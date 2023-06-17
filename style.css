@@ -1,0 +1,25 @@
+/* 
+Theme Name: Web Dev Agent
+Theme URI: http://wordpress.org/themes/web-dev-agent
+Author: edk
+Author URI: http://evolutiondesuka.com
+Description: web development agency theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 
+Text Domain: wda
+
+
+I tried the block theme - but will work with 'classic' theme for now:
+1. block theme didn't work! the homepage/front-page resolved to page.html template - don't know how to change this.
+   such an obvious requirement - bad start.
+2. legacy sites will def. be in 'classic' - I will check how much people are using both, 
+   but i suspect 'classic' php files are still very popular.
+3. I don't like the DSL they have created in their html template files - namely using html comments
+   to add 'blocks'. While it's declarative and you're working in html - which is nice - they throw those
+   advantages away by using json inside the 'block' comments - so messy and overkill.
+   would have been far nicer to retain html styling tag and integrate that.. shame, cause otherwise nice.
+
+*/
+

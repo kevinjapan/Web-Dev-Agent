@@ -1,0 +1,60 @@
+html {
+   margin:0;
+   padding:0;   
+}
+body {
+   background:white;
+   margin:0;
+   padding:0;
+}
+header {
+   background:white;
+   width:100%;
+   height:100px;
+   margin:0;
+}
+
+.menu-top-menu {
+   display:flex;
+}
+
+ul {
+   list-style:none;
+}
+ul.menu{
+   display:flex;
+   gap:1rem;
+}
+
+/* to keep track of templates during dev */
+.dev_notes {
+   width:fit-content;
+   color:lightgrey;
+   font-size:.9rem;
+   font-weight:100;
+   border:solid 1px lightgrey;
+   border-radius:.25rem;
+   margin:.25rem;
+   padding:.25rem;
+}
+
+
+/* 
+   adapt outlinecss nav to wordpress menu structure 
+
+   current features/limitations
+   - activated on 'hover' - to do : touch/ipad?
+
+*/
+
+/* style selection of menu item on top nav */
+li.menu-item:hover > a {
+   border-bottom:solid 1px black;
+}
+li.menu-item.current-menu-item > a {
+   border-bottom:solid 1px black;
+}
+
+.list_style_bullets {
+   list-style:circle !important;
+}
