@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 
-<!-- this is the default archive page listing all posts -->
-
-<h1><?php single_cat_title();?></h1>
-<h3>archive.php</h3>
 
 <?php 
    if(have_posts()) :

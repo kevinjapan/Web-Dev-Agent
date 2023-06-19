@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<!-- this is the default archive page listing all posts -->
-
 <h1><?php single_cat_title();?></h1>
 
 <section class="feed_list fade_in">

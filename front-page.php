@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<!-- this is the page template applied for front-page / homepage -->
-
 
 <section class="cover_block bg_navy fade_in">
 
@@ -10,13 +8,15 @@
       <?php endif;?>
 
       <div class="overlay">
-         <h1><?php the_title(); ?></h1>
-         <p>outlinecss education theme</p>
+         <h1><?php echo get_bloginfo('name'); ?></h1>
+         <p><?php echo get_bloginfo('description'); ?></p>
          <button>Find out more ></button>
       </div>
 
 </section>
 
+
+<h1><?php the_title(); ?></h1>
 
 <?php 
 

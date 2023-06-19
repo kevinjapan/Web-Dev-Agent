@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 
-<!-- this is the default archive page listing all posts -->
-
-<h1><?php single_cat_title();?></h1>
-
 <section class="feed_list fade_in">
    <ul>
 <?php 
@@ -17,10 +13,8 @@
                <img src="<?php the_post_thumbnail_url('large'); ?>"/>
             <?php endif;?>
 
-            <?php
-            the_title();
-            the_excerpt();
-            ?>
+            <h3><?php echo the_title();?></h3>
+            <div class="feature_tile_content"><?php echo the_excerpt();?></div>
 
             <a href="<?php the_permalink(); ?>">read more</a>
 

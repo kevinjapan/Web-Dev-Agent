@@ -56,5 +56,5 @@ li.menu-item.current-menu-item > a {
 }
 
 .list_style_bullets {
-   list-style:circle !important;
+   list-style:circle;
 }

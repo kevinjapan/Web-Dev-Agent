@@ -1,8 +1,3 @@
-
-
-
-
-
 <footer>
 
    <ul>
@@ -33,9 +28,7 @@
 
 </footer>
 
-<?php 
-// load all enqueqed assets 
-?>
+<?php // load all enqueqed assets ?>
 <?php  wp_footer(); ?>
 
 </body>

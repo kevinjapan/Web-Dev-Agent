@@ -4,16 +4,20 @@
       the_post(); 
       $features = (array) get_post_meta(get_the_ID(),'_features_meta_key',true);
       ?>
-               <h1><?php the_title(); ?></h1>
+         <h1><?php the_title(); ?></h1>
+      <?php if(has_post_thumbnail()):?>
+         <img src="<?php the_post_thumbnail_url('large'); ?>"/>
+      <?php endif;?>
             
-            <ul>
-               <?php
-                  foreach ($features as $feature) {
-                     ?><li><?php echo $feature;?></li><?php
-                  }
-               ?>
-            </ul>
-               <?php the_content();?>
+         <ul style="list-style:circle;">
+            <?php
+               foreach ($features as $feature) {
+                  ?><li><?php echo $feature;?></li><?php
+               }
+            ?>
+         </ul>
+               
+         <?php the_content();?>
           
    <?php endwhile; ?>
 

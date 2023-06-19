@@ -52,10 +52,11 @@ register_nav_menus(
 );
 
 // configure all uploaded images
-add_image_size('cover',1200,600,true);
-add_image_size('large',600,300,true);
-add_image_size('medium',300,300,true);
+add_image_size('cover',1920,600,true);
+add_image_size('large',1200,630,true);
+add_image_size('medium',600,305,true);
 add_image_size('small',200,200,true);
+
 
 // use plugin 'force_regenerate_thumbnails' if you change 
 // these on existing uploaded img files (to reconfigure imgs)

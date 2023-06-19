@@ -4,20 +4,16 @@
       the_post(); 
       $details= (array) get_post_meta( get_the_ID(),'_wda_testimonial_details_meta_key', true );
       ?>
-         <h1><?php the_title(); ?></h1>
-      <?php if(has_post_thumbnail()):?>
-         <img src="<?php the_post_thumbnail_url('small'); ?>"/>
-      <?php endif;?>
-            <p>
-               <?php echo isset($details['name']) ? $details['name'] : '';?>, 
-               <?php echo isset($details['company']) ? $details['company'] : '';?>
-            </p>
-            <p><?php echo isset($details['website']) ? $details['website'] : '';?></p>
-      
-         <?php  the_content();  ?>
+
+<h5 style="margin-bottom:0;"><?php echo isset($details['name']) ? $details['name'] : '';?></h5>
+                  <p style="color:grey;margin-top:0;">
+                     <?php echo isset($details['position']) ? $details['position'] : '';?>,
+                     <?php echo isset($details['company']) ? $details['company'] : '';?></p>
+                  <p><?php echo isset($details['website']) ? $details['website'] : '';?></p>
+                  <p><?php echo get_post_meta( get_the_ID(), 'wda_testimonial_tagline', true );?></p>
+   
+      <?php  the_content();  ?>
         
-
-
    <?php endwhile; ?>
             
 <?php get_footer(); ?>
