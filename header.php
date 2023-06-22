@@ -19,8 +19,9 @@
    
    <div class="logo_block">
       <a href="home.html">
-         <img class="logo" src="./imgs/logo-outlinecss-education.jpg" alt="logo"/>
-      </a>
+      <?php if ( function_exists( 'the_custom_logo' ) ) {
+         the_custom_logo();
+      } ?>
    </div>
 
    <div class="nav_toggle">menu</div>

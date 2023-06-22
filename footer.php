@@ -3,8 +3,9 @@
    <ul>
       <li>
          <a href="home.html">
-            <img class="logo" style="max-height:80px;border:solid 5px black;" 
-            src="./imgs/logo-outlinecss-education.jpg" alt="logo" />
+            <?php if ( function_exists( 'the_custom_logo' ) ) {
+               the_custom_logo();
+            } ?>
          </a>
       </li>
       <li>
@@ -19,10 +20,7 @@
 
    <ul class="footnote">
       <li>
-
-      <!-- to do : insert copyright_from() 
-         Copyright &#169; ` + copyright_from(2022) + `-->
-         Copyright &#169;
+         <div class="footer_copyright"><?php echo esc_html(get_theme_mod('wda_copyright'));?></div>
       </li>
    </ul>
 

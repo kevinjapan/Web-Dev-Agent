@@ -176,10 +176,10 @@ Access classes - use these to access the custom props
 }
 .appear {
    opacity:1;
-   transition:opacity .75s ease-in;
+   transition:opacity .25s ease-in;
 }
 .invisible_nav {
    -webkit-transform:translateY(-100%);
    transform:translateY(-100%);
-   transition:transform .6s ease-in;
+   transition:transform .25s ease-in;
 }

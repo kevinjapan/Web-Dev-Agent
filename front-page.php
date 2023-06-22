@@ -1,7 +1,10 @@
 <?php get_header(); ?>
 
+<!-- to do : using a generic 'cover_block' means we can't use customizer eg to change site title -
+    we need to distinguish frontpage cover_block.. temp below - clean this up -->
 
-<section class="cover_block bg_navy fade_in">
+
+<section class="front_page cover_block bg_navy fade_in">
 
       <?php if(has_post_thumbnail()):?>
          <img class="bg_img" src="<?php the_post_thumbnail_url('cover'); ?>"/>
