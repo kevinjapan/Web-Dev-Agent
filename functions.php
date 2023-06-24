@@ -21,8 +21,6 @@ add_action( 'after_setup_theme', 'wda_theme_setup' );
 
 
 function load_stylesheets() {
-
-   // to do : don't need separate register - see wp_enqueue_script docs
    wp_register_style('wda_stylesheet',get_template_directory_uri() . '/css/wda.css',array(),1,'all');
    wp_enqueue_style('wda_stylesheet');
    wp_register_style('outline',get_template_directory_uri() . '/css/outline.css',array(),1,'all');
@@ -50,10 +48,6 @@ add_action('wp_enqueue_scripts','load_scripts');
 
 
 // menu location
-//
-// to do : review
-// our header.php builds nav - so we are tied to eg 'top-menu' - ensure this is reasonable
-//
 register_nav_menus(
    array(
       'top-menu' => __('Top Menu','theme'),
@@ -72,11 +66,6 @@ add_image_size('small',200,200,true);
 
 require_once get_template_directory() . '/inc/wda-block-patterns.php';
 
-
-//
-// to do : on-going :
-// Adapting previous block patterns from edk theme (early learning theme development) for use in Wed Dev Agent theme.
-//
 
 // add theme patterns to customizer - must be included last
 require_once get_template_directory() . '/inc/wda-customize-theme.php';

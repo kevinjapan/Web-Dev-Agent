@@ -1,10 +1,5 @@
 <?php
 
-//
-// to do : on-going :
-// Adapting previous block patterns from edk theme (early learning theme development) for use in Wed Dev Agent theme.
-//
-
 require_once get_template_directory() . '/inc/wda-sanitize.php';
 
 
@@ -61,7 +56,7 @@ function wda_generate_complex_css_rule( $selector, $style, $mod_names, $prefixes
          $mod.= " " . $prefixes[$index] . get_theme_mod($mod_name) . $postfixes[$index++];
       }
    }
-   // to do : bug   -  $prefix ?
+   // $prefix ?
    // if ( ! empty( $mod ) ) sprintf('%s{%s:%s;}',$selector,$style,$prefix.$mod.$postfix) . "\n";
 }   
 
@@ -83,10 +78,6 @@ class WebDevAgentThemeCustomizer {
       $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
       $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-      // to do : useful?
-      // $wp_customize->remove_control('display_header_text');      // disable - we assume control
-      // $wp_customize->remove_control('header_text_color');
-      
       //
       // Wed Dev Agent Theme panel
       //
@@ -115,10 +106,7 @@ class WebDevAgentThemeCustomizer {
          ) 
       );
 
-      //
-      // to do : remove unnecessary: - include nav configuration?
-      //
-   
+
       // $wp_customize->add_section( 'wda_nav', 
       //    array('title'       => esc_html( 'Top Navigation', 'wda' ),
       //          'priority'    => 20,
@@ -824,12 +812,6 @@ class WebDevAgentThemeCustomizer {
 
    }
 
-
-
-   //
-   //  to do : align these rules to outlinecss classes
-   //
-  
 
    //
    // frontend inline theme styles

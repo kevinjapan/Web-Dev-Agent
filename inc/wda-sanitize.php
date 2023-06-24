@@ -1,17 +1,8 @@
 <?php
 
-//
-// to do : on-going :
-//
-// Adapting previous block patterns from edk theme (early learning theme development) for use in Wed Dev Agent theme.
-//
-// Will modify this file as we go.
-//
-
-
 /*
  * sanitize funcs
- * @since EvolutionDesuKa 1.0
+ * @since EvolutionDesuKa 1.0    // to do : remove all references.
  */
 
 if ( ! function_exists( 'wda_sanitize_number_range' ) ) :

@@ -2,7 +2,7 @@
 
 <!-- this is the default page (non front-page) template -->
 
-<h1><?php the_title();?></h1>
+<?php // we don't show title by default the_title();?>
 
 <?php 
    if(have_posts()) :

@@ -41,18 +41,14 @@ ul.menu{
 
 /* 
    adapt outlinecss nav to wordpress menu structure 
-
-   current features/limitations
-   - activated on 'hover' - to do : touch/ipad?
-
 */
 
 /* style selection of menu item on top nav */
 li.menu-item:hover > a {
-   border-bottom:solid 1px black;
+   border-bottom:solid 1px white;
 }
 li.menu-item.current-menu-item > a {
-   border-bottom:solid 1px black;
+   border-bottom:solid 1px white;
 }
 
 .list_style_bullets {

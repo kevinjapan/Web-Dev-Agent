@@ -3,9 +3,7 @@
    <ul>
       <li>
          <a href="home.html">
-            <?php if ( function_exists( 'the_custom_logo' ) ) {
-               the_custom_logo();
-            } ?>
+            <h5>webstudio kimono</h5>
          </a>
       </li>
       <li>

@@ -12,12 +12,13 @@
 // 
 
 //
-// to do : on-going :
 // Adapting previous block patterns from edk theme (early learning theme development) for use in Wed Dev Agent theme.
-// I generated these block patterns by building the pattern in editor then copying the html (use code editor mode)
+// I generated these block patterns by building the pattern in editor then copying the html (use code editor mode - 'serialized block')
 // and inserting that into my calls to register_block_pattern().content below.
 // For now, will stick with these to get this up and running - so currently minimal use of outlinecss
 // 
+// future : research correct way to generate these blocks and implement..  theme.json? or somesuch..
+//
 
 
 
@@ -54,21 +55,23 @@ function wda_register_block_patterns() {
          <img class="wp-block-cover__image-background wp-image-248" alt="image of columns" 
          src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" data-object-fit="cover"/>
          <div class="wp-block-cover__inner-container">
-
          <!-- wp:columns -->
          <div class="wp-block-columns"><!-- wp:column -->
-         <div class="wp-block-column"><!-- wp:heading {"className":"has-text-align-right"} -->
-         <h2 class="has-text-align-right">Introducing the Web Dev Agent Cover Block.</h2>
+         <div class="wp-block-column"><!-- wp:heading -->
+         <h2>Introducing the Web Dev Agent Cover Block.</h2>
          <!-- /wp:heading --></div>
-         <!-- /wp:column -->
-         
+         <!-- /wp:column -->         
          <!-- wp:column -->
-         <div class="wp-block-column"><!-- wp:paragraph -->
-         <p>Cover Blocks with Latitude! Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-         Integer facilisis metus sed enim ullamcorper tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-         Nulla ac nibh ut elit condimentum tempor sit amet sed risus.<br>You can customize the layout of this block pattern 
-         in Appearance - Customize - Web Dev Agent Block Patterns - Web Dev Agent Covers...</p>
-         <!-- /wp:paragraph --></div>
+         <div class="wp-block-column">
+            <!-- wp:paragraph -->
+            <p>Cover Blocks with Latitude!<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis metus sed enim ullamcorper tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nibh ut elit condimentum tempor sit amet sed risus.<br>
+            <br>You can customize the layout of this block pattern in the Dashboard menu:
+            <br>- Appearance 
+            <br>- - Customize
+            <br>- - - Web Dev Agent Block Patterns 
+            <br>- - - - Web Dev Agent Covers.</p>
+            <!-- /wp:paragraph -->
+         </div>
          <!-- /wp:column --></div>
          <!-- /wp:columns -->
          
@@ -112,11 +115,11 @@ function wda_register_block_patterns() {
    //       <!-- /wp:heading -->
    //       <!-- wp:paragraph {"align":"center"} -->
    //       <p class="has-text-align-center"> You can customize the layout of this block pattern 
-   //       in Appearance - Customize - Web Dev Agent Block Patterns - Web Dev Agent Covers.. </p>
+   //       in Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Covers.. </p>
    //       <!-- /wp:paragraph -->
-   //       <!-- wp:paragraph {"align":"center"} -->
-   //       <p class="has-text-align-center">read more</p>
-   //       <!-- /wp:paragraph --></div>
+   //       <!-- wp:button -->
+   //      <button>read more link</button>
+   //       <!-- /wp:button --></div>
    //       <!-- /wp:column --></div>
    //       <!-- /wp:columns -->
    //      </div></div>
@@ -150,9 +153,14 @@ function wda_register_block_patterns() {
    //         <p class="has-text-align-center"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem 
    //         deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam? </p>
    //         <!-- /wp:paragraph -->
-   //         <!-- wp:paragraph {"align":"center"} -->
-   //         <p class="has-text-align-center">read more</p>
-   //         <!-- /wp:paragraph --></div>
+            // <!-- wp:buttons -->
+            // <div class="wp-block-buttons wda_buttons">            
+            // <!-- wp:button -->
+            // <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+            // <!-- /wp:button -->
+            // </div>
+            // <!-- /wp:buttons -->
+   //         </div>
    //         <!-- /wp:column -->
    //         <!-- wp:column {"className":"wda_opaque_bg"} -->
    //         <div class="wp-block-column wda_opaque_bg"><!-- wp:heading {"textAlign":"center","level":3} -->
@@ -172,7 +180,7 @@ function wda_register_block_patterns() {
    //         <!-- /wp:heading -->
    //         <!-- wp:paragraph {"align":"center"} -->
    //         <p class="has-text-align-center"> You can customize the layout of this block pattern 
-   //         in Appearance - Customize - Web Dev Agent Block Patterns - Web Dev Agent Covers... </p>
+   //         in Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Covers... </p>
    //         <!-- /wp:paragraph --> 
    //         <!-- wp:paragraph {"align":"center"} -->
    //         <p class="has-text-align-center">continue</p>
@@ -194,23 +202,33 @@ function wda_register_block_patterns() {
    'categories' => ['wda-column-blocks'],
    'viewportWidth' => 1000,
    'content' => 
-         '<!-- wp:media-text 
-         {"mediaLink":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","mediaType":"image"} -->
+         '<!-- wp:media-text {"mediaLink":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","mediaType":"image"} -->
          <div class="wp-block-media-text alignwide is-stacked-on-mobile wda-columns wda-single-feature-columns">
          <figure class="wp-block-media-text__media">
          <img src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" alt="image of columns" />
          </figure>
          <div class="wp-block-media-text__content">
          <!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
-         <p class="has-large-font-size">Introducing the single feature column</p>
+         <p class="has-large-font-size">Introducing the single feature column.</p>
          <!-- /wp:paragraph -->
          <!-- wp:paragraph -->
          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit molestiae 
          provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
          <!-- /wp:paragraph -->
          <!-- wp:paragraph -->
-         <p>read more link</p>
+         <p>You can customize the layout of this block pattern in the Dashboard menu:
+         <br>- Appearance 
+         <br>- - Customize
+         <br>- - - Web Dev Agent Block Patterns 
+         <br>- - - - Web Dev Agent Columns</p>
          <!-- /wp:paragraph -->
+         <!-- wp:buttons -->
+         <div class="wp-block-buttons wda_buttons">            
+         <!-- wp:button -->
+         <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+         <!-- /wp:button -->
+         </div>
+         <!-- /wp:buttons -->
          </div>
          </div>
          <!-- /wp:media-text -->'
@@ -242,9 +260,14 @@ function wda_register_block_patterns() {
          <p class="has-text-align-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem 
          deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
          <!-- /wp:paragraph -->
-         <!-- wp:paragraph  {"align":"center"} -->
-         <p class="has-text-align-center">read more link</p>
-         <!-- /wp:paragraph --></div>
+         <!-- wp:buttons -->
+         <div class="wp-block-buttons wda_buttons">            
+         <!-- wp:button -->
+         <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+         <!-- /wp:button -->
+         </div>
+         <!-- /wp:buttons -->
+         </div>
          <!-- /wp:column -->
          <!-- wp:column -->
          <div class="wp-block-column"> 
@@ -256,8 +279,7 @@ function wda_register_block_patterns() {
          <h2 class="has-text-align-center">title here</h2>
          <!-- /wp:heading -->
          <!-- wp:paragraph  {"align":"center"} -->
-         <p class="has-text-align-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem 
-         deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
+         <p>You can customize the layout of this block pattern in the Dashboard menu: Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Columns</p>
          <!-- /wp:paragraph -->
          <!-- wp:paragraph  {"align":"center"} -->
          <p class="has-text-align-center">another link here</p>
@@ -288,15 +310,19 @@ function wda_register_block_patterns() {
             <img src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" alt="image of columns"/></figure>
             <!-- /wp:image -->
             <!-- wp:heading -->
-            <h2>three feature columns</h2>
+            <h2 class="has-text-align-center">three</h2>
             <!-- /wp:heading -->
             <!-- wp:paragraph -->
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae 
             odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
             <!-- /wp:paragraph -->
-            <!-- wp:paragraph {"align":"center"} -->
-            <p class="has-text-align-center">learn more</p>
-            <!-- /wp:paragraph --></div>
+            <!-- wp:buttons -->
+            <div class="wp-block-buttons wda_buttons">            
+            <!-- wp:button -->
+            <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+            <!-- /wp:button -->
+            </div>
+            <!-- /wp:buttons --></div>
             <!-- /wp:column -->        
             <!-- wp:column {"className":"wda_center_content"} -->
             <div class="wp-block-column wda_center_content">
@@ -305,15 +331,20 @@ function wda_register_block_patterns() {
             <img src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" alt="image of columns"/></figure>
             <!-- /wp:image -->
             <!-- wp:heading {"textAlign":"center"} -->
-            <h2 class="has-text-align-center">responsive layout</h2>
+            <h2 class="has-text-align-center">feature</h2>
             <!-- /wp:heading -->
             <!-- wp:paragraph {"align":"center"} -->
             <p class="has-text-align-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem 
             deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
             <!-- /wp:paragraph -->
-            <!-- wp:paragraph {"align":"center"} -->
-            <p class="has-text-align-center">read more</p>
-            <!-- /wp:paragraph --></div>
+            <!-- wp:buttons -->
+            <div class="wp-block-buttons wda_buttons">            
+            <!-- wp:button -->
+            <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+            <!-- /wp:button -->
+            </div>
+            <!-- /wp:buttons -->
+            </div>
             <!-- /wp:column -->
             <!-- wp:column {"className":"wda_center_content"} -->
             <div class="wp-block-column wda_center_content">
@@ -322,15 +353,19 @@ function wda_register_block_patterns() {
             <img src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" alt="image of columns"/></figure>
             <!-- /wp:image -->
             <!-- wp:heading -->
-            <h2>keep me hanging on</h2>
-            <!-- /wp:heading -->        
-            <!-- wp:paragraph -->
-            <p>You can customize the layout of this block pattern 
-            in Appearance - Customize - Web Dev Agent Block Patterns - Web Dev Agent Columns...</p>
+            <h2 class="has-text-align-center">columns</h2>
+            <!-- /wp:heading -->  
+            <!-- wp:paragraph  {"align":"center"} -->
+            <p>You can customize the layout of this block pattern in the Dashboard menu: Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Columns</p>
             <!-- /wp:paragraph -->
-            <!-- wp:paragraph {"align":"center"} -->
-            <p class="has-text-align-center">read more</p>
-            <!-- /wp:paragraph --></div>
+            <!-- wp:buttons -->
+            <div class="wp-block-buttons wda_buttons">            
+            <!-- wp:button -->
+            <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+            <!-- /wp:button -->
+            </div>
+            <!-- /wp:buttons -->
+            </div>
             <!-- /wp:column --></div>
             <!-- /wp:columns -->',
 	]);
@@ -417,9 +452,14 @@ function wda_register_block_patterns() {
    //          <p class="has-text-align-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem 
    //          deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
    //          <!-- /wp:paragraph -->
-   //          <!-- wp:paragraph  {"textAlign":"center"} -->
-   //          <p class="has-text-align-center">read more</p>
-   //          <!-- /wp:paragraph --></div></div>
+            // <!-- wp:buttons -->
+            // <div class="wp-block-buttons wda_buttons">            
+            // <!-- wp:button -->
+            // <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+            // <!-- /wp:button -->
+            // </div>
+            // <!-- /wp:buttons -->
+   // </div></div>
    //          <!-- /wp:cover --></div>
    //          <!-- /wp:column -->
    //          <!-- wp:column -->
@@ -448,7 +488,7 @@ function wda_register_block_patterns() {
    //          <!-- /wp:heading -->
    //          <!-- wp:paragraph  {"textAlign":"center"} -->
    //          <p class="has-text-align-center">You can customize the layout of this block pattern 
-   //          in Appearance - Customize - Web Dev Agent Block Patterns - Web Dev Agent Cover-Columns...</p>
+   //          in Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Cover-Columns...</p>
    //          <!-- /wp:paragraph -->
    //          <!-- wp:paragraph {"textAlign":"center"} -->
    //          <p class="has-text-align-center">learn more</p>
@@ -475,8 +515,9 @@ function wda_register_block_patterns() {
          <h2 class="wda-title-lead__title has-text-align-center">Title & Lead Text</h2>
          <!-- /wp:heading -->
          <!-- wp:paragraph {"align":"center"} -->
-         <p class="has-text-align-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>You can customize the layout of 
-         this block pattern in Appearance - Customize - Web Dev Agent Block Patterns - Web Dev Agent Texts...</p>
+         <p class="has-text-align-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.         
+         <br>You can customize the layout of this block pattern in the Dashboard menu:
+         <br> Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Texts </p>
          <!-- /wp:paragraph -->
          </div>
          <!-- /wp:group -->'
@@ -496,12 +537,11 @@ function wda_register_block_patterns() {
          '<!-- wp:group {"className":"wda-text wda-simple-text"} -->
          <div class="wp-block-group wda-text wda-simple-text">
          <!-- wp:paragraph -->
-         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit 
-         molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
+         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
          <!-- /wp:paragraph -->
          <!-- wp:paragraph -->
-         <p>You can customize the layout of this block pattern 
-         in Appearance - Customize - Web Dev Agent Block Patterns - Web Dev Agent Texts...</p>
+         <p>You can customize the layout of this block pattern in the Dashboard menu:
+         <br> Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Texts </p>
          <!-- /wp:paragraph --></div>
          <!-- /wp:group -->'
 	]);
@@ -510,26 +550,26 @@ function wda_register_block_patterns() {
    //
    // wda-columns-text : future release
    //
-	register_block_pattern('wda-columns-text', [
-		'title' => __('Columns Text', 'wda'),
-      'description' => _x( 'Columns Text.', 'A title and text block supporting columns on wider screens.', 'wda' ),            
-		'keywords' => ['text,columns'],
-		'categories' => ['wda-texts'],
-		'viewportWidth' => 1000,
-		'content' =>  
-         '<!-- wp:group {"className":"wda-text wda-columns-text"} -->
-         <div class="wp-block-group wda-text wda-columns-text">
-         <!-- wp:paragraph -->
-         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae 
-         odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
-         <!-- /wp:paragraph -->
-         <!-- wp:paragraph -->
-         <p>You can customize the layout of this block pattern 
-         in Appearance - Customize - Web Dev Agent Block Patterns - Web Dev Agent Texts...</p>
-         <!-- /wp:paragraph -->
-         </div>
-         <!-- /wp:group -->'
-	]);
+	// register_block_pattern('wda-columns-text', [
+	// 	'title' => __('Columns Text', 'wda'),
+   //    'description' => _x( 'Columns Text.', 'A title and text block supporting columns on wider screens.', 'wda' ),            
+	// 	'keywords' => ['text,columns'],
+	// 	'categories' => ['wda-texts'],
+	// 	'viewportWidth' => 1000,
+	// 	'content' =>  
+   //       '<!-- wp:group {"className":"wda-text wda-columns-text"} -->
+   //       <div class="wp-block-group wda-text wda-columns-text">
+   //       <!-- wp:paragraph -->
+   //       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae 
+   //       odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
+   //       <!-- /wp:paragraph -->
+   //       <!-- wp:paragraph -->
+   //       <p>You can customize the layout of this block pattern 
+   //       in Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Texts.</p>
+   //       <!-- /wp:paragraph -->
+   //       </div>
+   //       <!-- /wp:group -->'
+	// ]);
 
 
    //

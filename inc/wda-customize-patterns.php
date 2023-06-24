@@ -37,7 +37,7 @@ class WebDevAgentPatternsCustomizer {
       // sections
       //
       $wp_customize->add_section( 'wda_cover_patterns', 
-         array('title'       => __( 'Web Dev Agent Covers', 'wda' ),    // to do : -> 'wda-text-domain' ?
+         array('title'       => __( 'Web Dev Agent Covers', 'wda' ),
                'priority'    => 10,
                'capability'  => 'edit_theme_options',
                'description' => __('You can customize all Wed Dev Agent Covers across the site here.', 'wda'),
@@ -279,7 +279,7 @@ class WebDevAgentPatternsCustomizer {
       );
 
       // 
-      // lead-text box padding  - to do : what is this? cf w/ above.
+      // lead-text box padding
       //
       $wp_customize->add_setting( 'wda_title_lead_x_padding',
          array('default'    => '0', 
@@ -410,7 +410,6 @@ class WebDevAgentPatternsCustomizer {
    }
 
 
-  
    public static function wda_customizer_patterns_styles() {
 
       ?><!-- Web Dev Agent Patterns Customizer CSS --> 
@@ -419,14 +418,6 @@ class WebDevAgentPatternsCustomizer {
 
    /* wda-cover block */
 
-      // to do : if we go sidebar.. - may as well implement this again to familiarize myself.
-      // wda_generate_css_rule('.wda-cover', ['style' => 'width','setting' => 'wda_cover_x_width','prefix'  => '','postfix' => '%'],);
-
-      // to do : 
-      // - ensure responsive - so 100% at sm.
-      // - tidy/remove css rules below..
-
-   
       // wda-cover
       ?>
       @media screen and (min-width: 768px) { 
@@ -523,7 +514,6 @@ class WebDevAgentPatternsCustomizer {
             ['style' => 'padding-top','setting' => 'wda_title_lead_top_padding','prefix'  => '','postfix' => 'vh'],
             ['style' => 'padding-bottom','setting' => 'wda_title_lead_bottom_padding','prefix'  => '','postfix' => 'vh']);
       ?>}<?php
-      /* wda-text  -  to do : replace all '-block' & '-inline' - rollout */ 
       wda_generate_css_rule('.wp-block-group.wda-text.wda-simple-text',
          ['style' => 'margin-top','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh'],
          ['style' => 'margin-bottom','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh']); 
