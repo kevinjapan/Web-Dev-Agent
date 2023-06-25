@@ -1,31 +1,24 @@
 <?php get_header(); ?>
 
 
-<section class="feed_list fade_in">
+<section class="animated_tiles fade_in">
+   <h3>Our work</h3>
    <ul>
       <?php 
       if(have_posts()) :
          while(have_posts()) :
             the_post();?>
             <li>
-               <div style="background:white;margin-block:2rem;">
-               
-                  <?php if(has_post_thumbnail()):?>
-                     <img src="<?php the_post_thumbnail_url('large'); ?>"/>
-                  <?php endif;?>
                   <?php
-                  $tagline = get_post_meta( get_the_ID(), 'wda_casestudy_tagline',true );
-                  $url = get_post_meta( get_the_ID(), 'wda_casestudy_url',true );
-               
-                  ?><h3><?php echo the_title();?></h3><?php
-                  ?><?php echo $tagline;?><?php
-                  ?><?php echo $url;?><?php
-                  the_excerpt();
+                  if(has_post_thumbnail()):?>
+                     <img src="<?php the_post_thumbnail_url('large'); ?>"/>
+                  <?php endif;
                   ?>
-
-                  <a href="<?php the_permalink(); ?>">read more</a>
-
-               </div>
+                  <h3><?php echo get_the_title();?></h3>
+                  <p><?php echo get_post_meta( get_the_ID(), 'wda_casestudy_tagline', true );?></p>
+                  <!-- <p><?php echo get_the_excerpt();?></p> -->
+                  <button><a href="<?php echo get_permalink(get_the_ID()); ?>">project details</a></button>
+                  ?>
             </li>
             <?php
          endwhile; 

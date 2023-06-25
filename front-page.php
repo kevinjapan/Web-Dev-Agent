@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-
+<!-- to do : add some text content - including feature blocks -->
 
 <section class="front_page cover_block bg_navy fade_in">
 
@@ -18,6 +18,7 @@
 
 <?php // we don't show title by default the_title();?>
 
+<section>
 <?php 
 
 
@@ -30,6 +31,6 @@
       endwhile; 
    endif;
 ?>
-
+</section>
 
 <?php get_footer(); ?>

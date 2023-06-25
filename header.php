@@ -25,7 +25,7 @@
       </a>
    </div>
 
-   <div class="nav_toggle">menu</div>
+   <div class="nav_toggle" onclick="">menu</div>
 
    <?php wp_nav_menu(
       array(
