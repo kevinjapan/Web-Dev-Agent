@@ -184,12 +184,18 @@ nav div.logo_block    {
 
 nav ul   {list-style:none;}
 nav li * {padding-top:0;padding-bottom:0;}
-nav a    {cursor:pointer;color:white;}
+nav a    {
+   font-size:var(--nav_font_size);
+   cursor:pointer;
+   color:white;
+   white-space:nowrap;
+   margin-left:1rem;
+}
 
 nav ul.menu {
    position:absolute;
    z-index:2;
-   top:calc(var(--nav_bar_height) - 8px);
+   top:calc(var(--nav_bar_height) - 18px);
    left:0;
    width:100%;
    
@@ -203,13 +209,15 @@ nav ul.menu {
 
    gap:0;
    
-   padding:0;
+   padding:0 0 1rem 0;
+   background-color:var(--primary_1_bg);
    border-bottom:solid 3px hsl(0, 0%, 96%);
-   -webkit-transform:translateY(-500px);
-   -ms-transform:translateY(-500px);
-   transform:translateY(-500px);
+   
+   -webkit-transform:translateY(-300px);
+   -ms-transform:translateY(-300px);
+   transform:translateY(-300px);
    opacity:0;
-   transition:transform .75s ease-in-out .25s,opacity 3s ease-in-out .25s;
+   transition:transform .5s ease-in-out,opacity 3s ease-in-out;
 }
 
 /* mobile menu toggle */
@@ -253,22 +261,49 @@ nav ul.menu > li > a  {
    background-color:var(--primary_1_bg);
 }
 
-/* extend dropdown */
-nav > div.nav_toggle:hover + div > ul.menu {       /* added 'div >' for WordPress 'menu' structure */
+
+
+/* toggle sm/mobile nav dropdown */
+nav ul.menu.extended_nav_dropdown {
    -webkit-transform:translateY(0);
+   -ms-transform:translateY(0);
+   transform:translateY(0);
+   opacity:1;
+   transition:transform .5s ease-in-out,opacity .5s ease-in-out;
+}
+
+/*   --------------------------------------------------------------
+
+   to do : bug - something in menu has added bottom scrollbar to mobile page.. 
+
+*/   --------------------------------------------------------------
+
+
+/* to do : enable above and remove below.. 
+   to do : I'd like the dropdown to retract before refreshing the page (if i can do it, it should be quick enough.. */
+
+/* extend dropdown */
+/* nav > div.nav_toggle:hover + div > ul.menu {       */
+    /* added 'div >' for WordPress 'menu' structure */
+   /* -webkit-transform:translateY(0);
    -ms-transform:translateY(0);
    transform:translateY(0);
    opacity:1;
    transition:transform .5s ease-in-out .25s,opacity .5s ease-in-out .25s;
-}
+} */
 /* retain extended on menu:hover */
-nav > div > ul.menu:hover  {                       /* added 'div >' for WordPress 'menu' structure */
-   -webkit-transform:translateY(0);
+/* nav > div > ul.menu:hover  {                        */
+   /* added 'div >' for WordPress 'menu' structure */
+   /* -webkit-transform:translateY(0);
    -ms-transform:translateY(0);
    transform:translateY(0);
    opacity:1;
    transition:transform .5s ease-in-out .5s,opacity .5s ease-in-out .5s;
-}
+} */
+
+
+
+
 
 /* maintain <a> spacing on transitions */
 nav ul.menu li ul li a {margin:1rem; }
@@ -350,6 +385,7 @@ we support from 1045px determined by four cols of reasonable text in dropdown
       transform:unset;
       opacity:1;
       transition:none;
+      margin-left:0;
    }  
    /* md/lg dropdowns */
    nav ul.menu .menu_dropdown {
@@ -477,7 +513,6 @@ section > ul > li.stack_4 {order:4;}
       text-align:var(--default_text_align);
    }
    section > ul {
-   
       -webkit-box-orient:horizontal;
       -webkit-box-direction:normal;
       -ms-flex-direction:row;
@@ -490,7 +525,7 @@ section > ul > li.stack_4 {order:4;}
       padding-top:0;
       padding-bottom:0;
    }
-   section  ul  li  img {
+   section ul li img {
       display:block;  /* prevent browser's inline element spacing */
       width:100%;
       height:var(--section_img_height);
@@ -641,9 +676,9 @@ section.animated_tiles > ul {
 
    -ms-flex-wrap:wrap;
    flex-wrap:wrap;
-   gap:0;
+   gap:1.5rem;
 
-   width:100%;
+   width:90%;
    margin:0;
    margin-left:auto;
    margin-right:auto;
@@ -667,8 +702,10 @@ section.animated_tiles > ul > li {
    -webkit-box-align:center;
    -ms-flex-align:center;
    align-items:center;
+   
+   /* single col */
+   width:100%;
 
-   min-width:30%;
    padding:3rem 1rem 4rem 1rem;
    overflow:hidden;
 }
@@ -682,7 +719,10 @@ section.animated_tiles h6 {
    margin-right:auto;
    text-align:center;
 }
-section.animated_tiles *:not(button):not(img):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+/* section.animated_tiles *:not(button):not(img):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+   color:var(--section_overlay_text_color); 
+} */
+section.animated_tiles {
    color:var(--section_overlay_text_color); 
 }
 section.animated_tiles > ul > li *:not(img) {
@@ -704,7 +744,7 @@ section.animated_tiles > ul > li::before {
    width:100%;
    height:100%;
    background-color:black;
-   opacity:0;
+   opacity:0.23;
 }
 section.animated_tiles > ul > li:hover::before {
    opacity:0.6;
@@ -750,11 +790,18 @@ section.animated_tiles > ul > li:hover > button {
 /* elements outside tiles */
 section.animated_tiles > button {
    opacity:1;
-   color:black;
+   color:grey;
    margin-top:1rem;
 }
 section.animated_tiles > button > a {
    opacity:1;
+   color:grey;
+}
+section.animated_tiles > button:hover {
+   color:black;
+   border:solid 1px black;
+}
+section.animated_tiles > button:hover a {
    color:black;
 }
 section.animated_tiles > p {
@@ -762,8 +809,24 @@ section.animated_tiles > p {
    color:black;
 }
 
-@media screen and (min-width: 768px) {
 
+@media screen and (min-width: 660px) {
+   /* two cols */
+   section.animated_tiles > ul {
+      flex-direction:row;  /* to do : webkit.. */
+      gap:0;
+      width:100%;
+   }
+   section.animated_tiles > ul > li {
+      min-width:50%;
+   }
+}
+
+@media screen and (min-width: 910px) {
+   /* three cols */
+   section.animated_tiles > ul > li {
+      min-width:30%;
+   }
 }
 
 
@@ -897,7 +960,6 @@ section.feature_tiles  > ul > li > img {
    -webkit-box-flex:2;
    -ms-flex-positive:2;
    flex-grow:2;
-   border-radius:.25rem;
 }
 section.feature_tiles  > ul > li > h5 {
    padding-top:1rem;
@@ -918,6 +980,7 @@ section.feature_tiles a {
 section.feature_tiles  > ul > li > button {
    align-self:center;
    margin-top:auto;
+   margin-bottom:1rem;
 }
 @media screen and (min-width: 768px) {
    section.feature_tiles > ul > li {
@@ -931,7 +994,7 @@ section.feature_tiles  > ul > li > button {
 section.cover_block {
    position:relative;
    width:100%;
-   height:fit-content;
+   height:var(--cover_block_height);
    padding-top:5rem;
    padding-bottom:5rem;
    overflow:hidden;
@@ -946,9 +1009,45 @@ section.cover_block .bg_img {
    position:absolute;
    top:0;
    left:0;
-   z-index:-1;
+   z-index:-2;
    min-height:100%;
    object-fit: cover; 
+}
+section.cover_block .overlay {
+   height:fit-content;
+   padding:0 1rem 1rem 1rem;
+}
+section.cover_block .overlay p {
+   line-height:2rem;
+}
+section.cover_block button {
+   margin:1rem 1rem 0 auto;
+}
+/* dimmer behind text */
+section.cover_block .overlay::before {
+   content:'';
+   position:absolute;
+   top:0;
+   left:0;
+   z-index:-1;
+   width:100%;
+   height:100%;
+   background:black;
+   padding-left:1rem;
+   padding-right:1rem;
+   /* to do : make this configurable in customizer 0.0 -> 1.0 */
+   opacity:0.3;
+}
+section.cover_block h1 {
+   /* font-size:5rem; */
+   font-weight:900;
+   margin:0;
+   padding:0;
+}
+section.cover_block p {
+   font-size:2rem;
+   margin:0;
+   padding:0 0 0 1rem;
 }
 section.cover_block div {
 
@@ -1075,6 +1174,7 @@ footer ul.footnote li {
    -ms-flex:1 0;
    flex:1 0;
    text-align:center;
+   font-size:.9rem;
 }
 footer a {
    color:white;

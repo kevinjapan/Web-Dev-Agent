@@ -44,6 +44,12 @@ ul.menu{
 */
 
 /* style selection of menu item on top nav */
+li.menu-item {width:100%;}
+li.menu-item a,
+li.menu-item.current-menu-item > a {
+   width:fit-content;
+   border:solid 1px transparent;
+}
 li.menu-item:hover > a {
    border-bottom:solid 1px white;
 }

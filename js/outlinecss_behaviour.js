@@ -94,3 +94,25 @@ init_nav_scroll_observer()
 
 
 
+//
+// toggle sm/mobile menu
+//
+const nav_toggle = document.querySelector('.nav_toggle')
+const dropdown = document.querySelector('nav ul.menu')
+
+nav_toggle.addEventListener('click',() => {
+   if(dropdown) {
+      dropdown.classList.toggle('extended_nav_dropdown')
+   }
+})
+
+// retract dropdown on item clicked.
+const menu_items = document.querySelectorAll('.menu-item')
+
+menu_items.forEach((menu_item) => {
+   menu_item.addEventListener('click',() => {
+      if(dropdown) {
+         dropdown.classList.remove('extended_nav_dropdown')
+      }
+   })
+})

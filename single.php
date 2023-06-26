@@ -1,27 +1,21 @@
 <?php get_header(); ?>
 
-<h1><?php the_title();?></h1>
 
-<?php if(has_post_thumbnail()):?>
-   <img src="<?php the_post_thumbnail_url('large'); ?>"/>
-<?php endif;?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-<?php 
-   if(have_posts()) :
-      while(have_posts()) :
+<section class="front_page cover_block bg_navy fade_in">
+      <?php if(has_post_thumbnail()):?>
+         <img class="bg_img" src="<?php the_post_thumbnail_url('cover'); ?>"/>
+      <?php endif;?>
+      <div class="overlay">
+         <h1><?php the_title(); ?></h1>
+         <p><?php echo get_post_meta( get_the_ID(), 'wda_casestudy_tagline', true ); ?></p>
+      </div>
+</section>
 
-         the_post();
-         the_content();
+<?php the_content();?>
 
-      endwhile; 
-   endif;
-
-	// If comments are open or there is at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) {
-		comments_template();
-	}
-
-?>
+<?php endwhile; ?>
 
 
 <?php get_footer(); ?>

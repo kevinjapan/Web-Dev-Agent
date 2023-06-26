@@ -8,7 +8,7 @@
          <div style="background:white;margin-block:2rem;">
          
             <?php if(has_post_thumbnail()):?>
-               <img src="<?php the_post_thumbnail_url('small'); ?>"/>
+               <img src="<?php the_post_thumbnail_url('large'); ?>"/>
             <?php endif;?>
 
             <?php

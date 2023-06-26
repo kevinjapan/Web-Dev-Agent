@@ -13,7 +13,7 @@
             )
          ); ?>     
       </li>
-      <li>addresses here</li>
+      <li></li>
    </ul>
 
    <ul class="footnote">

@@ -10,15 +10,11 @@
             the_post();?>
             
             <li>
+               <h4><?php the_title();?></h4>
                <?php if(has_post_thumbnail()):?>
-                  <img src="<?php the_post_thumbnail_url('small'); ?>"/>
+                  <img src="<?php the_post_thumbnail_url('large'); ?>"/>
                <?php endif;?>
-
-               <?php
-               the_title();
-               the_excerpt();
-               ?>
-
+               <?php the_excerpt();?>
                <a href="<?php the_permalink(); ?>">read more</a>
             </li>
             <?php

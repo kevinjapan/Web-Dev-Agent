@@ -13,8 +13,13 @@
    */
 
    --primary_1_light_bg:   hsl(206, 12%, 88%); /* #DEE2E5 */
+
    --primary_1_bg:         hsl(207, 26%, 65%); /* #8EA8BD */
+   --primary_1_bg_light:   hsl(207, 26%, 75%); /* #8EA8BD */
+
    --primary_1_med_bg:     hsl(17, 100%, 38%); /* #C33800 */
+
+   --primary_1_dark_bg_light:    hsl(203, 29%, 61%); /* #141E24 */
    --primary_1_dark_bg:    hsl(203, 29%, 11%); /* #141E24 */
 
    --primary_1_color:     white;
@@ -142,6 +147,7 @@
    /* 
       md-lg screen navigation 
    */
+   --nav_font_size:1.3rem;
    --nav_bar_height:80px; /* used by header/header bg_img */
    --nav_bar_label_gap:3rem;
    --nav_bar_bg:          white;
@@ -292,5 +298,8 @@
    --feature_block_y_margin:0;
 
    --footer_top_margin:2rem;
+
+   /* cover_block */
+   --cover_block_height:400px;   /* to do : customizer */
 }
 
