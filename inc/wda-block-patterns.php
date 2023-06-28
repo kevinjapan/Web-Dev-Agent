@@ -279,7 +279,7 @@ function wda_register_block_patterns() {
          <h2 class="has-text-align-center">title here</h2>
          <!-- /wp:heading -->
          <!-- wp:paragraph  {"align":"center"} -->
-         <p>You can customize the layout of this block pattern in the Dashboard menu: Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Columns</p>
+         <p class="has-text-align-center">You can customize the layout of this block pattern in the Dashboard menu: Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Columns</p>
          <!-- /wp:paragraph -->
          <!-- wp:buttons -->
          <div class="wp-block-buttons wda_buttons">
@@ -316,8 +316,8 @@ function wda_register_block_patterns() {
             <!-- wp:heading -->
             <h2 class="has-text-align-center">three</h2>
             <!-- /wp:heading -->
-            <!-- wp:paragraph -->
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae 
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae 
             odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
             <!-- /wp:paragraph -->
             <!-- wp:buttons -->
@@ -360,7 +360,7 @@ function wda_register_block_patterns() {
             <h2 class="has-text-align-center">columns</h2>
             <!-- /wp:heading -->  
             <!-- wp:paragraph  {"align":"center"} -->
-            <p>You can customize the layout of this block pattern in the Dashboard menu: Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Columns</p>
+            <p class="has-text-align-center">You can customize the layout of this block pattern in the Dashboard menu: Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Columns</p>
             <!-- /wp:paragraph -->
             <!-- wp:buttons -->
             <div class="wp-block-buttons wda_buttons">            
