@@ -265,7 +265,7 @@ textarea {}
 /* button */
 button {
    width:fit-content;
-   padding:.5rem;
+   padding:.5rem 0 .5rem 0;
    background:transparent;
    color:hsl(0, 0%, 80%);
    border:solid 1px hsl(0, 0%, 75%);
@@ -280,11 +280,14 @@ button:hover {
 button > a {
    text-decoration:none;
    color:inherit;
+   padding:.5rem;
+   width:100%;
+   height:100%;
 }
 
 /* wda specific adaptations to integrate w/ WordPress */
 .wda_buttons {
-   margin-top:5rem;
+   margin-top:1rem;
 }
 .wda_button {
    width:100%;
