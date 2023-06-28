@@ -172,11 +172,11 @@ Access classes - use these to access the custom props
 /* fade_in hides, then IntersectionObserver resets */
 .fade_in {
    opacity:0;
-   transition:opacity .75s ease-in;
+   transition:opacity .45s ease-in;
 }
 .appear {
    opacity:1;
-   transition:opacity .25s ease-in;
+   transition:opacity 1s ease-in;
 }
 .invisible_nav {
    -webkit-transform:translateY(-100%);

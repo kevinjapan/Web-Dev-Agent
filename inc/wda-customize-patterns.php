@@ -418,10 +418,11 @@ class WebDevAgentPatternsCustomizer {
 
    /* wda-cover block */
 
+      //
       // wda-cover
+      //
       ?>
       @media screen and (min-width: 768px) { 
-      
          <?php 
             // wda-cover - md/lg 
             wda_generate_css_rule('.wda-cover',
@@ -429,14 +430,14 @@ class WebDevAgentPatternsCustomizer {
             wda_generate_css_rule('.wda-cover',
                ['style' => 'margin-top','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh'],
                ['style' => 'margin-bottom','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh']);
-
-            // wda-columns - md/lg
-
          ?>
       }
       <?php
 
+
+      //
       // wda-columns
+      //
          wda_generate_css_rule('.wp-block-media-text.wda-columns,.wp-block-media-text.wda-columns.has-background,.wp-block-columns.wda-columns,.wp-block-columns.wda-columns.has-background',
             ['style' => 'padding-top','setting' => 'wda_column_top_padding','prefix'  => '','postfix' => 'vh'],
             ['style' => 'padding-bottom','setting' => 'wda_column_bottom_padding','prefix'  => '','postfix' => 'vh']);
@@ -446,83 +447,98 @@ class WebDevAgentPatternsCustomizer {
       ?>
       @media screen and (min-width: 768px) { 
          <?php
-      wda_generate_css_rule(
-         '.wp-block-media-text.wda-columns,
-          .wp-block-media-text.wda-columns.has-background,
-          .wp-block-columns.wda-columns,
-          .wp-block-columns.wda-columns.has-background',
-         ['style' => 'padding-left','setting' => 'wda_column_x_padding','prefix'  => '','postfix' => '%'],
-         ['style' => 'padding-right','setting' => 'wda_column_x_padding','prefix'  => '','postfix' => '%']);
-      wda_generate_css_rule('.wda-cover-columns, .wda-cover-columns.has-background',
-         ['style' => 'padding-left','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%'],
-         ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']);?>}
-<?php
-      wda_generate_css_rule('.wda-cover-columns, .wda-cover-columns.has-background',
-         ['style' => 'padding-top','setting' => 'wda_cover_columns_y_padding','prefix'  => '','postfix' => 'vh'],
-         ['style' => 'padding-bottom','setting' => 'wda_cover_columns_y_padding','prefix'  => '','postfix' => 'vh']);
+            wda_generate_css_rule(
+               '.wp-block-media-text.wda-columns,
+               .wp-block-media-text.wda-columns.has-background,
+               .wp-block-columns.wda-columns,
+               .wp-block-columns.wda-columns.has-background',
+               ['style' => 'padding-left','setting' => 'wda_column_x_padding','prefix'  => '','postfix' => '%'],
+               ['style' => 'padding-right','setting' => 'wda_column_x_padding','prefix'  => '','postfix' => '%']);
+            wda_generate_css_rule('.wda-cover-columns, .wda-cover-columns.has-background',
+               ['style' => 'padding-left','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%'],
+               ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']);
+         ?>
+      }
+      <?php
+      
 
-      /* wda-cover-grid block */
-      wda_generate_css_rule('.wp-block-group.wda-cover-grid',
-         ['style' => 'margin-top','setting' => 'wda_cover_grid_y_margins','prefix'  => '','postfix' => 'vh'],
-         ['style' => 'margin-bottom','setting' => 'wda_cover_grid_y_margins','prefix'  => '','postfix' => 'vh']);
-      ?>@media screen and (min-width: 768px) {
-<?php
-      wda_generate_css_rule('.wda-cover-grid ',
-         ['style' => 'width','setting' => 'wda_cover_grid_x_width','prefix'  => '','postfix' => '%'],);?>}
-<?php
-      /* wda-media-text-grid block */
-      wda_generate_css_rule('.wda-media-text-grid',
-         ['style' => 'padding-left','setting' => 'wda_media_text_grid_x_padding','prefix'  => '','postfix' => '%'],
-         ['style' => 'padding-right','setting' => 'wda_media_text_grid_x_padding','prefix'  => '','postfix' => '%']);
-      wda_generate_css_rule('.wda-media-text-grid',
-         ['style' => 'margin-top','setting' => 'wda_media_text_grid_y_margins','prefix'  => '','postfix' => 'vh'],
-         ['style' => 'margin-bottom','setting' => 'wda_media_text_grid_y_margins','prefix'  => '','postfix' => 'vh']);
+      //
+      // wda-image
+      //
+      ?>
+      @media screen and (min-width: 768px) { 
+         <?php 
+         wda_generate_css_rule('article .entry-content figure.wp-block-image.wda-image img',
+            ['style' => 'padding-left','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%'],
+            ['style' => 'padding-right','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%']);
+         wda_generate_css_rule('figure.wp-block-image.wda-image',
+            ['style' => 'padding-left','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%'],
+            ['style' => 'padding-right','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%']);
+         wda_generate_css_rule('article .entry-content figure.wp-block-image.wda-image img,article .entry-content figure.wp-block-image.wda-image.has-background img',
+            ['style' => 'margin-top','setting' => 'wda_image_y_margins','prefix'  => '','postfix' => 'vh'],
+            ['style' => 'margin-bottom','setting' => 'wda_image_y_margins','prefix'  => '','postfix' => 'vh']);
+         ?>
+      }
+      <?php
 
-      /* wda-image */
-      wda_generate_css_rule('article .entry-content figure.wp-block-image.wda-image img',
-         ['style' => 'padding-left','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%'],
-         ['style' => 'padding-right','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%']);
-      wda_generate_css_rule('figure.wp-block-image.wda-image',
-         ['style' => 'padding-left','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%'],
-         ['style' => 'padding-right','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%']);
-      wda_generate_css_rule('article .entry-content figure.wp-block-image.wda-image img,article .entry-content figure.wp-block-image.wda-image.has-background img',
-         ['style' => 'margin-top','setting' => 'wda_image_y_margins','prefix'  => '','postfix' => 'vh'],
-         ['style' => 'margin-bottom','setting' => 'wda_image_y_margins','prefix'  => '','postfix' => 'vh']);
+      
+      //
+      // wda-gallery
+      //
+      ?>
+      @media screen and (min-width: 768px) { 
+         <?php 
+         wda_generate_css_rule('.wda-gallery,.wda-gallery.has-background',
+            ['style' => 'padding-left','setting' => 'wda_gallery_x_padding','prefix'  => '','postfix' => '%'],
+            ['style' => 'padding-right','setting' => 'wda_gallery_x_padding','prefix'  => '','postfix' => '%']);
+         wda_generate_css_rule('.wda-gallery,.wda-gallery.has-background',
+            ['style' => 'margin-top','setting' => 'wda_gallery_y_margins','prefix'  => '','postfix' => 'vh'],
+            ['style' => 'margin-bottom','setting' => 'wda_gallery_y_margins','prefix'  => '','postfix' => 'vh']);
+         ?>
+      }
+      <?php
 
-      /* wda-gallery */
-      wda_generate_css_rule('.wda-gallery,.wda-gallery.has-background',
-         ['style' => 'padding-left','setting' => 'wda_gallery_x_padding','prefix'  => '','postfix' => '%'],
-         ['style' => 'padding-right','setting' => 'wda_gallery_x_padding','prefix'  => '','postfix' => '%']);
-      wda_generate_css_rule('.wda-gallery,.wda-gallery.has-background',
-         ['style' => 'margin-top','setting' => 'wda_gallery_y_margins','prefix'  => '','postfix' => 'vh'],
-         ['style' => 'margin-bottom','setting' => 'wda_gallery_y_margins','prefix'  => '','postfix' => 'vh']);
 
-      /* wda-title-lead */
+      //
+      // wda-title-lead
+      //
       wda_generate_css_rule('.wp-block-group.wda-title-lead',
          ['style' => 'margin-top','setting' => 'wda_title_lead_bottom_margin','prefix'  => '','postfix' => 'vh'],
          ['style' => 'margin-bottom','setting' => 'wda_title_lead_bottom_margin','prefix'  => '','postfix' => 'vh']);
-      ?>@media screen and (min-width: 768px) {
-<?php
+      ?>
+      @media screen and (min-width: 768px) { 
+         <?php 
          wda_generate_css_rule('.wda-title-lead__title',
             ['style' => 'padding-bottom','setting' => 'wda_title_lead_btwn_padding','prefix'  => '','postfix' => 'vw']);
          wda_generate_css_rule(
             '.wp-block-group.wda-title-lead,
-             .wp-block-group.wda-title-lead.has-background ',
+            .wp-block-group.wda-title-lead.has-background ',
             ['style' => 'padding-left','setting' => 'wda_title_lead_x_padding','prefix'  => '','postfix' => '%'],
             ['style' => 'padding-right','setting' => 'wda_title_lead_x_padding','prefix'  => '','postfix' => '%']);
          wda_generate_css_rule('.wp-block-group.wda-title-lead',
             ['style' => 'padding-top','setting' => 'wda_title_lead_top_padding','prefix'  => '','postfix' => 'vh'],
             ['style' => 'padding-bottom','setting' => 'wda_title_lead_bottom_padding','prefix'  => '','postfix' => 'vh']);
-      ?>}<?php
+         ?>
+      }
+      <?php
+
+
+
+      //
+      // wda-simple-text
+      //
       wda_generate_css_rule('.wp-block-group.wda-text.wda-simple-text',
          ['style' => 'margin-top','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh'],
          ['style' => 'margin-bottom','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh']); 
-      ?>@media screen and (min-width: 768px) {
-<?php
-      wda_generate_css_rule('.wda-text, .wda-text.has-background ',
-         ['style' => 'padding-left','setting' => 'wda_text_x_padding','prefix'  => '','postfix' => '%'],
-         ['style' => 'padding-right','setting' => 'wda_text_x_padding','prefix'  => '','postfix' => '%']);?>}<?php
       ?>
+      @media screen and (min-width: 768px) { 
+         <?php 
+         wda_generate_css_rule('.wda-text, .wda-text.has-background ',
+            ['style' => 'padding-left','setting' => 'wda_text_x_padding','prefix'  => '','postfix' => '%'],
+            ['style' => 'padding-right','setting' => 'wda_text_x_padding','prefix'  => '','postfix' => '%']);
+         ?>
+      }
+   
 </style> 
 <!--/ Web Dev Agent Patterns Customizer CSS -->
       <?php

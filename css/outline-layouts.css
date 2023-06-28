@@ -164,12 +164,17 @@ nav {
    height:var(--nav_bar_height);
    transition:transform .6s ease-in;
 }
+
 nav div.logo_block    {
    position:relative;
    z-index:50;
-
+   
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
-
+   
+   -webkit-box-align:center;
+   -ms-flex-align:center;
    align-items:center;
 
    -webkit-box-flex:2;
@@ -198,6 +203,7 @@ nav ul.menu {
    top:calc(var(--nav_bar_height) - 18px);
    left:0;
    width:100%;
+   height:100vh;
    
    -ms-flex-item-align:start;
    align-self:flex-start;
@@ -211,17 +217,33 @@ nav ul.menu {
    
    padding:0 0 1rem 0;
    background-color:var(--primary_1_bg);
-   border-bottom:solid 3px hsl(0, 0%, 96%);
+
+   /* border-bottom:solid 3px hsl(0, 0%, 96%); */
+   border-bottom:none;
    
-   -webkit-transform:translateY(-300px);
-   -ms-transform:translateY(-300px);
-   transform:translateY(-300px);
+   -webkit-transform:translateY(-100vh);
+   -ms-transform:translateY(-100vh);
+   transform:translateY(-100vh);
    opacity:0;
    transition:transform .5s ease-in-out,opacity 3s ease-in-out;
 }
 
 /* mobile menu toggle */
-nav > div.nav_toggle {
+nav > div.nav_toggle_wrap {
+   display:-webkit-box;
+   display:-ms-flexbox;
+   display:flex;
+
+   flex-direction:column;  /* to do : webkit */
+   justify-content:center;
+   align-items:center;
+
+   width:40px;
+   height:100%;
+   padding-right:1rem;
+   background-color:var(--primary_1_bg); 
+}
+nav div.nav_toggle {
    position:relative;
    z-index:3;
 
@@ -229,18 +251,62 @@ nav > div.nav_toggle {
    display:-ms-flexbox;
    display:flex;
 
+
+   flex-direction:column;  /* to do : webkit */
+   justify-content:center;
+
    -webkit-box-align:center;
    -ms-flex-align:center;
    align-items:center;
 
-   padding:1rem;
-   padding-top:0;
-   height:100%;
+   /* margin:auto 0 auto 0; */
+   /* padding:1rem; */
+   padding:0;
+   width:100%;
+   height:20px;
    background-color:white;
    background-color:var(--primary_1_bg);
    cursor:pointer;
 }
+/* nav div.nav_toggle.selected_toggle {
+   background:lightgreen;
+} */
+nav div.nav_toggle .toggle_bar {
+   position:absolute;
+   top:0;
+   display:block;
+   width:100%;
+   height:2px;
+   margin-bottom:5px;
+   background:white;
+   /* to do : webkit all these.. */
+   transform:rotate(0deg);
+   transition:.5s ease-in-out;
+}
+nav div.nav_toggle .toggle_bar:nth-child(3) {
+   margin:0;
+}
 
+
+nav div.nav_toggle .toggle_bar:nth-child(1) {top:0px;}
+nav div.nav_toggle .toggle_bar:nth-child(2) {top:5px;opacity:1;transition:.5s;left:0;}
+nav div.nav_toggle .toggle_bar:nth-child(3) {top:10px;}
+
+/* on open dropdown */
+nav div.nav_toggle.selected_toggle .toggle_bar:nth-child(1) {
+   top:5px;
+   transform:rotate(45deg);
+   transition:.25s ease-in-out;
+}
+nav div.nav_toggle.selected_toggle .toggle_bar:nth-child(2) {
+   opacity:0;left:-80px;
+   transition:.5s ease-in-out;
+}
+nav div.nav_toggle.selected_toggle .toggle_bar:nth-child(3) {
+   top:5px;
+   transform:rotate(-45deg);
+   transition:.25s ease-in-out;
+}
 /* we hide all submenu dropdowns on mobile */
 nav ul.menu li ul,
 nav ul.menu li a  {
@@ -254,14 +320,14 @@ nav ul.menu li a  {
 nav ul.menu > li > a  {
    position:relative;
    display:block;
+   margin:0 auto 0 auto;margin-top:1rem;
    padding:.5rem;
    padding-top:.5rem;
    padding-bottom:.5rem;
    background-color:white;
    background-color:var(--primary_1_bg);
+
 }
-
-
 
 /* toggle sm/mobile nav dropdown */
 nav ul.menu.extended_nav_dropdown {
@@ -272,38 +338,25 @@ nav ul.menu.extended_nav_dropdown {
    transition:transform .5s ease-in-out,opacity .5s ease-in-out;
 }
 
-/*   --------------------------------------------------------------
-
-   to do : bug - something in menu has added bottom scrollbar to mobile page.. 
-
-*/   --------------------------------------------------------------
-
-
-/* to do : enable above and remove below.. 
-   to do : I'd like the dropdown to retract before refreshing the page (if i can do it, it should be quick enough.. */
-
-/* extend dropdown */
-/* nav > div.nav_toggle:hover + div > ul.menu {       */
-    /* added 'div >' for WordPress 'menu' structure */
-   /* -webkit-transform:translateY(0);
+/* 
+   extend dropdown - original version activated on hover
+   added 'div >' for WordPress 'menu' structure 
+*/
+/* nav > div.nav_toggle:hover + div > ul.menu {
+   -webkit-transform:translateY(0);
    -ms-transform:translateY(0);
    transform:translateY(0);
    opacity:1;
    transition:transform .5s ease-in-out .25s,opacity .5s ease-in-out .25s;
 } */
 /* retain extended on menu:hover */
-/* nav > div > ul.menu:hover  {                        */
-   /* added 'div >' for WordPress 'menu' structure */
-   /* -webkit-transform:translateY(0);
+/* nav > div > ul.menu:hover  {
+   -webkit-transform:translateY(0);
    -ms-transform:translateY(0);
    transform:translateY(0);
    opacity:1;
    transition:transform .5s ease-in-out .5s,opacity .5s ease-in-out .5s;
 } */
-
-
-
-
 
 /* maintain <a> spacing on transitions */
 nav ul.menu li ul li a {margin:1rem; }
@@ -599,7 +652,8 @@ section.gallery {
    -ms-flex-pack:start;
    justify-content:flex-start;
 
-   padding:3rem 1rem;
+   width:100%;
+   /* padding:3rem 1rem; */
 }
 section.gallery > h3 {
    position:absolute;
@@ -630,7 +684,7 @@ section.gallery > ul {
    margin-right:auto;
    padding:0;
 
-   list-style:none;
+   list-style:none;border:solid 1px blue;
 }
 section.gallery li {
    margin:0;
@@ -646,6 +700,8 @@ section.gallery li > p {
 @media screen and (min-width: 768px) {
 
 }
+
+
 
 /* 
    section.animated_tiles
@@ -730,6 +786,9 @@ section.animated_tiles > ul > li *:not(img) {
 }
 section.animated_tiles > ul > li button {
    width:fit-content;
+}
+section.animated_tiles > h3 {
+   color:black;
 }
 section.animated_tiles > ul > li > h3 {
    padding:0;
@@ -906,7 +965,6 @@ section.feature_block.reverse_order {
 section.feature_tiles {
    width:100%;
    height:fit-content;
-   padding:2rem;
 }
 section.feature_tiles > ul {
    display:-webkit-box;
@@ -914,7 +972,7 @@ section.feature_tiles > ul {
    display:flex;
    -ms-flex-wrap:wrap;
    flex-wrap:wrap;
-   gap:1rem;
+   gap:3rem;
 }
 section.feature_tiles > ul > li {
    display:-webkit-box;
@@ -982,11 +1040,29 @@ section.feature_tiles  > ul > li > button {
    margin-top:auto;
    margin-bottom:1rem;
 }
-@media screen and (min-width: 768px) {
+
+/* to do : review this again.. cf section.animated_tiles. */
+@media screen and (min-width: 660px) {
+   section.feature_tiles > ul {
+      flex-direction:row;  /* to do : webkit.. */
+      gap:1rem;
+      width:100%;
+   }
    section.feature_tiles > ul > li {
-      width:25%;
+      min-width:48%;
+      max-width:48%;
    }
 }
+@media screen and (min-width: 910px) {
+   section.feature_tiles {
+      padding:2rem;
+   }
+   section.feature_tiles > ul > li {
+      min-width:30%;
+   }
+}
+
+
 
 /* 
    section.cover_block
@@ -1109,10 +1185,18 @@ section.feed_list > ul {
 section.feed_list > ul > li {
    padding:.5rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 660px) {
+   section.feed_list {
+      width:80%;
+      padding-left:0;
+      padding-right:0;
+   }
+}
+
+@media screen and (min-width: 910px) {
     
    section.feed_list {
-      width:50%;
+      width:70%;
       padding-left:0;
       padding-right:0;
    }

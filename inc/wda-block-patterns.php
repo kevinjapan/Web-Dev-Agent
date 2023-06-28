@@ -191,6 +191,10 @@ function wda_register_block_patterns() {
 	// ]);
 
 
+
+   // to do : should we rename this 'single feature block' - since it is 
+   //         neither technically nor visually a column.
+
    //
    // single feature columns block
    // we use wp-block-media-text instead of wp-columms since it already has desired styling in two column pattern w/out additionals
@@ -210,10 +214,6 @@ function wda_register_block_patterns() {
          <div class="wp-block-media-text__content">
          <!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
          <p class="has-large-font-size">Introducing the single feature column.</p>
-         <!-- /wp:paragraph -->
-         <!-- wp:paragraph -->
-         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit molestiae 
-         provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
          <!-- /wp:paragraph -->
          <!-- wp:paragraph -->
          <p>You can customize the layout of this block pattern in the Dashboard menu:
@@ -261,7 +261,7 @@ function wda_register_block_patterns() {
          deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
          <!-- /wp:paragraph -->
          <!-- wp:buttons -->
-         <div class="wp-block-buttons wda_buttons">            
+         <div class="wp-block-buttons wda_buttons">
          <!-- wp:button -->
          <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
          <!-- /wp:button -->
@@ -281,9 +281,13 @@ function wda_register_block_patterns() {
          <!-- wp:paragraph  {"align":"center"} -->
          <p>You can customize the layout of this block pattern in the Dashboard menu: Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Columns</p>
          <!-- /wp:paragraph -->
-         <!-- wp:paragraph  {"align":"center"} -->
-         <p class="has-text-align-center">another link here</p>
-         <!-- /wp:paragraph -->
+         <!-- wp:buttons -->
+         <div class="wp-block-buttons wda_buttons">
+         <!-- wp:button -->
+         <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+         <!-- /wp:button -->
+         </div>
+         <!-- /wp:buttons -->
          </div>
          <!-- /wp:column -->
          </div>
@@ -498,6 +502,14 @@ function wda_register_block_patterns() {
    //          <!-- /wp:columns -->'
    // ]);
 
+
+   // to do :
+   // want 'fade_in' on all Block Patterns - ideally configurable.
+   // but we can't load in <style> at top of page since it is a class - we really need to apply here.
+   // try eg  
+   //            get_theme_mod('wda_title_lead_fade_in')       // contains string 'fade_in' or '' 
+   //
+   // to insert 'fade_in' in 'div.wda-title-lead' below
 
    //
    // title & lead text

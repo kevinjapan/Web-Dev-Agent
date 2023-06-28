@@ -60,3 +60,67 @@ li.menu-item.current-menu-item > a {
 .list_style_bullets {
    list-style:circle;
 }
+
+
+
+/* 
+   customizing Block Patterns 
+*/
+
+
+/* 
+   Single Feature Columns
+   -------------------------------------------------------------
+   We build from WordPress media-text which only stacks at v. sm
+   We want it consistent w/ two-feature-columns breakpoints etc.
+   Also, image was distorted by resizing screen width.
+*/
+/*
+   switch off grid at sm/mobile - permits stacking at <782px
+*/
+.wda-single-feature-columns {
+   display:unset;
+}
+/*
+   to retain pattern block integrity, we want img to keep height
+   Here, we force height but permit aspect to be retained (overflow permits x-cropping)
+*/
+.wda-single-feature-columns figure, 
+.wda-single-feature-columns figure img {
+   height:100%;
+   overflow:hidden
+}
+.wda-single-feature-columns figure img {
+   object-fit: cover;
+}
+/* 
+   reset grid (WordPress default)
+   782px matches WordPress columns media break - consistency 
+*/
+@media screen and (min-width: 782px) {
+   .wda-single-feature-columns {
+      display:grid;
+   }
+}
+
+
+/* 
+   Stacking Column Block Patterns
+   -------------------------------------------------------------
+   we incrse gap btwn 'columns' when stacking in sm/mobile for readability
+*/
+div.wda-columns > div.wp-block-column {
+   margin-bottom:3rem;
+}
+@media screen and (min-width: 782px) {
+   div.wda-columns > div.wp-block-column {
+      margin-bottom:0rem;
+   }
+}
+
+
+/* 
+to do : 
+- layout of text on columns when stacked retains height and spacing 
+  of horizontal alignment - would look better more compact. 
+*/

@@ -16,7 +16,7 @@
             <h3><?php echo the_title();?></h3>
             <div class="feature_tile_content"><?php echo the_excerpt();?></div>
 
-            <a href="<?php the_permalink(); ?>">read more</a>
+            <a style="float:right;" href="<?php the_permalink(); ?>">read more</a>
 
          </div>
             </li>

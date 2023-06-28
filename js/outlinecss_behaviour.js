@@ -103,6 +103,14 @@ const dropdown = document.querySelector('nav ul.menu')
 nav_toggle.addEventListener('click',() => {
    if(dropdown) {
       dropdown.classList.toggle('extended_nav_dropdown')
+
+      // to do : 
+      // we are going to change color of toggle 'lines' by changing the background color -
+      // so our 'line' (::before and :: after) will act as masks.
+
+      // but this is going to be really tough to do any rotating to 'X' close icon...
+      
+      nav_toggle.classList.toggle('selected_toggle')
    }
 })
 
@@ -114,5 +122,18 @@ menu_items.forEach((menu_item) => {
       if(dropdown) {
          dropdown.classList.remove('extended_nav_dropdown')
       }
+      
+      // Fade out any 'fade_in' class elements while waiting for new page.
+      // Does rely on fade out (.fade_in) being quick or looks awkward.
+      const faders = document.querySelectorAll('.fade_in')
+      if(faders) {
+         faders.forEach(fader => {
+            fader.classList.toggle('appear')
+         })
+      }
+      
    })
 })
+
+
+

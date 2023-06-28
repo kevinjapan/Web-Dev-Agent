@@ -2,8 +2,8 @@
 
    <ul>
       <li>
-         <a href="home.html">
-            <h5>webstudio kimono</h5>
+         <a href="<?php echo get_site_url(); ?>">
+            <h5>Webstudio Kimono</h5>
          </a>
       </li>
       <li>

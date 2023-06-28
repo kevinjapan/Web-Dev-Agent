@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<h1><?php single_cat_title();?></h1>
+<h1 class="fade_in"><?php single_cat_title();?></h1>
 
 <section class="feed_list fade_in">
    <ul>
@@ -15,7 +15,7 @@
                   <img src="<?php the_post_thumbnail_url('large'); ?>"/>
                <?php endif;?>
                <?php the_excerpt();?>
-               <a href="<?php the_permalink(); ?>">read more</a>
+               <a style="float:right;" href="<?php the_permalink(); ?>">read more</a>
             </li>
             <?php
          } 
