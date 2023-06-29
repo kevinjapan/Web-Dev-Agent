@@ -85,9 +85,12 @@ class WebDevAgentPatternsCustomizer {
                'active_callback' => '') 
       );
 
+   
 
       // settings and control pairs
 
+
+      
       // 
       // cover block patterns
       //
@@ -125,9 +128,23 @@ class WebDevAgentPatternsCustomizer {
                'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 1 )) 
       );
 
+
+
       //
       // column block patterns
       //
+
+      // to do : Add bg color setting to wda block patterns
+      // considerations: 
+      // - padding, esp y-padding. 
+      // - buttons need eg :hover rules for particular combos. 
+      // - using WordPress editor, adding bg colors gets awkward and uncomfortable for 'normal' users. 
+      //   (doesn't even update the editor view w/ the background color if using additional css class!)
+      // - also wda classes are exposed as 'additional css classes' - which means they can be mistakenly
+      //   removed too easily. Hence, we don't want to encourage access to this control.
+      // - if we tie into customizer, we can restrict or encourage choice from site color palette.
+      //   while applying across site w/ single action.
+
       $wp_customize->add_setting( 'wda_column_x_padding',
          array('default'    => '0', 
                'type'       => 'theme_mod',
@@ -180,6 +197,7 @@ class WebDevAgentPatternsCustomizer {
       );
 
 
+
       // 
       // wda-image block pattern : 
       // wrap wp-block-image to enable our margin and padding applied across all wda-image blocks 
@@ -217,6 +235,7 @@ class WebDevAgentPatternsCustomizer {
                'description' => __( '% vertical spacing for Web Dev Agent images.','wda'),
                'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
       );
+
 
 
       //
@@ -258,6 +277,7 @@ class WebDevAgentPatternsCustomizer {
       );
 
 
+
       //
       // title & lead block pattern
       //
@@ -277,6 +297,8 @@ class WebDevAgentPatternsCustomizer {
                'description' => __( '% padding between title & lead.','wda'),
                'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 80px;', 'step'	=> 1 ))
       );
+
+
 
       // 
       // lead-text box padding
@@ -333,6 +355,7 @@ class WebDevAgentPatternsCustomizer {
       );
 
       
+
       //
       // lead-text margins
       //
@@ -369,6 +392,7 @@ class WebDevAgentPatternsCustomizer {
                'description' => __( '% margin below for Web Dev Agent title & lead.','wda'),
                'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
       );
+
 
 
       //

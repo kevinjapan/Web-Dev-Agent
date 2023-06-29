@@ -192,7 +192,7 @@ function wda_register_block_patterns() {
 
 
 
-   // to do : should we rename this 'single feature block' - since it is 
+   // future : should we rename this 'single feature block' - since it is 
    //         neither technically nor visually a column.
 
    //
@@ -503,7 +503,7 @@ function wda_register_block_patterns() {
    // ]);
 
 
-   // to do :
+   // future :
    // want 'fade_in' on all Block Patterns - ideally configurable.
    // but we can't load in <style> at top of page since it is a class - we really need to apply here.
    // try eg  

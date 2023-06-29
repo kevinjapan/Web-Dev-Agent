@@ -102,14 +102,11 @@ const dropdown = document.querySelector('nav ul.menu')
 
 nav_toggle.addEventListener('click',() => {
    if(dropdown) {
+
+      // drop the nav list
       dropdown.classList.toggle('extended_nav_dropdown')
 
-      // to do : 
-      // we are going to change color of toggle 'lines' by changing the background color -
-      // so our 'line' (::before and :: after) will act as masks.
-
-      // but this is going to be really tough to do any rotating to 'X' close icon...
-      
+      // modify the toggle      
       nav_toggle.classList.toggle('selected_toggle')
    }
 })

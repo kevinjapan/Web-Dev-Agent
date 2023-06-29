@@ -2,7 +2,7 @@
 
 /*
  * sanitize funcs
- * @since EvolutionDesuKa 1.0    // to do : remove all references.
+ * @since Web Dev Agent 1.0
  */
 
 if ( ! function_exists( 'wda_sanitize_number_range' ) ) :

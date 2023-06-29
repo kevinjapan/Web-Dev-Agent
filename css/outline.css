@@ -120,13 +120,7 @@ ol {
    padding-right:var(--indent-lists);
 }
 /* li {} */
-/* to do : duplicates in outline-layout */
-p {
-   max-width:var(--paragraph-width);
-   margin:auto;
-   margin-top:3rem;
-   margin-bottom:3rem;
-}
+
 pre {
    padding:0;
    text-align:left;

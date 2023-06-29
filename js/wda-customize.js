@@ -1,7 +1,5 @@
 (function($) {
 
-   // <!-- to do : using a generic 'cover_block' means we can't use customizer eg to change site title -
-   // we need to distinguish frontpage cover_block.. temp below - clean this up --
 	wp.customize('blogname', function(setting) {
 		setting.bind(function(value) {
 			$('.front_page.cover_block h1').text(value);
