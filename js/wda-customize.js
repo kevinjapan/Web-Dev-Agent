@@ -122,6 +122,13 @@
       });
    });
 
+   // wda_text_text_align
+   wp.customize('wda_text_text_align', function(setting) {
+      setting.bind( function(value) {
+         $('.wda-text').css({"text-align":value}); 
+      });
+   });
+
 
    // 
    // image block
