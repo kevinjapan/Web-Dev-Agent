@@ -14,11 +14,7 @@ Access classes - use these to access the custom props
 }
 
 
-/* bg_navy */
-.bg_navy                {background-color:navy;color:white;}
-.bg_navy h1, .bg_navy h2, .bg_navy h3, .bg_navy h4, .bg_navy h5, .bg_navy h6 {color:white;}
-.bg_navy button         {color:hsl(0, 0%, 90%);}
-.bg_navy button:hover   {color:white;border:solid 1px white;}
+/* to do : this bg_ idea needs improvement.. */
 
 /* bg_white */
 .bg_white                     {background-color:white;color:black;}
@@ -28,11 +24,12 @@ Access classes - use these to access the custom props
 .bg_white button              {color:grey;border:solid 1px grey;}
 .bg_white button:hover        {color:black;border:solid 1px black;}
 
-.bg_lightblue {background-color:lightblue;color:blue;}
-.bg_lightblue button              {color:grey;border:solid 1px grey;}
-.bg_lightblue button:hover        {color:black;border:solid 1px black;}
 
-
+/* bg_navy */
+.bg_navy                {background-color:navy;color:white;}
+.bg_navy h1, .bg_navy h2, .bg_navy h3, .bg_navy h4, .bg_navy h5, .bg_navy h6 {color:white;}
+.bg_navy button         {color:hsl(0, 0%, 90%);}
+.bg_navy button:hover   {color:white;border:solid 1px white;}
 
 
 .primary_bg,.primary_1_bg {
