@@ -217,7 +217,6 @@ nav ul.menu {
    padding:0 0 1rem 0;
    background-color:var(--primary_1_bg);
 
-   /* border-bottom:solid 3px hsl(0, 0%, 96%); */
    border-bottom:none;
    
    -webkit-transform:translateY(-100vh);
@@ -340,6 +339,9 @@ nav ul.menu li a  {
    padding-right:2rem;
 }
 
+nav ul.nav_list > li {
+   text-align:center;
+}
 /* then restore the top level label links */
 nav ul.menu > li > a  {
    position:relative;
@@ -362,26 +364,6 @@ nav ul.menu.extended_nav_dropdown {
    opacity:1;
    transition:transform .5s ease-in-out,opacity .5s ease-in-out;
 }
-
-/* 
-   extend dropdown - original version activated on hover
-   added 'div >' for WordPress 'menu' structure 
-*/
-/* nav > div.nav_toggle:hover + div > ul.menu {
-   -webkit-transform:translateY(0);
-   -ms-transform:translateY(0);
-   transform:translateY(0);
-   opacity:1;
-   transition:transform .5s ease-in-out .25s,opacity .5s ease-in-out .25s;
-} */
-/* retain extended on menu:hover */
-/* nav > div > ul.menu:hover  {
-   -webkit-transform:translateY(0);
-   -ms-transform:translateY(0);
-   transform:translateY(0);
-   opacity:1;
-   transition:transform .5s ease-in-out .5s,opacity .5s ease-in-out .5s;
-} */
 
 /* maintain <a> spacing on transitions */
 nav ul.menu li ul li a {margin:1rem; }
@@ -513,7 +495,6 @@ we support from 1045px determined by four cols of reasonable text in dropdown
       width:100%;
       max-width:100%;
       padding:1rem;
-      background-color:white;
       background-color:var(--primary_1_bg);
 
       -webkit-transform:translateY(-100%);
@@ -725,6 +706,7 @@ section.gallery li > p {
 @media screen and (min-width: 768px) {
 
 }
+
 
 
 
@@ -970,9 +952,9 @@ section.feature_block > div > *:not(button) {
    margin:0;
    padding:0;
 }
-section.feature_block.reverse_order {
+/* section.feature_block.reverse_order {
    flex-direction:column-reverse;
-}
+} */
 @media screen and (min-width: 768px) {
    section.feature_block {
       -webkit-box-orient:horizontal;
@@ -984,7 +966,7 @@ section.feature_block.reverse_order {
    section.feature_block.reverse_order {
       flex-direction:row-reverse;
    }
-   /* section.feature_block.col_reverse {flex-direction:row-reverse;}  */
+
    section.feature_block img {
       width:50%;
    }
