@@ -98,7 +98,7 @@ init_nav_scroll_observer()
 // toggle sm/mobile menu
 //
 const nav_toggle = document.querySelector('.nav_toggle')
-const dropdown = document.querySelector('nav ul.menu')
+const dropdown = document.querySelector('nav ul.nav_list')
 
 nav_toggle.addEventListener('click',() => {
    if(dropdown) {
