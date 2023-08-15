@@ -73,7 +73,7 @@ const create_observers = (elements,active_class,options) => {
 //    hides when user is scrolling down
 //    to prevent nav disappearing in ios safari bounce, we don't hide < 80px from top
 //
-const init_nav_scroll_observer = () => {
+const init_nav_scroll_listener = () => {
 
    let last_scroll = 0
    const nav_bar = document.querySelector('nav')
@@ -93,7 +93,7 @@ const init_nav_scroll_observer = () => {
 
 
 init_fade_ins()
-init_nav_scroll_observer()
+init_nav_scroll_listener()
 
 
 
