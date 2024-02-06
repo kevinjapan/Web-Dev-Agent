@@ -35,6 +35,15 @@ function load_stylesheets() {
 add_action('wp_enqueue_scripts','load_stylesheets');
 
 
+
+// Admin stylesheet
+function wda_enqueue_custom_admin_style() {
+   wp_register_style( 'wda_custom_wp_admin_css', get_template_directory_uri() . '/css/wda-admin-style.css',array(),1,'all');
+   wp_enqueue_style( 'wda_custom_wp_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'wda_enqueue_custom_admin_style' );
+
+
 function load_jquery() {
    wp_enqueue_script('jquery');
 }
