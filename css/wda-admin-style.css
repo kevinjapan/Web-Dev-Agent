@@ -1,5 +1,5 @@
-
 /* 
+
 Web Dev Agent Custom CSS for WordPress Admin 
 
 We don't overwrite styles in WP Admin, instead we provide custom style classes
@@ -8,9 +8,8 @@ clearly name-spaced to the WDA theme and plugins.
 */
 
 
-
 /* 
-input/label combos 
+   Input/label combos 
 */
 label.wda_label {
    display:grid;
@@ -19,7 +18,7 @@ label.wda_label {
    /* width:100%; */
    margin-bottom:.5rem;
 }
-label.wda_label span.wda_title {
+label.wda_label span.wda_label_text {
    padding-top:.35rem;
 }
 input.wda_input {
@@ -29,7 +28,7 @@ input.wda_input {
 
 
 /* 
-checkboxes 
+   Checkboxes 
 */
 input.wda_checkbox {
    visibility:visible;
