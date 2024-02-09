@@ -16,13 +16,10 @@
 
    <?php endwhile;
    ?>
-
-            
+  
    <div style="display:flex;gap:2rem;">
       <div><?php next_post_link('&laquo; %link', 'prev project' ); ?></div>
       <div><?php previous_post_link( ' %link &raquo;', 'next project' ); ?></div>
    </div>
-
-
 
 <?php get_footer(); ?>
