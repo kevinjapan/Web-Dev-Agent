@@ -1,9 +1,4 @@
 <?php
-
-// to do : currently web-dev-agent plugins and this theme both load the same outlinecss stylesheets (duplicate)
-//         (plugins appear to avoid duplication)
-// - afterthought - maybe don't need these in the theme? we are only currently interested in the nav.
-
 if ( ! function_exists('wda_theme_setup') ) {
 
 	// theme defaults and support for WordPress features.
