@@ -20,7 +20,6 @@ this page as your Homepage.
 This will automatically add the site title, tagline and featured image to a cover block hero section on your homepage.
 
 
-
 ## Menus
 
 ### Menu Locations
@@ -54,7 +53,14 @@ Then in Admin/Settings/Appearance/Menu add a Custom Link for each plugin archive
 - create page / or access existing template page?
 - add to menu`
 
-`Case Studies - http://localhost/wordpress/web-dev-agent/casestudy`
-`Services - http://localhost/wordpress/web-dev-agent/service`
-`Testimonials - http://localhost/wordpress/web-dev-agent/testimonial`
-`Packages - http://localhost/wordpress/web-dev-agent/package`
+`Case Studies - http://web-dev-agent-example-site/casestudy`
+
+`Services - http://web-dev-agent-example-site/service`
+
+`Testimonials - http://web-dev-agent-example-site/testimonial`
+
+`Packages - http://web-dev-agent-example-site/package`
+
+
+
+
