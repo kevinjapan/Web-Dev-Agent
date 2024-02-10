@@ -3,7 +3,7 @@
    <ul>
       <li>
          <a href="<?php echo get_site_url(); ?>">
-            <h5>Webstudio Kimono</h5>
+            <h5><?php echo get_bloginfo('name'); ?></h5>
          </a>
       </li>
       <li>
