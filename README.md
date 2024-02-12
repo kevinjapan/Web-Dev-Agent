@@ -1,5 +1,6 @@
 # Web Dev Agent
-## WordPress Theme
+
+### WordPress Theme
 
 #### Theme for a Web Development Agency.
 
@@ -15,10 +16,10 @@ The following steps should get you off and running!
 To display the styled **WDA** homepage hero section, create a new page and add
 the desired background image as it's `featured image` in the page settings.
 
-Then set your homepage as a static page in 'Admin/Settings/Reading' and select
+Then set your homepage as a static page in `Admin/Settings/Reading` and select
 this page as your Homepage.
 
-This will automatically add the site title, tagline and featured image to a cover block hero section on your homepage.
+This will automatically add the site title, tagline and featured image to a **Cover Bloc Pattern** hero section on your homepage.
 
 
 ## Menus
@@ -29,7 +30,7 @@ Add a `top-menu` and `footer-menu` menu to these respectively and
 the theme will inject these into your pages appropriately.
 
 ### Top Menu
-To display the top level navigation for your site, add a menu named `top-menu` in  `Admin/Appearance/Menus` and set it's Display Location as **Top Menu** in the Menu Settings. Then add your **Homepage** to this menu and a link to this page will appear on the top level navigation.
+To display the top level navigation for your site, add a menu named `top-menu` in  `Admin/Appearance/Menus` and set it's `Display Location` as **Top Menu** in the Menu Settings. Then add your **Homepage** to this menu and a link to this page will appear on the top level navigation.
 You can add any subsequent pages to this menu as required.
 
 
@@ -37,7 +38,7 @@ You can add any subsequent pages to this menu as required.
 **WDA** will automatically inject your Posts into a Blog.
 Create an empty page named **Blog** and add this to your menu.
 In `Admin/Settings/Reading` where you have set `Your homepage displays` as `A static page`,
-set your Posts page as **Blog**.
+set your `Posts page` as **Blog**.
 
 
 ## Plugins 
