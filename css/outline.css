@@ -246,9 +246,6 @@ form label textarea {
 input {
    margin-top:1rem;
    margin-bottom:1rem;  
-
-   /* to do : remove */
-   border:solid 3px orange;
 }
 
 /* 
