@@ -17,29 +17,6 @@ internals through Admin/Settings/Reading/A Static Page will re-direct to this pa
 
 <section class="feature_tiles stagger_tiles fade_in">
    <ul>
-   <?php 
-      if(have_posts()) {
-         while(have_posts()) {
-            the_post();?>
-            <li class="news_tile" style="border:none;">
-               <?php if(has_post_thumbnail()):?>
-                  <img src="<?php the_post_thumbnail_url('large'); ?>"/>
-               <?php endif;?>
-               <h4><?php the_title();?></h4>
-               <?php the_excerpt();?>
-               <div class="wp-block-button te_button">
-                  <a class="wp-block-button__link wp-element-button" href="<?php the_permalink(); ?>">read more</a>
-               </div>
-            </li>
-            <?php
-         } 
-      }
-   ?>
-   </ul>
-</section>
-      
-<section class="feature_tiles stagger_tiles fade_in">
-   <ul>
       <?php 
       if(have_posts()) :
          while(have_posts()) :
