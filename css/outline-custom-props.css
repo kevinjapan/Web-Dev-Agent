@@ -93,13 +93,12 @@
    --grey_text:            lightgrey;
 
 
+
 /* 
    LAYOUTS
-   =============================================
 */
 
    --header_height:450px;
-
 
    --default_text_align: left;
 
@@ -110,18 +109,14 @@
    --hero_text_width:100%;
 
    --overlay_text_align:left;
-
-
    --section_inline_padding:3rem;
-
    --standard_component_padding:2rem;
+
    /* 
       margins 
    */
    --block_y_margins:0; 
    --block_y_padding:3rem;
-
-
 
    /* page */
    --page_content_width:1100px;
@@ -131,7 +126,6 @@
 
 /* 
    NAVIGATION
-   =============================================
 */
    /* 
       nav behaviour 
@@ -183,7 +177,6 @@
 
 /* 
    TEXT / HEADINGS
-   =============================================
 */
 
    /* 
@@ -197,7 +190,7 @@
    --heading_6_size:1.25rem;
    --heading_1_line_height:4rem;
    --heading_2_line_height:3rem;
-   --heading_3_line_height:2.75rem;
+   --heading_3_line_height:3rem;
    --heading_4_line_height:2.5rem;
    --heading_5_line_height:2.3rem;
    --heading_6_line_height:2rem;
@@ -212,13 +205,7 @@
 
 /* 
    BUTTONS
-   =============================================
 */
-
-   /* buttons 
-      because buttons are one of our most expressive components
-   */
-
    /* primary button */
    --button_1_bg:            #F4C900;
    --button_1_color:         #6B4444;
@@ -264,7 +251,6 @@
 
 /* 
    FOOTER
-   =============================================
 */
    --footer_bg:var(--neutral_bg_dark);
    --footer_color:white;
@@ -273,7 +259,6 @@
 
 /* 
    Z-INDEX LAYERS
-   =============================================
 */
 
    /* z-index register - application layers */
@@ -296,6 +281,8 @@
    --animated_tiles_max_width:1100px;
 
    --feature_block_y_margin:0;
+
+   --feature_tiles_gap:1rem;
 
    --footer_top_margin:2rem;
 
