@@ -521,8 +521,8 @@ function wda_register_block_patterns() {
 		'categories' => ['wda-texts'],
 		'viewportWidth' => 1000,
 		'content' =>  
-         '<!-- wp:group {"className":"wda-title-lead"} -->
-         <div class="wp-block-group wda-title-lead">
+         '<!-- wp:group {"className":"wda-title-lead fade_in"} -->
+         <div class="wp-block-group wda-title-lead fade_in">
          <!-- wp:heading {"textAlign":"center","level":2} -->
          <h2 class="wda-title-lead__title has-text-align-center">Title & Lead Text</h2>
          <!-- /wp:heading -->
