@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Single Page for Testimonial Custom Post Type
+*/
+
+get_header(); ?>
 
    <?php while ( have_posts() ) : 
       the_post(); 

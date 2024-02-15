@@ -1,6 +1,12 @@
-<?php get_header(); ?>
+<?php
+/*
+Single Page for Package Custom Post Type
+*/
 
-   <?php while ( have_posts() ) : 
+get_header(); ?>
+
+   <?php 
+   while ( have_posts() ) : 
       the_post(); 
       $features = (array) get_post_meta(get_the_ID(),'_features_meta_key',true);
       ?>
@@ -19,7 +25,9 @@
                     
          <?php the_content();?>
           
-   <?php endwhile; ?>
+   <?php 
+   endwhile; 
+   ?>
               
    <div style="display:flex;gap:2rem;">
       <div><?php next_post_link('&laquo; %link', '%title' ); ?></div>

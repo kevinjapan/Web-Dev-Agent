@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Single Page for CaseStudy Custom Post Type
+*/
+
+get_header(); ?>
 
    <?php while ( have_posts() ) : the_post(); ?>
 
@@ -14,8 +19,7 @@
 
       <?php the_content();?>
 
-   <?php endwhile;
-   ?>
+   <?php endwhile;?>
   
    <div style="display:flex;gap:2rem;">
       <div><?php next_post_link('&laquo; %link', 'prev project' ); ?></div>
