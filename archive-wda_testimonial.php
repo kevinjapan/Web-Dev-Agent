@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+Archive Page for Testimonial Custom Post Type
+*/ 
+get_header(); ?>
 
 
 <section class="feed_list fade_in">
@@ -10,7 +14,7 @@
             $details= (array) get_post_meta( get_the_ID(),'_wda_testimonial_details_meta_key', true );
             ?>
             <li>
-               <div style="background:white;margin-block:2rem;">
+               <div class="mt_2 mb_2">
                
 
 

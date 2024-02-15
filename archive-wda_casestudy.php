@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+Archive Page for CaseStudy Custom Post Type
+*/
+get_header(); ?>
 
 
 <section class="animated_tiles fade_in">
