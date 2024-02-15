@@ -1,5 +1,13 @@
+//
+// Enable preview live changes in WordPress Customizer here
+// Settings referenced here are defined in wda-customize-patterns.php
+//
+
 (function($) {
 
+   //
+   // site
+   //
 	wp.customize('blogname', function(setting) {
 		setting.bind(function(value) {
 			$('.front_page.cover_block h1').text(value);
@@ -12,10 +20,8 @@
 	});
 
 
-
-
    // 
-   // cover block
+   // wda cover block
    //
    wp.customize('wda_cover_x_width', function(setting) {
       setting.bind( function(value) {
@@ -34,7 +40,7 @@
 
 
    // 
-   // columns blocks
+   // wda columns blocks
    //
    wp.customize('wda_column_x_padding', function(setting) {
       setting.bind( function(value) {
@@ -60,7 +66,7 @@
 
 
    // 
-   // text blocks
+   // wda text blocks
    //
    wp.customize('wda_title_lead_x_padding', function(setting) {
       setting.bind( function(value) {
@@ -90,7 +96,6 @@
          $('.wda-title-lead').css('padding-bottom', value + 'vh');
       });
    });
-   
    wp.customize('wda_title_lead_top_margin', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -119,8 +124,6 @@
          $('.wda-text').css({"margin-top":value + 'vh',"margin-bottom":value + 'vh'}); 
       });
    });
-
-   // wda_text_text_align
    wp.customize('wda_text_text_align', function(setting) {
       setting.bind( function(value) {
          $('.wda-text').css({"text-align":value}); 
@@ -129,7 +132,7 @@
 
 
    // 
-   // image block
+   // wda image block
    //
    wp.customize('wda_image_x_padding', function(setting) {
       setting.bind( function(value) {
@@ -148,7 +151,7 @@
 
 
    // 
-   // gallery block
+   // wda gallery block
    //
      wp.customize('wda_gallery_x_padding', function(setting) {
       setting.bind( function(value) {
