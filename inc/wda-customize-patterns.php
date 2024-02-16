@@ -1,10 +1,12 @@
 <?php
 require_once get_template_directory() . '/inc/wda-sanitize.php';
+require_once get_template_directory() . '/inc/wda-utility.php';
+
 
 
 //
 // WebDevAgentPatternsCustomizer
-// Creates 'Web Dev Agent Block Patterns' in Customizer.
+// Creates 'Web Dev Agent Block Patterns' Controls in Customizer.
 // Generates front-end CSS from the configured Settings.
 //
 
@@ -26,15 +28,14 @@ class WebDevAgentPatternsCustomizer {
                   'title' => __( 'Web Dev Agent Block Patterns', 'wda' ),
                   'description' => 
                      __('Apply customizations to Web Dev Agent Block Pattern types across the site.
-                        <br>These changes will be applied to all instances
-                        of the selected block pattern on your site,
-                        thus ensuring consistency across your design.', 'wda'))
+                        <br>These changes will be applied to all instances of the selected block 
+                        pattern on your site, thus ensuring consistency across your design.', 'wda'))
             );
          }
       }
 
       //
-      // Add admin panel sections for our patterns
+      // Add admin panel sections for WDA patterns
       //
       $wp_customize->add_section( 'wda_cover_patterns', 
          array('title'       => __( 'Web Dev Agent Covers', 'wda' ),
@@ -458,18 +459,16 @@ class WebDevAgentPatternsCustomizer {
    }
 
 
+   // 
+   //  Custom frontend CSS
+   //
    public static function wda_customizer_patterns_styles() {
 
       ?><!-- Web Dev Agent Patterns Customizer CSS --> 
 <style id="wda-custom-patterns" type="text/css">
-<?php 
 
-   /* wda-cover block */
+   <?php // wda-cover pattern ?>
 
-      //
-      // wda-cover pattern
-      //
-      ?>
       @media screen and (min-width: 768px) { 
          <?php 
             // wda-cover - md/lg 
@@ -480,12 +479,9 @@ class WebDevAgentPatternsCustomizer {
                ['style' => 'margin-bottom','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh']);
          ?>
       }
-      <?php
 
+   <?php // wda-columns patterns
 
-      //
-      // wda-columns patterns
-      //
          wda_generate_css_rule('.wp-block-media-text.wda-columns,.wp-block-media-text.wda-columns.has-background,.wp-block-columns.wda-columns,.wp-block-columns.wda-columns.has-background',
             ['style' => 'padding-top','setting' => 'wda_column_top_padding','prefix'  => '','postfix' => 'vh'],
             ['style' => 'padding-bottom','setting' => 'wda_column_bottom_padding','prefix'  => '','postfix' => 'vh']);
@@ -507,13 +503,9 @@ class WebDevAgentPatternsCustomizer {
                ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']);
          ?>
       }
-      <?php
-      
 
-      //
-      // wda-image pattern
-      //
-      ?>
+   <?php // wda-image pattern ?>
+
       @media screen and (min-width: 768px) { 
          <?php 
          wda_generate_css_rule('article .entry-content figure.wp-block-image.wda-image img',
@@ -527,13 +519,9 @@ class WebDevAgentPatternsCustomizer {
             ['style' => 'margin-bottom','setting' => 'wda_image_y_margins','prefix'  => '','postfix' => 'vh']);
          ?>
       }
-      <?php
 
-      
-      //
-      // wda-gallery pattern
-      //
-      ?>
+   <?php // wda-gallery pattern ?>
+
       @media screen and (min-width: 768px) { 
          <?php 
          wda_generate_css_rule('.wda-gallery,.wda-gallery.has-background',
@@ -544,12 +532,9 @@ class WebDevAgentPatternsCustomizer {
             ['style' => 'margin-bottom','setting' => 'wda_gallery_y_margins','prefix'  => '','postfix' => 'vh']);
          ?>
       }
-      <?php
 
+   <?php // wda-title-lead pattern
 
-      //
-      // wda-title-lead pattern
-      //
       wda_generate_css_rule('.wp-block-group.wda-title-lead',
          ['style' => 'margin-top','setting' => 'wda_title_lead_bottom_margin','prefix'  => '','postfix' => 'vh'],
          ['style' => 'margin-bottom','setting' => 'wda_title_lead_bottom_margin','prefix'  => '','postfix' => 'vh']);
@@ -568,12 +553,9 @@ class WebDevAgentPatternsCustomizer {
             ['style' => 'padding-bottom','setting' => 'wda_title_lead_bottom_padding','prefix'  => '','postfix' => 'vh']);
          ?>
       }
-      <?php
 
+   <?php //wda-simple-text pattern 
 
-      //
-      // wda-simple-text pattern 
-      //
       // to do : combine in single rule assignment - rollout
       wda_generate_css_rule('.wp-block-group.wda-text.wda-simple-text',
          ['style' => 'margin-top','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh'],
@@ -592,7 +574,7 @@ class WebDevAgentPatternsCustomizer {
    
 </style> 
 <!--/ Web Dev Agent Patterns Customizer CSS -->
-      <?php
+   <?php
    }
 }
 
