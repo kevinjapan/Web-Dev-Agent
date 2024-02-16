@@ -34,7 +34,7 @@ class WebDevAgentPatternsCustomizer {
       }
 
       //
-      // sections
+      // Add admin panel sections for our patterns
       //
       $wp_customize->add_section( 'wda_cover_patterns', 
          array('title'       => __( 'Web Dev Agent Covers', 'wda' ),
@@ -87,12 +87,12 @@ class WebDevAgentPatternsCustomizer {
 
    
 
-      // settings and control pairs
+      //
+      // Add Settings and Control pairs
+      //
 
-
-      
       // 
-      // cover block patterns
+      // cover block pattern
       //
       $wp_customize->add_setting( 'wda_cover_x_width',
          array('default'    => '100', 
@@ -279,7 +279,7 @@ class WebDevAgentPatternsCustomizer {
 
 
       //
-      // title & lead block pattern
+      // title & lead pattern
       //
       $wp_customize->add_setting( 'wda_title_lead_btwn_padding',
          array('default'    => '0', 
@@ -301,7 +301,7 @@ class WebDevAgentPatternsCustomizer {
 
 
       // 
-      // lead-text box padding
+      // lead-text pattern padding
       //
       $wp_customize->add_setting( 'wda_title_lead_x_padding',
          array('default'    => '0', 
@@ -357,7 +357,7 @@ class WebDevAgentPatternsCustomizer {
       
 
       //
-      // lead-text margins
+      // lead-text pattern margins 
       //
       $wp_customize->add_setting( 'wda_title_lead_top_margin',
          array('default'    => '0', 
@@ -467,7 +467,7 @@ class WebDevAgentPatternsCustomizer {
    /* wda-cover block */
 
       //
-      // wda-cover
+      // wda-cover pattern
       //
       ?>
       @media screen and (min-width: 768px) { 
@@ -484,7 +484,7 @@ class WebDevAgentPatternsCustomizer {
 
 
       //
-      // wda-columns
+      // wda-columns patterns
       //
          wda_generate_css_rule('.wp-block-media-text.wda-columns,.wp-block-media-text.wda-columns.has-background,.wp-block-columns.wda-columns,.wp-block-columns.wda-columns.has-background',
             ['style' => 'padding-top','setting' => 'wda_column_top_padding','prefix'  => '','postfix' => 'vh'],
@@ -511,7 +511,7 @@ class WebDevAgentPatternsCustomizer {
       
 
       //
-      // wda-image
+      // wda-image pattern
       //
       ?>
       @media screen and (min-width: 768px) { 
@@ -531,7 +531,7 @@ class WebDevAgentPatternsCustomizer {
 
       
       //
-      // wda-gallery
+      // wda-gallery pattern
       //
       ?>
       @media screen and (min-width: 768px) { 
@@ -548,7 +548,7 @@ class WebDevAgentPatternsCustomizer {
 
 
       //
-      // wda-title-lead
+      // wda-title-lead pattern
       //
       wda_generate_css_rule('.wp-block-group.wda-title-lead',
          ['style' => 'margin-top','setting' => 'wda_title_lead_bottom_margin','prefix'  => '','postfix' => 'vh'],
@@ -572,7 +572,8 @@ class WebDevAgentPatternsCustomizer {
 
 
       //
-      // wda-simple-text
+      // wda-simple-text pattern 
+      //
       // to do : combine in single rule assignment - rollout
       wda_generate_css_rule('.wp-block-group.wda-text.wda-simple-text',
          ['style' => 'margin-top','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh'],
