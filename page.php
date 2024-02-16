@@ -1,8 +1,11 @@
-<?php get_header(); ?>
+<?php
+get_header(); 
 
-<!-- this is the default page (non front-page) template -->
+// Default template page
 
-<?php // we don't show title by default the_title();?>
+?>
+
+<?php // we don't show title by default // the_title();?>
 
 <?php 
    if(have_posts()) :
