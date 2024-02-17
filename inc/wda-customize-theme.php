@@ -12,13 +12,11 @@ require_once get_template_directory() . '/inc/wda-utility.php';
 
 
 class WebDevAgentThemeCustomizer {
-
-   public function __construct() {}
+   
 
    public static function register ( $wp_customize ) {
 
-      // $site_uri = get_template_directory_uri();
-      $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+      $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
       $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
       //
@@ -242,7 +240,10 @@ class WebDevAgentThemeCustomizer {
       //          'input_attrs' => array( 'min' => 0, 'max' => 1, 'style' => 'width: 80px;', 'step'	=> .1 ))
       // ); */
 
+
+      //
       // Custom Fonts
+      //
 
       /* Title & Tagline Custom Fonts */
       $wp_customize->add_setting( 'wda_title_fonts',
@@ -349,8 +350,9 @@ class WebDevAgentThemeCustomizer {
       );      
    
 
+      //
       // Hero Text & Layout
-      
+      //
 
       // Hero Text
       $wp_customize->add_setting( 'wda_hero_text',
@@ -479,9 +481,9 @@ class WebDevAgentThemeCustomizer {
       );
       
 
-      /*
-       * Title & Tagline Text & Layout
-       */
+      //
+      // Title & Tagline Text & Layout
+      //
 
       /* Title Text Color */
       // $wp_customize->add_setting( 'site_title_color',
@@ -571,10 +573,10 @@ class WebDevAgentThemeCustomizer {
       // );
 
 
-      /*
-       * Header Images 
-       * frontpage uses 'Custom Header Image' while other pages override w/ their own 'Featured Image' if present
-       */
+      //
+      // Header Images 
+      // frontpage uses 'Custom Header Image' while other pages override w/ their own 'Featured Image' if present
+      //
 
       /* FrontPage Header Image Is Fixed */
       // $wp_customize->add_setting( 'wda_is_header_img_fixed',
@@ -707,9 +709,9 @@ class WebDevAgentThemeCustomizer {
       // );
       
 
-      /*
-       * Posts
-       */
+      //
+      // Posts
+      //
 
       /* wda_posts */
       $wp_customize->add_setting( 'wda_is_posts_sidebar',
@@ -732,9 +734,9 @@ class WebDevAgentThemeCustomizer {
       );
       
 
-      /*
-       * Footer
-       */
+      //
+      // Footer
+      //
       
       /* Copyright Notice */
       $wp_customize->add_setting( 'wda_copyright',
