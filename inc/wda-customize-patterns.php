@@ -12,7 +12,6 @@ require_once get_template_directory() . '/inc/wda-utility.php';
 
 class WebDevAgentPatternsCustomizer {
 
-   public function __construct() {}
 
    public static function register ( $wp_customize ) {
 

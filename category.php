@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+/*
+Default Category page
+*/
+get_header(); 
+?>
 
 <h1 class="fade_in"><?php single_cat_title();?></h1>
 

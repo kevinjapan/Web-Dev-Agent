@@ -1,6 +1,6 @@
 <?php 
 /*
-
+Default Archive page
 */
 
 get_header(); 

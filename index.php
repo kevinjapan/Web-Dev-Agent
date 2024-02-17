@@ -4,9 +4,9 @@ Our Blog (default Posts) Page
 
 Unexpected, but when a static front page is used (as is default w/ Web Dev Agent) and the 
 site has any page defined for the blog list (eg a page called 'Blog'), home.php is used as
-the designated blog list page! (Or index.php if home.php doesn't exist).
-So, we effectively add a stub page called 'Blog' and add this to the menu, but wordpress 
-internals through Admin/Settings/Reading/A Static Page will re-direct to this page.
+the designated blog list page. (Or index.php if home.php doesn't exist).
+So, we add a stub page called 'Blog' and add this to the menu, but WordPress internals 
+through Admin/Settings/Reading/A Static Page will re-direct to this page.
 */
 
 ?>

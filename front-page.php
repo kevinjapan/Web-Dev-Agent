@@ -1,4 +1,7 @@
 <?php 
+/*
+Frontpage / Homepage
+*/
 
 get_header();
 
@@ -19,7 +22,7 @@ get_header();
 
 //
 // Front Page Content
-// each wda pattern block is a <section>,  so we don't provide top-level container
+// each WDA pattern block is a <section>,  we don't provide top-level container here
 //
    if(have_posts()) :
       while(have_posts()) :

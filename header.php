@@ -1,3 +1,8 @@
+<?php
+/*
+Global Page Header
+*/
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 

@@ -6,6 +6,7 @@
  * @since WebDevAgent 1.0
  */
 
+
 //
 // Web Dev Agent Block Patterns
 // Registers Patterns in 'block inserter' in editor.
@@ -27,8 +28,6 @@ function wda_register_block_pattern_categories() {
 	register_block_pattern_category('wda-buttons', ['label' => __('Web Dev Agent Buttons', 'wda')]);   
 }
 add_action( 'init', 'wda_register_block_pattern_categories' );
-
-
 
 
 
