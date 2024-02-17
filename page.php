@@ -4,19 +4,17 @@ get_header();
 // Default template page
 
 ?>
+<main>
+   <?php 
+      if(have_posts()) :
+         while(have_posts()) :
 
-<?php // we don't show title by default // the_title();?>
+            the_post();
+            the_content();
 
-<?php 
-   if(have_posts()) :
-      while(have_posts()) :
-
-         the_post();
-         the_content();
-
-      endwhile; 
-   endif;
-?>
-
+         endwhile; 
+      endif;
+   ?>
+</main>
 
 <?php get_footer(); ?>
