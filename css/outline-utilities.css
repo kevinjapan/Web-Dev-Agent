@@ -78,7 +78,9 @@ Access classes - use these to access the custom props
    color:var(--neutral_3_color);
    background-color:var(--bg_neutral_3);
 }
-
+.bg_yellow {
+   background:yellow;
+}
 
 .primary_bg h1,.primary_bg h2,.primary_bg h3,.primary_bg h4,.primary_bg h5,.primary_bg h6 {color:white;}
 .primary_bg_dark,.primary_1_bg_dark {
