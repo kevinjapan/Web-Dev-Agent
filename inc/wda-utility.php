@@ -41,9 +41,7 @@ if ( ! function_exists( 'wda_generate_css_rule' ) ) :
          foreach ($rules as $rule) {
             $mod = get_theme_mod($rule['setting']);
             if ( ! empty($mod) || $mod === "0" ) {
-               $css_inners.= sprintf('%s:%s;',
-                  $rule['style'],
-                  $rule['prefix'].$mod.$rule['postfix']);
+               $css_inners.= sprintf('%s:%s;',$rule['style'],$rule['prefix'].$mod.$rule['postfix']);
             }
          }
       }
