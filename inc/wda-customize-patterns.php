@@ -3,12 +3,12 @@ require_once get_template_directory() . '/inc/wda-sanitize.php';
 require_once get_template_directory() . '/inc/wda-utility.php';
 
 // Block Patterns
-require_once get_template_directory() . '/inc/block-patterns/wda-customize-cover-block.php';
-require_once get_template_directory() . '/inc/block-patterns/wda-customize-column-blocks.php';
-require_once get_template_directory() . '/inc/block-patterns/wda-customize-gallery-block.php';
-require_once get_template_directory() . '/inc/block-patterns/wda-customize-image-block.php';
-require_once get_template_directory() . '/inc/block-patterns/wda-customize-title-lead-block.php';
-require_once get_template_directory() . '/inc/block-patterns/wda-customize-text-block.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-cover-block.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-column-blocks.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-gallery-block.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-image-block.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-title-lead-block.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-text-block.php';
 
 
 //
