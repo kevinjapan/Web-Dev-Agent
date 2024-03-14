@@ -1506,3 +1506,30 @@ p {
 p.has-large-font-size {
    line-height:2.5rem;
 }
+
+/*  to do : review these block pattern styles for WP shouldn't be here..? */
+div.wda-hero {
+   
+   width:100%;
+
+   /* setting height here messes w/ the pattern view in WP Customizer - we defer to setting/ctrl */
+   /* height:100vh; */
+}
+div.wda-hero h1 {font-size:5rem;margin:0;padding:0;padding-bottom:1rem;}
+div.wda-hero h2 {font-size:3rem;margin:0;padding:0;padding-bottom:.5rem;}
+div.wda-hero h3 {font-size:2rem;margin:0;padding:0;padding-bottom:.25rem;}
+
+div.wda-cover h2 {
+   color:white;
+   font-weight:400;
+   font-size:4.5rem;
+   line-height:4.5rem;
+   padding-left:4rem;
+}
+div.wda-cover p  {
+   width:75%;
+   font-weight:400;
+   font-size:1.35rem;
+   line-height:2rem;
+   color:white;
+}

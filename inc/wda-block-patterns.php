@@ -83,13 +83,44 @@ function wda_register_block_patterns() {
 
    $site_uri = get_template_directory_uri();
    
-   // 
-   // register single feature cover block template
+
+   // Cover Block Templates
    //
-	register_block_pattern('wda-single-feature-cover', [
-		'title' => __('Single Feature Cover', 'wda'),
-      'description' => _x( 'Single Feature Cover.', 'A Cover block with a single feature.', 'wda' ),            
+
+   // Hero Cover Block Template
+	register_block_pattern('wda-hero-cover', [
+		'title' => __('Hero Cover Block', 'wda'),
+      'description' => _x( 'Hero Cover Block.', 'Hero Cover Block.', 'wda' ),            
 		'keywords' => ['single,cover'],
+		'categories' => ['wda-cover-blocks'],
+		'viewportWidth' => 1000,
+		'content' =>  
+         '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","id":287,"dimRatio":50,"layout":{"type":"constrained"}} -->
+         <div class="wp-block-cover wda-hero fade_in">
+            <span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
+            <img class="wp-block-cover__image-background wp-image-287" alt="" 
+               src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" data-object-fit="cover"/>
+
+            <div class="wp-block-cover__inner-container">
+            
+               <!-- wp:heading {"textAlign":"left","level":1} -->
+               <h1 class="wp-block-heading has-text-align-left">This is main heading</h1>
+               <!-- /wp:heading -->
+               
+               <!-- wp:heading {"level":3} -->
+               <h3 class="wp-block-heading">adfa sd fdsafa adfd</h3>
+               <!-- /wp:heading -->
+
+            </div>         
+         </div>
+         <!-- /wp:cover -->'
+	]);
+
+   // Cover Block Template
+	register_block_pattern('wda-cover', [
+		'title' => __('Cover Block', 'wda'),
+      'description' => _x( 'Cover Block.', 'A Cover block with a single feature.', 'wda' ),            
+		'keywords' => ['cover'],
 		'categories' => ['wda-cover-blocks'],
 		'viewportWidth' => 1000,
 		'content' =>  
@@ -136,10 +167,12 @@ function wda_register_block_patterns() {
 
 
 
-   //
+   // Column Block Templates
    // register single feature columns block / single feature block template
    // we use wp-block-media-text instead of wp-columms since it already has desired styling in two column pattern w/out additionals
    //
+   
+   // Single Feature Column Block Template
    register_block_pattern('wda-single-feature-column', [
       'title' => __('Single Feature Column', 'wda'),
       'description' => _x( 'Single Feature Column.', 'A Column block with a single feature.', 'wda' ),            
@@ -180,12 +213,8 @@ function wda_register_block_patterns() {
          </div>
          <!-- /wp:media-text -->'
 	]);
-   
 
-
-   //
-   // register two feature columns block template
-   //
+   // Two Feature Columns Block Template
 	register_block_pattern('wda-two-feature-columns', [
 		'title' => __('Two Feature Columns', 'wda'),
       'description' => _x( 'Two Feature Clolumns.', 'A Columns block with two features.', 'wda' ),            
@@ -193,20 +222,15 @@ function wda_register_block_patterns() {
 		'categories' => ['wda-column-blocks'],
 		'viewportWidth' => 1000,
 		'content' => 
-            '<!-- wp:columns {"className":"wda-columns wda-three-feature-columns"} -->
-            <div class="wp-block-columns wda-columns wda-three-feature-columns">' . 
+            '<!-- wp:columns {"className":"wda-columns wda-two-feature-columns"} -->
+            <div class="wp-block-columns wda-columns wda-two-feature-columns">' . 
                wda_single_col_template() . 
                wda_single_col_template() .
             '</div>
             <!-- /wp:columns -->',
 	]);
 
-
-
-
-   //
-   // register three feature columns block template
-   //
+   // Three Feature Columns Block Template
 	register_block_pattern('wda-three-feature-columns', [
 		'title' => __('Three Feature Columns', 'wda'),
       'description' => _x( 'Three Feature Columns.', 'A Columns block with three features.', 'wda' ),            
@@ -223,11 +247,7 @@ function wda_register_block_patterns() {
             <!-- /wp:columns -->',
 	]);
 
-
-
-   //
-   // register six feature columns block template
-   //
+   // Six Feature Columns Block Template
    register_block_pattern('wda-six-feature-column', [
       'title' => __('Six Feature Columns', 'wda'),
       'description' => _x( 'Six Feature Columns.', 'A Columns block with six features.', 'wda' ),            
@@ -256,9 +276,39 @@ function wda_register_block_patterns() {
    //
    // to insert 'fade_in' in 'div.wda-title-lead' below
 
-   //
-   // register title & lead text template
-   //
+
+
+   // Title & Lead Block Templates
+
+
+   // Big Title & Lead Text Block Template
+	register_block_pattern('wda-big-title-lead', [
+		'title' => __('Big Title And Lead Text', 'wda'),
+      'description' => _x( 'You can style all block patterns of this type in the customizer.', 'The big title and lead text block.', 'wda' ),            
+		'keywords' => ['big,title,lead,text'],
+		'categories' => ['wda-texts'],
+		'viewportWidth' => 1000,
+		'content' =>  
+         '<!-- wp:group {"className":"wda-big-title-lead"} -->
+         <div class="wp-block-group wda-big-title-lead">
+
+            <!-- wp:heading {"textAlign":"center","level":2} -->
+               <h2 class="wda-big-title-lead__title has-text-align-center">Big Title & Lead Text</h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit.         
+               <br>You can customize the layout of this block pattern in the Dashboard menu:
+               <br> Appearance \ Customize \ The Educator Block Patterns \ The Educator Texts 
+            </p>
+            <!-- /wp:paragraph -->
+         
+         </div>
+         <!-- /wp:group -->'
+   ]);
+
+   // Title & Lead Text Block Template
 	register_block_pattern('wda-title-lead', [
 		'title' => __('Title And Lead Text', 'wda'),
       'description' => _x( 'You can style all block patterns of this type in the customizer.', 'A title and lead text block.', 'wda' ),            
@@ -285,10 +335,10 @@ function wda_register_block_patterns() {
             <!-- /wp:group -->'
    ]);
  
-   
-   //
-   // register simple text template
-   //
+ 
+   // Text Block Templates
+
+   // Simple Text Block Template
 	register_block_pattern('wda-simple-text', [
 		'title' => __('Simple Text', 'wda'),
       'description' => _x( 'Simple Text.', 'A simple text block.', 'wda' ),            
@@ -343,8 +393,8 @@ function wda_register_block_patterns() {
 	// ]);
 
 
-   //
-   // register wda-image template
+
+   // Image Block Template
    //
     register_block_pattern('wda-image', [
 		'title' => __('Web Dev Agent Image', 'wda'),
@@ -362,9 +412,9 @@ function wda_register_block_patterns() {
 
 
 
-   //
-   // register wda-gallery template
-   //
+
+   // Gallery Block Template
+   // nesting of <figure> is-as in WP
     register_block_pattern('wda-gallery', [
 		'title' => __('Web Dev Agent Gallery', 'wda'),
       'description' => _x( 'Web Dev Agent Gallery.', 'An image gallery block with Web Dev Agent customization.', 'wda' ),            
@@ -394,11 +444,9 @@ function wda_register_block_patterns() {
                </figure>
                <!-- /wp:gallery -->'
    ]);
+   
 
-
-
-   // 
-   // register wda-buttons template
+   // Button Block Template
    //
    register_block_pattern('wda-buttons', [
 		'title' => __('Web Dev Agent Buttons', 'wda'),
