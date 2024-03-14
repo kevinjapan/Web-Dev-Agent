@@ -3,7 +3,7 @@ require_once get_template_directory() . '/inc/wda-sanitize.php';
 require_once get_template_directory() . '/inc/wda-utility.php';
 
 // Block Patterns
-require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-cover-block.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-cover-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-column-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-gallery-block.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-image-block.php';

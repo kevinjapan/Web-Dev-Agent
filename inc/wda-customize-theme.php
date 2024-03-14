@@ -30,6 +30,7 @@ class WebDevAgentThemeCustomizer {
       //
       // Wed Dev Agent Theme panel
       // to do : this panel not appearing? no sections content?
+      //
       if ( class_exists( 'WP_Customize_Panel' ) ) {
          if ( ! $wp_customize->get_panel( 'wda_layout_panel' ) ) {
             $wp_customize->add_panel(
@@ -69,22 +70,15 @@ class WebDevAgentThemeCustomizer {
                'panel' => 'wda_layout_panel') 
       );
       
-      /* Nav BG Opacity */
-      $wp_customize->add_setting( 'nav_bg_opacity',
-         array('default'    => '1', 
-               'type'       => 'theme_mod',
-               'capability' => 'edit_theme_options',
-               'transport'  => 'postMessage',
-               'sanitize_callback' => 'wda_sanitize_number_range') 
-      );
-      $wp_customize->add_control( 'nav_bg_opacity', 
-         array('type' => 'number',
-               'priority' => 10,
-               'section' => 'wda_nav',
-               'settings'   => 'nav_bg_opacity', 
-               'description' => esc_html__( 'background opacity','wda' ),
-               'input_attrs' => array( 'min' => 0, 'max' => 1, 'style' => 'width: 80px;', 'step'	=> .1 ))
-      ); 
+
+      // Theme Sections Settings/Controls combos
+      //
+      wda_customize_theme_copyright($wp_customize);
+      wda_customize_theme_typography($wp_customize);
+      wda_customize_theme_frontpage($wp_customize);
+      wda_customize_theme_posts($wp_customize);
+      
+
 
    }
 
@@ -95,7 +89,7 @@ class WebDevAgentThemeCustomizer {
    public static function wda_customizer_theme_styles() {
       ?>
       <!-- Web Dev Agent Theme Customizer CSS --> 
-      <style id="the-educator-custom-theme" type="text/css">
+      <style id="web-dev-agent-custom-theme" type="text/css">
       <?php 
       //
       // Theme Customizer Styles

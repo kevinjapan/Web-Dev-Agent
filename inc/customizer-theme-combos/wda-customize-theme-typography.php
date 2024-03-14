@@ -119,15 +119,15 @@ function wda_customize_theme_typography_styles() {
 
    /* custom fonts - ensure order is maintained */
    // $fallback_fonts = ',serif,verdana';  /* fallback system fonts */
-   // wda_generawda_css_rule('body',
+   // wda_generate_css_rule('body',
    //    ['style' => 'font-family','setting' => 'wda_body_fonts',  'prefix'  => '',  'postfix' => $fallback_fonts]);
-   // wda_generawda_css_rule('.evolutiondesuka-navigation',
+   // wda_generate_css_rule('.evolutiondesuka-navigation',
    //    ['style' => 'font-family','setting' => 'wda_nav_fonts',  'prefix'  => '',  'postfix' => $fallback_fonts]);
-   // wda_generawda_css_rule('h1:not(.wda_title_heading),h2:not(.wda_title_heading),h3:not(.wda_title_heading),h4:not(.wda_title_heading),h5,h6',
+   // wda_generate_css_rule('h1:not(.wda_title_heading),h2:not(.wda_title_heading),h3:not(.wda_title_heading),h4:not(.wda_title_heading),h5,h6',
    //    ['style' => 'font-family','setting' => 'wda_headings_fonts',  'prefix'  => '',  'postfix' => $fallback_fonts]);
-   // wda_generawda_css_rule('.wda_title_heading',
+   // wda_generate_css_rule('.wda_title_heading',
    //    ['style' => 'font-family','setting' => 'wda_tagline_fonts',  'prefix'  => '',  'postfix' => $fallback_fonts]);
-   // wda_generawda_css_rule('h1.wda_title_heading,h2.wda_title_heading,h3.wda_title_heading',
+   // wda_generate_css_rule('h1.wda_title_heading,h2.wda_title_heading,h3.wda_title_heading',
    //    ['style' => 'font-family','setting' => 'wda_title_fonts',  'prefix'  => '',  'postfix' => $fallback_fonts]);
 
 }

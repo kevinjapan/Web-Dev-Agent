@@ -24,9 +24,9 @@ function wda_customize_column_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_column_patterns',
-            'label' => __( 'Padding','the-educator'),
+            'label' => __( 'Padding','wda'),
             'settings'   => 'wda_column_x_padding', 
-            'description' => __( '% horizontal padding for Columns.','the-educator'),
+            'description' => __( '% horizontal padding for Columns.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
@@ -41,9 +41,9 @@ function wda_customize_column_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_column_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_column_top_padding', 
-            'description' => __( '% top padding for Columns.','the-educator'),
+            'description' => __( '% top padding for Columns.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
@@ -58,9 +58,9 @@ function wda_customize_column_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_column_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_column_bottom_padding', 
-            'description' => __( '% bottom padding for Columns.','the-educator'),
+            'description' => __( '% bottom padding for Columns.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 }

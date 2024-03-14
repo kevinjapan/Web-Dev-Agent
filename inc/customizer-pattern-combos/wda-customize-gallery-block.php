@@ -18,9 +18,9 @@ function wda_customize_gallery_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_image_patterns',
-            'label' => __( 'Galleries','the-educator'),
+            'label' => __( 'Galleries','wda'),
             'settings'   => 'wda_gallery_x_padding', 
-            'description' => __( '% horizontal padding for Galleries.','the-educator'),
+            'description' => __( '% horizontal padding for Galleries.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
@@ -35,9 +35,9 @@ function wda_customize_gallery_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_image_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_gallery_y_margins', 
-            'description' => __( '% vertical spacing for Galleries.','the-educator'),
+            'description' => __( '% vertical spacing for Galleries.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 

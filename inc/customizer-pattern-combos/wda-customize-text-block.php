@@ -17,9 +17,9 @@ function wda_customize_text_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_text_patterns',
-            'label' => __( 'Simple Text','the-educator'),
+            'label' => __( 'Simple Text','wda'),
             'settings'   => 'wda_text_x_padding', 
-            'description' => __( '% horizontal padding for Texts.','the-educator'),
+            'description' => __( '% horizontal padding for Texts.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -34,9 +34,9 @@ function wda_customize_text_block($wp_customize) {
       array('type' => 'number',
             'priority' => 11,
             'section' => 'wda_text_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_text_y_margins', 
-            'description' => __( '% vertical spacing for Texts.','the-educator'),
+            'description' => __( '% vertical spacing for Texts.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
@@ -53,9 +53,9 @@ function wda_customize_text_block($wp_customize) {
             'priority' => 12,
             'type' => 'radio',
             'section' => 'wda_text_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_text_text_align', 
-            'description' => __( 'Set text alignment for Texts.','the-educator'),
+            'description' => __( 'Set text alignment for Texts.','wda'),
             'choices' => array(
                'left' => __( 'Left' ),
                'center' => __( 'Center' ),

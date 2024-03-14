@@ -17,9 +17,9 @@ function wda_customize_image_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_image_patterns',
-            'label' => __( 'Images','the-educator'),
+            'label' => __( 'Images','wda'),
             'settings'   => 'wda_image_x_padding', 
-            'description' => __( '% horizontal padding for Images.','the-educator'),
+            'description' => __( '% horizontal padding for Images.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
@@ -34,9 +34,9 @@ function wda_customize_image_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_image_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_image_y_margins', 
-            'description' => __( '% vertical spacing for Images.','the-educator'),
+            'description' => __( '% vertical spacing for Images.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 

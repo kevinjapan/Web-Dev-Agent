@@ -18,9 +18,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_big_title_lead_patterns',
-            'label' => __( 'Padding','the-educator'),
+            'label' => __( 'Padding','wda'),
             'settings'   => 'wda_big_title_lead_btwn_padding', 
-            'description' => __( '% padding between Big Title & Lead.','the-educator'),
+            'description' => __( '% padding between Big Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 80px;', 'step'	=> 1 ))
    );
 
@@ -40,9 +40,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_big_title_lead_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_big_title_lead_x_padding', 
-            'description' => __( '% horizontal padding for Big Title & Lead.','the-educator'),
+            'description' => __( '% horizontal padding for Big Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -57,9 +57,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_big_title_lead_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_big_title_lead_top_padding', 
-            'description' => __( '% padding above Big Title & Lead.','the-educator'),
+            'description' => __( '% padding above Big Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -74,9 +74,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_big_title_lead_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_big_title_lead_bottom_padding', 
-            'description' => __( '% padding below for Big Title & Lead.','the-educator'),
+            'description' => __( '% padding below for Big Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -96,9 +96,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_big_title_lead_patterns',
-            'label' => __( 'Margins','the-educator'),
+            'label' => __( 'Margins','wda'),
             'settings'   => 'wda_big_title_lead_top_margin', 
-            'description' => __( '% margin above Big Title & Lead.','the-educator'),
+            'description' => __( '% margin above Big Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -113,9 +113,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_big_title_lead_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_big_title_lead_bottom_margin', 
-            'description' => __( '% margin below for Big Title & Lead.','the-educator'),
+            'description' => __( '% margin below for Big Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -137,9 +137,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_title_lead_patterns',
-            'label' => __( 'Padding','the-educator'),
+            'label' => __( 'Padding','wda'),
             'settings'   => 'wda_title_lead_btwn_padding', 
-            'description' => __( '% padding between Title & Lead.','the-educator'),
+            'description' => __( '% padding between Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 80px;', 'step'	=> 1 ))
    );
 
@@ -159,9 +159,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_title_lead_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_title_lead_x_padding', 
-            'description' => __( '% horizontal padding for Title & Lead.','the-educator'),
+            'description' => __( '% horizontal padding for Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -176,9 +176,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_title_lead_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_title_lead_top_padding', 
-            'description' => __( '% padding above Title & Lead.','the-educator'),
+            'description' => __( '% padding above Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -193,9 +193,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_title_lead_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_title_lead_bottom_padding', 
-            'description' => __( '% padding below for Title & Lead.','the-educator'),
+            'description' => __( '% padding below for Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -215,9 +215,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_title_lead_patterns',
-            'label' => __( 'Margins','the-educator'),
+            'label' => __( 'Margins','wda'),
             'settings'   => 'wda_title_lead_top_margin', 
-            'description' => __( '% margin above Title & Lead.','the-educator'),
+            'description' => __( '% margin above Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
@@ -232,9 +232,9 @@ function wda_customize_title_lead_block($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_title_lead_patterns',
-            'label' => __( '','the-educator'),
+            'label' => __( '','wda'),
             'settings'   => 'wda_title_lead_bottom_margin', 
-            'description' => __( '% margin below for Title & Lead.','the-educator'),
+            'description' => __( '% margin below for Title & Lead.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
