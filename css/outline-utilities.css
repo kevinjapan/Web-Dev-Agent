@@ -181,3 +181,14 @@ Access classes - use these to access the custom props
    transform:translateY(-100%);
    transition:transform .25s ease-in;
 }
+
+
+.flex {
+   display:-webkit-box;
+   display:-ms-flexbox;
+   display:flex;
+}
+
+.fit_content {
+   max-width:fit-content;
+}
