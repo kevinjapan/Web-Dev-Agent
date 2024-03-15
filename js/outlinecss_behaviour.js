@@ -46,7 +46,7 @@ const create_observers = (elements,active_class,options) => {
 const init_nav_scroll_listener = () => {
 
    let last_scroll = 0
-   const nav_bar = document.querySelector('nav')
+   const nav_bar = document.querySelector('nav.outline_nav')
 
    if(nav_bar) {
       window.addEventListener('scroll', () => {
@@ -112,7 +112,7 @@ init_fade_ins()
 
 init_nav_scroll_listener()
 
-const dropdown = document.querySelector('nav ul.menu')
+const dropdown = document.querySelector('nav.outline_nav  ul.menu')
 
 if(dropdown) {
    init_toggle_sm_menu(dropdown)

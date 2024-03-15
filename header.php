@@ -13,9 +13,9 @@ Global Page Header
    <?php wp_head(); ?>
 </head>
 
-<body <?php body_class();?>>
+<body <?php body_class('outline_body');?>>
 
-<nav class="nav">
+<nav class="outline_nav">
    
    <div class="logo_block">
       <a href="<?php echo get_site_url(); ?>" style="text-decoration:none;">
