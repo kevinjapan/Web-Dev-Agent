@@ -34,6 +34,11 @@
          $('.wda-hero').css('margin-bottom', value + '%');
       });
    });
+   wp.customize('wda_hero_v_align', function(setting) {
+      setting.bind( function(value) {
+         $('.wda-hero').css('align-items', value);
+      });
+   });
 
 
    // Cover Block

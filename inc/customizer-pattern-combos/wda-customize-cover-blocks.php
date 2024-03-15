@@ -7,6 +7,25 @@ function wda_customize_cover_block($wp_customize) {
    
    // Hero Cover Block Patterns
    //
+   $wp_customize->add_setting( 'wda_hero_v_align',
+      array('default'    => 'center', 
+            'type'       => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport'  => 'postMessage',
+            'sanitize_callback' => 'wda_sanitize_number_range') 
+   );
+   $wp_customize->add_control( 'wda_hero_v_align', 
+      array('type' => 'select',
+            'priority' => 10,
+            'section' => 'wda_hero_patterns',
+            'label' => __( 'Hero Cover Blocks','the-educator'), 
+            'description' => __( 'Align text vertically.','the-educator'),
+            'choices' => array(
+               'flex-start' => 'Top',
+               'center' => 'Center',
+               'flex-end' => 'Bottom',
+            ))
+   );
    $wp_customize->add_setting( 'wda_hero_x_height',
       array('default'    => '100', 
             'type'       => 'theme_mod',
@@ -86,11 +105,17 @@ function wda_customize_cover_block_styles() {
    ?>
    @media screen and (min-width: 768px) { 
       <?php 
-         // wda-cover - md/lg 
+         // Hero Cover Block 
          wda_generate_css_rule('.wda-hero',            
          ['style' => 'height','setting' => 'wda_hero_x_height','prefix'  => '','postfix' => 'vh'],);
          wda_generate_css_rule('.wda-hero',            
-            ['style' => 'margin-bottom','setting' => 'wda_hero_bottom_margin','prefix'  => '','postfix' => '%'],);            
+            ['style' => 'margin-bottom','setting' => 'wda_hero_bottom_margin','prefix'  => '','postfix' => '%'],);  
+            
+         wda_generate_css_rule('.wda-hero',            
+         ['style' => 'align-items','setting' => 'wda_hero_v_align','prefix'  => '','postfix' => ''],);
+
+         
+         // Cover Block 
          wda_generate_css_rule('.wda-cover',
             ['style' => 'width','setting' => 'wda_cover_x_width','prefix'  => '','postfix' => '%'],);
          wda_generate_css_rule('.wda-cover',

@@ -42,15 +42,24 @@ class WebDevAgentPatternsCustomizer {
 
       //
       // Add admin panel sections for WDA patterns
-      //
+      // 
+      
+      $wp_customize->add_section( 'wda_hero_patterns', 
+      array('title'       => __( $theme_title . 'Hero Cover Blocks', 'wda' ),
+            'priority'    => 10,
+            'capability'  => 'edit_theme_options',
+            'description' => __('Customize all Hero Covers site-wide.', 'wda'),
+            'panel' => 'wda_patterns_panel',
+            'active_callback' => '') 
+      );   
       $wp_customize->add_section( 'wda_cover_patterns', 
-         array('title'       => __( 'Web Dev Agent Covers', 'wda' ),
-               'priority'    => 10,
-               'capability'  => 'edit_theme_options',
-               'description' => __('You can customize all Wed Dev Agent Covers across the site here.', 'wda'),
-               'panel' => 'wda_patterns_panel',
-               'active_callback' => '') 
-      );
+      array('title'       => __( $theme_title . 'Cover Blocks', 'wda' ),
+            'priority'    => 20,
+            'capability'  => 'edit_theme_options',
+            'description' => __('Customize all Covers site-wide.', 'wda'),
+            'panel' => 'wda_patterns_panel',
+            'active_callback' => '') 
+      );  
       $wp_customize->add_section( 'wda_column_patterns', 
          array('title'       => __( 'Web Dev Agent Columns', 'wda' ),
                'priority'    => 20,
