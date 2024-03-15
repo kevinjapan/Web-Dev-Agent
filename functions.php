@@ -34,8 +34,16 @@ add_action('wp_enqueue_scripts','load_stylesheets');
 
 // Admin stylesheets
 function wda_enqueue_custom_admin_style() {
-   wp_register_style( 'wda_custom_wp_admin_css', get_template_directory_uri() . '/css/wda-admin-style.css',array(),1,'all');
-   wp_enqueue_style( 'wda_custom_wp_admin_css' );
+   if ('post.php' === $hook ||  'post-new.php' === $hook || 'site-editor.php' === $hook) {
+      wp_register_style('outline',get_template_directory_uri() . '/css/outline.css',array(),1,'all');
+      wp_enqueue_style('outline');
+      wp_register_style('outline_custom_props',get_template_directory_uri() . '/css/outline-custom-props.css',array(),1,'all');
+      wp_enqueue_style('outline_custom_props');
+      wp_register_style('outline_layouts',get_template_directory_uri() . '/css/outline-layouts.css',array(),1,'all');
+      wp_enqueue_style('outline_layouts');
+      wp_register_style('outline_utilities',get_template_directory_uri() . '/css/outline-utilities.css',array(),1,'all');
+      wp_enqueue_style('outline_utilities');
+   }
 }
 add_action( 'admin_enqueue_scripts', 'wda_enqueue_custom_admin_style' );
 
