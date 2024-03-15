@@ -33,7 +33,7 @@ add_action('wp_enqueue_scripts','load_stylesheets');
 
 
 // Admin stylesheets
-function wda_enqueue_custom_admin_style() {
+function wda_enqueue_custom_admin_style($hook) {
    if ('post.php' === $hook ||  'post-new.php' === $hook || 'site-editor.php' === $hook) {
       wp_register_style('outline',get_template_directory_uri() . '/css/outline.css',array(),1,'all');
       wp_enqueue_style('outline');
