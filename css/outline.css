@@ -280,32 +280,45 @@ button > a {
    height:100%;
 }
 
-/* wda specific adaptations to integrate w/ WordPress */
-.wda_buttons {
+
+/* 
+   The Educator adaptations to integrate w/ WordPress 
+*/
+div.wda_buttons {
    margin-top:1rem;
-}
-.wda_button {
-   width:100%;
    margin-left:auto;
    margin-right:auto;
-   text-align:center;
 }
-.wda_button a.wp-block-button__link {
+
+
+/* wp-block-button__link differs elem type in editor and front-end! */
+div.wp-block-button.wda_button > a.wp-block-button__link,
+div.wp-block-button.wda_button > div.wp-block-button__link{
    padding:.25rem 1rem .5rem 1rem;
-   color:hsl(0, 0%, 65%);
+   color:hsl(0, 0%, 55%);
    background:transparent;
-   border:solid 1px lightgrey;
+   border:solid 1px hsl(0, 0%, 65%);
    border-radius:.5rem;
 }
-.wda_button a.wp-block-button__link:hover {
+div.wda_button a.wp-block-button__link:hover,
+div.wda_button div.wp-block-button__link:hover {
    color:black;
-   border:solid 1px grey;
+   border:solid 1px black;
 }
-/* .wda_button_link {} */
-
-/*
- - button styling variations come largely from utility classes - see xxx-outline-utilities.css 
-*/
+/* over image btn defaults to light */
+div.wp-block-button.wda_button.over_img > a.wp-block-button__link,
+div.wp-block-button.wda_button.over_img > div.wp-block-button__link {
+   padding:.25rem 1rem .5rem 1rem;
+   color:hsl(0, 0%, 85%);
+   background:transparent;
+   border:solid 1px hsl(0, 0%, 73%);
+   border-radius:.5rem;
+}
+div.wda_button.over_img a.wp-block-button__link:hover,
+div.wda_button.over_img div.wp-block-button__link:hover {
+   color:white;
+   border:solid 1px white;
+}
 
 
 

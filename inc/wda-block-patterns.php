@@ -111,6 +111,14 @@ function wda_register_block_patterns() {
                <h3 class="wp-block-heading">adfa sd fdsafa adfd</h3>
                <!-- /wp:heading -->
 
+               <!-- wp:buttons -->
+               <div class="wp-block-buttons wda_buttons">            
+                  <!-- wp:button -->
+                  <div class="wp-block-button wda_button over_img"><a class="wp-block-button__link">read more</a></div>
+                  <!-- /wp:button -->
+               </div>
+               <!-- /wp:buttons -->
+
             </div>         
          </div>
          <!-- /wp:cover -->'
@@ -155,6 +163,15 @@ function wda_register_block_patterns() {
                         <br>- - - - Web Dev Agent Covers.
                      </p>
                      <!-- /wp:paragraph -->
+
+                     <!-- wp:buttons -->
+                     <div class="wp-block-buttons wda_buttons">            
+                        <!-- wp:button -->
+                        <div class="wp-block-button wda_button over_img"><a class="wp-block-button__link">read more</a></div>
+                        <!-- /wp:button -->
+                     </div>
+                     <!-- /wp:buttons -->
+
                   </div>
                   <!-- /wp:column -->
 
@@ -444,7 +461,7 @@ function wda_register_block_patterns() {
                </figure>
                <!-- /wp:gallery -->'
    ]);
-   
+
 
    // Button Block Template
    //
