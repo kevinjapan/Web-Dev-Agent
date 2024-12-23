@@ -6,6 +6,7 @@
 
 [Web Dev Agent](https://web-dev-agent.netlify.app/)
 
+status : refresh theme dev - Dec 2024
 
 `# to do : on-going - review & update setup instructions below`
 
