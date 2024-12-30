@@ -140,7 +140,7 @@
 
    /*  Paragraphs */
    --paragraph_width:50rem;
-   --paragraph_padding:1rem;
+   --paragraph_padding:0;
 
    /* Text color over background images */
    --section_overlay_text_color:white; 

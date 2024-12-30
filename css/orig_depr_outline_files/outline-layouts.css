@@ -1491,16 +1491,21 @@ footer a:hover {
    }
 }
 
+section.the_content {
+   /* wrap the_content paragraphs */
+   visibility:visible;
+}
+
 
 /* paragraph block of text */
 p {
    width:min(100%,var(--paragraph_width));
-   margin-top:1rem;
-   margin-bottom:1rem;
+   margin-top:.5rem;
+   margin-bottom:.5rem;
    margin-left:auto;
    margin-right:auto;
    padding:var(--paragraph_padding);
-   line-height:1.5rem;
+   line-height:1.65rem;
 }
 /* we have to cater for all WP modifying classes.. */
 p.has-large-font-size {

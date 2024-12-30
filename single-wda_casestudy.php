@@ -16,8 +16,9 @@ get_header(); ?>
                <p><?php echo get_post_meta( get_the_ID(), 'wda_casestudy_tagline', true ); ?></p>
             </div>
       </section>
-
-      <?php the_content();?>
+      <section class="the_content">
+         <?php the_content();?>
+      </section>
 
    <?php endwhile;?>
   

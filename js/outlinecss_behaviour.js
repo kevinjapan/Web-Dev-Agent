@@ -1,26 +1,15 @@
-//
-// Behaviour for OutlineCSS Components
-//
 
-
-
-//
-// Fade In Components on entering viewport
-//
 const init_fade_ins = () => {
-
    const faders = document.querySelectorAll('.fade_in')
-
    const appearOptions = {
       threshold: 0,
       rootMargin: "0px 0px -200px 0px"
    }
    return create_observers(faders,'appear',appearOptions)
 }
+
 const create_observers = (elements,active_class,options) => {
-
    let observers_created = false
-
    const appearOnScroll = new IntersectionObserver(
       function(entries,appearOnScroll){
          entries.forEach(entry => {
@@ -29,7 +18,6 @@ const create_observers = (elements,active_class,options) => {
             appearOnScroll.unobserve(entry.target)
          })
    },options)
-
    if(elements) {
       elements.forEach(element => {
          appearOnScroll.observe(element)
@@ -40,81 +28,83 @@ const create_observers = (elements,active_class,options) => {
 }
 
 
-//
-// Dynamic nav bar - hide on scrolling down
-//
+
+
+//    Dynamic nav bar
+//    hides when user is scrolling down
+//    to prevent nav disappearing in ios safari bounce, we don't hide < 80px from top
 const init_nav_scroll_listener = () => {
 
    let last_scroll = 0
-   const nav_bar = document.querySelector('nav.outline_nav')
+   const nav_bar = document.querySelector('nav')
 
    if(nav_bar) {
       window.addEventListener('scroll', () => {
-         let current_scroll = window.scrollY       
-         // to prevent nav disappearing in ios safari bounce, we don't hide < 80px from top  
+         let current_scroll = window.scrollY         
          if((current_scroll > last_scroll) && (current_scroll > 80)) {
-            nav_bar.classList.add('invisible_nav')    // user is scrolling downwards - hide nav bar below 80px
+            nav_bar.classList.add('hide_on_scroll_down')    // user is scrolling downwards - hide nav bar ( if below 80px )
          } else {
-            nav_bar.classList.remove('invisible_nav')    // scrolling upwards - show hide bar
+            nav_bar.classList.remove('hide_on_scroll_down')    // scrolling upwards - show hide bar
          }
          last_scroll = current_scroll
       })
    }
 }
 
-
-//
-// Toggle sm menu extend dropdown
-//
-const init_toggle_sm_menu = (dropdown) => {
-
-   const nav_toggle = document.querySelector('.nav_toggle')
-
-   nav_toggle.addEventListener('click',() => {
-      if(dropdown) {
-         dropdown.classList.toggle('extended_nav_dropdown')  
-         nav_toggle.classList.toggle('selected_toggle')
-      }
-   })
-}
-
-
-// 
-// Retract sm menu dropdown on item clicked
-//
-const init_retract_sm_menu = (dropdown) => {
-
-   const menu_items = document.querySelectorAll('.menu-item')
-
-   menu_items.forEach((menu_item) => {
-      menu_item.addEventListener('click',() => {
-
-         if(dropdown) dropdown.classList.remove('extended_nav_dropdown')
-         
-         // Fade out any 'fade_in' class elements while waiting for new page.
-         // Relies on fade out (.fade_in) being quick or looks awkward.
-         const faders = document.querySelectorAll('.fade_in')
-         if(faders) {
-            faders.forEach(fader => {
-               fader.classList.toggle('appear')
-            })
-         }
-      })
-   })
-}
-
-
-//
-// Init all behaviours
-//
+// if any issues arise with fade_in not taking effect..
+// we have fixed fade_in failing on 'back' button & '#' links in wda and te projects.
 
 init_fade_ins()
-
 init_nav_scroll_listener()
 
-const dropdown = document.querySelector('nav.outline_nav  ul.menu')
 
-if(dropdown) {
-   init_toggle_sm_menu(dropdown)
-   init_retract_sm_menu(dropdown)
+// toggle sm/mobile menu
+const nav_toggle = document.querySelector('.nav_toggle')
+const dropdown = document.querySelector('nav ul.menu')
+nav_toggle.addEventListener('click',() => {
+   if(dropdown) {
+      // drop the nav list
+      dropdown.classList.toggle('extended_sm_nav_dropdown')
+      // modify the toggle      
+      nav_toggle.classList.toggle('selected_toggle')
+   }
+})
+
+// page transitions - we retract dropdown on item clicked & fade out content
+// to do : create react/vue components to encapsulate this functionality?
+const menu_items = document.querySelectorAll('.menu-item')
+menu_items.forEach((menu_item) => {
+   menu_item.addEventListener('click',() => {
+      if(dropdown) {
+         dropdown.classList.remove('extended_sm_nav_dropdown')
+      }
+      // Fade out any 'fade_in' class elements while waiting for new page.
+      // Does rely on fade out (.fade_in) being quick or looks awkward.
+      const faders = document.querySelectorAll('.fade_in')
+      if(faders) {
+         faders.forEach(fader => {
+            fader.classList.toggle('appear')
+         })
+      }
+   })
+})
+
+
+//    faqs_block
+const close_open_faq = () => {
+   const faq = document.querySelector('.open_faq')
+   if(faq) faq.classList.remove('open_faq')
 }
+const faq_toggles = document.querySelectorAll('.faq_toggle')
+faq_toggles.forEach((faq_toggle) => {
+   faq_toggle.addEventListener('click',() => {
+
+      // get immediate sibling <p>
+      let faq_text = faq_toggle.nextElementSibling
+
+      if(!faq_text.classList.contains('open_faq')) {
+         close_open_faq()
+      }
+      faq_text.classList.toggle('open_faq')
+   })
+})
