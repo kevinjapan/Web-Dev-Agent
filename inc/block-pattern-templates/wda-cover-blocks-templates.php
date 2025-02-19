@@ -20,18 +20,27 @@ function wda_register_cover_blocks_templates($site_uri) {
 
             <div class="wp-block-cover__inner-container">
             
-               <!-- wp:heading {"textAlign":"left","level":1} -->
-               <h1 class="wp-block-heading has-text-align-left">This is main heading</h1>
+               <!-- wp:heading {"textAlign":"left","level":3} -->
+               <h3 class="wp-block-heading has-text-align-left">This is main heading</h3>
                <!-- /wp:heading -->
                
-               <!-- wp:heading {"level":3} -->
-               <h3 class="wp-block-heading">adfa sd fdsafa adfd</h3>
+               <!-- wp:heading {"level":1} -->
+               <h1 class="wp-block-heading">adfa sd fdsafa adfd</h1>
                <!-- /wp:heading -->
+               
+               <!-- wp:paragraph -->
+               <p class="align_left">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit 
+                  molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?
+               </p>
+               <!-- /wp:paragraph -->
 
                <!-- wp:buttons -->
                <div class="wp-block-buttons wda_buttons">            
                   <!-- wp:button -->
-                  <div class="wp-block-button wda_button over_img"><a class="wp-block-button__link">read more</a></div>
+                  <div class="wp-block-button wda_button over_img wda_button">
+                     <a class="wp-block-button__link">read more</a>
+                  </div>
                   <!-- /wp:button -->
                </div>
                <!-- /wp:buttons -->

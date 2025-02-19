@@ -397,6 +397,9 @@ p {
    overflow-wrap: break-word;
    text-wrap: pretty;
 }
+p.align_left {
+   margin:0;
+}
 
 /* the inline text semantic elements ---------------------- */
 a {
@@ -968,6 +971,7 @@ section.darken_img_4::before, section > ul > li.darken_img_4::before {opacity:0.
 .mb_2 {margin-bottom:2rem;}
 .mb_3 {margin-bottom:3rem;}
 .p_1  {padding:1rem;}
+.p_1\.5 {padding:1.5rem;}
 .p_2  {padding:2rem;}
 .p_3  {padding:3rem;}
 .pt_1  {padding-top:1rem;}
