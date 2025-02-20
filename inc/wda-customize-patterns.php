@@ -5,6 +5,7 @@ require_once get_template_directory() . '/inc/wda-utility.php';
 // Block Patterns
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-cover-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-column-blocks.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-grid-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-gallery-block.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-image-block.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-title-lead-block.php';
@@ -68,6 +69,14 @@ class WebDevAgentPatternsCustomizer {
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
+      $wp_customize->add_section( 'wda_grid_patterns', 
+         array('title'       => __( 'WDA Grids', 'wda' ),
+               'priority'    => 20,
+               'capability'  => 'edit_theme_options',
+               'description' => __('You can customize all Wed Dev Agent Grids across the site here.', 'wda'),
+               'panel' => 'wda_patterns_panel',
+               'active_callback' => '') 
+      );
       $wp_customize->add_section( 'wda_title_lead_patterns', 
          array('title'       => __( 'WDA Title & Lead', 'wda' ),
                'priority'    => 50,
@@ -106,6 +115,7 @@ class WebDevAgentPatternsCustomizer {
       //
       wda_customize_cover_block($wp_customize);
       wda_customize_column_blocks($wp_customize);
+      wda_customize_grid_block($wp_customize);
       wda_customize_image_block($wp_customize);
       wda_customize_gallery_block($wp_customize);
       wda_customize_title_lead_block($wp_customize);
@@ -119,6 +129,7 @@ class WebDevAgentPatternsCustomizer {
    public static function wda_customizer_patterns_styles() {
       ?>
       <!-- The Web Dev Agent Patterns Customizer CSS --> 
+       <!-- to do : te-custom-patterns : replace any 'te' references -->
       <style id="te-custom-patterns" type="text/css">
       <?php 
       //
@@ -126,6 +137,7 @@ class WebDevAgentPatternsCustomizer {
       //
       wda_customize_cover_block_styles();
       wda_customize_column_blocks_styles();
+      wda_customize_grid_block_styles();
       wda_customize_image_block_styles();
       wda_customize_gallery_block_styles();
       wda_customize_title_lead_block_styles();

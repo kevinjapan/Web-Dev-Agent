@@ -9,6 +9,7 @@
 // Block Pattern Templates
 require_once get_template_directory() . '/inc/block-pattern-templates/wda-column-blocks-templates.php';
 require_once get_template_directory() . '/inc/block-pattern-templates/wda-cover-blocks-templates.php';
+require_once get_template_directory() . '/inc/block-pattern-templates/wda-grid-blocks-templates.php';
 require_once get_template_directory() . '/inc/block-pattern-templates/wda-gallery-blocks-templates.php';
 require_once get_template_directory() . '/inc/block-pattern-templates/wda-image-blocks-templates.php';
 require_once get_template_directory() . '/inc/block-pattern-templates/wda-text-blocks-templates.php';
@@ -30,6 +31,7 @@ require_once get_template_directory() . '/inc/block-pattern-templates/wda-button
 function wda_register_block_pattern_categories() { 
 	register_block_pattern_category('wda-cover-blocks', ['label' => __('Web Dev Agent Covers', 'wda')]);
 	register_block_pattern_category('wda-column-blocks', ['label' => __('Web Dev Agent Columns', 'wda')]);  
+	register_block_pattern_category('wda-grid-blocks', ['label' => __('Web Dev Agent Grids', 'wda')]);  
 	register_block_pattern_category('wda-texts', ['label' => __('Web Dev Agent Texts', 'wda')]); 
 	register_block_pattern_category('wda-images', ['label' => __('Web Dev Agent Images', 'wda')]); 
 	register_block_pattern_category('wda-buttons', ['label' => __('Web Dev Agent Buttons', 'wda')]);   
@@ -49,6 +51,9 @@ function wda_register_block_patterns() {
 
    // Column Blocks Templates
    wda_register_column_blocks_templates($site_uri);
+   
+   // Grid Blocks Templates
+   wda_register_grid_blocks_templates($site_uri);
 
    // Title & Lead Blocks Templates
    wda_register_title_lead_blocks_templates($site_uri);

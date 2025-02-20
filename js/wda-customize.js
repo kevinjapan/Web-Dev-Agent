@@ -6,7 +6,7 @@
 (function($) {
 
    // Site
-   //
+   // to do : replace evolutiondesuka refs : rollout
 	wp.customize('blogname', function(setting) {
 		setting.bind(function(value) {
 			$('.front_page.cover_block h1').text(value);
@@ -84,6 +84,59 @@
    });
 
  
+   // Grid Block
+   // to do : review : 'vh'/'vw' for margins? - how about 'rem' and make it standard across all dimensions..?
+   // to do : eg '.wda-grid > div' & '.wda-grid:not(:has(div))' are not working :  WP injects inner__container..
+   // container rules
+   wp.customize('wda_grid_x_margins',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 25) value = 25;
+         $('.wda-grid').css({"margin-left":value + 'vw',"margin-right":value + 'vw'}); 
+      });
+   });
+   wp.customize('wda_grid_y_margins',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 25) value = 25;
+         $('.wda-grid').css({"margin-top":value + 'vh',"margin-bottom":value + 'vh'}); 
+      });
+   });
+   // grid rules
+   // to do : bug : if go to zero, loses render completely in editor
+   wp.customize('wda_grid_gap',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 25) value = 25;
+         $('.wda-grid > div').css({"gap":value + 'vh'}); 
+      });
+   });
+   // to do : alternative not working?
+   wp.customize('wda_grid_gap',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 25) value = 25;
+         $('.wda-grid:not(:has(div))').css({"gap":value + 'vh'});
+      });
+   });
+   wp.customize('wda_grid_gap',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 25) value = 25;
+         $('.wda-grid > div').css({"grid-template-columns":value + ''}); 
+      });
+   });
+   // to do : working?
+   wp.customize('wda_grid_template_cols',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 10) value = 10;
+         $('.wda-grid:not(:has(div))').css({"grid-template-columns":'repeat(' + value + ',minmax(100px,1fr))' + ''}); 
+      });
+   });
+
+
+
    // wda text blocks
    //
    wp.customize('wda_title_lead_x_padding', function(setting) {

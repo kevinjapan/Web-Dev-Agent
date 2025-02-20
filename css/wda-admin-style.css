@@ -33,3 +33,31 @@ input.wda_input {
 input.wda_checkbox {
    visibility:visible;
 }
+
+
+/* to do : none of these are getting through.. - how to get admin stylesheets effective in page editor?
+
+*/
+.wda-grid {
+   border:solid 4px navy !important;
+}
+
+img {
+   border:solid 3px yellow !important;
+}
+/* we allow for WP injecting an inner container div w/ redundancy 
+to do : duplicated from wda.css ? */
+
+/* .wda-grid:not(:has(div)),
+.wda-grid > div {
+   display:grid !important;
+   grid-template-columns:1fr 1fr 1fr !important;
+   justify-content:center !important;
+   align-items:center !important;
+   container:unset !important;
+   border:solid 4px orange;
+}  */
+.display_block {
+   display:block;
+}
+

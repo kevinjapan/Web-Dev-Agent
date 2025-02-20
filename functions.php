@@ -22,6 +22,7 @@ function load_stylesheets() {
    wp_enqueue_style('wda_stylesheet');
    wp_register_style('outline',get_template_directory_uri() . '/css/outline.css',array(),1,'all');
    wp_enqueue_style('outline');
+
    // to do : remove depr outline files
    // wp_register_style('outline_custom_props',get_template_directory_uri() . '/css/outline-custom-props.css',array(),1,'all');
    // wp_enqueue_style('outline_custom_props');
@@ -38,6 +39,10 @@ function wda_enqueue_custom_admin_style($hook) {
    if ('post.php' === $hook ||  'post-new.php' === $hook || 'site-editor.php' === $hook) {
       wp_register_style('outline',get_template_directory_uri() . '/css/outline.css',array(),1,'all');
       wp_enqueue_style('outline');
+      
+      wp_register_style('wda_admin_stylesheet',get_template_directory_uri() . '/css/wda-admin-style.css',array(),1,'all');
+      wp_enqueue_style('wda_admin_stylesheet');
+
       // wp_register_style('outline_custom_props',get_template_directory_uri() . '/css/outline-custom-props.css',array(),1,'all');
       // wp_enqueue_style('outline_custom_props');
       // wp_register_style('outline_layouts',get_template_directory_uri() . '/css/outline-layouts.css',array(),1,'all');

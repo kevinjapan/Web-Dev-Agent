@@ -146,3 +146,16 @@ div.wda_buttons {
 div.wda_button a {
    border-radius:.75rem;
 }
+/* we allow for WP injecting an inner container div w/ redundancy */
+.wda-grid:not(:has(div)),
+.wda-grid > div {
+   display:grid;
+   /* to do : make grid-template-columns configurable in customizer */
+   grid-template-columns:1fr 1fr 1fr;
+   justify-content:center;
+   align-items:center;
+   container:unset;
+} 
+.display_block {
+   display:block;
+}
