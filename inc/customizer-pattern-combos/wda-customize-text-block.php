@@ -6,14 +6,16 @@ function wda_customize_text_block($wp_customize) {
    //
    // text block pattern   
    //  
-   $wp_customize->add_setting( 'wda_text_x_padding',
+   $wp_customize->add_setting(
+      'wda_text_x_padding',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_text_x_padding', 
+   $wp_customize->add_control(
+      'wda_text_x_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_text_patterns',
@@ -23,14 +25,16 @@ function wda_customize_text_block($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
    );
 
-   $wp_customize->add_setting( 'wda_text_y_margins',
+   $wp_customize->add_setting(
+      'wda_text_y_margins',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_text_y_margins', 
+   $wp_customize->add_control(
+      'wda_text_y_margins', 
       array('type' => 'number',
             'priority' => 11,
             'section' => 'wda_text_patterns',

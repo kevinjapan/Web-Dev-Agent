@@ -7,14 +7,16 @@ function wda_customize_gallery_block($wp_customize) {
    // te-gallery block pattern : 
    // wrap wp-block-image to enable our margin and padding applied across all gallery blocks 
    //
-   $wp_customize->add_setting( 'wda_gallery_x_padding',
+   $wp_customize->add_setting(
+      'wda_gallery_x_padding',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_gallery_x_padding', 
+   $wp_customize->add_control(
+      'wda_gallery_x_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_image_patterns',
@@ -24,14 +26,16 @@ function wda_customize_gallery_block($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
-   $wp_customize->add_setting( 'wda_gallery_y_margins',
+   $wp_customize->add_setting(
+      'wda_gallery_y_margins',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_gallery_y_margins', 
+   $wp_customize->add_control(
+      'wda_gallery_y_margins', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_image_patterns',

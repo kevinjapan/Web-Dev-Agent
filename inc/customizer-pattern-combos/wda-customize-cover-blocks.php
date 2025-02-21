@@ -1,20 +1,22 @@
 <?php
 
-
+// to do : want 'combo' in these filenames : rollout
 
 function wda_customize_cover_block($wp_customize) {
 
    
    // Hero Cover Block Patterns
-   //
-   $wp_customize->add_setting( 'wda_hero_v_align',
+   // to do : not 'wda_sanitize_number_range'
+   $wp_customize->add_setting(
+      'wda_hero_v_align',
       array('default'    => 'center', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_hero_v_align', 
+   $wp_customize->add_control(
+      'wda_hero_v_align', 
       array('type' => 'select',
             'priority' => 10,
             'section' => 'wda_hero_patterns',
@@ -26,14 +28,16 @@ function wda_customize_cover_block($wp_customize) {
                'flex-end' => 'Bottom',
             ))
    );
-   $wp_customize->add_setting( 'wda_hero_x_height',
+   $wp_customize->add_setting(
+      'wda_hero_x_height',
       array('default'    => '100', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_hero_x_height', 
+   $wp_customize->add_control(
+      'wda_hero_x_height', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_cover_patterns',
@@ -41,14 +45,16 @@ function wda_customize_cover_block($wp_customize) {
             'description' => __( '% height for Hero Covers.','wda'),
             'input_attrs' => array( 'min' => 50, 'max' => 100, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
-   $wp_customize->add_setting( 'wda_hero_bottom_margin',
+   $wp_customize->add_setting(
+      'wda_hero_bottom_margin',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_hero_bottom_margin', 
+   $wp_customize->add_control(
+      'wda_hero_bottom_margin', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_cover_patterns',
@@ -62,14 +68,16 @@ function wda_customize_cover_block($wp_customize) {
    // 
    // cover block patterns
    //
-   $wp_customize->add_setting( 'wda_cover_x_width',
+   $wp_customize->add_setting(
+      'wda_cover_x_width',
       array('default'    => '100', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_cover_x_width', 
+   $wp_customize->add_control(
+      'wda_cover_x_width', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_cover_patterns',
@@ -79,14 +87,16 @@ function wda_customize_cover_block($wp_customize) {
             'input_attrs' => array( 'min' => 60, 'max' => 100, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
-   $wp_customize->add_setting( 'wda_cover_y_margins',
+   $wp_customize->add_setting(
+      'wda_cover_y_margins',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_cover_y_margins', 
+   $wp_customize->add_control(
+      'wda_cover_y_margins', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_cover_patterns',

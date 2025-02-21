@@ -7,14 +7,16 @@
 function wda_customize_grid_block($wp_customize) {
 
    // X-margins
-   $wp_customize->add_setting( 'wda_grid_x_margins',
+   $wp_customize->add_setting(
+      'wda_grid_x_margins',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_grid_x_margins', 
+   $wp_customize->add_control(
+      'wda_grid_x_margins', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
@@ -25,14 +27,16 @@ function wda_customize_grid_block($wp_customize) {
    );
 
    // Y-margins
-   $wp_customize->add_setting( 'wda_grid_y_margins',
+   $wp_customize->add_setting(
+      'wda_grid_y_margins',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_grid_y_margins', 
+   $wp_customize->add_control(
+      'wda_grid_y_margins', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
@@ -44,14 +48,16 @@ function wda_customize_grid_block($wp_customize) {
    
 
    // Grid Gap
-   $wp_customize->add_setting( 'wda_grid_gap',
+   $wp_customize->add_setting(
+      'wda_grid_gap',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_grid_gap', 
+   $wp_customize->add_control(
+      'wda_grid_gap', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
@@ -62,14 +68,16 @@ function wda_customize_grid_block($wp_customize) {
    );
 
    // Grid Template Columns
-   $wp_customize->add_setting( 'wda_grid_template_cols',
+   $wp_customize->add_setting(
+      'wda_grid_template_cols',
    array('default'    => '0', 
          'type'       => 'theme_mod',
          'capability' => 'edit_theme_options',
          'transport'  => 'postMessage',
          'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_grid_template_cols', 
+   $wp_customize->add_control(
+      'wda_grid_template_cols', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
