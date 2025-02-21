@@ -1,5 +1,7 @@
 <?php
 
+// Feature Blocks [multi-columns]
+
 function wda_customize_column_blocks($wp_customize) {
 
    // future : Add bg color setting to block patterns
@@ -13,14 +15,16 @@ function wda_customize_column_blocks($wp_customize) {
    // - if we tie into customizer, we can restrict or encourage choice from site color palette.
    //   while applying across site w/ single action.
 
-   $wp_customize->add_setting( 'wda_column_x_padding',
+   $wp_customize->add_setting(
+      'wda_column_x_padding',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_column_x_padding', 
+   $wp_customize->add_control(
+      'wda_column_x_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_column_patterns',
@@ -30,14 +34,16 @@ function wda_customize_column_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
-   $wp_customize->add_setting( 'wda_column_top_padding',
+   $wp_customize->add_setting(
+      'wda_column_top_padding',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_column_top_padding', 
+   $wp_customize->add_control(
+      'wda_column_top_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_column_patterns',
@@ -47,14 +53,16 @@ function wda_customize_column_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
 
-   $wp_customize->add_setting( 'wda_column_bottom_padding',
+   $wp_customize->add_setting(
+      'wda_column_bottom_padding',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control( 'wda_column_bottom_padding', 
+   $wp_customize->add_control(
+      'wda_column_bottom_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_column_patterns',
@@ -63,6 +71,56 @@ function wda_customize_column_blocks($wp_customize) {
             'description' => __( '% bottom padding for Columns.','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
    );
+
+   // to do : not 'wda_sanitize_number_range'
+   $wp_customize->add_setting(
+      'wda_features_img_width',
+      array('default'    => '100', 
+            'type'       => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport'  => 'postMessage',
+            'sanitize_callback' => 'wda_sanitize_number_range') 
+   );
+   $wp_customize->add_control(
+      'wda_features_img_width', 
+      array('type' => 'select',
+            'priority' => 10,
+            'section' => 'wda_column_patterns',
+            'label' => __( 'Image Size','wda'),
+            'settings'   => 'wda_features_img_width', 
+            'description' => __( 'Set image size on multi-Feature Blocks.','wda'),
+            'choices' => array(
+               '100' => 'Cover (full width image)',
+               '50' => 'Small (small image)',
+               '20' => 'Icon (icon-sized image)',
+            ))
+   );
+   
+   $wp_customize->add_setting(
+      'wda_features_cta_type',
+      array('default'    => 'none', 
+            'type'       => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport'  => 'postMessage',
+            'sanitize_callback' => 'wda_sanitize_radio_buttons',) 
+   );
+   // WordPress forces 'Center' -> 'Centre' if 'UK English' set!
+   $wp_customize->add_control(
+      'wda_features_cta_type', 
+      array('type' => 'number',
+            'priority' => 12,
+            'type' => 'radio',
+            'section' => 'wda_column_patterns',
+            'label' => __( '','wda'),
+            'settings'   => 'wda_features_cta_type', 
+            'description' => __( 'Set link type.','wda'),
+            'choices' => array(
+               'none' => __( 'none' ),
+               'lightgrey' => __( 'grey' )
+            )
+      )
+   );
+
 }
 
 
@@ -70,20 +128,20 @@ function wda_customize_column_blocks_styles() {
 
    
       //
-      // te-columns
+      // te-columns  to do : remove/replace refs. to te-..
       //
       wda_generate_css_rule('.wp-block-media-text.wda-columns,.wp-block-media-text.wda-columns.has-background,.wp-block-columns.wda-columns,.wp-block-columns.wda-columns.has-background',
       ['style' => 'padding-top','setting' => 'wda_column_top_padding','prefix'  => '','postfix' => 'vh'],
       ['style' => 'padding-bottom','setting' => 'wda_column_bottom_padding','prefix'  => '','postfix' => 'vh']);
-   wda_generate_css_rule('.wp-block-media-text.wda-columns.wda-single-feature-columns,.wp-block-media-text.wda-columns.has-background,.wp-block-columns.wda-columns,.wp-block-columns.wda-columns.has-background',
-      ['style' => 'margin-top','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important'],
-      ['style' => 'margin-bottom','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important']);
-?>
+      wda_generate_css_rule('.wp-block-media-text.wda-columns.wda-single-feature-columns,.wp-block-media-text.wda-columns.has-background,.wp-block-columns.wda-columns,.wp-block-columns.wda-columns.has-background',
+         ['style' => 'margin-top','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important'],
+         ['style' => 'margin-bottom','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important']);
+      ?>
 
-<?php
-   // future : refactor : we want to prevent empty media queries but efficiently!
-   // $mod = get_theme_mod('wda_column_x_padding');
-   // if ( ! empty($mod) || $mod === "0" ) {?>
+      <?php
+      // future : refactor : we want to prevent empty media queries but efficiently!
+      // $mod = get_theme_mod('wda_column_x_padding');
+      // if ( ! empty($mod) || $mod === "0" ) {?>
       @media screen and (min-width: 768px) { 
          <?php
             wda_generate_css_rule(
@@ -92,10 +150,24 @@ function wda_customize_column_blocks_styles() {
                .wp-block-columns.wda-columns,
                .wp-block-columns.wda-columns.has-background',
                ['style' => 'padding-left','setting' => 'wda_column_x_padding','prefix'  => '','postfix' => '%'],
-               ['style' => 'padding-right','setting' => 'wda_column_x_padding','prefix'  => '','postfix' => '%']);
+               ['style' => 'padding-right','setting' => 'wda_column_x_padding','prefix'  => '','postfix' => '%']
+            );
+
             wda_generate_css_rule('.wda-cover-columns, .wda-cover-columns.has-background',
                ['style' => 'padding-left','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%'],
-               ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']);
+               ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']
+            );
+
+            wda_generate_css_rule('.wda-two-feature-columns img,.wda-three-feature-columns img,.wda-six-feature-columns img',
+               ['style' => 'width','setting' => 'wda_features_img_width','prefix'  => '','postfix' => '%']
+            );
+
+            // to do : wda_features_cta_type - rules to erode the button styling and re-enable as simple link
+            // if we can access the value, then if==='link', then we can add this rule:
+            wda_generate_css_rule('.wda_feature_btns',
+               ['style' => 'background','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%'],
+            );
+            
          ?>
       }
    <?php

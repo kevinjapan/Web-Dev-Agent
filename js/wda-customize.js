@@ -59,8 +59,8 @@
    });
 
 
-   // wda columns blocks
-   //
+   // WDA Feature Blocks
+   
    wp.customize('wda_column_x_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -82,6 +82,19 @@
          $('.wda-columns, .wda-columns.has-background').css('padding-bottom', value + 'vh');
       });
    });
+   // ----------------------------------------------------------------------------------------
+   // ----------------------------------------------------------------------------------------
+   // to do : not working:
+   wp.customize('wda_features_img_width', function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 100) value = 100;
+         $('.wda-two-feature-columns img, .wda-three-feature-columns img,.wda-six-feature-columns img').css('width', value + '%');
+      });
+   });
+   // ----------------------------------------------------------------------------------------
+   // ----------------------------------------------------------------------------------------
+   
 
  
    // Grid Block

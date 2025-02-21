@@ -63,7 +63,7 @@ li.menu-item.current-menu-item > a {
 
 
 /* 
-   Single Feature Columns
+   Single Feature Blocks [using WP Columns]
    -------------------------------------------------------------
    We build from WordPress media-text which only stacks at v. sm
    We want it consistent w/ two-feature-columns breakpoints etc.
@@ -74,6 +74,14 @@ li.menu-item.current-menu-item > a {
 */
 .wda-single-feature-columns {
    display:unset;
+}
+.wda-columns {
+   border:solid 3px navy;
+}
+.wda_inner_feature_block {
+   padding:.5rem;
+   border:solid 1px lightgrey;
+   border-radius:.5rem;
 }
 /*
    to retain pattern block integrity, we want img to keep height
@@ -146,6 +154,12 @@ div.wda_buttons {
 div.wda_button a {
    border-radius:.75rem;
 }
+
+/* to do : grid is not responsive - overlapping.. wrapping late. */
+div.wda-grid {
+   max-width:100%;
+   border:solid 1px blue;
+}
 /* we allow for WP injecting an inner container div w/ redundancy */
 .wda-grid:not(:has(div)),
 .wda-grid > div {
@@ -154,8 +168,17 @@ div.wda_button a {
    grid-template-columns:1fr 1fr 1fr;
    justify-content:center;
    align-items:center;
-   container:unset;
+   /* container:unset; */
 } 
 .display_block {
    display:block;
+}
+/* 
+Feature Blocks 
+
+*/
+
+/* left-align content */
+.wda-two-feature-columns img, .wda-three-feature-columns img, .wda-six-feature-columns img {
+   margin:0 auto 0 0;
 }

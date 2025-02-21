@@ -1,17 +1,22 @@
 <?php
 
+
+// Feature Blocks [multi-columns]
 // Register Theme Block Pattern Templates
-//
+
+
 function wda_register_column_blocks_templates($site_uri) {
 
    // Column Block Templates
    // register single feature columns block / single feature block template
    // we use wp-block-media-text instead of wp-columms since it already has desired styling in two column pattern w/out additionals
    
+
    // Single Feature Column Block Template
+
    register_block_pattern('wda-single-feature-column', [
-      'title' => __('Single Feature Column', 'wda'),
-      'description' => _x( 'Single Feature Column.', 'A Column block with a single feature.', 'wda' ),            
+      'title' => __('Single Feature Block', 'wda'),
+      'description' => _x( 'Single Feature Block.', 'A Feature Block with a single feature.', 'wda' ),            
       'keywords' => ['single,column'],
       'categories' => ['wda-column-blocks'],
       'viewportWidth' => 1000,
@@ -26,7 +31,7 @@ function wda_register_column_blocks_templates($site_uri) {
             <div class="wp-block-media-text__content">
 
                <!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
-                  <p class="has-large-font-size">Introducing the single feature column.</p>
+                  <p class="has-large-font-size">Introducing the single Feature Block.</p>
                <!-- /wp:paragraph -->
 
                <!-- wp:paragraph -->
@@ -34,7 +39,7 @@ function wda_register_column_blocks_templates($site_uri) {
                   <br>- Appearance 
                   <br>- - Customize
                   <br>- - - Web Dev Agent Block Patterns 
-                  <br>- - - - Web Dev Agent Columns</p>
+                  <br>- - - - Web Dev Agent Feature Blocks</p>
                <!-- /wp:paragraph -->
 
                <!-- wp:buttons -->
@@ -50,10 +55,12 @@ function wda_register_column_blocks_templates($site_uri) {
          <!-- /wp:media-text -->'
 	]);
 
+
    // Two Feature Columns Block Template
+
 	register_block_pattern('wda-two-feature-columns', [
-		'title' => __('Two Feature Columns', 'wda'),
-      'description' => _x( 'Two Feature Clolumns.', 'A Columns block with two features.', 'wda' ),            
+		'title' => __('Two Column Feature Block', 'wda'),
+      'description' => _x( 'Two Column Feature Block.', 'A two Column block with two Block Features.', 'wda' ),            
 		'keywords' => ['two,columns'],
 		'categories' => ['wda-column-blocks'],
 		'viewportWidth' => 1000,
@@ -66,10 +73,12 @@ function wda_register_column_blocks_templates($site_uri) {
             <!-- /wp:columns -->',
 	]);
 
+
    // Three Feature Columns Block Template
+
 	register_block_pattern('wda-three-feature-columns', [
-		'title' => __('Three Feature Columns', 'wda'),
-      'description' => _x( 'Three Feature Columns.', 'A Columns block with three features.', 'wda' ),            
+		'title' => __('Three Column Feature Block', 'wda'),
+      'description' => _x( 'Three Column Feature Block.', 'A three column block with three Feature Blocks.', 'wda' ),            
 		'keywords' => ['three,keywords'],
 		'categories' => ['wda-column-blocks'],
 		'viewportWidth' => 1000,
@@ -83,10 +92,12 @@ function wda_register_column_blocks_templates($site_uri) {
             <!-- /wp:columns -->',
 	]);
 
+
    // Six Feature Columns Block Template
+
    register_block_pattern('wda-six-feature-column', [
-      'title' => __('Six Feature Columns', 'wda'),
-      'description' => _x( 'Six Feature Columns.', 'A Columns block with six features.', 'wda' ),            
+      'title' => __('Six Column Feature Block', 'wda'),
+      'description' => _x( 'Six Column Feature Block.', 'A six column block with six Feature Blocks.', 'wda' ),            
       'keywords' => ['six,columns'],
       'categories' => ['wda-column-blocks'],
       'viewportWidth' => 1000,
@@ -112,8 +123,8 @@ function wda_single_col_template($img_only = false) {
    
    $site_uri = get_template_directory_uri();
 
-   $template = '<!-- wp:column {"className":"wda_center_content"} -->
-                  <div class="wp-block-column wda_center_content">
+   $template = '<!-- wp:column {"className":"wda_inner_feature_block"} -->
+                  <div class="wp-block-column wda_inner_feature_block">
 
                <!-- wp:image {"sizeSlug":"medium","linkDestination":"none","className":"fill_width"} -->
                <figure class="wp-block-image size-medium fill_width">
@@ -123,16 +134,16 @@ function wda_single_col_template($img_only = false) {
 
    if(!$img_only) {
    
-      $template .=  '<!-- wp:heading -->
-                     <h2 class="has-text-align-center">column</h2>
+      $template .=  '<!-- wp:heading {"level":4} -->
+                     <h4 class="has-text-align-left">Feature Block</h4>
                      <!-- /wp:heading -->
 
-                     <!-- wp:paragraph {"align":"center"} -->
-                     <p class="has-text-align-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
+                     <!-- wp:paragraph {"align":"left"} -->
+                     <p class="has-text-align-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
                      <!-- /wp:paragraph -->
 
                      <!-- wp:buttons -->
-                     <div class="wp-block-buttons wda_buttons">            
+                     <div class="wp-block-buttons wda_buttons wda_feature_btns">            
                         <!-- wp:button -->
                         <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
                         <!-- /wp:button -->

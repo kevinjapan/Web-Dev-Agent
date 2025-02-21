@@ -62,7 +62,7 @@ class WebDevAgentPatternsCustomizer {
             'active_callback' => '') 
       );  
       $wp_customize->add_section( 'wda_column_patterns', 
-         array('title'       => __( 'WDA Columns', 'wda' ),
+         array('title'       => __( 'WDA Feature Blocks', 'wda' ),
                'priority'    => 20,
                'capability'  => 'edit_theme_options',
                'description' => __('You can customize all Wed Dev Agent Columns across the site here.', 'wda'),
