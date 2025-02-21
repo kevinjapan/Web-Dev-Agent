@@ -23,7 +23,7 @@ function wda_customize_grid_block($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_grid_x_margins', 
             'description' => __( '% margin either side of Grids.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 1 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    );
 
    // Y-margins
@@ -43,7 +43,7 @@ function wda_customize_grid_block($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_grid_y_margins', 
             'description' => __( '% margin above and below Grids.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 1 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    );
    
 
@@ -64,7 +64,7 @@ function wda_customize_grid_block($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_grid_gap', 
             'description' => __( 'rem gap between Grid elements.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 80px;', 'step'	=> .5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
    );
 
    // Grid Template Columns
@@ -84,7 +84,7 @@ function wda_customize_grid_block($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_grid_template_cols', 
             'description' => __( 'number of Grid columns.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 80px;', 'step'	=> 1 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    );
 
 }

@@ -166,34 +166,38 @@
          $('.wda-title-lead__title').css('padding-bottom', value + 'vh');
       });
    });
-   wp.customize('wda_title_lead_top_padding', function(setting) {
+   wp.customize('wda_title_lead_y_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 25) value = 25;
-         $('.wda-title-lead').css('padding-top', value + 'vh');
+         $('.wda-title-lead').css('padding-top', value + 'vh').css('padding-bottom', value + 'vh');
       });
    });
-   wp.customize('wda_title_lead_bottom_padding', function(setting) {
+   // to do : review - we limit functionality - eg you cannot do top and bottom separately,
+   //         rather you can edit y margins as a pair
+   //         this constrains the no. of ctrls in customizer (a good thing)
+   //         and we can still address indvdl blocks w/ 'advanced' css rules on the block itself.
+   // wp.customize('wda_title_lead_bottom_padding', function(setting) {
+   //    setting.bind( function(value) {
+   //       if(value < 0) value = 0;
+   //       if(value > 25) value = 25;
+   //       $('.wda-title-lead').css('padding-bottom', value + 'vh');
+   //    });
+   // });
+   wp.customize('wda_title_lead_y_margin', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 25) value = 25;
-         $('.wda-title-lead').css('padding-bottom', value + 'vh');
+         $('.wda-title-lead').css('margin-top', value + 'vh').css('margin-bottom', value + 'vh');
       });
    });
-   wp.customize('wda_title_lead_top_margin', function(setting) {
-      setting.bind( function(value) {
-         if(value < 0) value = 0;
-         if(value > 25) value = 25;
-         $('.wda-title-lead').css('margin-top', value + 'vh');
-      });
-   });
-   wp.customize('wda_title_lead_bottom_margin', function(setting) {
-      setting.bind( function(value) {
-         if(value < 0) value = 0;
-         if(value > 25) value = 25;
-         $('.wda-title-lead').css('margin-bottom', value + 'vh');
-      });
-   });
+   // wp.customize('wda_title_lead_bottom_margin', function(setting) {
+   //    setting.bind( function(value) {
+   //       if(value < 0) value = 0;
+   //       if(value > 25) value = 25;
+   //       $('.wda-title-lead').css('margin-bottom', value + 'vh');
+   //    });
+   // });
    wp.customize('wda_text_x_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;

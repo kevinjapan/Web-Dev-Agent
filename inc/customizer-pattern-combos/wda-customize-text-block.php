@@ -22,7 +22,7 @@ function wda_customize_text_block($wp_customize) {
             'label' => __( 'Simple Text','wda'),
             'settings'   => 'wda_text_x_padding', 
             'description' => __( '% horizontal padding for Texts.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 ))
    );
 
    $wp_customize->add_setting(
@@ -41,7 +41,7 @@ function wda_customize_text_block($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_text_y_margins', 
             'description' => __( '% vertical spacing for Texts.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
    $wp_customize->add_setting('wda_text_text_align',

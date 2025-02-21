@@ -22,7 +22,7 @@ function wda_customize_image_block($wp_customize) {
             'label' => __( 'Images','wda'),
             'settings'   => 'wda_image_x_padding', 
             'description' => __( '% horizontal padding for Images.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
    $wp_customize->add_setting(
@@ -41,7 +41,7 @@ function wda_customize_image_block($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_image_y_margins', 
             'description' => __( '% vertical spacing for Images.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
 

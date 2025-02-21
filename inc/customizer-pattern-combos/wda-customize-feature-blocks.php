@@ -31,7 +31,7 @@ function wda_customize_feature_blocks($wp_customize) {
             'label' => __( 'Padding','wda'),
             'settings'   => 'wda_features_x_padding', 
             'description' => __( '% horizontal padding for Features.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
    $wp_customize->add_setting(
@@ -50,7 +50,7 @@ function wda_customize_feature_blocks($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_features_top_padding', 
             'description' => __( '% top padding for Features.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
    $wp_customize->add_setting(
@@ -69,7 +69,7 @@ function wda_customize_feature_blocks($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_features_bottom_padding', 
             'description' => __( '% bottom padding for Features.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
    // to do : not 'wda_sanitize_number_range'

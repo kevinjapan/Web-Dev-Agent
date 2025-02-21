@@ -23,7 +23,7 @@ function wda_customize_gallery_block($wp_customize) {
             'label' => __( 'Galleries','wda'),
             'settings'   => 'wda_gallery_x_padding', 
             'description' => __( '% horizontal padding for Galleries.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
    $wp_customize->add_setting(
@@ -42,7 +42,7 @@ function wda_customize_gallery_block($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_gallery_y_margins', 
             'description' => __( '% vertical spacing for Galleries.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 ))
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 ))
    );
 
 

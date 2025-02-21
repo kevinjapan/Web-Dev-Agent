@@ -43,7 +43,7 @@ function wda_customize_cover_block($wp_customize) {
             'section' => 'wda_cover_patterns',
             'label' => __( 'Hero Cover Blocks','wda'), 
             'description' => __( '% height for Hero Covers.','wda'),
-            'input_attrs' => array( 'min' => 50, 'max' => 100, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 50, 'max' => 100, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
    $wp_customize->add_setting(
       'wda_hero_bottom_margin',
@@ -60,7 +60,7 @@ function wda_customize_cover_block($wp_customize) {
             'section' => 'wda_cover_patterns',
             'label' => __( '','wda'),
             'description' => __( '% margin below Hero Covers.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
 
@@ -84,7 +84,7 @@ function wda_customize_cover_block($wp_customize) {
             'label' => __( 'Covers','wda'),
             'settings'   => 'wda_cover_x_width', 
             'description' => __( '% width for Covers.','wda'),
-            'input_attrs' => array( 'min' => 60, 'max' => 100, 'style' => 'width: 80px;', 'step'	=> 5 )) 
+            'input_attrs' => array( 'min' => 60, 'max' => 100, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    );
 
    $wp_customize->add_setting(
@@ -103,7 +103,7 @@ function wda_customize_cover_block($wp_customize) {
             'label' => __( '','wda'),
             'settings'   => 'wda_cover_y_margins', 
             'description' => __( '% above and below Covers.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 80px;', 'step'	=> 1 )) 
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    );
 }
 
