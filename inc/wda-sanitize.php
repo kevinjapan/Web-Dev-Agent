@@ -5,12 +5,12 @@
  * @since Web Dev Agent 1.0
  */
 
-if ( ! function_exists( 'wda_sanitize_number_range' ) ) :
+if (!function_exists('wda_sanitize_number_range')) :
 
 	/*
 	 * Sanitize number range.
 	 */
-	function wda_sanitize_number_range( $input, $setting ) {
+	function wda_sanitize_number_range($input, $setting) {
 
       // ctrl permits user to enter any number - inc negatives (eg for img shifts) 
       // so we tie to min/max & capture user's intent
@@ -18,8 +18,8 @@ if ( ! function_exists( 'wda_sanitize_number_range' ) ) :
       
 		// get permitted min / max 
 		$atts = $setting->manager->get_control( $setting->id )->input_attrs;
-		$min = ( isset( $atts['min'] ) ? $atts['min'] : $input );
-		$max = ( isset( $atts['max'] ) ? $atts['max'] : $input );
+		$min = (isset( $atts['min']) ? $atts['min'] : $input);
+		$max = (isset( $atts['max']) ? $atts['max'] : $input);
 
 		// return if valid - otherwise return closest in permitted range
       if($input > $max) $input = $max;

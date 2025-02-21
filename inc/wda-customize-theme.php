@@ -24,20 +24,20 @@ class WebDevAgentThemeCustomizer {
 
    public static function register ( $wp_customize ) {
 
-      $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-      $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+      $wp_customize->get_setting('blogname')->transport = 'postMessage';
+      $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
 
       //
       // Wed Dev Agent Theme panel
       // to do : this panel not appearing? no sections content?
       //
-      if ( class_exists( 'WP_Customize_Panel' ) ) {
-         if ( ! $wp_customize->get_panel( 'wda_layout_panel' ) ) {
+      if ( class_exists('WP_Customize_Panel')) {
+         if ( ! $wp_customize->get_panel('wda_layout_panel') ) {
             $wp_customize->add_panel(
                'wda_layout_panel',
                array(
                   'priority' => 25,
-                  'title' => esc_html__( 'Wed Dev Agent','wda'),
+                  'title' => esc_html__('Wed Dev Agent','wda'),
                   'description' => esc_html__('Customize your Wed Dev Agent theme here.', 'wda'))
             );
          }
@@ -46,8 +46,9 @@ class WebDevAgentThemeCustomizer {
 
       // Theme Customizer Sections
       //
-      $wp_customize->add_section( 'wda_typography', 
-         array('title'       => esc_html( 'Typography', 'wda' ),
+      $wp_customize->add_section(
+         'wda_typography', 
+         array('title'       => esc_html('Typography', 'wda'),
                'priority'    => 10,
                'capability'  => 'edit_theme_options',
                'description' => esc_html('You can assign any custom font families you have included via a font plugin here.', 'wda'),
@@ -55,15 +56,17 @@ class WebDevAgentThemeCustomizer {
                'active_callback' => ''
          ) 
       );
-      $wp_customize->add_section( 'wda_posts', 
-         array('title'       => esc_html__( 'Posts', 'wda' ),
+      $wp_customize->add_section(
+         'wda_posts', 
+         array('title'       => esc_html__('Posts', 'wda'),
                'priority'    => 52,
                'capability'  => 'edit_theme_options',
                'description' => esc_html__('Customize the layout of your posts.', 'wda'),
                'panel' => 'wda_layout_panel') 
       );
-      $wp_customize->add_section( 'wda_copyright', 
-         array('title'       => esc_html__( 'Copyright', 'wda' ),
+      $wp_customize->add_section(
+         'wda_copyright', 
+         array('title'       => esc_html__('Copyright', 'wda'),
                'priority'    => 52,
                'capability'  => 'edit_theme_options',
                'description' => esc_html__('You can customize the site\'s Copyright Footer Notice here.', 'wda'),
@@ -108,10 +111,10 @@ class WebDevAgentThemeCustomizer {
 
 // setup theme customizer settings and controls
 //
-add_action( 'customize_register', array( 'WebDevAgentThemeCustomizer' , 'register' ) );
+add_action( 'customize_register', array('WebDevAgentThemeCustomizer', 'register' ) );
 
 
 // output custom css to frontend
 //
-add_action('wp_head', array( 'WebDevAgentThemeCustomizer' , 'wda_customizer_theme_styles' ) );
+add_action('wp_head', array('WebDevAgentThemeCustomizer', 'wda_customizer_theme_styles' ) );
 

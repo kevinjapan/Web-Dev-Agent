@@ -61,25 +61,25 @@
 
    // WDA Feature Blocks
    
-   wp.customize('wda_column_x_padding', function(setting) {
+   wp.customize('wda_features_x_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 25) value = 25;
-         $('.wda-columns').css({"padding-left":value + '%',"padding-right":value + '%'}); 
+         $('.wda-features').css({"padding-left":value + '%',"padding-right":value + '%'}); 
       });
    });
-   wp.customize('wda_column_top_padding', function(setting) {
+   wp.customize('wda_features_top_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 25) value = 25;
-         $('.wda-columns, .wda-columns.has-background').css('padding-top', value + 'vh'); 
+         $('.wda-features, .wda-features.has-background').css('padding-top', value + 'vh'); 
       });
    });
-   wp.customize('wda_column_bottom_padding', function(setting) {
+   wp.customize('wda_features_bottom_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 25) value = 25;
-         $('.wda-columns, .wda-columns.has-background').css('padding-bottom', value + 'vh');
+         $('.wda-features, .wda-features.has-background').css('padding-bottom', value + 'vh');
       });
    });
    // ----------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 100) value = 100;
-         $('.wda-two-feature-columns img, .wda-three-feature-columns img,.wda-six-feature-columns img').css('width', value + '%');
+         $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-featuress img').css('width', value + '%');
       });
    });
    // ----------------------------------------------------------------------------------------

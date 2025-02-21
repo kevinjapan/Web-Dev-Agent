@@ -7,7 +7,7 @@
  */
 
 // Block Pattern Templates
-require_once get_template_directory() . '/inc/block-pattern-templates/wda-column-blocks-templates.php';
+require_once get_template_directory() . '/inc/block-pattern-templates/wda-feature-blocks-templates.php';
 require_once get_template_directory() . '/inc/block-pattern-templates/wda-cover-blocks-templates.php';
 require_once get_template_directory() . '/inc/block-pattern-templates/wda-grid-blocks-templates.php';
 require_once get_template_directory() . '/inc/block-pattern-templates/wda-gallery-blocks-templates.php';
@@ -30,7 +30,7 @@ require_once get_template_directory() . '/inc/block-pattern-templates/wda-button
 //
 function wda_register_block_pattern_categories() { 
 	register_block_pattern_category('wda-cover-blocks', ['label' => __('WDA Cover Blocks', 'wda')]);
-	register_block_pattern_category('wda-column-blocks', ['label' => __('WDA Feature Blocks', 'wda')]);  
+	register_block_pattern_category('wda-features-blocks', ['label' => __('WDA Feature Blocks', 'wda')]);  
 	register_block_pattern_category('wda-grid-blocks', ['label' => __('WDA Grid Blocks', 'wda')]);  
 	register_block_pattern_category('wda-texts', ['label' => __('WDA Text Blocks', 'wda')]); 
 	register_block_pattern_category('wda-images', ['label' => __('WDA Image Blocks', 'wda')]); 

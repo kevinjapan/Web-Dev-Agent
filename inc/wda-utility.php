@@ -7,19 +7,19 @@
 
 
 
-if ( ! function_exists( 'wda_is_general_page' ) ) :
+if (!function_exists('wda_is_general_page')) :
    function wda_is_general_page() {
       return !is_front_page() && !is_category('blog');
    }
 endif;
 
-if ( ! function_exists( 'wda_sanitize_checkbox' ) ) :
+if (!function_exists('wda_sanitize_checkbox')) :
    function wda_sanitize_checkbox( $checked ) {
       return ((isset($checked) && true === $checked) ? true : false);
    }
 endif;
 
-if ( ! function_exists( 'wda_is_blog_archive_page' ) ) :
+if (!function_exists('wda_is_blog_archive_page')) :
    function wda_is_blog_archive_page() {
       return is_category('blog');
    }
@@ -30,7 +30,7 @@ endif;
 // Generate front-end css selector with rule(s) from our theme mods.
 // These rules will not appear in the front-end until you have 'published' in the Customizer.
 //
-if ( ! function_exists( 'wda_generate_css_rule' ) ) :
+if (!function_exists('wda_generate_css_rule')) :
 
    function wda_generate_css_rule($selector,...$rules) {
 
@@ -60,9 +60,9 @@ endif;
 // Generate front-end css selector with rule(s) from our theme mods.
 // Handle complex single-properties - eg "background-position: {top 20px right -10px};"
 //
-if ( ! function_exists( 'wda_generate_complex_css_rule' ) ) :
+if (!function_exists('wda_generate_complex_css_rule')) :
 
-   function wda_generate_complex_css_rule( $selector, $style, $mod_names, $prefixes=array(), $postfixes=array() ) {
+   function wda_generate_complex_css_rule($selector, $style, $mod_names, $prefixes=array(), $postfixes=array()) {
       $mod = null;
       $index = 0;
       if(is_array($mod_names)) {

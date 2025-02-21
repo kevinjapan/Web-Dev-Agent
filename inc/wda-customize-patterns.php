@@ -4,7 +4,7 @@ require_once get_template_directory() . '/inc/wda-utility.php';
 
 // Block Patterns
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-cover-blocks.php';
-require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-column-blocks.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-feature-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-grid-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-gallery-block.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-image-block.php';
@@ -45,64 +45,72 @@ class WebDevAgentPatternsCustomizer {
       // Add admin panel sections for WDA patterns
       // 
       
-      $wp_customize->add_section( 'wda_hero_patterns', 
-      array('title'       => __( 'WDA Hero Cover Blocks', 'wda' ),
-            'priority'    => 10,
-            'capability'  => 'edit_theme_options',
-            'description' => __('Customize all Hero Covers site-wide.', 'wda'),
-            'panel' => 'wda_patterns_panel',
-            'active_callback' => '') 
+      $wp_customize->add_section(
+         'wda_hero_patterns', 
+         array('title'       => __('WDA Hero Cover Blocks', 'wda' ),
+               'priority'    => 10,
+               'capability'  => 'edit_theme_options',
+               'description' => __('Customize all Hero Covers site-wide.', 'wda'),
+               'panel' => 'wda_patterns_panel',
+               'active_callback' => '') 
       );   
-      $wp_customize->add_section( 'wda_cover_patterns', 
-      array('title'       => __( 'WDA Cover Blocks', 'wda' ),
-            'priority'    => 20,
-            'capability'  => 'edit_theme_options',
-            'description' => __('Customize all Covers site-wide.', 'wda'),
-            'panel' => 'wda_patterns_panel',
-            'active_callback' => '') 
+      $wp_customize->add_section( 
+         'wda_cover_patterns', 
+         array('title'       => __('WDA Cover Blocks', 'wda' ),
+               'priority'    => 20,
+               'capability'  => 'edit_theme_options',
+               'description' => __('Customize all Covers site-wide.', 'wda'),
+               'panel' => 'wda_patterns_panel',
+               'active_callback' => '') 
       );  
-      $wp_customize->add_section( 'wda_column_patterns', 
-         array('title'       => __( 'WDA Feature Blocks', 'wda' ),
+      $wp_customize->add_section(
+         'wda_features_patterns', 
+         array('title'       => __('WDA Feature Blocks', 'wda' ),
                'priority'    => 20,
                'capability'  => 'edit_theme_options',
                'description' => __('You can customize all Wed Dev Agent Columns across the site here.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
-      $wp_customize->add_section( 'wda_grid_patterns', 
-         array('title'       => __( 'WDA Grids', 'wda' ),
+      $wp_customize->add_section(
+         'wda_grid_patterns', 
+         array('title'       => __('WDA Grids', 'wda' ),
                'priority'    => 20,
                'capability'  => 'edit_theme_options',
                'description' => __('You can customize all Wed Dev Agent Grids across the site here.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
-      $wp_customize->add_section( 'wda_title_lead_patterns', 
-         array('title'       => __( 'WDA Title & Lead', 'wda' ),
+      $wp_customize->add_section(
+         'wda_title_lead_patterns', 
+         array('title'       => __('WDA Title & Lead', 'wda' ),
                'priority'    => 50,
                'capability'  => 'edit_theme_options',
                'description' => __('You can customize all Wed Dev Agent Title & Leads across the site here.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
-      $wp_customize->add_section( 'wda_text_patterns', 
-         array('title'       => __( 'WDA Texts', 'wda' ),
+      $wp_customize->add_section(
+         'wda_text_patterns', 
+         array('title'       => __('WDA Texts', 'wda' ),
                'priority'    => 50,
                'capability'  => 'edit_theme_options',
                'description' => __('You can customize all Wed Dev Agent Texts across the site here.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
-      $wp_customize->add_section( 'wda_image_patterns', 
-         array('title'       => __( 'WDA Images', 'wda' ),
+      $wp_customize->add_section(
+         'wda_image_patterns', 
+         array('title'       => __('WDA Images', 'wda' ),
                'priority'    => 60,
                'capability'  => 'edit_theme_options',
                'description' => __('You can customize all Wed Dev Agent Images and Galleries across the site here.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
-      $wp_customize->add_section( 'wda_buttons_patterns', 
-         array('title'       => __( 'WDA Buttons', 'wda' ),
+      $wp_customize->add_section(
+         'wda_buttons_patterns', 
+         array('title'       => __('WDA Buttons', 'wda' ),
                'priority'    => 70,
                'capability'  => 'edit_theme_options',
                'description' => __('You can customize all Wed Dev Agent Buttons across the site here.', 'wda'),
@@ -114,7 +122,7 @@ class WebDevAgentPatternsCustomizer {
       // Block Pattern Settings/Controls pairs
       //
       wda_customize_cover_block($wp_customize);
-      wda_customize_column_blocks($wp_customize);
+      wda_customize_feature_blocks($wp_customize);
       wda_customize_grid_block($wp_customize);
       wda_customize_image_block($wp_customize);
       wda_customize_gallery_block($wp_customize);
@@ -136,7 +144,7 @@ class WebDevAgentPatternsCustomizer {
       // Block Pattern Styles
       //
       wda_customize_cover_block_styles();
-      wda_customize_column_blocks_styles();
+      wda_customize_feature_blocks_styles();
       wda_customize_grid_block_styles();
       wda_customize_image_block_styles();
       wda_customize_gallery_block_styles();
@@ -151,9 +159,9 @@ class WebDevAgentPatternsCustomizer {
 
 
 // Register Theme Customizer Settings and Controls
-add_action( 'customize_register', array( 'WebDevAgentPatternsCustomizer' , 'register' ) );
+add_action('customize_register', array( 'WebDevAgentPatternsCustomizer', 'register'));
 
 // Output Custom Block Pattern CSS to frontend (utilising Theme Customizer Settings and Controls)
-add_action( 'wp_head', array( 'WebDevAgentPatternsCustomizer' , 'wda_customizer_patterns_styles' ) );
+add_action('wp_head', array( 'WebDevAgentPatternsCustomizer', 'wda_customizer_patterns_styles'));
 
 
