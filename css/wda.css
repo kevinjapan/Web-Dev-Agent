@@ -77,7 +77,7 @@ li.menu-item.current-menu-item > a {
    display:unset;
 }
 .wda-features {
-   border:solid 3px navy;
+   visibility:visible;
 }
 .wda_inner_feature_block {
    padding:.5rem;
@@ -159,7 +159,6 @@ div.wda_button a {
 /* to do : grid is not responsive - overlapping.. wrapping late. */
 div.wda-grid {
    max-width:100%;
-   border:solid 1px blue;
 }
 /* we allow for WP injecting an inner container div w/ redundancy */
 .wda-grid:not(:has(div)),
