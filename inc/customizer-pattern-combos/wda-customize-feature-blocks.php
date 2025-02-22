@@ -15,6 +15,18 @@ function wda_customize_feature_blocks($wp_customize) {
    // - if we tie into customizer, we can restrict or encourage choice from site color palette.
    //   while applying across site w/ single action.
 
+   
+   // to do : review - is there an existing way to add a separate label (outside add_setting/add_control) ?
+   //         - if so, use and remove this..
+   $wp_customize->add_control(new LabelCustomizerControl($wp_customize,
+      'wda_features_padding_label', 
+      array('type' => 'number',
+            'priority' => 10,
+            'section' => 'wda_features_patterns',
+            'label' => __( 'HERE IS MY OWN LABEL','wda'))
+   ));
+
+
    $wp_customize->add_setting(
       'wda_features_x_padding',
       array('default'    => '0', 
@@ -23,54 +35,35 @@ function wda_customize_feature_blocks($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_features_x_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_features_patterns',
             'label' => __( 'Padding','wda'),
             'settings'   => 'wda_features_x_padding', 
-            'description' => __( '% horizontal padding for Features.','wda'),
+            'description' => __( '% horizontal padding','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
-   );
+   ));
 
    $wp_customize->add_setting(
-      'wda_features_top_padding',
+      'wda_features_y_padding',
       array('default'    => '0', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
-      'wda_features_top_padding', 
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
+      'wda_features_y_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_features_patterns',
             'label' => __( '','wda'),
-            'settings'   => 'wda_features_top_padding', 
-            'description' => __( '% top padding for Features.','wda'),
+            'settings'   => 'wda_features_y_padding', 
+            'description' => __( '% vertical padding','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
-   );
-
-   $wp_customize->add_setting(
-      'wda_features_bottom_padding',
-      array('default'    => '0', 
-            'type'       => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport'  => 'postMessage',
-            'sanitize_callback' => 'wda_sanitize_number_range') 
-   );
-   $wp_customize->add_control(
-      'wda_features_bottom_padding', 
-      array('type' => 'number',
-            'priority' => 10,
-            'section' => 'wda_features_patterns',
-            'label' => __( '','wda'),
-            'settings'   => 'wda_features_bottom_padding', 
-            'description' => __( '% bottom padding for Features.','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
-   );
+   ));
 
    // to do : not 'wda_sanitize_number_range'
    $wp_customize->add_setting(
@@ -88,7 +81,7 @@ function wda_customize_feature_blocks($wp_customize) {
             'section' => 'wda_features_patterns',
             'label' => __( 'Image Size','wda'),
             'settings'   => 'wda_features_img_width', 
-            'description' => __( 'Set image size on multi-Feature Blocks.','wda'),
+            'description' => __( 'Set image size on multi-Feature Blocks','wda'),
             'choices' => array(
                '100' => 'Cover (full width image)',
                '50' => 'Small (small image)',
@@ -113,7 +106,7 @@ function wda_customize_feature_blocks($wp_customize) {
             'section' => 'wda_features_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_features_cta_type', 
-            'description' => __( 'Set link type.','wda'),
+            'description' => __( 'Set link type','wda'),
             'choices' => array(
                'none' => __( 'none' ),
                'lightgrey' => __( 'grey' )
@@ -131,8 +124,8 @@ function wda_customize_feature_blocks_styles() {
       // te-columns  to do : remove/replace refs. to te-..
       //
       wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
-      ['style' => 'padding-top','setting' => 'wda_features_top_padding','prefix'  => '','postfix' => 'vh'],
-      ['style' => 'padding-bottom','setting' => 'wda_features_bottom_padding','prefix'  => '','postfix' => 'vh']);
+      ['style' => 'padding-top','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh'],
+      ['style' => 'padding-bottom','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh']);
       wda_generate_css_rule('.wp-block-media-text.wda-features.wda-single-feature-columns,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
          ['style' => 'margin-top','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important'],
          ['style' => 'margin-bottom','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important']);

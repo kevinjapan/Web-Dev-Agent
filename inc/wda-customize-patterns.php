@@ -50,7 +50,7 @@ class WebDevAgentPatternsCustomizer {
          array('title'       => __('WDA Hero Cover Blocks', 'wda' ),
                'priority'    => 10,
                'capability'  => 'edit_theme_options',
-               'description' => __('Customize all Hero Covers site-wide.', 'wda'),
+               'description' => __('Customize all Hero Covers.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );   
@@ -59,7 +59,7 @@ class WebDevAgentPatternsCustomizer {
          array('title'       => __('WDA Cover Blocks', 'wda' ),
                'priority'    => 20,
                'capability'  => 'edit_theme_options',
-               'description' => __('Customize all Covers site-wide.', 'wda'),
+               'description' => __('Customize all Cover Blocks.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );  
@@ -68,7 +68,7 @@ class WebDevAgentPatternsCustomizer {
          array('title'       => __('WDA Feature Blocks', 'wda' ),
                'priority'    => 20,
                'capability'  => 'edit_theme_options',
-               'description' => __('You can customize all Wed Dev Agent Columns across the site here.', 'wda'),
+               'description' => __('Customize all Feature Blocks.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
@@ -77,7 +77,7 @@ class WebDevAgentPatternsCustomizer {
          array('title'       => __('WDA Grids', 'wda' ),
                'priority'    => 20,
                'capability'  => 'edit_theme_options',
-               'description' => __('You can customize all Wed Dev Agent Grids across the site here.', 'wda'),
+               'description' => __('Customize all Grid Blocks.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
@@ -86,7 +86,7 @@ class WebDevAgentPatternsCustomizer {
          array('title'       => __('WDA Title & Lead', 'wda' ),
                'priority'    => 50,
                'capability'  => 'edit_theme_options',
-               'description' => __('You can customize all Wed Dev Agent Title & Leads across the site here.', 'wda'),
+               'description' => __('Customize all Title & Lead Blocks.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
@@ -95,7 +95,7 @@ class WebDevAgentPatternsCustomizer {
          array('title'       => __('WDA Texts', 'wda' ),
                'priority'    => 50,
                'capability'  => 'edit_theme_options',
-               'description' => __('You can customize all Wed Dev Agent Texts across the site here.', 'wda'),
+               'description' => __('Customize all Text Blocks.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
@@ -104,7 +104,7 @@ class WebDevAgentPatternsCustomizer {
          array('title'       => __('WDA Images', 'wda' ),
                'priority'    => 60,
                'capability'  => 'edit_theme_options',
-               'description' => __('You can customize all Wed Dev Agent Images and Galleries across the site here.', 'wda'),
+               'description' => __('Customize all Image and Gallery Blocks.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );
@@ -113,7 +113,7 @@ class WebDevAgentPatternsCustomizer {
          array('title'       => __('WDA Buttons', 'wda' ),
                'priority'    => 70,
                'capability'  => 'edit_theme_options',
-               'description' => __('You can customize all Wed Dev Agent Buttons across the site here.', 'wda'),
+               'description' => __('Customize all Button Blocks.', 'wda'),
                'panel' => 'wda_patterns_panel',
                'active_callback' => '') 
       );

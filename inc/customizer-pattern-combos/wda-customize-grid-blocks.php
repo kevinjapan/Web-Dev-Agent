@@ -15,16 +15,16 @@ function wda_customize_grid_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_grid_x_margins', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_grid_x_margins', 
-            'description' => __( '% margin either side of Grids.','wda'),
+            'description' => __( '% horizontal margin','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
-   );
+   ));
 
    // Y-margins
    $wp_customize->add_setting(
@@ -35,16 +35,16 @@ function wda_customize_grid_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_grid_y_margins', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_grid_y_margins', 
-            'description' => __( '% margin above and below Grids.','wda'),
+            'description' => __( '% vertical margin','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
-   );
+   ));
    
 
    // Grid Gap
@@ -56,16 +56,16 @@ function wda_customize_grid_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_grid_gap', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_grid_gap', 
-            'description' => __( 'rem gap between Grid elements.','wda'),
+            'description' => __( 'element spacing','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
-   );
+   ));
 
    // Grid Template Columns
    $wp_customize->add_setting(
@@ -76,16 +76,16 @@ function wda_customize_grid_block($wp_customize) {
          'transport'  => 'postMessage',
          'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_grid_template_cols', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_grid_template_cols', 
-            'description' => __( 'number of Grid columns.','wda'),
+            'description' => __( 'number of columns','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
-   );
+   ));
 
 }
 

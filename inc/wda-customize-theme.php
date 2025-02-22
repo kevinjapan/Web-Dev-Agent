@@ -82,7 +82,10 @@ class WebDevAgentThemeCustomizer {
       wda_customize_theme_posts($wp_customize);
       
 
-
+      // to do : review : on-going - CompactNumberCustomizerControl
+      // Load Custom Custom Customizer Controls
+      require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/LabelCustomizerControl.php';
+      require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactNumberCustomizerControl.php';
    }
 
 

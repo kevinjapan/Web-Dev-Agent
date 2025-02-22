@@ -182,3 +182,7 @@ Feature Blocks
 .wda-two-col-features img, .wda-three-col-features img, .wda-six-col-featuress img {
    margin:0 auto 0 0;
 }
+
+div.flex {
+   display:flex;
+}

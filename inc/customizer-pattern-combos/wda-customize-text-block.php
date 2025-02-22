@@ -14,16 +14,16 @@ function wda_customize_text_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_text_x_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_text_patterns',
             'label' => __( 'Simple Text','wda'),
             'settings'   => 'wda_text_x_padding', 
-            'description' => __( '% horizontal padding for Texts.','wda'),
+            'description' => __( '% horizontal padding','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 ))
-   );
+   ));
 
    $wp_customize->add_setting(
       'wda_text_y_margins',
@@ -33,16 +33,16 @@ function wda_customize_text_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_text_y_margins', 
       array('type' => 'number',
             'priority' => 11,
             'section' => 'wda_text_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_text_y_margins', 
-            'description' => __( '% vertical spacing for Texts.','wda'),
+            'description' => __( '% vertical margins','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
-   );
+   ));
 
    $wp_customize->add_setting('wda_text_text_align',
       array('default'    => 'left', 
@@ -52,14 +52,15 @@ function wda_customize_text_block($wp_customize) {
             'sanitize_callback' => 'wda_sanitize_radio_buttons',) 
    );
    // WordPress forces 'Center' -> 'Centre' if 'UK English' set!
-   $wp_customize->add_control('wda_text_text_align', 
+   $wp_customize->add_control(
+      'wda_text_text_align', 
       array('type' => 'number',
             'priority' => 12,
             'type' => 'radio',
             'section' => 'wda_text_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_text_text_align', 
-            'description' => __( 'Set text alignment for Texts.','wda'),
+            'description' => __( 'text align.','wda'),
             'choices' => array(
                'left' => __( 'Left' ),
                'center' => __( 'Center' ),

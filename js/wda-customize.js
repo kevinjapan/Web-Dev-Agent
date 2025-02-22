@@ -60,7 +60,7 @@
 
 
    // WDA Feature Blocks
-   
+   // to do : review all - use 'vh' for measurements or 'rem'?
    wp.customize('wda_features_x_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -68,11 +68,11 @@
          $('.wda-features').css({"padding-left":value + '%',"padding-right":value + '%'}); 
       });
    });
-   wp.customize('wda_features_top_padding', function(setting) {
+   wp.customize('wda_features_y_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 25) value = 25;
-         $('.wda-features, .wda-features.has-background').css('padding-top', value + 'vh'); 
+         $('.wda-features, .wda-features.has-background').css({"padding-top": value + 'vh',"padding-bottom": value + 'vh'}); 
       });
    });
    wp.customize('wda_features_bottom_padding', function(setting) {

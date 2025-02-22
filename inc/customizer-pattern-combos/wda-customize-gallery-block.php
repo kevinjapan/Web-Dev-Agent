@@ -15,16 +15,16 @@ function wda_customize_gallery_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_gallery_x_padding', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_image_patterns',
             'label' => __( 'Galleries','wda'),
             'settings'   => 'wda_gallery_x_padding', 
-            'description' => __( '% horizontal padding for Galleries.','wda'),
+            'description' => __( '% horizontal padding','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
-   );
+   ));
 
    $wp_customize->add_setting(
       'wda_gallery_y_margins',
@@ -34,16 +34,16 @@ function wda_customize_gallery_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_gallery_y_margins', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_image_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_gallery_y_margins', 
-            'description' => __( '% vertical spacing for Galleries.','wda'),
+            'description' => __( '% vertical margins','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 ))
-   );
+   ));
 
 
 }

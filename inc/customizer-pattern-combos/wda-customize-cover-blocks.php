@@ -36,15 +36,15 @@ function wda_customize_cover_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_hero_x_height', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_cover_patterns',
             'label' => __( 'Hero Cover Blocks','wda'), 
-            'description' => __( '% height for Hero Covers.','wda'),
+            'description' => __( '% height','wda'),
             'input_attrs' => array( 'min' => 50, 'max' => 100, 'style' => 'width: 60px;', 'step'	=> 5 )) 
-   );
+   ));
    $wp_customize->add_setting(
       'wda_hero_bottom_margin',
       array('default'    => '0', 
@@ -53,15 +53,15 @@ function wda_customize_cover_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_hero_bottom_margin', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_cover_patterns',
             'label' => __( '','wda'),
-            'description' => __( '% margin below Hero Covers.','wda'),
+            'description' => __( '% margin below','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
-   );
+   ));
 
 
 
@@ -76,16 +76,16 @@ function wda_customize_cover_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_cover_x_width', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_cover_patterns',
             'label' => __( 'Covers','wda'),
             'settings'   => 'wda_cover_x_width', 
-            'description' => __( '% width for Covers.','wda'),
+            'description' => __( '% width','wda'),
             'input_attrs' => array( 'min' => 60, 'max' => 100, 'style' => 'width: 60px;', 'step'	=> 5 )) 
-   );
+   ));
 
    $wp_customize->add_setting(
       'wda_cover_y_margins',
@@ -95,16 +95,16 @@ function wda_customize_cover_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_cover_y_margins', 
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_cover_patterns',
             'label' => __( '','wda'),
             'settings'   => 'wda_cover_y_margins', 
-            'description' => __( '% above and below Covers.','wda'),
+            'description' => __( '% vertical margin','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
-   );
+   ));
 }
 
 function wda_customize_cover_block_styles() {
