@@ -14,11 +14,13 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
    public $type = 'compact_number_customizer_control';
 
    public function render_content() {
+
+
       ?>
       <!-- to do : need to use label - or separate control? -->
-      <!-- to do : current label is too similar to input box - cf eg menu customizer labels : rollout to all Custom Controls w/ label
+      <!-- to do : current label is too similar to input box - cf eg menu customizer labels : rollout to all Custom Controls w/ label -->
       <?php if($this->label !== "") {?>
-         <div style="margin-bottom:.5rem;background:white;"><h4 style="margin:0;padding:.25rem;font-weight:200;font-size:1rem;"><?php echo $this->label;?></h4></div>
+         <div style="margin-bottom:.5rem;background:white;"><h4 style="margin:0;padding:.25rem;font-weight:200;font-size:1rem;"><?php echo $this->label; ?></h4></div>
       <?php }?>
 
       <div class="flex" style="display:flex;align-items:center;gap:1rem;min-width:100%;">
@@ -31,13 +33,13 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
          <input 
             id="_customize-input-<?php echo $this->id;?>" 
             type="number" 
-            aria-describedby="_customize-description-<?php echo $this->id;?>" 
+            aria-describedby="_customize-description-<?php echo $this->id; ?>" 
             min="0" 
-            max="<?php echo $this->input_attrs['max'];?>" 
-            step="<?php echo $this->input_attrs['step'];?>" 
+            max="<?php echo $this->input_attrs['max']; ?>" 
+            step="<?php echo $this->input_attrs['step']; ?>" 
             style="width: 60px;" 
-            value="<?php echo esc_attr($this->value());?>"  
-            data-customize-setting-link="<?php echo $this->id;?>">
+            value="<?php echo esc_attr($this->value()); ?>"  
+            data-customize-setting-link="<?php echo $this->id; ?>">
 
          <?php // } ?>
       </div>
