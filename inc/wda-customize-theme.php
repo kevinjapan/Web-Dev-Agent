@@ -86,6 +86,7 @@ class WebDevAgentThemeCustomizer {
       // Load Custom Custom Customizer Controls
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/LabelCustomizerControl.php';
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactNumberCustomizerControl.php';
+      require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactSelectCustomizerControl.php';
    }
 
 

@@ -74,20 +74,20 @@ function wda_customize_feature_blocks($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
       'wda_features_img_width', 
       array('type' => 'select',
             'priority' => 10,
             'section' => 'wda_features_patterns',
-            'label' => __( 'Image Size','wda'),
+            'label' => __( 'Multi-Feature Blocks','wda'),
             'settings'   => 'wda_features_img_width', 
-            'description' => __( 'Set image size on multi-Feature Blocks','wda'),
+            'description' => __( 'image size','wda'),
             'choices' => array(
-               '100' => 'Cover (full width image)',
-               '50' => 'Small (small image)',
-               '20' => 'Icon (icon-sized image)',
+               '100' => 'Cover',
+               '50' => 'Small',
+               '20' => 'Icon',
             ))
-   );
+   ));
    
    $wp_customize->add_setting(
       'wda_features_cta_type',

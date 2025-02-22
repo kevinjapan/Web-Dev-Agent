@@ -1,22 +1,21 @@
 <?php
 
-// CompactNumberCustomizerControl
+// CompactSelectCustomizerControl
 // assuming all ctrls are a single setting, to reduce footprint of ctrls, we want option
 // to display label and input side-by-side - simply displays label and input side-by-side
 
-// to do 
-// - adapt to handle simple input w/ range selection.. as orig ctrl.
-// - move inline styles to css
+// to do : should data-customize-setting-link be $this->link() rather than $this->id
+// to do : apply selected="selected" to appropriate <option>
 
 
-class CompactNumberCustomizerControl extends WP_Customize_Control {
+class CompactSelectCustomizerControl extends WP_Customize_Control {
 
-   public $type = 'compact_number_customizer_control';
+   public $type = 'compact_select_customizer_control';
 
    public function render_content() {
+
       ?>
       <!-- to do : need to use label - or separate control? -->
-      <!-- to do : current label is too similar to input box - cf eg menu customizer labels : rollout to all Custom Controls w/ label
       <?php if($this->label !== "") {?>
          <div style="margin-bottom:.5rem;background:white;"><h4 style="margin:0;padding:.25rem;font-weight:200;font-size:1rem;"><?php echo $this->label;?></h4></div>
       <?php }?>
@@ -27,25 +26,23 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
                <?php echo wp_kses_post($this->description );?>
             </div>
          <?php } ?>
-         <?php // if( !empty( $this->label ) ) { ?>
-         <input 
+         <select 
             id="_customize-input-<?php echo $this->id;?>" 
-            type="number" 
             aria-describedby="_customize-description-<?php echo $this->id;?>" 
-            min="0" 
-            max="<?php echo $this->input_attrs['max'];?>" 
-            step="<?php echo $this->input_attrs['step'];?>" 
-            style="width: 60px;" 
-            value="<?php echo esc_attr($this->value());?>"  
             data-customize-setting-link="<?php echo $this->id;?>">
+               <?php
+                  foreach($this->choices as $key => $value) {
+                     ?>
+                     <option value="<?php echo $key;?>"><?php echo $value;?></option>
+                     <?php
+                  }
+               ?>
+         </select>
 
-         <?php // } ?>
       </div>
-
-      <!-- future : keep reference to link() here - likely important in some scenarios but not needed for now -->
-      <!-- <div><?php // echo $this->link(); ?></div> -->
-     
+      
       <?php
-   }
-}
 
+   }
+
+}

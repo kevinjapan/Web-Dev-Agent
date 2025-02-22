@@ -7,6 +7,7 @@ function wda_customize_cover_block($wp_customize) {
    
    // Hero Cover Block Patterns
    // to do : not 'wda_sanitize_number_range'
+   // to do : re-enable this or remove
    $wp_customize->add_setting(
       'wda_hero_v_align',
       array('default'    => 'center', 
@@ -15,7 +16,7 @@ function wda_customize_cover_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   $wp_customize->add_control(
+   $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
       'wda_hero_v_align', 
       array('type' => 'select',
             'priority' => 10,
@@ -27,7 +28,7 @@ function wda_customize_cover_block($wp_customize) {
                'center' => 'Center',
                'flex-end' => 'Bottom',
             ))
-   );
+   ));
    $wp_customize->add_setting(
       'wda_hero_x_height',
       array('default'    => '100', 
