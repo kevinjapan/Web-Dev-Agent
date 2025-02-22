@@ -14,8 +14,8 @@ class CompactSelectCustomizerControl extends WP_Customize_Control {
 
    public function render_content() {
 
+      // to do : need to use label - or separate control?
       ?>
-      <!-- to do : need to use label - or separate control? -->
       <?php if($this->label !== "") {?>
          <div style="margin-bottom:.5rem;background:white;"><h4 style="margin:0;padding:.25rem;font-weight:200;font-size:1rem;"><?php echo $this->label;?></h4></div>
       <?php }?>

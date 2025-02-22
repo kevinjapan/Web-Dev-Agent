@@ -36,7 +36,7 @@ through Admin/Settings/Reading/A Static Page will re-direct to this page.
    </ul>
 </section>
 
-<!-- wp_link_pages() -->
+<?php // wp_link_pages(); ?>
 
 <?php get_footer(); ?>
 

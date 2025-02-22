@@ -32,6 +32,6 @@ get_header();
    ?>
    </ul>
 </section>
-<!-- wp_link_pages() -->
+<?php // wp_link_pages(); ?>
 
 <?php get_footer(); ?>

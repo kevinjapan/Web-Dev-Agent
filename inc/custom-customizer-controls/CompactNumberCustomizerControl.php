@@ -1,13 +1,9 @@
 <?php
 
+
 // CompactNumberCustomizerControl
 // assuming all ctrls are a single setting, to reduce footprint of ctrls, we want option
 // to display label and input side-by-side - simply displays label and input side-by-side
-
-// to do 
-// - adapt to handle simple input w/ range selection.. as orig ctrl.
-// - move inline styles to css
-
 
 class CompactNumberCustomizerControl extends WP_Customize_Control {
 
@@ -15,10 +11,13 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
 
    public function render_content() {
 
-
+      // to do : 
+      // - move inline styles to css files
+      // - rollout : make sure all comments are in php (a) don't show in client-side (b) more importantly, will show up as errors in my code editor
+      // - review source code client-side - tidy as needed
+      // - need to use label - or separate control? 
+      // - current label is too similar to input box - cf eg menu customizer labels : rollout to all Custom Controls w/ label
       ?>
-      <!-- to do : need to use label - or separate control? -->
-      <!-- to do : current label is too similar to input box - cf eg menu customizer labels : rollout to all Custom Controls w/ label -->
       <?php if($this->label !== "") {?>
          <div style="margin-bottom:.5rem;background:white;"><h4 style="margin:0;padding:.25rem;font-weight:200;font-size:1rem;"><?php echo $this->label; ?></h4></div>
       <?php }?>
@@ -29,7 +28,7 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
                <?php echo wp_kses_post($this->description );?>
             </div>
          <?php } ?>
-         <?php // if( !empty( $this->label ) ) { ?>
+         <?php // if( !empty( $this->label ) ) to do : ??? { ?>
          <input 
             id="_customize-input-<?php echo $this->id;?>" 
             type="number" 
@@ -44,10 +43,10 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
          <?php // } ?>
       </div>
 
-      <!-- future : keep reference to link() here - likely important in some scenarios but not needed for now -->
-      <!-- <div><?php // echo $this->link(); ?></div> -->
-     
       <?php
+      // future : keep reference to link() here - likely important in some scenarios but not needed for now
+      // <div><?php // echo $this->link();</div>
+     
    }
 }
 
