@@ -2,36 +2,46 @@
 
 // Register Theme Customizer Settings and Controls
 //
+
+// to do : review : not sure this is good way to do this...
+
+
+
 function wda_customize_theme_typography($wp_customize) {
 
    // Custom Fonts
    //
 
    /* Title & Tagline Custom Fonts */
-   $wp_customize->add_setting( 'wda_title_fonts',
+   $wp_customize->add_setting(
+      'wda_title_fonts',
       array('default'    => 'Roboto', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'sanitize_text_field') 
    );
-   $wp_customize->add_control( 'wda_title_fonts', 
+   $wp_customize->add_control(new CompactTextCustomizerControl($wp_customize,
+      'wda_title_fonts', 
       array(
          'type' => 'text',
          'priority' => 10,
          'section' => 'wda_typography',
          'label' => esc_html__( 'Site Title','wda'),
+         'description' => __( 'text for site title','the-educator'),
          'settings'   => 'wda_title_fonts', 
          'input_attrs' => array('style' => 'width: 50%;')) 
-   );
-   $wp_customize->add_setting( 'wda_tagline_fonts',
+   ));
+   $wp_customize->add_setting(
+      'wda_tagline_fonts',
       array('default'    => 'Festive', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'sanitize_text_field') 
    );
-   $wp_customize->add_control( 'wda_tagline_fonts', 
+   $wp_customize->add_control(
+      'wda_tagline_fonts', 
       array(
          'type' => 'text',
          'priority' => 10,
@@ -42,14 +52,16 @@ function wda_customize_theme_typography($wp_customize) {
    );
    
    /* Hero Custom Fonts */
-   $wp_customize->add_setting( 'wda_hero_fonts',
+   $wp_customize->add_setting(
+      'wda_hero_fonts',
       array('default'    => 'Century Gothic', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'sanitize_text_field') 
    );
-   $wp_customize->add_control( 'wda_hero_fonts', 
+   $wp_customize->add_control(
+      'wda_hero_fonts', 
       array(
          'type' => 'text',
          'priority' => 10,
@@ -60,14 +72,16 @@ function wda_customize_theme_typography($wp_customize) {
    );
    
    /* Nav Custom Fonts */
-   $wp_customize->add_setting( 'wda_nav_fonts',
+   $wp_customize->add_setting(
+      'wda_nav_fonts',
       array('default'    => 'Courier', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'sanitize_text_field') 
    );
-   $wp_customize->add_control( 'wda_nav_fonts', 
+   $wp_customize->add_control(
+      'wda_nav_fonts', 
       array('type' => 'text',
             'priority' => 10,
             'section' => 'wda_typography',
@@ -77,14 +91,16 @@ function wda_customize_theme_typography($wp_customize) {
    );
    
    /* Headings Custom Fonts */
-   $wp_customize->add_setting( 'wda_headings_fonts',
+   $wp_customize->add_setting(
+      'wda_headings_fonts',
       array('default'    => 'Verdana', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'sanitize_text_field') 
    );
-   $wp_customize->add_control( 'wda_headings_fonts', 
+   $wp_customize->add_control(
+      'wda_headings_fonts', 
       array(
          'type' => 'text',
          'priority' => 10,
@@ -95,14 +111,16 @@ function wda_customize_theme_typography($wp_customize) {
    );
 
    /* Text Custom Fonts */
-   $wp_customize->add_setting( 'wda_body_fonts',
+   $wp_customize->add_setting(
+      'wda_body_fonts',
       array('default'    => 'Sans Serif', 
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
             'sanitize_callback' => 'sanitize_text_field') 
    );
-   $wp_customize->add_control( 'wda_body_fonts', 
+   $wp_customize->add_control(
+      'wda_body_fonts', 
       array('type' => 'text',
             'priority' => 10,
             'section' => 'wda_typography',
