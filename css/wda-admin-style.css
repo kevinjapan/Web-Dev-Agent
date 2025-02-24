@@ -61,3 +61,32 @@ to do : duplicated from wda.css ? */
    display:block;
 }
 
+
+
+.wda-features {
+   visibility:visible;
+}
+.wda-single-feature-columns { 
+   display:unset;
+}
+.wda_inner_feature_block {
+   display:grid;
+   align-items:left;
+   padding:.5rem;padding:0;
+   border:solid 1px lightgrey;
+   border-radius:.5rem;
+   overflow:hidden;
+}
+.wda_inner_feature_block > figure {
+   max-width:100%;
+   margin:0;
+   overflow:hidden;
+}
+/* .wda_inner_feature_block > figure > img {
+   width:100%;
+} */
+.wda_inner_feature_block *,
+.wda_inner_feature_block div.wda_buttons {
+   margin:0;
+   max-width:90%;
+}

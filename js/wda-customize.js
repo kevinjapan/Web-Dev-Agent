@@ -82,21 +82,23 @@
          $('.wda-features, .wda-features.has-background').css('padding-bottom', value + 'vh');
       });
    });
-   // ----------------------------------------------------------------------------------------
-   // ----------------------------------------------------------------------------------------
-   // to do : not working:
+   
    wp.customize('wda_features_img_width', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 100) value = 100;
          $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-featuress img').css('width', value + '%');
+         if(value !== '100') {
+            $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-featuress img').css('margin-left','.5rem').css('margin-top','.5rem');
+         }
+         else {
+            // reset on-the-fly if user swaps between options
+            $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-featuress img').css('margin-left','0').css('margin-top','0');
+         }
       });
    });
-   // ----------------------------------------------------------------------------------------
-   // ----------------------------------------------------------------------------------------
    
 
- 
    // Grid Block
    // to do : review : 'vh'/'vw' for margins? - how about 'rem' and make it standard across all dimensions..?
    // to do : eg '.wda-grid > div' & '.wda-grid:not(:has(div))' are not working :  WP injects inner__container..

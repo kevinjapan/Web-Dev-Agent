@@ -62,27 +62,69 @@ li.menu-item.current-menu-item > a {
 */
 
 
+
+
+
 /* 
-   Single Feature Blocks [using WP Columns]
+future : 
+- layout of text on columns when stacked retains height and spacing 
+  of horizontal alignment - may look better more compact. 
+*/
+
+
+.wda-cover h1,.wda-cover h2,.wda-cover h3,.wda-cover h4,.wda-cover h5,.wda-cover h6,
+.wda-cover p{
+  color:white;
+}
+
+
+
+/*
+   Button Blocks
+*/
+div.wda_buttons {
+   margin:1rem 2rem;
+}
+/* add wda_button to any WP button type to control border-radius */
+div.wda_button a {
+   border-radius:.75rem;
+}
+
+
+/* 
+   Feature Blocks [using WP Columns]
    -------------------------------------------------------------
    We build from WordPress media-text which only stacks at v. sm
    We want it consistent w/ two-feature-columns breakpoints etc.
    Also, image was distorted by resizing screen width.
 */
-/*
-   switch off grid at sm/mobile - permits stacking at <782px
-*/
-/*  to do : rename -> wda-single-feature-block : rollout */
-.wda-single-feature-columns { 
-   display:unset;
-}
+/* switch off grid at sm/mobile - permits stacking at <782px */
 .wda-features {
    visibility:visible;
 }
+.wda-single-feature-columns { 
+   display:unset;
+}
 .wda_inner_feature_block {
-   padding:.5rem;
+   display:grid;
+   align-items:left;
+   padding:.5rem;padding:0;
    border:solid 1px lightgrey;
    border-radius:.5rem;
+   overflow:hidden;
+}
+.wda_inner_feature_block > figure {
+   max-width:100%;
+   margin:0;
+   overflow:hidden;
+}
+/* .wda_inner_feature_block > figure > img {
+   width:100%;
+} */
+.wda_inner_feature_block *,
+.wda_inner_feature_block div.wda_buttons {
+   margin:0;
+   max-width:90%;
 }
 /*
    to retain pattern block integrity, we want img to keep height
@@ -120,42 +162,16 @@ div.wda-features > div.wp-block-column {
       margin-bottom:0rem;
    }
 }
+/* enable left-align content */
+.wda-two-col-features img, .wda-three-col-features img, .wda-six-col-featuress img {
+   margin:0 auto 0 0;
+}
 
 
-/* 
-future : 
-- layout of text on columns when stacked retains height and spacing 
-  of horizontal alignment - may look better more compact. 
+/*
+   Grid Blocks
+   -------------------------------------------------------------
 */
-
-
-.wda-cover h1,.wda-cover h2,.wda-cover h3,.wda-cover h4,.wda-cover h5,.wda-cover h6,
-.wda-cover p{
-  color:white;
-}
-
-
-/* 
-   Utility Classes 
-*/
-
-.mt_2 {margin-top:2rem;}
-.mb_2 {margin-bottom:2rem;}
-
-
-.center_me {
-   margin-left:auto;
-   margin-right:auto;
-}
-
-div.wda_buttons {
-   margin:1rem 2rem;
-}
-/* add wda_button to any WP button type to control border-radius */
-div.wda_button a {
-   border-radius:.75rem;
-}
-
 /* to do : grid is not responsive - overlapping.. wrapping late. */
 div.wda-grid {
    max-width:100%;
@@ -173,20 +189,12 @@ div.wda-grid {
 .display_block {
    display:block;
 }
-/* 
-Feature Blocks 
 
+
+/*
+   Title-Lead Blocks
+   -------------------------------------------------------------
 */
-
-/* left-align content */
-.wda-two-col-features img, .wda-three-col-features img, .wda-six-col-featuress img {
-   margin:0 auto 0 0;
-}
-
-div.flex {
-   display:flex;
-}
-
 /* we need to remove P margin to permit text-align in Title-Lead Block */
 p.wda-title-lead__p {
    margin:0;
@@ -197,4 +205,20 @@ p.wda-title-lead__p {
    display:flex;
    flex-direction:column;
    align-items:flex-end;
+}
+
+/*
+   Utility Classes
+   -------------------------------------------------------------
+*/
+div.flex {
+   display:flex;
+}
+.mt_2 {margin-top:2rem;}
+.mb_2 {margin-bottom:2rem;}
+
+
+.center_me {
+   margin-left:auto;
+   margin-right:auto;
 }

@@ -151,10 +151,15 @@ function wda_customize_feature_blocks_styles() {
                ['style' => 'padding-left','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%'],
                ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']
             );
-
+// to do : 'featuress'
             wda_generate_css_rule('.wda-two-col-features img,.wda-three-col-features img,.wda-six-col-featuress img',
                ['style' => 'width','setting' => 'wda_features_img_width','prefix'  => '','postfix' => '%']
             );
+            // if not 'Cover' (100), we inject a left margin
+            // echo('THEME_MOD:' . gettype(get_theme_mod('wda_features_img_width')));
+            if(get_theme_mod('wda_features_img_width') !== '100') {               
+               echo('.wda-two-col-features img,.wda-three-col-features img,.wda-six-col-featuress img {margin-left:.5rem;margin-top:.5rem;}');
+            }
 
             // to do : wda_features_cta_type - rules to erode the button styling and re-enable as simple link
             // if we can access the value, then if==='link', then we can add this rule:
