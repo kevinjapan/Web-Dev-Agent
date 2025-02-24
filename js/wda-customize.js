@@ -191,6 +191,41 @@
          $('.wda-title-lead').css('margin-top', value + 'vh').css('margin-bottom', value + 'vh');
       });
    });
+
+
+   function map_to_flex_value(value) {
+      switch(value) {
+         case 'left':
+            return 'flex-start'
+            break
+         case 'right':
+            return 'flex-end'
+      }
+      return 'center'
+   }
+
+   const text_to_flex_props = {
+      'left': 'flex-start',
+      'right': 'flex-end',
+      'center': 'center'
+   }
+   
+   // wda_generate_css_rule('.wda-title-lead,.wda-title-lead > div',
+   //    ['style' => 'align-items','setting' => 'wda_title_lead_align','prefix'  => '','postfix' => '']);
+
+   wp.customize('wda_title_lead_align', function(setting) {
+      setting.bind( function(value) {
+         // to do : validation?
+         // if(value < 0) value = 0;
+         // if(value > 25) value = 25;
+         $('.wda-title-lead__title').css('text-align', value);
+         $('.wda-title-lead__p').css('text-align', value);
+         $('.wda-title-lead').css('align-items',text_to_flex_props[value])
+         $('.wda-title-lead > div').css('align-items',text_to_flex_props[value])
+      });
+   });
+
+   
    // wp.customize('wda_title_lead_bottom_margin', function(setting) {
    //    setting.bind( function(value) {
    //       if(value < 0) value = 0;

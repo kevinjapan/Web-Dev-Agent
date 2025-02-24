@@ -186,3 +186,15 @@ Feature Blocks
 div.flex {
    display:flex;
 }
+
+/* we need to remove P margin to permit text-align in Title-Lead Block */
+p.wda-title-lead__p {
+   margin:0;
+}
+.wda-title-lead:not(:has(div)),
+.wda-title-lead > div {
+   /* to do : webkit : rollout */
+   display:flex;
+   flex-direction:column;
+   align-items:flex-end;
+}

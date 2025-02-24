@@ -46,12 +46,12 @@ function wda_register_title_lead_blocks_templates($site_uri) {
             '<!-- wp:group {"className":"wda-title-lead fade_in"} -->
                <div class="wp-block-group wda-title-lead fade_in">
 
-                  <!-- wp:heading {"textAlign":"center","level":2} -->
-                  <h2 class="wda-title-lead__title has-text-align-center">Title & Lead Text</h2>
+                  <!-- wp:heading {"level":2} -->
+                  <h2 class="wda-title-lead__title">Title & Lead Text</h2>
                   <!-- /wp:heading -->
 
-                  <!-- wp:paragraph {"align":"center"} -->
-                  <p class="has-text-align-center">
+                  <!-- wp:paragraph -->
+                  <p class="wda-title-lead__p">
                      Lorem ipsum dolor sit amet consectetur adipisicing elit.         
                      <br>You can customize the layout of this block pattern in the Dashboard menu:
                      <br> Appearance \ Customize \ Web Dev Agent Block Patterns \ Web Dev Agent Texts 

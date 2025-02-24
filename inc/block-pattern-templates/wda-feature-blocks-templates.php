@@ -5,6 +5,7 @@
 // Register Theme Block Pattern Templates
 
 
+// to do : utility classes for all blocks - how to expose to user - eg change image size for a single multiple feature block
 // to do :rename func:
 
 function wda_register_column_blocks_templates($site_uri) {

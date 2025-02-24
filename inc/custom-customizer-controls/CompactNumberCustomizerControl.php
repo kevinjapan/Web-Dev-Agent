@@ -18,6 +18,7 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
       // - need to use label - or separate control? 
       // - current label is too similar to input box - cf eg menu customizer labels : rollout to all Custom Controls w/ label
       ?>
+      
       <?php if($this->label !== "") {?>
          <div style="margin-bottom:.5rem;background:white;"><h4 style="margin:0;padding:.25rem;font-weight:200;font-size:1rem;"><?php echo $this->label; ?></h4></div>
       <?php }?>
