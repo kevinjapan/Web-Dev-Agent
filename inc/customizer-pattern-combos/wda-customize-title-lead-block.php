@@ -282,7 +282,7 @@ function wda_customize_title_lead_block_styles() {
       wda_generate_css_rule('.wda-title-lead__title, .wda-title-lead__p',
          ['style' => 'text-align','setting' => 'wda_title_lead_align','prefix'  => '','postfix' => '']);
       wda_generate_css_rule('.wda-title-lead,.wda-title-lead > div',
-         ['map_value_to' => 'text_to_flex_props', 'style' => 'align-items','setting' => 'wda_title_lead_align','prefix'  => '','postfix' => '']);
+         ['map_value_to' => 'text_to_flex_props','style' => 'align-items','setting' => 'wda_title_lead_align','prefix'  => '','postfix' => '']);
 
 
       ?>
