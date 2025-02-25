@@ -61,6 +61,24 @@ if (!function_exists('wda_generate_css_rule')) :
 endif;
 
 
+
+if (!function_exists('wda_inject_css')) :
+
+   function wda_inject_css($selector,...$rules) {
+
+      foreach ($rules as $rule) {
+         $css_inners = sprintf('%s:%s;',$rule['style'],$rule['prefix'].$rule['value'].$rule['postfix']);
+         if($css_inners !== '') {
+            $css = $selector . '{';
+            $css.= $css_inners;
+            $css.= '}';
+            echo $css . "\n";
+         }
+      }
+   }
+
+endif;
+
 // map setting values to appropriate value for a specified property
 
 if (!function_exists('map_prop_values')) :
