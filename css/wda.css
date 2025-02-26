@@ -128,9 +128,14 @@ div.wda_button a {
    Also, image was distorted by resizing screen width.
 */
 /* switch off grid at sm/mobile - permits stacking at <782px */
-.wda-features {
-   visibility:visible;
+.wda-features .wp-block-media-text__content {
+   display:flex;
+   flex-direction:column;
+   gap:1rem;
+   align-self:flex-start;
 }
+/* align all child text elements in text__content */
+.wda-features .wp-block-media-text__content > * {margin:0;padding:0;}
 .wda-single-feature-columns { 
    display:unset;
 }
@@ -250,6 +255,16 @@ div.wda-grid {
 .display_block {
    display:block;
 }
+/* utility classes */
+.wda-grid.grid_2_cols {
+   grid-template-columns:1fr 1fr;
+}
+.wda-grid.grid_4_cols {
+   grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.wda-grid.grid_6_cols {
+   grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+}
 
 
 /*
@@ -283,3 +298,13 @@ div.flex {
    margin-left:auto;
    margin-right:auto;
 }
+
+
+.wda_inner_feature_block.bg_blue {background:blue;color:white;}
+.wda_inner_feature_block.bg_blue a {color:white;}
+.wda_inner_feature_block.bg_blue a:hover {color:white;}
+/* to do : change btn color if necessary - eg on feature column bg */
+
+.wda_inner_feature_block.bg_lightgrey {background:hsl(0, 0%, 88%);color:black;}
+
+

@@ -46,16 +46,19 @@ function wda_register_column_blocks_templates($site_uri) {
 
                <div class="wp-block-media-text__content">
 
-                  <!-- wp:paragraph {"placeholder":"Content…","fontSize":"large"} -->
-                     <p class="has-large-font-size">Introducing the single Feature Block.</p>
-                  <!-- /wp:paragraph -->
+                  <!-- wp:heading {"textAlign":"left","level":3} -->
+                  <h3 class="wp-block-heading has-text-align-left">
+                     Introducing the single Feature Block.
+                  </h3>
+                  <!-- /wp:heading -->
 
                   <!-- wp:paragraph -->
-                     <p>You can customize the layout of this block pattern in the Dashboard menu:
+                  <p>You can customize the layout of this block pattern in the Dashboard menu:
                      <br>- Appearance 
                      <br>- - Customize
                      <br>- - - Web Dev Agent Block Patterns 
-                     <br>- - - - Web Dev Agent Feature Blocks</p>
+                     <br>- - - - Web Dev Agent Feature Blocks
+                  </p>
                   <!-- /wp:paragraph -->
 
                   <!-- wp:buttons -->
@@ -90,6 +93,7 @@ function wda_register_column_blocks_templates($site_uri) {
                '</div>
                <!-- /wp:columns -->',
 	]);
+
 	register_block_pattern(
       'wda-two-col-features-no-img',
       [
