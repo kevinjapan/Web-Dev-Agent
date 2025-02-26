@@ -64,7 +64,7 @@ img {
 /* we allow for WP injecting an inner container div w/ redundancy 
 to do : duplicated from wda.css ? */
 
-/* .wda-grid:not(:has(div)),
+.wda-grid:not(:has(div)),
 .wda-grid > div {
    display:grid !important;
    grid-template-columns:1fr 1fr 1fr !important;
@@ -72,7 +72,7 @@ to do : duplicated from wda.css ? */
    align-items:center !important;
    container:unset !important;
    border:solid 4px orange;
-}  */
+}  
 .display_block {
    display:block;
 }

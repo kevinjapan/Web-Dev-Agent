@@ -159,7 +159,8 @@ div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
    margin:0;
    overflow:hidden;
 }
-.wda_inner_feature_block > figure.wda_icon {
+.wda_inner_feature_block > figurewda_customize_card_block,
+.wda-card > figurewda_customize_card_block  {
    align-self:flex-start;
    width:60px;
    margin-left:.5rem;
@@ -172,6 +173,7 @@ div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
    margin:0;
    max-width:100%;
 }
+
 /*
    to retain pattern block integrity, we want img to keep height
    Here, we force height but permit aspect to be retained (overflow permits x-cropping)
@@ -233,15 +235,22 @@ div.wda-features > div.wp-block-column {
    margin:0 auto 0 0;
 }
 
+.wda-card {
+   margin:1rem;
+   padding:1rem;
+   gap:1rem;
+   /* we override WP container class .wp-container-core-group-is-layout-9 which is inserted after save */
+   grid-template-columns:1fr 1fr 1fr 1fr !important; 
+}
 
 /*
    Grid Blocks
    -------------------------------------------------------------
 */
 /* to do : grid is not responsive - overlapping.. wrapping late. */
-div.wda-grid {
+/* div.wda-grid {
    max-width:100%;
-}
+} */
 /* we allow for WP injecting an inner container div w/ redundancy */
 .wda-grid:not(:has(div)),
 .wda-grid > div {
@@ -308,3 +317,4 @@ div.flex {
 .wda_inner_feature_block.bg_lightgrey {background:hsl(0, 0%, 88%);color:black;}
 
 
+.mx_5 {margin-left:5rem;margin-right:5rem;}

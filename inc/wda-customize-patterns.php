@@ -5,6 +5,7 @@ require_once get_template_directory() . '/inc/wda-utility.php';
 // Block Patterns
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-cover-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-feature-blocks.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-card-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-grid-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-gallery-block.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-image-block.php';
@@ -73,8 +74,17 @@ class WebDevAgentPatternsCustomizer {
                'active_callback' => '') 
       );
       $wp_customize->add_section(
+         'wda_card_patterns', 
+         array('title'       => __('WDA Card Blocks', 'wda' ),
+               'priority'    => 20,
+               'capability'  => 'edit_theme_options',
+               'description' => __('Customize all Card Blocks.', 'wda'),
+               'panel' => 'wda_patterns_panel',
+               'active_callback' => '') 
+      );
+      $wp_customize->add_section(
          'wda_grid_patterns', 
-         array('title'       => __('WDA Grids', 'wda' ),
+         array('title'       => __('WDA Grid Blocks', 'wda' ),
                'priority'    => 20,
                'capability'  => 'edit_theme_options',
                'description' => __('Customize all Grid Blocks.', 'wda'),
@@ -83,7 +93,7 @@ class WebDevAgentPatternsCustomizer {
       );
       $wp_customize->add_section(
          'wda_title_lead_patterns', 
-         array('title'       => __('WDA Title & Lead', 'wda' ),
+         array('title'       => __('WDA Title & Lead Blocks', 'wda' ),
                'priority'    => 50,
                'capability'  => 'edit_theme_options',
                'description' => __('Customize all Title & Lead Blocks.', 'wda'),
@@ -92,7 +102,7 @@ class WebDevAgentPatternsCustomizer {
       );
       $wp_customize->add_section(
          'wda_text_patterns', 
-         array('title'       => __('WDA Texts', 'wda' ),
+         array('title'       => __('WDA Text Blocks', 'wda' ),
                'priority'    => 50,
                'capability'  => 'edit_theme_options',
                'description' => __('Customize all Text Blocks.', 'wda'),
@@ -101,7 +111,7 @@ class WebDevAgentPatternsCustomizer {
       );
       $wp_customize->add_section(
          'wda_image_patterns', 
-         array('title'       => __('WDA Images', 'wda' ),
+         array('title'       => __('WDA Image Blocks', 'wda' ),
                'priority'    => 60,
                'capability'  => 'edit_theme_options',
                'description' => __('Customize all Image and Gallery Blocks.', 'wda'),
@@ -110,7 +120,7 @@ class WebDevAgentPatternsCustomizer {
       );
       $wp_customize->add_section(
          'wda_buttons_patterns', 
-         array('title'       => __('WDA Buttons', 'wda' ),
+         array('title'       => __('WDA Button Blocks', 'wda' ),
                'priority'    => 70,
                'capability'  => 'edit_theme_options',
                'description' => __('Customize all Button Blocks.', 'wda'),
@@ -123,6 +133,7 @@ class WebDevAgentPatternsCustomizer {
       //
       wda_customize_cover_block($wp_customize);
       wda_customize_feature_blocks($wp_customize);
+      wda_customize_card_block($wp_customize);
       wda_customize_grid_block($wp_customize);
       wda_customize_image_block($wp_customize);
       wda_customize_gallery_block($wp_customize);
@@ -145,6 +156,7 @@ class WebDevAgentPatternsCustomizer {
       //
       wda_customize_cover_block_styles();
       wda_customize_feature_blocks_styles();
+      wda_customize_card_block_styles();
       wda_customize_grid_block_styles();
       wda_customize_image_block_styles();
       wda_customize_gallery_block_styles();

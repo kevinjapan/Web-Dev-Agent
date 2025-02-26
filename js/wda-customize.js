@@ -127,6 +127,22 @@
    });
 
    
+   // Card Block
+   wp.customize('wda_card_x_margins',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 25) value = 25;
+         $('.wda-card').css({"margin-left":value + 'vw',"margin-right":value + 'vw'}); 
+      });
+   });
+   wp.customize('wda_card_y_margins',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 25) value = 25;
+         $('.wda-card').css({"margin-top":value + 'vh',"margin-bottom":value + 'vh'}); 
+      });
+   });
+
 
    // Grid Block
    // to do : review : 'vh'/'vw' for margins? - how about 'rem' and make it standard across all dimensions..?
