@@ -165,12 +165,12 @@ function wda_customize_feature_blocks_styles() {
                ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']
             );
 
-            // wda_generate_css_rule('.wda-two-col-features img,.wda-three-col-features img,.wda-six-col-features img',
+            // wda_generate_css_rule('.wda-two-col-features img,.wda-three-col-features img',
             //    ['style' => 'width','setting' => 'wda_features_img_width','prefix'  => '','postfix' => '%']
             // );
             // if features_img is not 'Cover' (100), we inject a left margin
             // if(get_theme_mod('wda_features_img_width') !== '100') {               
-            //    echo('.wda-two-col-features img,.wda-three-col-features img,.wda-six-col-features img {margin-left:.5rem;margin-top:.5rem;}');
+            //    echo('.wda-two-col-features img,.wda-three-col-features img {margin-left:.5rem;margin-top:.5rem;}');
             // }
 
             // to do : replace bg_color only w/ styling to change btn to link and vice-versa

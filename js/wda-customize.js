@@ -87,13 +87,13 @@
    //    setting.bind( function(value) {
    //       if(value < 0) value = 0;
    //       if(value > 100) value = 100;
-   //       $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-features img').css('width', value + '%');
+   //       $('.wda-two-col-features img, .wda-three-col-features img').css('width', value + '%');
    //       if(value !== '100') {
-   //          $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-features img').css('margin-left','.5rem').css('margin-top','.5rem');
+   //          $('.wda-two-col-features img, .wda-three-col-features img').css('margin-left','.5rem').css('margin-top','.5rem');
    //       }
    //       else {
    //          // reset on-the-fly if user swaps between options
-   //          $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-features img').css('margin-left','0').css('margin-top','0');
+   //          $('.wda-two-col-features img, .wda-three-col-features img').css('margin-left','0').css('margin-top','0');
    //       }
    //    });
    // });

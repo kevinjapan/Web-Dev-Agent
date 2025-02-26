@@ -95,24 +95,6 @@ function wda_register_column_blocks_templates($site_uri) {
 	]);
 
 	register_block_pattern(
-      'wda-two-col-features-no-img',
-      [
-         'title' => __('Two column Feature Block - no img', 'wda'),
-         'description' => _x( 'Two column Feature Block - no img.', 'A two column Feature Block.', 'wda' ),            
-         'keywords' => ['two,columns'],
-         'categories' => ['wda-features-blocks'],
-         'viewportWidth' => 1000,
-         'content' => 
-               '<!-- wp:columns {"className":"wda-features wda-two-col-features"} -->
-               <div class="wp-block-columns wda-features wda-two-col-features">' . 
-                  wda_features_col_template() . 
-                  wda_features_col_template() .
-               '</div>
-               <!-- /wp:columns -->',
-	]);
-
-
-	register_block_pattern(
       'wda-two-col-features-icons',
       [
          'title' => __('Two column Feature Block Icon', 'wda'),
@@ -129,6 +111,22 @@ function wda_register_column_blocks_templates($site_uri) {
                <!-- /wp:columns -->',
 	]);
 
+	register_block_pattern(
+      'wda-two-col-features-no-img',
+      [
+         'title' => __('Two column Feature Block - no img', 'wda'),
+         'description' => _x( 'Two column Feature Block - no img.', 'A two column Feature Block.', 'wda' ),            
+         'keywords' => ['two,columns'],
+         'categories' => ['wda-features-blocks'],
+         'viewportWidth' => 1000,
+         'content' => 
+               '<!-- wp:columns {"className":"wda-features wda-two-col-features"} -->
+               <div class="wp-block-columns wda-features wda-two-col-features">' . 
+                  wda_features_col_template() . 
+                  wda_features_col_template() .
+               '</div>
+               <!-- /wp:columns -->',
+	]);
    
    // Three column Feature Block Template
 
@@ -170,29 +168,6 @@ function wda_register_column_blocks_templates($site_uri) {
                '</div>
                <!-- /wp:columns -->',
 	]);
-
-   // Six column Feature Block Template
-
-   register_block_pattern(
-      'wda-six-col-features',
-      [
-         'title' => __('Six Column Feature Block', 'wda'),
-         'description' => _x( 'Six column Feature Block.', 'A six column Feature Block.', 'wda' ),            
-         'keywords' => ['six,columns'],
-         'categories' => ['wda-features-blocks'],
-         'viewportWidth' => 1000,
-         'content' =>  
-         '<!-- wp:columns {"className":"wda-features wda-three-col-features"} -->
-         <div class="wp-block-columns wda-features wda-three-col-features">' . 
-            wda_features_col_template($image_template,true) .
-            wda_features_col_template($image_template,true) .
-            wda_features_col_template($image_template,true) .
-            wda_features_col_template($image_template,true) .
-            wda_features_col_template($image_template,true) .
-            wda_features_col_template($image_template,true) .
-         '</div>
-         <!-- /wp:columns -->',
-   ]);
 }
 
 
