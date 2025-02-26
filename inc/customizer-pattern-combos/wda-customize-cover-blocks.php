@@ -37,6 +37,7 @@ function wda_customize_cover_block($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
+   // to do : move to Hero Cover Block section
    $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_hero_x_height', 
       array('type' => 'number',
@@ -127,7 +128,7 @@ function wda_customize_cover_block_styles() {
 
          
          // Cover Block 
-         wda_generate_css_rule('.wda-cover',
+         wda_generate_css_rule('.wda-cover, .wda-cover-rows',
             ['style' => 'width','setting' => 'wda_cover_x_width','prefix'  => '','postfix' => '%'],);
          wda_generate_css_rule('.wda-cover',
             ['style' => 'margin-top','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh'],
