@@ -153,14 +153,16 @@ function wda_features_col_template($img_only = false) {
                      <p class="has-text-align-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
                      <!-- /wp:paragraph -->
 
-                     <!-- wp:buttons -->
+                     <!-- wp:buttons {"className":"wda-buttons"} -->
                      <div class="wp-block-buttons wda_buttons wda_feature_btns">            
-                        <!-- wp:button -->
-                        <div class="wp-block-button wda_button"><a class="wp-block-button__link">read more</a></div>
+                        <!-- wp:button {"className":"wda_feature_btn"} -->
+                        <div class="wp-block-button wda_button wda_feature_btn"><a class="wp-block-button__link">read more</a></div>
                         <!-- /wp:button -->
                      </div>
                      <!-- /wp:buttons -->';
    }
+
+   
                
    $template .= '</div><!-- /wp:column -->';
    return $template;

@@ -6,6 +6,22 @@ We don't overwrite styles in WP Admin, instead we provide custom style classes
 clearly name-spaced to the WDA theme and plugins.
 
 */
+/* 
+   Custom Properties
+   -------------------------------------------------------------
+*/
+:root {
+
+   /* to do : review OutlineCSS example - any ideas we can carry arcoss..? */
+
+   --wda_btn_bg:  hsl(240, 100%, 50%);
+   --wda_btn_bg_hover:  hsl(240, 100%, 40%);
+   --wda_btn_text_color: white;
+   --wda_btn_padding:.5rem;
+   --wda_btn_font_size:1rem;
+   
+   
+} 
 
 
 /* 
@@ -61,5 +77,15 @@ to do : duplicated from wda.css ? */
    display:block;
 }
 
-
+/* style button/links in Feature Block */
+.wda_feature_btns > div > a {
+   width:100%;
+   background:var(--wda_btn_bg);
+   color:var(--wda_btn_text_color);
+   padding:var(--wda_btn_padding);
+   font-size:var(--wda_btn_font_size);
+}
+.wda_feature_btns > div > a:hover {
+   background:var(--wda_btn_bg_hover);
+}
 

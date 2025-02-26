@@ -293,7 +293,7 @@ function wda_customize_title_lead_block_styles() {
    //
    wda_generate_css_rule('.wp-block-group.wda-title-lead',
       ['style' => 'margin-top','setting' => 'wda_title_lead_y_margin','prefix'  => '','postfix' => 'vh'],
-      ['style' => 'margin-bottom','setting' => 'wda_title_lead_bottom_margin','prefix'  => '','postfix' => 'vh']);
+      ['style' => 'margin-bottom','setting' => 'wda_title_lead_y_margin','prefix'  => '','postfix' => 'vh']);
    ?>
    @media screen and (min-width: 768px) { 
       <?php 

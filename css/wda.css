@@ -1,3 +1,26 @@
+
+/* 
+   Custom Properties
+   -------------------------------------------------------------
+*/
+:root {
+
+   /* to do : review OutlineCSS example - any ideas we can carry arcoss..? */
+
+   --wda_btn_bg:  hsl(240, 100%, 50%);
+   --wda_btn_bg_hover:  hsl(240, 100%, 40%);
+   --wda_btn_text_color: white;
+   --wda_btn_padding:.5rem;
+   --wda_btn_font_size:1rem;
+   
+   --link_text_color:blue;
+   --link_text_color_hover:purple;
+   
+} 
+
+
+
+
 html {
    margin:0;
    padding:0;   
@@ -70,7 +93,9 @@ future :
 - layout of text on columns when stacked retains height and spacing 
   of horizontal alignment - may look better more compact. 
 */
-
+.wda-cover {
+   margin:0 auto;
+}
 
 .wda-cover h1,.wda-cover h2,.wda-cover h3,.wda-cover h4,.wda-cover h5,.wda-cover h6,
 .wda-cover p{
@@ -108,7 +133,7 @@ div.wda_button a {
 .wda_inner_feature_block {
    display:grid;
    align-items:left;
-   padding:.5rem;padding:0;
+   padding:1rem;
    border:solid 1px lightgrey;
    border-radius:.5rem;
    overflow:hidden;
@@ -124,7 +149,7 @@ div.wda_button a {
 .wda_inner_feature_block *,
 .wda_inner_feature_block div.wda_buttons {
    margin:0;
-   max-width:90%;
+   max-width:100%;
 }
 /*
    to retain pattern block integrity, we want img to keep height
@@ -138,6 +163,9 @@ div.wda_button a {
 .wda-single-feature-columns figure img {
    object-fit: cover;
 }
+/* div.wda_feature_btn {
+   
+} */
 /* 
    reset grid (WordPress default)
    782px matches WordPress columns media break - consistency 
@@ -147,6 +175,23 @@ div.wda_button a {
       display:grid;
    }
 }
+/* style button/links in Feature Block */
+/* to do : trying various to get working in Page Editor - eg !important.. */
+.wda_feature_btns > div > a,
+.wda_feature_btns > div > div {
+   width:100%;
+   background:var(--wda_btn_bg);
+   color:var(--wda_btn_text_color);
+   padding:var(--wda_btn_padding);
+   font-size:var(--wda_btn_font_size);
+}
+.wda_feature_btns > div > a:hover {
+   background:var(--wda_btn_bg_hover);
+   color:var(--link_text_color_hover); 
+}
+/* .wda_feature_btns > .wda_feature_btn  {
+   
+} */
 
 
 /* 
@@ -163,7 +208,7 @@ div.wda-features > div.wp-block-column {
    }
 }
 /* enable left-align content */
-.wda-two-col-features img, .wda-three-col-features img, .wda-six-col-featuress img {
+.wda-two-col-features img, .wda-three-col-features img, .wda-six-col-features img {
    margin:0 auto 0 0;
 }
 

@@ -87,16 +87,45 @@
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 100) value = 100;
-         $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-featuress img').css('width', value + '%');
+         $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-features img').css('width', value + '%');
          if(value !== '100') {
-            $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-featuress img').css('margin-left','.5rem').css('margin-top','.5rem');
+            $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-features img').css('margin-left','.5rem').css('margin-top','.5rem');
          }
          else {
             // reset on-the-fly if user swaps between options
-            $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-featuress img').css('margin-left','0').css('margin-top','0');
+            $('.wda-two-col-features img, .wda-three-col-features img,.wda-six-col-features img').css('margin-left','0').css('margin-top','0');
          }
       });
    });
+
+   wp.customize('wda_features_cta_type', function(setting) {
+
+      setting.bind( function(value) {
+         // to do : validate value..
+         if(value === "Button") {
+            $('.wda_feature_btns > div > a').css('background','var(--wda_btn_bg)');
+            $('.wda_feature_btns > div > a').css('color','var(--wda_btn_text_color)');
+            $('.wda_feature_btns > div > a').css('text-align','left');
+            $('.wda_feature_btns > div > a').css('padding','.25rem');
+            $('.wda_feature_btns > div > a').css('padding-left','.25rem');
+            $('.wda_feature_btns > div > a').css('font-size','1rem');
+            $('.wda_feature_btns > div > a').css('text-decoration','underline');
+         }
+         else {
+            $('.wda_feature_btns > div > a').css('background','transparent');
+            $('.wda_feature_btns > div > a').css('color','var(--link_text_color');
+            $('.wda_feature_btns > div > a').css('text-align','left');
+            $('.wda_feature_btns > div > a').css('padding','.25rem');
+            $('.wda_feature_btns > div > a').css('padding-left','.5rem');
+            $('.wda_feature_btns > div > a').css('font-size','1rem');
+            $('.wda_feature_btns > div > a').css('text-decoration','underline');
+            
+            $('.wda_feature_btns > div > a:hover').css('background','transparent');
+            $('.wda_feature_btns > div > a:hover').css('color','var(--link_text_color_hover');
+         }
+      });
+   });
+
    
 
    // Grid Block
