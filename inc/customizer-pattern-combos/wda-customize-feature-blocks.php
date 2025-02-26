@@ -66,28 +66,30 @@ function wda_customize_feature_blocks($wp_customize) {
    ));
 
    // to do : not 'wda_sanitize_number_range' : rollout
-   $wp_customize->add_setting(
-      'wda_features_img_width',
-      array('default'    => '100', 
-            'type'       => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport'  => 'postMessage',
-            'sanitize_callback' => 'wda_sanitize_number_range') 
-   );
-   $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
-      'wda_features_img_width', 
-      array('type' => 'select',
-            'priority' => 10,
-            'section' => 'wda_features_patterns',
-            'label' => __( 'Multi-Feature Blocks only','wda'),
-            'settings'   => 'wda_features_img_width', 
-            'description' => __( 'image size','wda'),
-            'choices' => array(
-               '100' => 'Cover',
-               '50' => 'Small',
-               '20' => 'Icon',
-            ))
-   ));
+
+   // depr : changing image size via setting is not compatible w/ Page Editor, so we offer as different separate templates instead.
+      // $wp_customize->add_setting(
+      //    'wda_features_img_width',
+      //    array('default'    => '100', 
+      //          'type'       => 'theme_mod',
+      //          'capability' => 'edit_theme_options',
+      //          'transport'  => 'postMessage',
+      //          'sanitize_callback' => 'wda_sanitize_number_range') 
+      // );
+      // $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
+      //    'wda_features_img_width', 
+      //    array('type' => 'select',
+      //          'priority' => 10,
+      //          'section' => 'wda_features_patterns',
+      //          'label' => __( 'Multi-Feature Blocks only','wda'),
+      //          'settings'   => 'wda_features_img_width', 
+      //          'description' => __( 'image size','wda'),
+      //          'choices' => array(
+      //             '100' => 'Cover',
+      //             '50' => 'Small',
+      //             '20' => 'Icon',
+      //          ))
+      // ));
    
    $wp_customize->add_setting(
       'wda_features_cta_type',
@@ -163,13 +165,13 @@ function wda_customize_feature_blocks_styles() {
                ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']
             );
 
-            wda_generate_css_rule('.wda-two-col-features img,.wda-three-col-features img,.wda-six-col-features img',
-               ['style' => 'width','setting' => 'wda_features_img_width','prefix'  => '','postfix' => '%']
-            );
+            // wda_generate_css_rule('.wda-two-col-features img,.wda-three-col-features img,.wda-six-col-features img',
+            //    ['style' => 'width','setting' => 'wda_features_img_width','prefix'  => '','postfix' => '%']
+            // );
             // if features_img is not 'Cover' (100), we inject a left margin
-            if(get_theme_mod('wda_features_img_width') !== '100') {               
-               echo('.wda-two-col-features img,.wda-three-col-features img,.wda-six-col-features img {margin-left:.5rem;margin-top:.5rem;}');
-            }
+            // if(get_theme_mod('wda_features_img_width') !== '100') {               
+            //    echo('.wda-two-col-features img,.wda-three-col-features img,.wda-six-col-features img {margin-left:.5rem;margin-top:.5rem;}');
+            // }
 
             // to do : replace bg_color only w/ styling to change btn to link and vice-versa
 
