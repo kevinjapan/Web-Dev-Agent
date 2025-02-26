@@ -96,6 +96,10 @@ future :
 .wda-cover {
    margin:0 auto;
 }
+.wda-cover-rows div.wp-block-columns {
+   display:flex;
+   flex-direction:column;
+}
 
 .wda-cover h1,.wda-cover h2,.wda-cover h3,.wda-cover h4,.wda-cover h5,.wda-cover h6,
 .wda-cover p{
@@ -138,10 +142,22 @@ div.wda_button a {
    border-radius:.5rem;
    overflow:hidden;
 }
+
+div.wda-features.wda-single-feature-columns.reverse_order figure:nth-child(1) {
+   grid-column:2;
+}
+div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
+   grid-column:1;
+}
 .wda_inner_feature_block > figure {
    max-width:100%;
    margin:0;
    overflow:hidden;
+}
+.wda_inner_feature_block > figure.wda_icon {
+   align-self:flex-start;
+   width:60px;
+   margin-left:.5rem;
 }
 /* .wda_inner_feature_block > figure > img {
    width:100%;
