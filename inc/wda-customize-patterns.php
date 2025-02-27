@@ -147,9 +147,8 @@ class WebDevAgentPatternsCustomizer {
    //
    public static function wda_customizer_patterns_styles() {
       ?>
-      <!-- The Web Dev Agent Patterns Customizer CSS --> 
-       <!-- to do : te-custom-patterns : replace any 'te' references -->
-      <style id="te-custom-patterns" type="text/css">
+      <!-- The Web Dev Agent Patterns Customizer CSS -->
+      <style type="text/css">
       <?php 
       //
       // Block Pattern Styles

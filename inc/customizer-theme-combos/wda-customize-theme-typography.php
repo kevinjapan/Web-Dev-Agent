@@ -1,10 +1,6 @@
 <?php
 
 // Register Theme Customizer Settings and Controls
-//
-
-// to do : review : not sure this is good way to do this...
-
 
 
 function wda_customize_theme_typography($wp_customize) {

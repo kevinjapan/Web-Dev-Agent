@@ -106,27 +106,3 @@ if(!function_exists('text_to_flex_props')) :
    }
 endif;
 
-
-
-
-// Generate front-end css selector with rule(s) from our theme mods.
-// Handle complex single-properties - eg "background-position: {top 20px right -10px};"
-// to do : 
-// - not used - we need it? or remove
-// - include handling for : $mod = map_prop_values($rule['map_value_to'],get_theme_mod($rule['setting'])); - see wda_generate_css_rule()
-
-if (!function_exists('wda_generate_complex_css_rule')) :
-
-   function wda_generate_complex_css_rule($selector, $style, $mod_names, $prefixes=array(), $postfixes=array()) {
-      $mod = null;
-      $index = 0;
-      if(is_array($mod_names)) {
-         foreach ($mod_names as $mod_name) {
-            $mod.= " " . $prefixes[$index] . get_theme_mod($mod_name) . $postfixes[$index++];
-         }
-      }
-      // $prefix ?
-      // if ( ! empty( $mod ) ) sprintf('%s{%s:%s;}',$selector,$style,$prefix.$mod.$postfix) . "\n";
-   } 
-
-endif;
