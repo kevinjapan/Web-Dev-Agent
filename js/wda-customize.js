@@ -6,7 +6,6 @@
 (function($) {
 
    // Site
-   // to do : replace evolutiondesuka refs : rollout
 	wp.customize('blogname', function(setting) {
 		setting.bind(function(value) {
 			$('.front_page.cover_block h1').text(value);
@@ -14,7 +13,7 @@
 	});
 	wp.customize('blogdescription', function(setting) {
 		setting.bind(function(value) {
-			$('.evolutiondesuka--tagline').text(value);
+			$('.wda-tagline').text(value);
 		});
 	});
 
@@ -60,7 +59,6 @@
 
 
    // WDA Feature Blocks
-   // to do : review all - use 'vh' for measurements or 'rem'?
    wp.customize('wda_features_x_padding', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -101,8 +99,19 @@
    wp.customize('wda_features_cta_type', function(setting) {
 
       setting.bind( function(value) {
-         // to do : validate value..
-         if(value === "Button") {
+         if(value === "Link") {
+
+            $('.wda_feature_btns > div > a').css('background','transparent');
+            $('.wda_feature_btns > div > a').css('color','var(--link_text_color');
+            $('.wda_feature_btns > div > a').css('text-align','left');
+            $('.wda_feature_btns > div > a').css('padding','.25rem');
+            $('.wda_feature_btns > div > a').css('padding-left','.5rem');
+            $('.wda_feature_btns > div > a').css('font-size','1rem');
+            $('.wda_feature_btns > div > a').css('text-decoration','underline');            
+            $('.wda_feature_btns > div > a:hover').css('background','transparent');
+            $('.wda_feature_btns > div > a:hover').css('color','var(--link_text_color_hover');
+         }
+         else {            
             $('.wda_feature_btns > div > a').css('background','var(--wda_btn_bg)');
             $('.wda_feature_btns > div > a').css('color','var(--wda_btn_text_color)');
             $('.wda_feature_btns > div > a').css('text-align','left');
@@ -110,18 +119,6 @@
             $('.wda_feature_btns > div > a').css('padding-left','.25rem');
             $('.wda_feature_btns > div > a').css('font-size','1rem');
             $('.wda_feature_btns > div > a').css('text-decoration','underline');
-         }
-         else {
-            $('.wda_feature_btns > div > a').css('background','transparent');
-            $('.wda_feature_btns > div > a').css('color','var(--link_text_color');
-            $('.wda_feature_btns > div > a').css('text-align','left');
-            $('.wda_feature_btns > div > a').css('padding','.25rem');
-            $('.wda_feature_btns > div > a').css('padding-left','.5rem');
-            $('.wda_feature_btns > div > a').css('font-size','1rem');
-            $('.wda_feature_btns > div > a').css('text-decoration','underline');
-            
-            $('.wda_feature_btns > div > a:hover').css('background','transparent');
-            $('.wda_feature_btns > div > a:hover').css('color','var(--link_text_color_hover');
          }
       });
    });
@@ -146,7 +143,6 @@
 
    // Grid Block
    // to do : review : 'vh'/'vw' for margins? - how about 'rem' and make it standard across all dimensions..?
-   // to do : eg '.wda-grid > div' & '.wda-grid:not(:has(div))' are not working :  WP injects inner__container..
    // container rules
    wp.customize('wda_grid_x_margins',function(setting) {
       setting.bind( function(value) {
@@ -171,7 +167,6 @@
          $('.wda-grid > div').css({"gap":value + 'vh'}); 
       });
    });
-   // to do : alternative not working?
    wp.customize('wda_grid_gap',function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -186,7 +181,6 @@
          $('.wda-grid > div').css({"grid-template-columns":value + ''}); 
       });
    });
-   // to do : working?
    wp.customize('wda_grid_template_cols',function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -220,17 +214,6 @@
          $('.wda-title-lead').css('padding-top', value + 'vh').css('padding-bottom', value + 'vh');
       });
    });
-   // to do : review - we limit functionality - eg you cannot do top and bottom separately,
-   //         rather you can edit y margins as a pair
-   //         this constrains the no. of ctrls in customizer (a good thing)
-   //         and we can still address indvdl blocks w/ 'advanced' css rules on the block itself.
-   // wp.customize('wda_title_lead_bottom_padding', function(setting) {
-   //    setting.bind( function(value) {
-   //       if(value < 0) value = 0;
-   //       if(value > 25) value = 25;
-   //       $('.wda-title-lead').css('padding-bottom', value + 'vh');
-   //    });
-   // });
    wp.customize('wda_title_lead_y_margin', function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -263,8 +246,7 @@
    wp.customize('wda_title_lead_align', function(setting) {
       setting.bind( function(value) {
          // to do : validation?
-         // if(value < 0) value = 0;
-         // if(value > 25) value = 25;
+         // eg cf. if(value < 0) value = 0;
          $('.wda-title-lead__title').css('text-align', value);
          $('.wda-title-lead__p').css('text-align', value);
          $('.wda-title-lead').css('align-items',text_to_flex_props[value])
