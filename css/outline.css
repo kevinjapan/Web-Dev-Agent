@@ -755,7 +755,7 @@ section.feature_tiles > ul > li > div:not(button) {
    z-index:300;
    width:94%;
    margin:0 auto;
-   margin-top:-30px;
+   /* margin-top:-30px; to do : review - we need to remove this - was prev. workaround covering other issues now simplified/resolve w/ h elements */
    background:white;
    padding:0 1.5rem 1rem 1.5rem;
    text-align:center;

@@ -37,6 +37,10 @@ header {
    margin:0;
 }
 
+p {
+   margin:0;
+}
+
 
 .menu-top-menu {
    display:flex;
@@ -50,7 +54,39 @@ ul.menu{
    gap:1rem;
 }
 
-
+h1, h2, h3, h4, h5, h6 {
+   margin:0;
+   padding: 0;
+}
+h1.wda_h1,.wda-cover h1 {
+   font-size:3.5rem;
+   line-height:3.7rem;
+}
+h2.wda_h2,.wda-cover h2 {
+   font-size:3rem;
+   line-height:3.2rem;
+}
+h3.wda_h3,.wda-cover h3 {
+   font-size:2.5rem;
+   line-height:2.7rem;
+}
+h4.wda_h4,.wda-cover h4 {
+   font-size:2rem;
+   line-height:2.25rem;
+}
+h5.wda_h5,.wda-cover h5 {
+   font-size:1.5rem;
+   line-height:1.75rem;
+}
+h6.wda_h6,.wda-cover h6 {
+   font-size:1.25rem;
+   line-height:1.35rem;
+}
+h4 {
+   /* to do : review : remove !important : including for now just to set sizes - but we will need to force our sizes onto Blocks perhaps.. */
+   font-size:1.4rem;
+   line-height:1.65rem;
+}
 
 /* 
    adapt outlinecss nav to wordpress menu structure 
@@ -83,9 +119,11 @@ li.menu-item.current-menu-item > a {
 /* 
    customizing Block Patterns 
 */
-
-
-
+/* we take control to align all Blocks elements */
+/* div, p {
+   margin:0;
+   padding:0;
+} */
 
 
 /* 
@@ -95,6 +133,7 @@ future :
 */
 .wda-cover {
    margin:0 auto;
+   border-radius:1rem;
 }
 .wda-cover-rows div.wp-block-columns {
    display:flex;
@@ -107,12 +146,32 @@ future :
 }
 
 
+.wda_cover_btns {
+   margin:0;
+}
+/* future : duplicates feature_btns below - we want universal btn across blocks */
+.wda_cover_btns > div > a,
+.wda_cover_btns > div > div {
+   width:100%;
+   background:var(--wda_btn_bg);
+   color:var(--wda_btn_text_color);
+   padding:var(--wda_btn_padding);
+   font-size:var(--wda_btn_font_size);
+}
+.wda_cover_btns > div > a:hover {
+   background:var(--wda_btn_bg_hover);
+   color:var(--link_text_color_hover); 
+}
 
+
+/* .wda_cover_btn {
+   padding:.5rem;
+} */
 /*
    Button Blocks
 */
 div.wda_buttons {
-   margin:1rem 2rem;
+   margin:1rem 0;
 }
 /* add wda_button to any WP button type to control border-radius */
 div.wda_button a {
@@ -243,6 +302,10 @@ div.wda-features > div.wp-block-column {
    grid-template-columns:1fr 1fr 1fr 1fr !important; 
 }
 
+.wda_icon {
+   width:42px;
+   padding-left:.5rem;
+}
 /*
    Grid Blocks
    -------------------------------------------------------------
