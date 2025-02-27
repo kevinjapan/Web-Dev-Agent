@@ -1,9 +1,11 @@
 <?php
 
+// wda 'customize_register' TitleLead Blocks
+// The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
 
-// future : can we / need we! make ctrls layout more compact - eg side-by-side smaller ctrls?
+
    
-function wda_customize_title_lead_block($wp_customize) {
+function wda_customize_register_title_lead_blocks($wp_customize) {
 
 
    //
@@ -32,7 +34,6 @@ function wda_customize_title_lead_block($wp_customize) {
 
    // 
    // big title & lead-text box padding
-   // to do : do we need big_title_lead block?
    $wp_customize->add_setting(
       'wda_big_title_lead_x_padding',
       array('default'    => '0', 
@@ -225,7 +226,6 @@ function wda_customize_title_lead_block($wp_customize) {
    ));
 
    // Title Lead Align
-   // to do : account for 'align-items:flex-end;' on '.wda-title-lead' or '.wda-title-lead > div'
    $wp_customize->add_setting(
       'wda_title_lead_align',
       array('default'    => '0', 
@@ -254,7 +254,7 @@ function wda_customize_title_lead_block($wp_customize) {
 
 
 
-function wda_customize_title_lead_block_styles() {
+function wda_customize_register_title_lead_blocks_styles() {
 
    
    //

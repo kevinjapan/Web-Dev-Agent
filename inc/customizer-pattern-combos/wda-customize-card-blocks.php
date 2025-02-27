@@ -1,10 +1,15 @@
 <?php
 
+// wda 'customize_register' Card Blocks
+// The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
+
+
+
 // paired w/ wda-customize.js for live updates in Customizer
 
 // to do : comment here - where/how are these put out to front-end?
 
-function wda_customize_card_block($wp_customize) {
+function wda_customize_register_card_blocks($wp_customize) {
 
    // X-margins
    $wp_customize->add_setting(
@@ -89,7 +94,7 @@ function wda_customize_card_block($wp_customize) {
 
 }
 
-function wda_customize_card_block_styles() {
+function wda_customize_register_card_blocks_styles() {
 
    //
    // wda-card

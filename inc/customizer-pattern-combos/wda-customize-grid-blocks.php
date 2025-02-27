@@ -1,10 +1,10 @@
 <?php
 
-// paired w/ wda-customize.js for live updates in Customizer
+// wda 'customize_register' Grid Blocks
+// The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
 
-// to do : comment here - where/how are these put out to front-end?
 
-function wda_customize_grid_block($wp_customize) {
+function wda_customize_register_grid_blocks($wp_customize) {
 
    // X-margins
    $wp_customize->add_setting(
@@ -89,7 +89,7 @@ function wda_customize_grid_block($wp_customize) {
 
 }
 
-function wda_customize_grid_block_styles() {
+function wda_customize_register_grid_blocks_styles() {
 
    //
    // wda-grid

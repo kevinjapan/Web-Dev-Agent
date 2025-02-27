@@ -22,12 +22,12 @@ require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-cust
 class WebDevAgentPatternsCustomizer {
 
 
-   public static function register ( $wp_customize ) {
+   public static function register($wp_customize) {
 
       //
       // Wed Dev Agent Block Patterns panel
       //
-      if ( class_exists( 'WP_Customize_Panel' ) ) {
+      if (class_exists( 'WP_Customize_Panel') ) {
          if ( ! $wp_customize->get_panel( 'wda_patterns_panel' ) ) {
             $wp_customize->add_panel(
                'wda_patterns_panel',
@@ -131,14 +131,14 @@ class WebDevAgentPatternsCustomizer {
       //
       // Block Pattern Settings/Controls pairs
       //
-      wda_customize_cover_block($wp_customize);
-      wda_customize_feature_blocks($wp_customize);
-      wda_customize_card_block($wp_customize);
-      wda_customize_grid_block($wp_customize);
-      wda_customize_image_block($wp_customize);
-      wda_customize_gallery_block($wp_customize);
-      wda_customize_title_lead_block($wp_customize);
-      wda_customize_text_block($wp_customize);
+      wda_customize_register_cover_blocks($wp_customize);
+      wda_customize_register_feature_blocks($wp_customize);
+      wda_customize_register_card_blocks($wp_customize);
+      wda_customize_register_grid_blocks($wp_customize);
+      wda_customize_register_image_blocks($wp_customize);
+      wda_customize_register_gallery_blocks($wp_customize);
+      wda_customize_register_title_lead_blocks($wp_customize);
+      wda_customize_register_text_blocks($wp_customize);
    }
 
 
@@ -153,14 +153,14 @@ class WebDevAgentPatternsCustomizer {
       //
       // Block Pattern Styles
       //
-      wda_customize_cover_block_styles();
-      wda_customize_feature_blocks_styles();
-      wda_customize_card_block_styles();
-      wda_customize_grid_block_styles();
-      wda_customize_image_block_styles();
-      wda_customize_gallery_block_styles();
-      wda_customize_title_lead_block_styles();
-      wda_customize_text_block_styles();
+      wda_customize_register_cover_blocks_styles();
+      wda_customize_register_feature_blocks_styles();
+      wda_customize_register_card_blocks_styles();
+      wda_customize_register_grid_blocks_styles();
+      wda_customize_register_image_blocks_styles();
+      wda_customize_register_gallery_blocks_styles();
+      wda_customize_register_title_lead_blocks_styles();
+      wda_customize_register_text_blocks_styles();
       ?>   
       </style> 
       <!-- The Web Dev Agent Patterns Customizer CSS -->

@@ -1,8 +1,12 @@
 <?php
 
+// wda 'customize_register' Feature Blocks
+// The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
+
+
 // Feature Blocks [multi-columns]
 
-function wda_customize_feature_blocks($wp_customize) {
+function wda_customize_register_feature_blocks($wp_customize) {
 
    // future : Add bg color setting to block patterns
    // considerations: 
@@ -130,7 +134,7 @@ function wda_customize_feature_blocks($wp_customize) {
 }
 
 
-function wda_customize_feature_blocks_styles() {
+function wda_customize_register_feature_blocks_styles() {
 
    
       //

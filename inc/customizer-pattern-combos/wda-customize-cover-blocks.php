@@ -1,8 +1,13 @@
 <?php
 
+// wda 'customize_register' Cover Blocks
+// The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
+
+
+
 // to do : want 'combo' in these filenames : rollout
 
-function wda_customize_cover_block($wp_customize) {
+function wda_customize_register_cover_blocks($wp_customize) {
 
    
    // Hero Cover Block Patterns
@@ -109,7 +114,7 @@ function wda_customize_cover_block($wp_customize) {
    ));
 }
 
-function wda_customize_cover_block_styles() {
+function wda_customize_register_cover_blocks_styles() {
 
    //
    // wda-cover

@@ -1,7 +1,12 @@
 <?php
 
+// wda 'customize_register' Gallery Blocks
+// The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
+
+
+
    
-function wda_customize_gallery_block($wp_customize) {
+function wda_customize_register_gallery_blocks($wp_customize) {
 
    //
    // te-gallery block pattern : 
@@ -50,7 +55,7 @@ function wda_customize_gallery_block($wp_customize) {
 
 
 
-function wda_customize_gallery_block_styles() {
+function wda_customize_register_gallery_blocks_styles() {
 
 
    
