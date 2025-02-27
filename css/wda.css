@@ -436,8 +436,7 @@ div.flex {
 .wda_inner_feature_block.bg_blue {background:blue;color:white;}
 .wda_inner_feature_block.bg_blue a {color:white;}
 .wda_inner_feature_block.bg_blue a:hover {color:white;}
-/* to do : change btn color if necessary - eg on feature column bg */
-
+/* we change btn color if necessary - eg on feature column bg */
 .wda_inner_feature_block.bg_lightgrey {background:hsl(0, 0%, 88%);color:black;}
 
 

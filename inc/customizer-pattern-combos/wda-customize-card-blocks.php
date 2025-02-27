@@ -4,11 +4,6 @@
 // The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
 
 
-
-// paired w/ wda-customize.js for live updates in Customizer
-
-// to do : comment here - where/how are these put out to front-end?
-
 function wda_customize_register_card_blocks($wp_customize) {
 
    // X-margins
@@ -96,10 +91,6 @@ function wda_customize_register_card_blocks($wp_customize) {
 
 function wda_customize_register_card_blocks_styles() {
 
-   //
-   // wda-card
-   // to do : review : we likely are generating way too many '@media screen..'s in page source?
-   // to do : review : 'vh'/'vw' for margins?
    ?>
    @media screen and (min-width: 768px) { 
       <?php 

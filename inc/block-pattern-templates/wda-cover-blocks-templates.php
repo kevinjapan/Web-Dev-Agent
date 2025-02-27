@@ -178,7 +178,7 @@ function wda_register_cover_blocks_templates($site_uri) {
 
    
    // Cover Block Template
-   //  to do : eg id:248 below - don't include hardcoded ids etc.
+   //  to do : eg id:248 below - don't include hardcoded ids etc. : rollout
 	register_block_pattern(
       'wda-cover-rows-no-img',
       [

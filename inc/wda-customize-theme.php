@@ -2,22 +2,16 @@
 require_once get_template_directory() . '/inc/wda-sanitize.php';
 require_once get_template_directory() . '/inc/wda-utility.php';
 
-
-// Settings Control Combos
+// Settings/Control Combos
 require_once get_template_directory() . '/inc/customizer-theme-combos/wda-customize-theme-copyright.php';
 require_once get_template_directory() . '/inc/customizer-theme-combos/wda-customize-theme-typography.php';
 require_once get_template_directory() . '/inc/customizer-theme-combos/wda-customize-theme-posts.php';
 require_once get_template_directory() . '/inc/customizer-theme-combos/wda-customize-theme-frontpage.php';
 
 
-//
 // WebDevAgentThemeCustomizer
 // Creates 'Web Dev Agent' Theme Controls in Customizer.
 // Generates front-end CSS from the configured Settings.
-// 
-
-
-// to do : refactor - see this file version in The Educator.
 
 class WebDevAgentThemeCustomizer {
    
@@ -40,7 +34,6 @@ class WebDevAgentThemeCustomizer {
             );
          }
       }
-
 
       // Theme Customizer Sections
       $wp_customize->add_section(
@@ -76,7 +69,6 @@ class WebDevAgentThemeCustomizer {
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactTextCustomizerControl.php';
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactSelectCustomizerControl.php';
    
-
       // Theme Sections Settings/Controls combos
       wda_customize_theme_copyright($wp_customize);
       wda_customize_theme_typography($wp_customize);
