@@ -46,4 +46,18 @@ if(!function_exists('wda_sanitize_radio_buttons')):
 endif;
 
 
+if (!function_exists('wda_sanitize_select')) :
+
+	/*
+	 * Sanitize number range.
+	 */
+	function wda_sanitize_select($input, $setting) {
+      
+      // to do : implement
+
+      return true;
+   }
+
+
+endif;
 
