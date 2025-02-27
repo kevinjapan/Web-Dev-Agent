@@ -278,8 +278,9 @@ div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
    margin:0;
    overflow:hidden;
 }
-.wda_inner_feature_block > figurewda_customize_card_block,
-.wda-card > figurewda_customize_card_block  {
+/* to do : review these : may have broken */
+.wda_inner_feature_block > figure,
+.wda-card > figure  {
    align-self:flex-start;
    width:60px;
    margin-left:.5rem;

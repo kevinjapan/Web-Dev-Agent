@@ -1,24 +1,13 @@
 
 <?php
-// to do : 
-// - customize on customizer to change grid layout for all grids
-// - add utility css classes to indvdl grid in Edit Page - Block - to override grid columns
+
 
 // Register Theme Block Pattern Templates
-//
+
 function wda_register_grid_blocks_templates($site_uri) {
 
    // Grid Block Template
-   // 
-   // to do : review : we removed WP group layout type and implement our own via wda-grid : 
-   //     '<!-- wp:group {"layout":{"type":"grid"}} -->
 
-   // -------------------------------------------------------------------------------------------
-   // to do : relying on WP group elements is risky, since they may change their behaviour
-   // eg for wp-block-group, WP *will* inject '<div class="wp-block-group__inner-container">.. - 
-   // we can't hardcode this in our own solution - it's change is outside our control and would
-   // break this. So, we should implement our own HTML elements and CSS rules.
-   // -------------------------------------------------------------------------------------------
 	register_block_pattern(
       'wda-grid',
       [

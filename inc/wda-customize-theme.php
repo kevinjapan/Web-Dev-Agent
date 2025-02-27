@@ -27,10 +27,8 @@ class WebDevAgentThemeCustomizer {
       $wp_customize->get_setting('blogname')->transport = 'postMessage';
       $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
 
-      //
+
       // Wed Dev Agent Theme panel
-      // to do : this panel not appearing? no sections content?
-      //
       if ( class_exists('WP_Customize_Panel')) {
          if ( ! $wp_customize->get_panel('wda_layout_panel') ) {
             $wp_customize->add_panel(
@@ -45,7 +43,6 @@ class WebDevAgentThemeCustomizer {
 
 
       // Theme Customizer Sections
-      //
       $wp_customize->add_section(
          'wda_typography', 
          array('title'       => esc_html('Typography', 'wda'),
@@ -72,8 +69,7 @@ class WebDevAgentThemeCustomizer {
                'description' => esc_html__('You can customize the site\'s Copyright Footer Notice here.', 'wda'),
                'panel' => 'wda_layout_panel') 
       );
-      
-      // to do : review : on-going - CompactNumberCustomizerControl
+
       // Load Custom Custom Customizer Controls
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/LabelCustomizerControl.php';
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactNumberCustomizerControl.php';
@@ -82,27 +78,20 @@ class WebDevAgentThemeCustomizer {
    
 
       // Theme Sections Settings/Controls combos
-      //
       wda_customize_theme_copyright($wp_customize);
       wda_customize_theme_typography($wp_customize);
       wda_customize_theme_frontpage($wp_customize);
       wda_customize_theme_posts($wp_customize);
-      
-
    }
 
 
-   //
    // frontend inline theme styles
-   // to do : merging in refactoring from TE - enable styles !
    public static function wda_customizer_theme_styles() {
       ?>
       <!-- Web Dev Agent Theme Customizer CSS --> 
       <style id="web-dev-agent-custom-theme" type="text/css">
       <?php 
-      //
       // Theme Customizer Styles
-      //
       wda_customize_theme_copyright_styles();
       wda_customize_theme_typography_styles();
       wda_customize_theme_posts_styles();

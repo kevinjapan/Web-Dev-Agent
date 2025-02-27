@@ -232,7 +232,7 @@ function wda_customize_register_title_lead_blocks($wp_customize) {
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
-            'sanitize_callback' => 'wda_sanitize_number_range') 
+            'sanitize_callback' => 'wda_sanitize_select') 
    );
    $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
       'wda_title_lead_align', 

@@ -4,14 +4,10 @@
 // The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
 
 
-
-// to do : want 'combo' in these filenames : rollout
-
 function wda_customize_register_cover_blocks($wp_customize) {
 
    
    // Hero Cover Block Patterns
-   // to do : not 'wda_sanitize_number_range'
    // to do : re-enable this or remove
    $wp_customize->add_setting(
       'wda_hero_v_align',
@@ -19,7 +15,7 @@ function wda_customize_register_cover_blocks($wp_customize) {
             'type'       => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport'  => 'postMessage',
-            'sanitize_callback' => 'wda_sanitize_number_range') 
+            'sanitize_callback' => 'wda_sanitize_select') 
    );
    $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
       'wda_hero_v_align', 
@@ -42,7 +38,7 @@ function wda_customize_register_cover_blocks($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_number_range') 
    );
-   // to do : move to Hero Cover Block section
+
    $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
       'wda_hero_x_height', 
       array('type' => 'number',

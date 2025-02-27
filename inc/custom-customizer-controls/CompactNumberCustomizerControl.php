@@ -29,7 +29,6 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
                <?php echo wp_kses_post($this->description );?>
             </div>
          <?php } ?>
-         <?php // if( !empty( $this->label ) ) to do : ??? { ?>
          <input 
             id="_customize-input-<?php echo $this->id;?>" 
             type="number" 
@@ -40,8 +39,6 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
             style="width: 60px;" 
             value="<?php echo esc_attr($this->value()); ?>"  
             data-customize-setting-link="<?php echo $this->id; ?>">
-
-         <?php // } ?>
       </div>
 
       <?php

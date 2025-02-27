@@ -1,6 +1,5 @@
 <?php
 
-
 // Feature Blocks [multi-columns]
 // Register Theme Block Pattern Templates
 
@@ -11,9 +10,6 @@
 // over settings and generate applicable CSS in straightfoward manner. So, we offer different templates.
 // It is important that we maintain integrity of WP blocks so that users can still change elements in 
 // individual blocks in the Page Editor etc.
-
-// to do : utility classes for all blocks - how to expose to user - eg change image size for a single multiple feature block
-// to do :rename func:
 
 function wda_register_column_blocks_templates($site_uri) {
 
@@ -202,7 +198,6 @@ function wda_features_col_image() {
                <!-- /wp:image -->';
 }
 function wda_features_col_icon() {
-   // to do : change this to icon size img
    return '<!-- wp:image {"sizeSlug":"medium","linkDestination":"none","className":"fill_width"} -->
                <figure class="wp-block-image size-medium fill_width wda_icon">
                   <img src="' . get_template_directory_uri() .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" alt="image of Feature Blocks"/>

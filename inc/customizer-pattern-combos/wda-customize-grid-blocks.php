@@ -91,10 +91,8 @@ function wda_customize_register_grid_blocks($wp_customize) {
 
 function wda_customize_register_grid_blocks_styles() {
 
-   //
-   // wda-grid
-   // to do : review : we likely are generating way too many '@media screen..'s in page source?
-   // to do : review : 'vh'/'vw' for margins?
+   // to do : review : we are generating way too many '@media screen..'s in page source? : rollout
+   // to do : review : 'vh'/'vw' for margins? : rollout
    ?>
    @media screen and (min-width: 768px) { 
       <?php 
