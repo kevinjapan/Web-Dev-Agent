@@ -57,18 +57,14 @@ function wda_customize_register_gallery_blocks($wp_customize) {
 
 function wda_customize_register_gallery_blocks_styles() {
 
-?>
-@media screen and (min-width: 768px) { 
-   <?php 
+
    wda_generate_css_rule('.wda-gallery,.wda-gallery.has-background',
       ['style' => 'padding-left','setting' => 'wda_gallery_x_padding','prefix'  => '','postfix' => '%'],
       ['style' => 'padding-right','setting' => 'wda_gallery_x_padding','prefix'  => '','postfix' => '%']);
    wda_generate_css_rule('.wda-gallery,.wda-gallery.has-background',
       ['style' => 'margin-top','setting' => 'wda_gallery_y_margins','prefix'  => '','postfix' => 'vh'],
       ['style' => 'margin-bottom','setting' => 'wda_gallery_y_margins','prefix'  => '','postfix' => 'vh']);
-   ?>
-}
-<?php
+   
 
 }
 

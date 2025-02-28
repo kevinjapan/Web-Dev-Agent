@@ -90,7 +90,6 @@ function wda_customize_register_card_blocks($wp_customize) {
 }
 
 function wda_customize_register_card_blocks_styles() {
-
    ?>
 @media screen and (min-width: 768px) { 
 <?php 
@@ -98,6 +97,9 @@ function wda_customize_register_card_blocks_styles() {
 wda_generate_css_rule('.wda-card',
 ['style' => 'margin-left','setting' => 'wda_card_x_margins','prefix'  => '','postfix' => 'vw'],
 ['style' => 'margin-right','setting' => 'wda_card_x_margins','prefix'  => '','postfix' => 'vw']);
+?>
+}
+<?php
 wda_generate_css_rule('.wda-card',
 ['style' => 'margin-top','setting' => 'wda_card_y_margins','prefix'  => '','postfix' => 'vh'],
 ['style' => 'margin-bottom','setting' => 'wda_card_y_margins','prefix'  => '','postfix' => 'vh']);
@@ -108,7 +110,5 @@ wda_generate_css_rule('.wda-card > div, .wda-card:not(:has(div))',
 // wda_card_template_cols
 wda_generate_css_rule('.wda-card > div, .wda-card:not(:has(div))',
 ['style' => 'card-template-columns','setting' => 'wda_card_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
-?>
-}
-<?php
+
 }
