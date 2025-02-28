@@ -53,9 +53,14 @@ if (!function_exists('wda_sanitize_select')) :
 	 */
 	function wda_sanitize_select($input, $setting) {
       
-      // to do : implement
+      // Ensure input is a slug.
+      $input = sanitize_key($input);
+      
+      // get list of options
+      $choices = $setting->manager->get_control($setting->id)->choices;
 
-      return true;
+      // If the input is a valid key, return it - else return default
+      return (array_key_exists($input, $choices) ? $input : $setting->default);
    }
 
 
