@@ -5,67 +5,67 @@
 */
 :root {
 
-      /* Custom Props Color Schemes */
-      --primary_bg:  hsl(41, 44%, 57%);   /* #c2a361 */
-      --secondary_bg:hsl(64, 53%, 57%);   /* #c4cb57 */
-      --light_bg:    hsl(49, 8%, 62%);    /* #a6a396 */
-      --dark_bg:     hsl(206, 3%, 46%);   /* #727679 */
-      --accent_bg:hsl(50, 99%, 48%);
-      --semantic_pos_bg:    hsl(120, 93%, 79%);  /* green  - positive */
-      --semantic_neg_bg:    hsl(0, 100%, 75%);   /* red    - negative */
-      --semantic_warn_bg:   hsl(39, 100%, 75%);  /* orange - warning  */
-      --semantic_neutral_bg:hsl(240, 100%, 75%); /* blue   - neutral  */
+   /* Custom Props Color Schemes */
+   --primary_bg:  hsl(41, 44%, 57%);   /* #c2a361 */
+   --secondary_bg:hsl(64, 53%, 57%);   /* #c4cb57 */
+   --light_bg:    hsl(49, 8%, 62%);    /* #a6a396 */
+   --dark_bg:     hsl(206, 3%, 46%);   /* #727679 */
+   --accent_bg:hsl(50, 99%, 48%);
+   --semantic_pos_bg:    hsl(120, 93%, 79%);  /* green  - positive */
+   --semantic_neg_bg:    hsl(0, 100%, 75%);   /* red    - negative */
+   --semantic_warn_bg:   hsl(39, 100%, 75%);  /* orange - warning  */
+   --semantic_neutral_bg:hsl(240, 100%, 75%); /* blue   - neutral  */
    
       
-      /* Fonts */
-      /* sans|serif */
-      --font_family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-      /* --font_family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; */
-      --font-size:18px;
-   
-      --light_text:white;
-      --dark_text:black;
-   
-      /* Navigation */
-      --nav_mobile_dropdown_bg:blue;  
-      --nav_mobile_dropdown_color:white;
+   /* Fonts */
+   /* sans|serif */
+   --font_family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+   /* --font_family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; */
+   --font-size:18px;
+
+   --light_text:white;
+   --dark_text:black;
+
+   /* Navigation */
+   --nav_mobile_dropdown_bg:blue;  
+   --nav_mobile_dropdown_color:white;
    
    /* top level nav items - dropdown in sm/mobile */
-      /* md-lg screen navigation */
-      --nav_bar_height:90px; /* used by header/header bg_img */
-      --nav_bar_bg:          white;
-      --nav_bar_text_color:  black;
-      --nav_dropdown_bg:     white;
-      --nav_dropdown_color:  black;
-      /* item link highlight on hover */
-      --nav_item_bottom_border:solid 1px transparent;
-      --align_items_lg_dropdown:flex-end;
+   /* md-lg screen navigation */
+   --nav_bar_height:90px; /* used by header/header bg_img */
+   --nav_bar_bg:          white;
+   --nav_bar_text_color:  black;
+   --nav_dropdown_bg:     white;
+   --nav_dropdown_color:  black;
+   /* item link highlight on hover */
+   --nav_item_bottom_border:solid 1px transparent;
+   --align_items_lg_dropdown:flex-end;
+
+   /* Paragraphs  */
+   --paragraph_width:50rem;
+   --paragraph_padding:1rem;
+
+   /* z-index layers */
+   --app_status_layer:1100;
+   --over_over_over_nav_layer:1000;
+   --over_over_nav_layer:999;
+   --over_nav_layer:998;
+   --nav_layer:900;
+   --under_nav_layer:-10;
    
-      /* Paragraphs  */
-      --paragraph_width:50rem;
-      --paragraph_padding:1rem;
+   /* Component properties */    
+   --cover_block_height:500px;   
+   --feature_tiles_gap:1rem;
    
-      /* z-index layers */
-      --app_status_layer:1100;
-      --over_over_over_nav_layer:1000;
-      --over_over_nav_layer:999;
-      --over_nav_layer:998;
-      --nav_layer:900;
-      --under_nav_layer:-10;
-      
-      /* Component properties */    
-      --cover_block_height:500px;   
-      --feature_tiles_gap:1rem;
-   
-      /* Utility properties */
-      --rounded_border:.5rem;
-      --img_border_radius:.25rem;
-   
-      --wda_btn_bg:  hsl(240, 100%, 50%);
-      --wda_btn_bg_hover:  hsl(240, 100%, 40%);
-      --wda_btn_text_color: white;
-      --wda_btn_padding:.5rem;
-      --wda_btn_font_size:1rem;
+   /* Utility properties */
+   --rounded_border:.5rem;
+   --img_border_radius:.25rem;
+
+   --wda_btn_bg:  hsl(240, 100%, 50%);
+   --wda_btn_bg_hover:  hsl(240, 100%, 40%);
+   --wda_btn_text_color: white;
+   --wda_btn_padding:.5rem;
+   --wda_btn_font_size:1rem;
 
    --wda_btn_bg:  hsl(240, 100%, 50%);
    --wda_btn_bg_hover:  hsl(240, 100%, 40%);
@@ -103,6 +103,8 @@ p {
 
 
 .menu-top-menu {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
 }
 
@@ -110,10 +112,13 @@ ul {
    list-style:none;
 }
 ul.menu{
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
    gap:1rem;
 }
 
+/* Heading elements */
 h1, h2, h3, h4, h5, h6 {
    margin:0;
    padding: 0;
@@ -142,11 +147,7 @@ h6.wda_h6,.wda-cover h6 {
    font-size:1.25rem;
    line-height:1.35rem;
 }
-h4 {
-   /* to do : review : remove !important : including for now just to set sizes - but we will need to force our sizes onto Blocks perhaps.. */
-   font-size:1.4rem;
-   line-height:1.65rem;
-}
+
 
 /* 
    adapt outlinecss nav to wordpress menu structure 
@@ -168,7 +169,11 @@ li.menu-item.current-menu-item > a {
 
 
 .list_style_bullets {
+
+   -ms-flex-item-align:center;
+   -ms-grid-row-align:center;
    align-self:center;
+
    width:fit-content;
    list-style:circle;
    margin-bottom:1rem;
@@ -196,7 +201,12 @@ future :
    border-radius:1rem;
 }
 .wda-cover-rows div.wp-block-columns {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+   -webkit-box-orient:vertical;
+   -webkit-box-direction:normal;
+   -ms-flex-direction:column;
    flex-direction:column;
 }
 
@@ -248,10 +258,16 @@ div.wda_button a {
 */
 /* switch off grid at sm/mobile - permits stacking at <782px */
 .wda-features .wp-block-media-text__content {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
+   -webkit-box-orient:vertical;
+   -webkit-box-direction:normal;
+   -ms-flex-direction:column;
    flex-direction:column;
-   gap:1rem;
+   -ms-flex-item-align:start;
    align-self:flex-start;
+   gap:1rem;
 }
 /* align all child text elements in text__content */
 .wda-features .wp-block-media-text__content > * {margin:0;padding:0;}
@@ -259,8 +275,12 @@ div.wda_button a {
    display:unset;
 }
 .wda_inner_feature_block {
+   display:-ms-grid;
    display:grid;
+   -webkit-box-align:left;
+   -ms-flex-align:left;
    align-items:left;
+
    padding:1rem;
    border:solid 1px lightgrey;
    border-radius:.5rem;
@@ -268,9 +288,11 @@ div.wda_button a {
 }
 
 div.wda-features.wda-single-feature-columns.reverse_order figure:nth-child(1) {
+   -ms-grid-column:2;
    grid-column:2;
 }
 div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
+   -ms-grid-column:1;
    grid-column:1;
 }
 .wda_inner_feature_block > figure {
@@ -278,9 +300,9 @@ div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
    margin:0;
    overflow:hidden;
 }
-/* to do : review these : may have broken */
 .wda_inner_feature_block > figure,
 .wda-card > figure  {
+   -ms-flex-item-align:start;
    align-self:flex-start;
    width:60px;
    margin-left:.5rem;
@@ -304,6 +326,7 @@ div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
    overflow:hidden
 }
 .wda-single-feature-columns figure img {
+   -o-object-fit: cover;
    object-fit: cover;
 }
 /* div.wda_feature_btn {
@@ -315,11 +338,11 @@ div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
 */
 @media screen and (min-width: 782px) {
    .wda-single-feature-columns {
+      display:-ms-grid;
       display:grid;
    }
 }
 /* style button/links in Feature Block */
-/* to do : trying various to get working in Page Editor - eg !important.. */
 .wda_feature_btns > div > a,
 .wda_feature_btns > div > div {
    width:100%;
@@ -360,6 +383,7 @@ div.wda-features > div.wp-block-column {
    padding:1rem;
    gap:1rem;
    /* we override WP container class .wp-container-core-group-is-layout-9 which is inserted after save */
+   -ms-grid-columns:1fr 1fr 1fr 1fr !important;
    grid-template-columns:1fr 1fr 1fr 1fr !important; 
 }
 
@@ -371,17 +395,21 @@ div.wda-features > div.wp-block-column {
    Grid Blocks
    -------------------------------------------------------------
 */
-/* to do : grid is not responsive - overlapping.. wrapping late. */
 /* div.wda-grid {
    max-width:100%;
 } */
 /* we allow for WP injecting an inner container div w/ redundancy */
 .wda-grid:not(:has(div)),
 .wda-grid > div {
+   display:-ms-grid;
    display:grid;
-   /* to do : make grid-template-columns configurable in customizer */
+   -ms-grid-columns:1fr 1fr 1fr;
    grid-template-columns:1fr 1fr 1fr;
+   -webkit-box-pack:center;
+   -ms-flex-pack:center;
    justify-content:center;
+   -webkit-box-align:center;
+   -ms-flex-align:center;
    align-items:center;
    /* container:unset; */
 } 
@@ -390,12 +418,15 @@ div.wda-features > div.wp-block-column {
 }
 /* utility classes */
 .wda-grid.grid_2_cols {
+   -ms-grid-columns:1fr 1fr;
    grid-template-columns:1fr 1fr;
 }
 .wda-grid.grid_4_cols {
+   -ms-grid-columns:1fr 1fr 1fr 1fr;
    grid-template-columns:1fr 1fr 1fr 1fr;
 }
 .wda-grid.grid_6_cols {
+   -ms-grid-columns:1fr 1fr 1fr 1fr 1fr 1fr;
    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
@@ -410,10 +441,16 @@ p.wda-title-lead__p {
 }
 .wda-title-lead:not(:has(div)),
 .wda-title-lead > div {
-   /* to do : webkit : rollout */
-   display:flex;
-   flex-direction:column;
-   align-items:flex-end;
+      display:-webkit-box;
+      display:-ms-flexbox;
+      display:flex;
+      -webkit-box-orient:vertical;
+      -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+      flex-direction:column;
+      -webkit-box-align:end;
+      -ms-flex-align:end;
+      align-items:flex-end;
 }
 
 /*
@@ -421,6 +458,8 @@ p.wda-title-lead__p {
    -------------------------------------------------------------
 */
 div.flex {
+   display:-webkit-box;
+   display:-ms-flexbox;
    display:flex;
 }
 .mt_2 {margin-top:2rem;}
@@ -441,3 +480,4 @@ div.flex {
 
 
 .mx_5 {margin-left:5rem;margin-right:5rem;}
+
