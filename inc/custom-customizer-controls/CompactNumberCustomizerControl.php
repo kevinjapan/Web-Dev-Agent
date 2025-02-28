@@ -10,22 +10,14 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
    public $type = 'compact_number_customizer_control';
 
    public function render_content() {
-
-      // to do : 
-      // - move inline styles to css files
-      // - rollout : make sure all comments are in php (a) don't show in client-side (b) more importantly, will show up as errors in my code editor
-      // - review source code client-side - tidy as needed
-      // - need to use label - or separate control? 
-      // - current label is too similar to input box - cf eg menu customizer labels : rollout to all Custom Controls w/ label
       ?>
-      
       <?php if($this->label !== "") {?>
-         <div style="margin-bottom:.5rem;background:white;"><h4 style="margin:0;padding:.25rem;font-weight:200;font-size:1rem;"><?php echo $this->label; ?></h4></div>
+         <div class="wda_customizer_ctrl_label"><h4><?php echo $this->label; ?></h4></div>
       <?php }?>
 
-      <div class="flex" style="display:flex;align-items:center;gap:1rem;min-width:100%;">
+      <div class="wda_compact_number_customizer_ctrl">
          <?php if(!empty($this->description)) { ?>
-            <div class="customize-control-description" style="width:50%;height:fit-content;">
+            <div class="customize-control-description">
                <?php echo wp_kses_post($this->description );?>
             </div>
          <?php } ?>
@@ -35,8 +27,8 @@ class CompactNumberCustomizerControl extends WP_Customize_Control {
             aria-describedby="_customize-description-<?php echo $this->id; ?>" 
             min="0" 
             max="<?php echo $this->input_attrs['max']; ?>" 
-            step="<?php echo $this->input_attrs['step']; ?>" 
-            style="width: 60px;" 
+            step="<?php echo $this->input_attrs['step']; ?>"
+            class="wda_compact_number_customizer_ctrl_input"
             value="<?php echo esc_attr($this->value()); ?>"  
             data-customize-setting-link="<?php echo $this->id; ?>">
       </div>
