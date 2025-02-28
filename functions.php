@@ -31,19 +31,18 @@ add_action('wp_enqueue_scripts','load_stylesheets');
 
 // Admin stylesheets
 function wda_enqueue_custom_admin_style($hook) {
-   if ('post.php' === $hook ||  'post-new.php' === $hook || 'site-editor.php' === $hook) {
+   // if ('post.php' === $hook ||  'post-new.php' === $hook || 'site-editor.php' === $hook) {
       
-      wp_register_style('outline',get_template_directory_uri() . '/css/outline.css',array(),1,'all');
-      wp_enqueue_style('outline');
+      // wp_register_style('outline',get_template_directory_uri() . '/css/outline.css',array(),1,'all');
+      // wp_enqueue_style('outline');
       
-      // to do : review : trying include wda.css in editor - initially for Feature Block Button/Link option
-      wp_register_style('wda_stylesheet',get_template_directory_uri() . '/css/wda.css',array(),1,'all');
-      wp_enqueue_style('wda_stylesheet');
+      // wp_register_style('wda_stylesheet',get_template_directory_uri() . '/css/wda.css',array(),1,'all');
+      // wp_enqueue_style('wda_stylesheet');
 
       wp_register_style('wda_admin_stylesheet',get_template_directory_uri() . '/css/wda-admin-style.css',array(),1,'all');
       wp_enqueue_style('wda_admin_stylesheet');
 
-   }
+   // }
 }
 add_action( 'admin_enqueue_scripts', 'wda_enqueue_custom_admin_style' );
 
