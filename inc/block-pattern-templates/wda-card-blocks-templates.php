@@ -32,7 +32,6 @@ function wda_register_card_blocks_templates($site_uri) {
 
 
 function wda_single_card_template() {
-   
 
    $template = '<!-- wp:column {"className":"wda_inner_feature_block"} -->
                   <div class="wp-block-column wda_inner_feature_block">';

@@ -91,32 +91,26 @@ function wda_customize_register_grid_blocks($wp_customize) {
 
 function wda_customize_register_grid_blocks_styles() {
 
-   // to do : review : we are generating way too many '@media screen..'s in page source? : rollout
-   // to do : review : 'vh'/'vw' for margins? : rollout
+   // to do : tidy source code output - 
+   // to do : we are generating way too many '@media screen..'s in page source? : rollout
+?>
+@media screen and (min-width: 768px) { 
+<?php 
+   // container rules
+   wda_generate_css_rule('.wda-grid',
+   ['style' => 'margin-left','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw'],
+   ['style' => 'margin-right','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw']);
+   wda_generate_css_rule('.wda-grid',
+   ['style' => 'margin-top','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh'],
+   ['style' => 'margin-bottom','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh']);
+
+   // grid rules
+   wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
+   ['style' => 'gap','setting' => 'wda_grid_gap','prefix'  => '','postfix' => 'rem']);
+   // wda_grid_template_cols
+   wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
+   ['style' => 'grid-template-columns','setting' => 'wda_grid_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
    ?>
-   @media screen and (min-width: 768px) { 
-      <?php 
-
-      // container rules
-      wda_generate_css_rule('.wda-grid',
-      ['style' => 'margin-left','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw'],
-      ['style' => 'margin-right','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw']);
-      
-      wda_generate_css_rule('.wda-grid',
-      ['style' => 'margin-top','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh'],
-      ['style' => 'margin-bottom','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh']);
-
-
-      // grid rules
-      wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
-      ['style' => 'gap','setting' => 'wda_grid_gap','prefix'  => '','postfix' => 'rem']);
-
-      // wda_grid_template_cols
-      wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
-      ['style' => 'grid-template-columns','setting' => 'wda_grid_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
-
-      ?>
-
-   }
-   <?php
+}
+<?php
 }

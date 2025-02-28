@@ -146,25 +146,22 @@ class WebDevAgentPatternsCustomizer {
    //  Custom frontend CSS
    //
    public static function wda_customizer_patterns_styles() {
-      ?>
-      <!-- The Web Dev Agent Patterns Customizer CSS -->
-      <style type="text/css">
-      <?php 
-      //
-      // Block Pattern Styles
-      //
-      wda_customize_register_cover_blocks_styles();
-      wda_customize_register_feature_blocks_styles();
-      wda_customize_register_card_blocks_styles();
-      wda_customize_register_grid_blocks_styles();
-      wda_customize_register_image_blocks_styles();
-      wda_customize_register_gallery_blocks_styles();
-      wda_customize_register_title_lead_blocks_styles();
-      wda_customize_register_text_blocks_styles();
-      ?>   
-      </style> 
-      <!-- The Web Dev Agent Patterns Customizer CSS -->
-      <?php
+      echo("\n");
+?><!-- Web Dev Agent Patterns Customizer CSS -->
+<style type="text/css">
+<?php
+wda_customize_register_cover_blocks_styles();
+wda_customize_register_feature_blocks_styles();
+wda_customize_register_card_blocks_styles();
+wda_customize_register_grid_blocks_styles();
+wda_customize_register_image_blocks_styles();
+wda_customize_register_gallery_blocks_styles();
+wda_customize_register_title_lead_blocks_styles();
+wda_customize_register_text_blocks_styles();
+?>   
+</style>
+<?php
+echo("\n");
    }
 }
 
@@ -172,7 +169,8 @@ class WebDevAgentPatternsCustomizer {
 // Register Theme Customizer Settings and Controls
 add_action('customize_register', array( 'WebDevAgentPatternsCustomizer', 'register'));
 
-// Output Custom Block Pattern CSS to frontend (utilising Theme Customizer Settings and Controls)
+
+// Print Custom Block Pattern CSS in the head tag on the front end (utilising Theme Customizer Settings and Controls)
 add_action('wp_head', array( 'WebDevAgentPatternsCustomizer', 'wda_customizer_patterns_styles'));
 
 

@@ -142,7 +142,7 @@
 
 
    // Grid Block
-   // to do : review : 'vh'/'vw' for margins? - how about 'rem' and make it standard across all dimensions..?
+   // future : review : 'vh'/'vw' for margins? - how about 'rem' and make it standard across all dimensions..?
    // container rules
    wp.customize('wda_grid_x_margins',function(setting) {
       setting.bind( function(value) {
@@ -159,7 +159,6 @@
       });
    });
    // grid rules
-   // to do : bug : if go to zero, loses render completely in editor
    wp.customize('wda_grid_gap',function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -245,8 +244,7 @@
 
    wp.customize('wda_title_lead_align', function(setting) {
       setting.bind( function(value) {
-         // to do : validation?
-         // eg cf. if(value < 0) value = 0;
+         // future : validation
          $('.wda-title-lead__title').css('text-align', value);
          $('.wda-title-lead__p').css('text-align', value);
          $('.wda-title-lead').css('align-items',text_to_flex_props[value])

@@ -55,6 +55,7 @@ if (!function_exists('wda_generate_css_rule')) :
          $css = $selector . '{';
          $css.= $css_inners;
          $css.= '}';
+         echo ("\t");
          echo $css . "\n";
       }
    }
@@ -72,6 +73,7 @@ if (!function_exists('wda_inject_css')) :
             $css = $selector . '{';
             $css.= $css_inners;
             $css.= '}';
+            echo ("\t");
             echo $css . "\n";
          }
       }

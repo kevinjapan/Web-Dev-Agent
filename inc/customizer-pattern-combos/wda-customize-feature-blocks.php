@@ -83,55 +83,50 @@ function wda_customize_register_feature_blocks($wp_customize) {
 
 function wda_customize_register_feature_blocks_styles() {
       
-      wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
-      ['style' => 'padding-top','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh'],
-      ['style' => 'padding-bottom','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh']);
-      wda_generate_css_rule('.wp-block-media-text.wda-features.wda-single-feature-columns,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
-         ['style' => 'margin-top','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important'],
-         ['style' => 'margin-bottom','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important']);
-      ?>
-      @media screen and (min-width: 768px) { 
-         <?php
-            wda_generate_css_rule(
-               '.wp-block-media-text.wda-features,
-               .wp-block-media-text.wda-columfeaturesns.has-background,
-               .wp-block-columns.wda-features,
-               .wp-block-columns.wda-features.has-background',
-               ['style' => 'padding-left','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%'],
-               ['style' => 'padding-right','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%']
-            );
+   wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
+   ['style' => 'padding-top','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh'],
+   ['style' => 'padding-bottom','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh']);
+   wda_generate_css_rule('.wp-block-media-text.wda-features.wda-single-feature-columns,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
+      ['style' => 'margin-top','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important'],
+      ['style' => 'margin-bottom','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important']);
+   ?>
+@media screen and (min-width: 768px) { 
+<?php
+   wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
+      ['style' => 'padding-left','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%'],
+      ['style' => 'padding-right','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%']
+   );
 
-            wda_generate_css_rule('.wda-cover-columns, .wda-cover-columns.has-background',
-               ['style' => 'padding-left','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%'],
-               ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']
-            );
+   wda_generate_css_rule('.wda-cover-columns, .wda-cover-columns.has-background',
+      ['style' => 'padding-left','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%'],
+      ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']
+   );
 
-            if(get_theme_mod('wda_features_cta_type') === "Button") {
-               wda_inject_css(
-                  '.wda_feature_btns',
-                  ['style' => 'background','value' => 'unset' ,'prefix'  => '','postfix' => '']
-               );
-            }
-            else {
-               wda_inject_css(
-                  '.wda_feature_btns > div > a',
-                  ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
-                  ['style' => 'color','value' => 'var(--wda_btn_bg)' ,'prefix'  => '','postfix' => ''],
-                  ['style' => 'text-align','value' => 'left' ,'prefix'  => '','postfix' => ''],
-                  ['style' => 'padding','value' => '.25rem' ,'prefix'  => '','postfix' => ''],
-                  ['style' => 'padding-left','value' => '.5rem' ,'prefix'  => '','postfix' => ''],
-                  ['style' => 'font-size','value' => '1rem' ,'prefix'  => '','postfix' => ''],
-                  ['style' => 'text-decoration','value' => 'underline' ,'prefix'  => '','postfix' => '']
-               );
-               wda_inject_css(
-                  '.wda_feature_btns > div > a:hover',
-                  ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
-                  ['style' => 'color','value' => 'var(--link_text_color_hover)' ,'prefix'  => '','postfix' => '']
-               );
-            }
-         ?>
-      }
-   <?php
+   if(get_theme_mod('wda_features_cta_type') === "Button") {
+      wda_inject_css(
+         '.wda_feature_btns',
+         ['style' => 'background','value' => 'unset' ,'prefix'  => '','postfix' => '']
+      );
+   }
+   else {
+      wda_inject_css('.wda_feature_btns > div > a',
+         ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
+         ['style' => 'color','value' => 'var(--wda_btn_bg)' ,'prefix'  => '','postfix' => ''],
+         ['style' => 'text-align','value' => 'left' ,'prefix'  => '','postfix' => ''],
+         ['style' => 'padding','value' => '.25rem' ,'prefix'  => '','postfix' => ''],
+         ['style' => 'padding-left','value' => '.5rem' ,'prefix'  => '','postfix' => ''],
+         ['style' => 'font-size','value' => '1rem' ,'prefix'  => '','postfix' => ''],
+         ['style' => 'text-decoration','value' => 'underline' ,'prefix'  => '','postfix' => '']
+      );
+      wda_inject_css(
+         '.wda_feature_btns > div > a:hover',
+         ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
+         ['style' => 'color','value' => 'var(--link_text_color_hover)' ,'prefix'  => '','postfix' => '']
+      );
+   }
+?>
+}
+<?php
 }
 
 

@@ -79,20 +79,20 @@ class WebDevAgentThemeCustomizer {
 
    // frontend inline theme styles
    public static function wda_customizer_theme_styles() {
-      ?>
-      <!-- Web Dev Agent Theme Customizer CSS --> 
-      <style id="web-dev-agent-custom-theme" type="text/css">
-      <?php 
-      // Theme Customizer Styles
-      wda_customize_theme_copyright_styles();
-      wda_customize_theme_typography_styles();
-      wda_customize_theme_posts_styles();
-      wda_customize_theme_frontpage_styles();
-      ?>
-      </style> 
-      <!-- Web Dev Agent Theme Customizer -->
-      <?php
-   }
+      echo("\n");
+      ?><!-- Web Dev Agent Theme Customizer CSS --> 
+<style id="web-dev-agent-custom-theme" type="text/css">
+<?php 
+// Theme Customizer Styles
+wda_customize_theme_copyright_styles();
+wda_customize_theme_typography_styles();
+wda_customize_theme_posts_styles();
+wda_customize_theme_frontpage_styles();
+?>
+</style>
+<?php
+echo("\n");
+}
 }
 
 
@@ -101,7 +101,6 @@ class WebDevAgentThemeCustomizer {
 add_action( 'customize_register', array('WebDevAgentThemeCustomizer', 'register' ) );
 
 
-// output custom css to frontend
-//
+// Print Customizer CSS in the head tag on the front end.
 add_action('wp_head', array('WebDevAgentThemeCustomizer', 'wda_customizer_theme_styles' ) );
 
