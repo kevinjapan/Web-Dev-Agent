@@ -14,7 +14,7 @@ function wda_register_cover_blocks_templates($site_uri) {
          'categories' => ['wda-cover-blocks'],
          'viewportWidth' => 1000,
          'content' =>  
-            '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","id":287,"dimRatio":50,"layout":{"type":"constrained"}} -->
+            '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","dimRatio":50,"layout":{"type":"constrained"}} -->
             <div class="wp-block-cover wda-hero fade_in">
                <span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
                <img class="wp-block-cover__image-background wp-image-287" alt="" 
@@ -62,7 +62,7 @@ function wda_register_cover_blocks_templates($site_uri) {
          'categories' => ['wda-cover-blocks'],
          'viewportWidth' => 1000,
          'content' =>  
-            '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","id":248,"dimRatio":50,"isDark":false,"className":"wda-cover"} -->
+            '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","dimRatio":50,"isDark":false,"className":"wda-cover"} -->
             <div class="wp-block-cover has-background-dim wda-cover">
 
                <img class="wp-block-cover__image-background wp-image-248" 
@@ -125,7 +125,7 @@ function wda_register_cover_blocks_templates($site_uri) {
          'categories' => ['wda-cover-blocks'],
          'viewportWidth' => 1000,
          'content' =>  
-            '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","id":248,"dimRatio":50,"isDark":false,"className":"wda-cover"} -->
+            '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","dimRatio":50,"isDark":false,"className":"wda-cover"} -->
             <div class="wp-block-cover has-background-dim wda-cover wda-cover-rows">
 
                <img class="wp-block-cover__image-background wp-image-248" 
@@ -178,7 +178,6 @@ function wda_register_cover_blocks_templates($site_uri) {
 
    
    // Cover Block Template
-   //  to do : eg id:248 below - don't include hardcoded ids etc. : rollout
 	register_block_pattern(
       'wda-cover-rows-no-img',
       [
@@ -188,7 +187,7 @@ function wda_register_cover_blocks_templates($site_uri) {
          'categories' => ['wda-cover-blocks'],
          'viewportWidth' => 1000,
          'content' =>  
-            '<!-- wp:cover {"id":248,"dimRatio":50,"isDark":false,"className":"wda-cover"} -->
+            '<!-- wp:cover {"dimRatio":50,"isDark":false,"className":"wda-cover"} -->
             <div class="wp-block-cover has-background-dim wda-cover wda-cover-rows">
 
 

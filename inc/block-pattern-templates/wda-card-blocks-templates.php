@@ -37,7 +37,7 @@ function wda_single_card_template() {
    $template = '<!-- wp:column {"className":"wda_inner_feature_block"} -->
                   <div class="wp-block-column wda_inner_feature_block">';
 
-   $template .=  '<!-- wp:image {"id":31,"sizeSlug":"large","linkDestination":"none"} -->
+   $template .=  '<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
                <figure class="wp-block-image size-large display_block wda_icon">
                   <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" class="wp-image-31"/>
                </figure>
