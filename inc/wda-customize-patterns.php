@@ -11,6 +11,7 @@ require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-cust
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-image-block.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-title-lead-block.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-text-block.php';
+require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-button-blocks.php';
 
 
 //
@@ -139,6 +140,7 @@ class WebDevAgentPatternsCustomizer {
       wda_customize_register_gallery_blocks($wp_customize);
       wda_customize_register_title_lead_blocks($wp_customize);
       wda_customize_register_text_blocks($wp_customize);
+      wda_customize_register_button_blocks($wp_customize);
    }
 
 
@@ -158,6 +160,7 @@ wda_customize_register_image_blocks_styles();
 wda_customize_register_gallery_blocks_styles();
 wda_customize_register_title_lead_blocks_styles();
 wda_customize_register_text_blocks_styles();
+wda_customize_register_button_blocks_styles();
 ?>   
 </style>
 <?php
