@@ -102,3 +102,26 @@ div.wda_compact_number_customizer_ctrl div.customize-control-description {
 input.wda_compact_number_customizer_ctrl_input {
    max-width: 60px;
 }
+
+/* default  */
+h2.wda-title-lead__title {
+   text-align:left !important;
+}
+
+/* we unset responsive rules in editor */
+/* we vertically stack earlier than wp default */
+@media screen and (max-width: 1000px) {
+   .wda-features {
+      flex-direction:row;
+      gap:0;
+      margin:0;
+      margin-left:1rem;
+      margin-right:1rem;
+   }
+   .is-layout-flex .wp-block-column.wda_inner_feature_block {
+      min-height:fit-content;
+   }   
+   div.wda-features > div.wp-block-column {
+      margin-bottom:1rem;
+   }
+}
