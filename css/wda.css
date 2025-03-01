@@ -215,6 +215,11 @@ future :
   color:white;
 }
 
+@media screen and (max-width: 782px) { 
+   .wda-cover {
+      border-radius:0;
+   }
+}
 
 .wda_cover_btns {
    margin:0;
@@ -287,14 +292,22 @@ div.wda_button a {
    overflow:hidden;
 }
 
-div.wda-features.wda-single-feature-columns.reverse_order figure:nth-child(1) {
-   -ms-grid-column:2;
-   grid-column:2;
-}
-div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
-   -ms-grid-column:1;
-   grid-column:1;
-}
+/* we vertically stack earlier than wp default */
+/* @media screen and (max-width: 782px) { */
+   div.wda-features.wda-single-feature-columns.reverse_order figure:nth-child(1) {
+      -ms-grid-column:2;
+      grid-column:2;
+   }
+   div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
+      -ms-grid-column:1;
+      grid-column:1;
+   }
+   div.wda-features.wda-single-feature-columns.reverse_order figure {
+      width:90%;
+      margin-left:auto;
+      margin-right:auto;
+   }
+/* } */
 .wda_inner_feature_block > figure {
    max-width:100%;
    margin:0;
@@ -315,6 +328,23 @@ div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
    margin:0;
    max-width:100%;
 }
+/* we vertically stack earlier than wp default */
+@media screen and (max-width: 1000px) {
+   .wda-features {
+      flex-direction:column;
+      gap:0;
+      margin:0;
+      margin-left:1rem;
+      margin-right:1rem;
+   }
+   .is-layout-flex .wp-block-column.wda_inner_feature_block {
+      min-height:fit-content;
+   }   
+   div.wda-features > div.wp-block-column {
+      margin-bottom:1rem;
+   }
+}
+
 
 /*
    to retain pattern block integrity, we want img to keep height
@@ -366,13 +396,9 @@ div.wda-features.wda-single-feature-columns.reverse_order div:nth-child(2) {
    we incrse gap btwn 'columns' when stacking in sm/mobile for readability
 */
 div.wda-features > div.wp-block-column {
-   margin-bottom:3rem;
+   margin-bottom:1rem;
 }
-@media screen and (min-width: 782px) {
-   div.wda-features > div.wp-block-column {
-      margin-bottom:0rem;
-   }
-}
+
 /* enable left-align content */
 .wda-two-col-features img, .wda-three-col-features img, .wda-six-col-features img {
    margin:0 auto 0 0;
@@ -387,6 +413,22 @@ div.wda-features > div.wp-block-column {
    grid-template-columns:1fr 1fr 1fr 1fr !important; 
 }
 
+/* we vertically stack earlier than wp default */
+@media screen and (max-width: 1000px) {
+   .wda-card {
+      flex-direction:column;
+      gap:0;
+      margin:0;
+      margin-left:1rem;
+      margin-right:1rem;
+   }
+   .is-layout-grid .wp-block-column.wda_inner_feature_block {
+      min-height:fit-content;
+   }   
+   div.wda-card > div.wp-block-column {
+      margin-bottom:1rem;
+   }
+}
 .wda_icon {
    width:42px;
    padding-left:.5rem;
@@ -395,9 +437,14 @@ div.wda-features > div.wp-block-column {
    Grid Blocks
    -------------------------------------------------------------
 */
-/* div.wda-grid {
-   max-width:100%;
-} */
+
+@media screen and (max-width: 768px) {
+   div.wda-grid {
+      /* set defaults on mobile/sm screens */
+      width:fit-content;
+      margin:1rem auto;
+   }
+}
 /* we allow for WP injecting an inner container div w/ redundancy */
 .wda-grid:not(:has(div)),
 .wda-grid > div {
@@ -435,11 +482,23 @@ div.wda-features > div.wp-block-column {
    Title-Lead Blocks
    -------------------------------------------------------------
 */
-.wp-block-group.wda-title-lead {
-   /* set padding on mobile/sm screens */
-   padding-left:2rem;
-   padding-right:2rem;
+@media screen and (max-width: 768px) {
+   .wp-block-group.wda-title-lead {
+      /* set padding on mobile/sm screens */
+      padding-left:2rem;
+      padding-right:2rem;
+   }
 }
+.wda-title-lead__title, .wda-title-lead__p {
+   text-align:left;
+}
+.wda-title-lead,.wda-title-lead > div {
+   align-items:flex-start;
+}
+
+
+
+
 /* we need to remove P margin to permit text-align in Title-Lead Block */
 p.wda-title-lead__p {
    margin:0;
