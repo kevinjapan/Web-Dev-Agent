@@ -17,7 +17,7 @@ function wda_register_cover_blocks_templates($site_uri) {
             '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","dimRatio":50,"layout":{"type":"constrained"}} -->
             <div class="wp-block-cover wda-hero fade_in">
                <span aria-hidden="true" class="wp-block-cover__background has-background-dim"></span>
-               <img class="wp-block-cover__image-background wp-image-287" alt="" 
+               <img class="wp-block-cover__image-background" alt="" 
                   src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" data-object-fit="cover"/>
 
                <div class="wp-block-cover__inner-container">
@@ -65,7 +65,7 @@ function wda_register_cover_blocks_templates($site_uri) {
             '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","dimRatio":50,"isDark":false,"className":"wda-cover"} -->
             <div class="wp-block-cover has-background-dim wda-cover">
 
-               <img class="wp-block-cover__image-background wp-image-248" 
+               <img class="wp-block-cover__image-background" 
                   alt="image of columns" 
                   src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" data-object-fit="cover"/>
 
@@ -128,7 +128,7 @@ function wda_register_cover_blocks_templates($site_uri) {
             '<!-- wp:cover {"url":"' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg","dimRatio":50,"isDark":false,"className":"wda-cover"} -->
             <div class="wp-block-cover has-background-dim wda-cover wda-cover-rows">
 
-               <img class="wp-block-cover__image-background wp-image-248" 
+               <img class="wp-block-cover__image-background" 
                   alt="image of columns" 
                   src="' . $site_uri .'/imgs/kae-anderson-7KLv5TOKOrM-unsplash.jpg" data-object-fit="cover"/>
 

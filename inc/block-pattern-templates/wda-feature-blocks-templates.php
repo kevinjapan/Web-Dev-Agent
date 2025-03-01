@@ -11,6 +11,8 @@
 // It is important that we maintain integrity of WP blocks so that users can still change elements in 
 // individual blocks in the Page Editor etc.
 
+// to do : Feature Block alignment (title and image) in Page Editor and (image) Customizer
+
 function wda_register_column_blocks_templates($site_uri) {
 
    // Feature Block Templates

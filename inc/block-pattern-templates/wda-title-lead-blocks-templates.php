@@ -17,12 +17,12 @@ function wda_register_title_lead_blocks_templates($site_uri) {
             '<!-- wp:group {"className":"wda-big-title-lead"} -->
             <div class="wp-block-group wda-big-title-lead">
 
-               <!-- wp:heading {"textAlign":"center","level":2} -->
-                  <h2 class="wda-big-title-lead__title has-text-align-center">Big Title & Lead Text</h2>
+               <!-- wp:heading {"level":2} -->
+                  <h2 class="wda-big-title-lead__title ">Big Title & Lead Text</h2>
                <!-- /wp:heading -->
 
-               <!-- wp:paragraph {"align":"center"} -->
-               <p class="has-text-align-center">
+               <!-- wp:paragraph -->
+               <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.         
                   <br>You can customize the layout of this block pattern in the Dashboard menu:
                   <br> Appearance \ Customize \ The Educator Block Patterns \ The Educator Texts 

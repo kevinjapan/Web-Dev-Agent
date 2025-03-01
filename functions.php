@@ -36,6 +36,7 @@ function wda_enqueue_custom_admin_style($hook) {
       // wp_register_style('outline',get_template_directory_uri() . '/css/outline.css',array(),1,'all');
       // wp_enqueue_style('outline');
       
+      // We don't require wda.css here - it appears to be injected in Page Editor iframes as required (?)
       wp_register_style('wda_stylesheet',get_template_directory_uri() . '/css/wda.css',array(),1,'all');
       wp_enqueue_style('wda_stylesheet');
 

@@ -83,6 +83,7 @@ function wda_customize_register_feature_blocks($wp_customize) {
 
 function wda_customize_register_feature_blocks_styles() {
       
+   // to do : these rules are too long to be useful page source - break them up
    wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
    ['style' => 'padding-top','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh'],
    ['style' => 'padding-bottom','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh']);
