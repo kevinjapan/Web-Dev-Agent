@@ -105,9 +105,18 @@ function wda_customize_register_grid_blocks_styles() {
    ['style' => 'margin-top','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh'],
    ['style' => 'margin-bottom','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh']);
 
-   // grid rules
+   // to do : could gen @media w/ utility func call?  eg:
+   // start_media_query('min-width','768px');   // <- this would allow global setting for primary screen size changes..
+   // end_media_query()                         // simply '}'
+   // would also allow better control of layout on front-end page source.
+?>
+@media screen and (min-width: 768px) { 
+<?php
    wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
    ['style' => 'gap','setting' => 'wda_grid_gap','prefix'  => '','postfix' => 'rem']);
+   ?>
+   }
+   <?php
    // wda_grid_template_cols
    wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
    ['style' => 'grid-template-columns','setting' => 'wda_grid_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
