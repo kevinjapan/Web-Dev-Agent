@@ -304,7 +304,7 @@ wda_generate_css_rule(
 <?php
    wda_generate_css_rule(
       '.wda-title-lead__title',
-      ['style' => 'padding-bottom','setting' => 'wda_title_lead_btwn_padding','prefix'  => '','postfix' => 'vw']);
+      ['style' => 'padding-bottom','setting' => 'wda_title_lead_btwn_padding','prefix'  => '','postfix' => 'vh']);
    wda_generate_css_rule(
       '.wp-block-group.wda-title-lead',
       ['style' => 'padding-top','setting' => 'wda_title_lead_top_padding','prefix'  => '','postfix' => 'vh'],
