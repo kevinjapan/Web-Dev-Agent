@@ -4,6 +4,8 @@
 // The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
 
 
+// to do  : responsiveness etc
+
 function wda_customize_register_card_blocks($wp_customize) {
 
    // X-margins
@@ -89,26 +91,32 @@ function wda_customize_register_card_blocks($wp_customize) {
 
 }
 
-function wda_customize_register_card_blocks_styles() {
-   ?>
+function wda_customize_register_card_blocks_styles() { // to do : rollout spacing in front-end css w/ spacing btwn block styles
+?>
 @media screen and (min-width: 768px) { 
 <?php 
 // container rules
-wda_generate_css_rule('.wda-card',
-['style' => 'margin-left','setting' => 'wda_card_x_margins','prefix'  => '','postfix' => 'vw'],
-['style' => 'margin-right','setting' => 'wda_card_x_margins','prefix'  => '','postfix' => 'vw']);
+wda_inject_css('.wda-card',
+['style' => 'border','value' => 'solid 3px blue' ,'prefix'  => '','postfix' => '']);
+
 ?>
 }
 <?php
+wda_generate_css_rule('.wda-card',
+['style' => 'margin-left','setting' => 'wda_card_x_margins','prefix'  => '','postfix' => 'vw'],
+['style' => 'margin-right','setting' => 'wda_card_x_margins','prefix'  => '','postfix' => 'vw']);
 wda_generate_css_rule('.wda-card',
 ['style' => 'margin-top','setting' => 'wda_card_y_margins','prefix'  => '','postfix' => 'vh'],
 ['style' => 'margin-bottom','setting' => 'wda_card_y_margins','prefix'  => '','postfix' => 'vh']);
 
 // card rules
-wda_generate_css_rule('.wda-card > div, .wda-card:not(:has(div))',
+wda_generate_css_rule('.wda-card ',
 ['style' => 'gap','setting' => 'wda_card_gap','prefix'  => '','postfix' => 'rem']);
 // wda_card_template_cols
-wda_generate_css_rule('.wda-card > div, .wda-card:not(:has(div))',
-['style' => 'card-template-columns','setting' => 'wda_card_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
+// future : improve on temp workaround '!important' :
+wda_generate_css_rule('.wda-card',
+['style' => 'grid-template-columns','setting' => 'wda_card_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr)) !important']);
+?>
 
+<?php
 }

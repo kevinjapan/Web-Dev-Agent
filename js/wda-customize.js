@@ -139,6 +139,22 @@
          $('.wda-card').css({"margin-top":value + 'vh',"margin-bottom":value + 'vh'}); 
       });
    });
+   
+   wp.customize('wda_card_gap',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 25) value = 25;
+         $('.wda-card ').css({"gap":value + 'vh'}); 
+      });
+   });
+   wp.customize('wda_card_template_cols',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 10) value = 10;
+         $('.wda-card').css({"grid-template-columns":'repeat(' + value + ',minmax(100px,1fr))' + ''}); 
+      });
+   });
+
 
 
    // Grid Block
@@ -163,16 +179,10 @@
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 25) value = 25;
-         $('.wda-grid > div').css({"gap":value + 'vh'}); 
+         $('.wda-grid').css({"gap":value + 'rem'}); 
       });
    });
-   wp.customize('wda_grid_gap',function(setting) {
-      setting.bind( function(value) {
-         if(value < 0) value = 0;
-         if(value > 25) value = 25;
-         $('.wda-grid:not(:has(div))').css({"gap":value + 'vh'});
-      });
-   });
+   // to do : incorrect setting:
    wp.customize('wda_grid_gap',function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
@@ -316,6 +326,25 @@
       });
    });
 
+   // wda Button Block
+   wp.customize(
+      'wda_button_margin',
+      function(setting) {
+         setting.bind( function(value) {
+            if(value < 0.5) value = 0.5;
+            if(value > 5) value = 5;
+            $('.wda_discrete_buttons > .wda_button > a.wp-block-button__link').css({"margin":value + 'rem'}); 
+      });
+   });
+   wp.customize(
+      'wda_button_padding',
+      function(setting) {
+         setting.bind( function(value) {
+            if(value < 0.5) value = 0.5;
+            if(value > 5) value = 5;
+            $('.wda_discrete_buttons > .wda_button > a.wp-block-button__link').css({"padding":value + 'rem'}); 
+      });
+   });
 
    // copyright notice
    //

@@ -405,12 +405,39 @@ div.wda-features > div.wp-block-column {
 }
 
 .wda-card {
-   margin:1rem;
+   margin:1rem auto;
    padding:1rem;
    gap:1rem;
    /* we override WP container class .wp-container-core-group-is-layout-9 which is inserted after save */
-   -ms-grid-columns:1fr 1fr 1fr 1fr !important;
-   grid-template-columns:1fr 1fr 1fr 1fr !important; 
+   -ms-grid-columns:1fr 1fr 1fr 1fr;
+   grid-template-columns:1fr 1fr 1fr 1fr; 
+}
+
+.wda-card > div {
+   display:-ms-grid;
+   display:grid;
+   -ms-grid-columns:1fr 1fr 1fr;
+   grid-template-columns:1fr 1fr 1fr;
+   -webkit-box-pack:center;
+   -ms-flex-pack:center;
+   justify-content:center;
+   -webkit-box-align:center;
+   -ms-flex-align:center;
+   align-items:center;
+   /* container:unset; */
+} 
+/* utility classes */
+.wda-card.card_2_cols {
+   -ms-grid-columns:1fr 1fr;
+   grid-template-columns:1fr 1fr;
+}
+.wda-card.card_4_cols {
+   -ms-grid-columns:1fr 1fr 1fr 1fr;
+   grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.wda-card.card_6_cols {
+   -ms-grid-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+   grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 /* we vertically stack earlier than wp default */
@@ -545,3 +572,11 @@ div.flex {
 
 .mx_5 {margin-left:5rem;margin-right:5rem;}
 
+.wda-simple-text {
+   padding:0 1rem;
+   border:solid 1px blue;
+}
+
+figure.wda-image > img {
+   margin:0 auto;
+}
