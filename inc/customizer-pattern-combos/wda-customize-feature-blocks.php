@@ -112,6 +112,8 @@ function wda_customize_register_feature_blocks_styles() {
       );
    }
    else {
+
+      // to do : separate css in front-end page source - and remove <!-- wda   reference
       wda_inject_css('.wda_feature_btns > div > a',
          ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
          ['style' => 'color','value' => 'var(--wda_btn_bg)' ,'prefix'  => '','postfix' => ''],
@@ -128,7 +130,6 @@ function wda_customize_register_feature_blocks_styles() {
       );
    }
 ?>
-}
 <?php
 }
 
