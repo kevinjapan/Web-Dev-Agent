@@ -455,6 +455,15 @@ div.wda-features > div.wp-block-column {
 }
 
 
+.wda_grid_cards {
+   background:transparent;
+}
+.wda_grid_cards > div.wp-block-group {
+   display:flex;
+   flex-direction:column;
+   align-items:flex-start;
+}
+
 /*
    Title-Lead Blocks
    -------------------------------------------------------------

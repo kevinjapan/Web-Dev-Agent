@@ -53,7 +53,7 @@ function wda_register_grid_blocks_templates($site_uri) {
          'viewportWidth' => 1000,
          'content' =>  
            '<!-- wp:group {"layout":{"type":"grid"}} -->
-            <div class="wp-block-group wda-grid">
+            <div class="wp-block-group wda-grid wda_grid_cards">
             
 		         <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
                <div class="wp-block-group">
@@ -63,6 +63,15 @@ function wda_register_grid_blocks_templates($site_uri) {
                   <!-- wp:paragraph {"align":"left"} -->
                   <p class="has-text-align-left">paragraph in here</p>
                   <!-- /wp:paragraph -->
+                  <!-- wp:buttons -->
+                  <div class="wp-block-buttons">
+                     <!-- wp:button -->
+                     <div class="wp-block-button">
+                        <a class="wp-block-button__link wp-element-button">read more</a>
+                     </div>
+                     <!-- /wp:button -->
+                  </div>
+                  <!-- /wp:buttons -->
                </div>
 		         <!-- /wp:group -->
                      

@@ -83,6 +83,15 @@ class WebDevAgentPatternsCustomizer {
                'active_callback' => '') 
       );
       $wp_customize->add_section(
+         'wda_grid_cards_patterns', 
+         array('title'       => __('WDA Grid Card Blocks', 'wda' ),
+               'priority'    => 20,
+               'capability'  => 'edit_theme_options',
+               'description' => __('Customize all Grid Card Blocks.', 'wda'),
+               'panel' => 'wda_patterns_panel',
+               'active_callback' => '') 
+      );
+      $wp_customize->add_section(
          'wda_title_lead_patterns', 
          array('title'       => __('WDA Title & Lead Blocks', 'wda' ),
                'priority'    => 50,

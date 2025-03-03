@@ -87,6 +87,47 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
+
+   // Grid Card Blocks
+   // X-margins
+   $wp_customize->add_setting(
+      'wda_grid_cards_x_margins',
+      array('default'    => '0', 
+            'type'       => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport'  => 'postMessage',
+            'sanitize_callback' => 'wda_sanitize_number_range') 
+   );
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
+      'wda_grid_cards_x_margins', 
+      array('type' => 'number',
+            'priority' => 10,
+            'section' => 'wda_grid_cards_patterns',
+            'label' => __( '','wda'),
+            'settings'   => 'wda_grid_cards_x_margins', 
+            'description' => __( '% horizontal margin','wda'),
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+   ));
+   // Grid Cards Gap
+   $wp_customize->add_setting(
+      'wda_grid_cards_gap',
+      array('default'    => '0', 
+            'type'       => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport'  => 'postMessage',
+            'sanitize_callback' => 'wda_sanitize_number_range') 
+   );
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
+      'wda_grid_cards_gap', 
+      array('type' => 'number',
+            'priority' => 10,
+            'section' => 'wda_grid_cards_patterns',
+            'label' => __( '','wda'),
+            'settings'   => 'wda_grid_cards_gap', 
+            'description' => __( 'element spacing','wda'),
+            'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
+   ));
+
 }
 
 function wda_customize_register_grid_blocks_styles() {
@@ -98,6 +139,16 @@ function wda_customize_register_grid_blocks_styles() {
    wda_generate_css_rule('.wda-grid',
    ['style' => 'margin-left','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw'],
    ['style' => 'margin-right','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw']);
+   
+   wda_generate_css_rule('.wda_grid_cards',
+   ['style' => 'margin-left','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw'],
+   ['style' => 'margin-right','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw']);
+   
+   wda_inject_css(
+      '.wda_grid_cards > *',
+      ['style' => 'background','value' => 'blue' ,'prefix'  => '','postfix' => ''],
+      ['style' => 'color','value' => 'white' ,'prefix'  => '','postfix' => '']
+   );
    ?>
 }
 <?php
@@ -114,6 +165,8 @@ function wda_customize_register_grid_blocks_styles() {
 <?php
    wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
    ['style' => 'gap','setting' => 'wda_grid_gap','prefix'  => '','postfix' => 'rem']);
+   wda_generate_css_rule('.wda_grid_cards',
+   ['style' => 'gap','setting' => 'wda_grid_cards_gap','prefix'  => '','postfix' => 'rem']);
    ?>
    }
    <?php
