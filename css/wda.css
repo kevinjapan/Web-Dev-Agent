@@ -404,58 +404,8 @@ div.wda-features > div.wp-block-column {
    margin:0 auto 0 0;
 }
 
-.wda-card {
-   margin:1rem auto;
-   padding:1rem;
-   gap:1rem;
-   /* we override WP container class .wp-container-core-group-is-layout-9 which is inserted after save */
-   -ms-grid-columns:1fr 1fr 1fr 1fr;
-   grid-template-columns:1fr 1fr 1fr 1fr; 
-}
 
-.wda-card > div {
-   display:-ms-grid;
-   display:grid;
-   -ms-grid-columns:1fr 1fr 1fr;
-   grid-template-columns:1fr 1fr 1fr;
-   -webkit-box-pack:center;
-   -ms-flex-pack:center;
-   justify-content:center;
-   -webkit-box-align:center;
-   -ms-flex-align:center;
-   align-items:center;
-   /* container:unset; */
-} 
-/* utility classes */
-.wda-card.card_2_cols {
-   -ms-grid-columns:1fr 1fr;
-   grid-template-columns:1fr 1fr;
-}
-.wda-card.card_4_cols {
-   -ms-grid-columns:1fr 1fr 1fr 1fr;
-   grid-template-columns:1fr 1fr 1fr 1fr;
-}
-.wda-card.card_6_cols {
-   -ms-grid-columns:1fr 1fr 1fr 1fr 1fr 1fr;
-   grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
-}
 
-/* we vertically stack earlier than wp default */
-@media screen and (max-width: 1000px) {
-   .wda-card {
-      flex-direction:column;
-      gap:0;
-      margin:0;
-      margin-left:1rem;
-      margin-right:1rem;
-   }
-   .is-layout-grid .wp-block-column.wda_inner_feature_block {
-      min-height:fit-content;
-   }   
-   div.wda-card > div.wp-block-column {
-      margin-bottom:1rem;
-   }
-}
 .wda_icon {
    width:42px;
    padding-left:.5rem;
@@ -574,7 +524,6 @@ div.flex {
 
 .wda-simple-text {
    padding:0 1rem;
-   border:solid 1px blue;
 }
 
 figure.wda-image > img {

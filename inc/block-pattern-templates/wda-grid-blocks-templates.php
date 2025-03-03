@@ -42,6 +42,68 @@ function wda_register_grid_blocks_templates($site_uri) {
             <!-- /wp:group -->'
 	]);
 
+   
+	register_block_pattern(
+      'wda-grid-cards',
+      [
+         'title' => __('Grid Cards Block', 'wda'),
+         'description' => _x( 'Grid Cards Block.', 'Grid Cards Block.', 'wda' ),            
+         'keywords' => ['single,grid,card'],
+         'categories' => ['wda-grid-blocks'],
+         'viewportWidth' => 1000,
+         'content' =>  
+           '<!-- wp:group {"layout":{"type":"grid"}} -->
+            <div class="wp-block-group wda-grid">
+            
+		         <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+               <div class="wp-block-group">
+                  <!-- wp:heading {"fontSize":"x-large"} -->
+                  <h2 class="wp-block-heading has-x-large-font-size">one</h2>
+                  <!-- /wp:heading -->
+                  <!-- wp:paragraph {"align":"left"} -->
+                  <p class="has-text-align-left">paragraph in here</p>
+                  <!-- /wp:paragraph -->
+               </div>
+		         <!-- /wp:group -->
+                     
+		         <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+               <div class="wp-block-group">
+                  <!-- wp:heading {"fontSize":"x-large"} -->
+                  <h2 class="wp-block-heading has-x-large-font-size">one</h2>
+                  <!-- /wp:heading -->
+                  <!-- wp:paragraph {"align":"left"} -->
+                  <p class="has-text-align-left">paragraph in here</p>
+                  <!-- /wp:paragraph -->
+               </div>
+		         <!-- /wp:group -->
+                     
+		         <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+               <div class="wp-block-group">
+                  <!-- wp:heading {"fontSize":"x-large"} -->
+                  <h2 class="wp-block-heading has-x-large-font-size">one</h2>
+                  <!-- /wp:heading -->
+                  <!-- wp:paragraph {"align":"left"} -->
+                  <p class="has-text-align-left">paragraph in here</p>
+                  <!-- /wp:paragraph -->
+               </div>
+		         <!-- /wp:group -->
+                     
+		         <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
+               <div class="wp-block-group">
+                  <!-- wp:heading {"fontSize":"x-large"} -->
+                  <h2 class="wp-block-heading has-x-large-font-size">one</h2>
+                  <!-- /wp:heading -->
+                  <!-- wp:paragraph {"align":"left"} -->
+                  <p class="has-text-align-left">paragraph in here</p>
+                  <!-- /wp:paragraph -->
+               </div>
+		         <!-- /wp:group -->
+
+            </div>
+            <!-- /wp:group -->'
+	]);
+
+
 }
 
 

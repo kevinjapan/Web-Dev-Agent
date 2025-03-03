@@ -5,7 +5,6 @@ require_once get_template_directory() . '/inc/wda-utility.php';
 // Block Patterns
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-cover-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-feature-blocks.php';
-require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-card-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-grid-blocks.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-gallery-block.php';
 require_once get_template_directory() . '/inc/customizer-pattern-combos/wda-customize-image-block.php';
@@ -75,15 +74,6 @@ class WebDevAgentPatternsCustomizer {
                'active_callback' => '') 
       );
       $wp_customize->add_section(
-         'wda_card_patterns', 
-         array('title'       => __('WDA Card Blocks', 'wda' ),
-               'priority'    => 20,
-               'capability'  => 'edit_theme_options',
-               'description' => __('Customize all Card Blocks.', 'wda'),
-               'panel' => 'wda_patterns_panel',
-               'active_callback' => '') 
-      );
-      $wp_customize->add_section(
          'wda_grid_patterns', 
          array('title'       => __('WDA Grid Blocks', 'wda' ),
                'priority'    => 20,
@@ -134,7 +124,6 @@ class WebDevAgentPatternsCustomizer {
       //
       wda_customize_register_cover_blocks($wp_customize);
       wda_customize_register_feature_blocks($wp_customize);
-      wda_customize_register_card_blocks($wp_customize);
       wda_customize_register_grid_blocks($wp_customize);
       wda_customize_register_image_blocks($wp_customize);
       wda_customize_register_gallery_blocks($wp_customize);
@@ -154,7 +143,6 @@ class WebDevAgentPatternsCustomizer {
 <?php
 wda_customize_register_cover_blocks_styles();
 wda_customize_register_feature_blocks_styles();
-wda_customize_register_card_blocks_styles();
 wda_customize_register_grid_blocks_styles();
 wda_customize_register_image_blocks_styles();
 wda_customize_register_gallery_blocks_styles();

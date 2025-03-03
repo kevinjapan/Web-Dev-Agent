@@ -144,17 +144,19 @@
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 25) value = 25;
-         $('.wda-card ').css({"gap":value + 'vh'}); 
+         $('.wda-card').css({"gap":value + 'vh'}); 
       });
    });
    wp.customize('wda_card_template_cols',function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
          if(value > 10) value = 10;
-         $('.wda-card').css({"grid-template-columns":'repeat(' + value + ',minmax(100px,1fr))' + ''}); 
+         $('.wda-card.wp-block-is-layout-grid').css({"grid-template-columns":'repeat(' + value + ',minmax(100px,1fr))' +  ' !important'}); 
       });
    });
 
+   // wda_generate_css_rule('.wda-card',
+   //    ['style' => 'grid-template-columns','setting' => 'wda_card_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr)) !important']);
 
 
    // Grid Block

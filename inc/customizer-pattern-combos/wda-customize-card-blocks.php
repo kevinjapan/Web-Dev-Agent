@@ -95,16 +95,12 @@ function wda_customize_register_card_blocks_styles() { // to do : rollout spacin
 ?>
 @media screen and (min-width: 768px) { 
 <?php 
-// container rules
-wda_inject_css('.wda-card',
-['style' => 'border','value' => 'solid 3px blue' ,'prefix'  => '','postfix' => '']);
-
-?>
-}
-<?php
 wda_generate_css_rule('.wda-card',
 ['style' => 'margin-left','setting' => 'wda_card_x_margins','prefix'  => '','postfix' => 'vw'],
 ['style' => 'margin-right','setting' => 'wda_card_x_margins','prefix'  => '','postfix' => 'vw']);
+?>
+}
+<?php
 wda_generate_css_rule('.wda-card',
 ['style' => 'margin-top','setting' => 'wda_card_y_margins','prefix'  => '','postfix' => 'vh'],
 ['style' => 'margin-bottom','setting' => 'wda_card_y_margins','prefix'  => '','postfix' => 'vh']);
