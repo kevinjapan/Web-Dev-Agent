@@ -36,7 +36,7 @@ function wda_register_block_pattern_categories() {
 	register_block_pattern_category('wda-grid-blocks', ['label' => __('WDA Grid Blocks', 'wda')]);  
 	register_block_pattern_category('wda-texts', ['label' => __('WDA Text Blocks', 'wda')]); 
 	register_block_pattern_category('wda-images', ['label' => __('WDA Image Blocks', 'wda')]); 
-	register_block_pattern_category('wda-buttons', ['label' => __('WDA Button Blocks', 'wda')]);   
+	register_block_pattern_category('wda-buttons-blocks', ['label' => __('WDA Button Blocks', 'wda')]);
 }
 add_action( 'init', 'wda_register_block_pattern_categories' );
 

@@ -6,6 +6,8 @@
 
 function wda_customize_register_cover_blocks($wp_customize) {
 
+
+   // to do : customize button.. at least 'padding'
    
    // Hero Cover Block Patterns
    $wp_customize->add_setting(

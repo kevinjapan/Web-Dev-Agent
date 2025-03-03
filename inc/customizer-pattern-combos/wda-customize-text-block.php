@@ -3,7 +3,7 @@
 // wda 'customize_register' Text Blocks
 // The ‘customize_register‘ action hook is used to customize and manipulate the Theme Customization admin screen.
 
-
+// to do : inc '-combo' in file name? rollout
 
    
 function wda_customize_register_text_blocks($wp_customize) {
