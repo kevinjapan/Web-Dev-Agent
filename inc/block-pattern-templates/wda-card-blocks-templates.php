@@ -33,16 +33,16 @@ function wda_register_card_blocks_templates($site_uri) {
 
 function wda_single_card_template() {
 
-   $template = '<!-- wp:column {"className":"wda_inner_feature_block"} -->
-                  <div class="wp-block-column wda_inner_feature_block">';
+   $template = '<!-- wp:column {"className":"wda_inner_card_block"} -->
+                  <div class="wp-block-column wda_inner_card_block">';
 
-   $template .=  '<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-               <figure class="wp-block-image size-large display_block wda_icon">
-                  <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" class="wp-image-31"/>
+   $template .=  '<!-- wp:image -->
+               <figure class="wp-block-image display_block wda_icon">
+                  <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt=""/>
                </figure>
             <!-- /wp:image -->
                <!-- wp:heading {"level":4} -->
-                  <h4 class="has-text-align-left">Feature Block</h4>
+                  <h4 class="has-text-align-left">card Block</h4>
                <!-- /wp:heading -->
 
                <!-- wp:paragraph {"align":"left"} -->
@@ -50,9 +50,9 @@ function wda_single_card_template() {
                <!-- /wp:paragraph -->
 
                <!-- wp:buttons {"className":"wda-buttons"} -->
-               <div class="wp-block-buttons wda_buttons wda_feature_btns">            
-                  <!-- wp:button {"className":"wda_feature_btn"} -->
-                  <div class="wp-block-button wda_button wda_feature_btn"><a class="wp-block-button__link">read more</a></div>
+               <div class="wp-block-buttons wda_buttons wda_card_btns">            
+                  <!-- wp:button {"className":"wda_card_btn"} -->
+                  <div class="wp-block-button wda_button wda_card_btn"><a class="wp-block-button__link">read more</a></div>
                   <!-- /wp:button -->
                </div>
                <!-- /wp:buttons -->';
