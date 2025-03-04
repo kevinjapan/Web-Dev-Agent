@@ -19,32 +19,32 @@ function wda_register_grid_blocks_templates($site_uri) {
          'content' =>  
             '<!-- wp:group {"layout":{"type":"grid"}} -->
                <div class="wp-block-group wda-grid">
-               <!-- wp:image {"linkDestination":"none"} -->
-               <figure class="wp-block-image display_block">
-                  <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" /></figure>
-               <!-- /wp:image -->
+                  <!-- wp:image {"linkDestination":"none"} -->
+                  <figure class="wp-block-image display_block">
+                     <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" /></figure>
+                  <!-- /wp:image -->
 
-               <!-- wp:image {"linkDestination":"none"} -->
-               <figure class="wp-block-image display_block">
-                  <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" /></figure>
-               <!-- /wp:image -->
+                  <!-- wp:image {"linkDestination":"none"} -->
+                  <figure class="wp-block-image display_block">
+                     <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" /></figure>
+                  <!-- /wp:image -->
 
-               <!-- wp:image {"linkDestination":"none"} -->
-               <figure class="wp-block-image display_block">
-                  <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" /></figure>
-               <!-- /wp:image -->
+                  <!-- wp:image {"linkDestination":"none"} -->
+                  <figure class="wp-block-image display_block">
+                     <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" /></figure>
+                  <!-- /wp:image -->
 
-               <!-- wp:image {"linkDestination":"none"} -->
-               <figure class="wp-block-image display_block">
-                  <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" /></figure>
-               <!-- /wp:image -->
+                  <!-- wp:image {"linkDestination":"none"} -->
+                  <figure class="wp-block-image display_block">
+                     <img src="http://localhost/wordpress/web-dev-agent/wp-content/uploads/2024/02/scott-graham-5fNmWej4tAA-unsplash-1200x630.jpg" alt="" /></figure>
+                  <!-- /wp:image -->
                </div>
             <!-- /wp:group -->'
 	]);
 
    
 	register_block_pattern(
-      'wda-grid-cards',
+      'wda_grid_cards',
       [
          'title' => __('Grid Cards Block', 'wda'),
          'description' => _x( 'Grid Cards Block.', 'Grid Cards Block.', 'wda' ),            
@@ -53,7 +53,7 @@ function wda_register_grid_blocks_templates($site_uri) {
          'viewportWidth' => 1000,
          'content' =>  
            '<!-- wp:group {"layout":{"type":"grid"}} -->
-            <div class="wp-block-group wda-grid wda_grid_cards">
+            <div class="wp-block-group wda_grid_cards">
             
 		         <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
                <div class="wp-block-group">

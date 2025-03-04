@@ -189,7 +189,13 @@
          $('.wda_grid_cards').css({"gap":value + 'rem'}); 
       });
    });
-
+   wp.customize('wda_grid_cards_template_cols',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0;
+         if(value > 10) value = 10;
+         $('.wda_grid_cards').css({"grid-template-columns":'repeat(' + value + ',minmax(100px,1fr))'}); 
+      });
+   });
 
    // wda text blocks
    //

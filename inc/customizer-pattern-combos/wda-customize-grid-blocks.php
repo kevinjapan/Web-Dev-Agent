@@ -127,6 +127,25 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'description' => __( 'element spacing','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
    ));
+   // Grid Cards Template Columns
+   $wp_customize->add_setting(
+      'wda_grid_cards_template_cols',
+      array('default'    => '0', 
+         'type'       => 'theme_mod',
+         'capability' => 'edit_theme_options',
+         'transport'  => 'postMessage',
+         'sanitize_callback' => 'wda_sanitize_number_range') 
+   );
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
+      'wda_grid_cards_template_cols', 
+      array('type' => 'number',
+            'priority' => 10,
+            'section' => 'wda_grid_cards_patterns',
+            'label' => __( '','wda'),
+            'settings'   => 'wda_grid_cards_template_cols', 
+            'description' => __( 'number of columns','wda'),
+            'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+   ));
 
 }
 
@@ -170,8 +189,11 @@ function wda_customize_register_grid_blocks_styles() {
    ?>
    }
    <?php
-   // wda_grid_template_cols
    wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
    ['style' => 'grid-template-columns','setting' => 'wda_grid_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
+
+   // we increase specificity to ensure this rule is selected over WP classes and avoid using !important so as not to override web-customize.js binding in Customizer
+   wda_generate_css_rule('div.wp-block-group.wda_grid_cards.is-layout-grid',
+   ['style' => 'grid-template-columns','setting' => 'wda_grid_cards_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
 
 }
