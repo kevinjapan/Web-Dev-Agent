@@ -5,7 +5,6 @@
 function wda_register_button_blocks_templates($site_uri) {
 
    // Button Block Template
-   // to do : using wda_cover_btns / wda_cover_btn for styling - move this to wda_buttons / wda_button
 
 
    // Single Button Block

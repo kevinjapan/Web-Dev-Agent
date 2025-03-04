@@ -6,9 +6,6 @@
 
 function wda_customize_register_cover_blocks($wp_customize) {
 
-
-   // to do : customize button.. at least 'padding'
-   
    // Hero Cover Block Patterns
    $wp_customize->add_setting(
       'wda_hero_v_align',
@@ -131,7 +128,7 @@ function wda_customize_register_cover_blocks_styles() {
    wda_generate_css_rule('.wda-hero',            
       ['style' => 'margin-bottom','setting' => 'wda_hero_bottom_margin','prefix'  => '','postfix' => '%'],);  
    wda_generate_css_rule('.wda-hero',            
-   ['style' => 'align-items','setting' => 'wda_hero_v_align','prefix'  => '','postfix' => ''],);
+      ['style' => 'align-items','setting' => 'wda_hero_v_align','prefix'  => '','postfix' => ''],);
 
    // Cover Block  
    wda_generate_css_rule('.wda-cover',

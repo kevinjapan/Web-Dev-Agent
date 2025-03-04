@@ -91,7 +91,7 @@ function wda_customize_register_card_blocks($wp_customize) {
 
 }
 
-function wda_customize_register_card_blocks_styles() { // to do : rollout spacing in front-end css w/ spacing btwn block styles
+function wda_customize_register_card_blocks_styles() {
 ?>
 @media screen and (min-width: 768px) { 
 <?php 
