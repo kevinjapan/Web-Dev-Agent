@@ -157,14 +157,6 @@
          $('.wda-grid').css({"gap":value + 'rem'}); 
       });
    });
-   // to do : incorrect setting:
-   wp.customize('wda_grid_gap',function(setting) {
-      setting.bind( function(value) {
-         if(value < 0) value = 0;
-         if(value > 25) value = 25;
-         $('.wda-grid > div').css({"grid-template-columns":value + ''}); 
-      });
-   });
    wp.customize('wda_grid_template_cols',function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0;
