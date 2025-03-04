@@ -55,15 +55,18 @@ function wda_customize_register_button_blocks($wp_customize) {
 
 
 function wda_customize_register_button_blocks_styles() {
-   ?>
 
-<?php 
+   wda_start_css_block('Button Blocks');
+
    // to do : ' wda_button_margin' not working exactly as expected - apply to container (group) ? stretching x-axis unexpectedly
+   
    wda_generate_css_rule(
       '.wda_discrete_buttons > .wda_button > a.wp-block-button__link',
+      [],
       ['style' => 'margin','setting' => 'wda_button_margin','prefix'  => '','postfix' => 'rem']);
    wda_generate_css_rule(
       '.wda_discrete_buttons > .wda_button > a.wp-block-button__link',
+      [],
       ['style' => 'padding','setting' => 'wda_button_padding','prefix'  => '','postfix' => 'rem']);
 
 }

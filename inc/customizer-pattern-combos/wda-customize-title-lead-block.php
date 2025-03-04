@@ -256,25 +256,27 @@ function wda_customize_register_title_lead_blocks($wp_customize) {
 
 function wda_customize_register_title_lead_blocks_styles() {
 
-   ?>
-
-   <?php
+   wda_start_css_block('Title Lead Blocks');
 
    wda_generate_css_rule(
       '.wp-block-group.wda-big-title-lead',
+      [],
       ['style' => 'margin-top','setting' => 'wda_big_title_lead_top_margin','prefix'  => '','postfix' => 'vh'],
       ['style' => 'margin-bottom','setting' => 'wda_big_title_lead_bottom_margin','prefix'  => '','postfix' => 'vh']);
 
    wda_generate_css_rule(
       '.wda-big-title-lead__title',
+      [],
       ['style' => 'padding-bottom','setting' => 'wda_big_title_lead_btwn_padding','prefix'  => '','postfix' => 'vw']);
    wda_generate_css_rule(
       '.wp-block-group.wda-big-title-lead,
       .wp-block-group.wda-big-title-lead.has-background ',
+      [],
       ['style' => 'padding-left','setting' => 'wda_big_title_lead_x_padding','prefix'  => '','postfix' => '%'],
       ['style' => 'padding-right','setting' => 'wda_big_title_lead_x_padding','prefix'  => '','postfix' => '%']);
    wda_generate_css_rule(
       '.wp-block-group.wda-big-title-lead',
+      [],
       ['style' => 'padding-top','setting' => 'wda_big_title_lead_top_padding','prefix'  => '','postfix' => 'vh'],
       ['style' => 'padding-bottom','setting' => 'wda_big_title_lead_bottom_padding','prefix'  => '','postfix' => 'vh']);
 
@@ -282,9 +284,11 @@ function wda_customize_register_title_lead_blocks_styles() {
 // we align text elements and containing flex block (since paragraphs likely have a set width less than container width)
    wda_generate_css_rule(
       '.wda-title-lead__title, .wda-title-lead__p',
+      [],
       ['style' => 'text-align','setting' => 'wda_title_lead_align','prefix'  => '','postfix' => '']);
    wda_generate_css_rule(
       '.wda-title-lead,.wda-title-lead > div',
+      [],
       ['map_value_to' => 'text_to_flex_props','style' => 'align-items','setting' => 'wda_title_lead_align','prefix'  => '','postfix' => '']);
 
 
@@ -293,24 +297,27 @@ function wda_customize_register_title_lead_blocks_styles() {
 
    wda_generate_css_rule(
       '.wp-block-group.wda-title-lead',
+      [],
       ['style' => 'margin-top','setting' => 'wda_title_lead_y_margin','prefix'  => '','postfix' => 'vh'],
       ['style' => 'margin-bottom','setting' => 'wda_title_lead_y_margin','prefix'  => '','postfix' => 'vh']);
 
    wda_generate_css_rule(
       '.wda-title-lead__title',
+      [],
       ['style' => 'padding-bottom','setting' => 'wda_title_lead_btwn_padding','prefix'  => '','postfix' => 'vh']);
    wda_generate_css_rule(
       '.wp-block-group.wda-title-lead',
+      [],
       ['style' => 'padding-top','setting' => 'wda_title_lead_top_padding','prefix'  => '','postfix' => 'vh'],
       ['style' => 'padding-bottom','setting' => 'wda_title_lead_bottom_padding','prefix'  => '','postfix' => 'vh']);
-   ?>
-    @media screen and (min-width: 768px) { 
-      <?php 
+
+
+   wda_start_media_query("screen","(min-width: 768px)"); 
       wda_generate_css_rule(
          '.wp-block-group.wda-title-lead,.wp-block-group.wda-title-lead.has-background ',
+         ['indent' => 'true'],
          ['style' => 'padding-left','setting' => 'wda_title_lead_x_padding','prefix'  => '','postfix' => '%'],
          ['style' => 'padding-right','setting' => 'wda_title_lead_x_padding','prefix'  => '','postfix' => '%']);
-      ?>
-    }
-<?php
+    wda_end_media_query();
+    
 }

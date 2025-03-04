@@ -24,11 +24,32 @@ if (!function_exists('wda_is_blog_archive_page')) :
 endif;
 
 
+// We generate tidy front-end CSS and we don't want source code providing formatting for output
+
+if(!function_exists('wda_start_css_block')) :
+   function wda_start_css_block($block_name) {
+      echo "\n\t/* " . $block_name . " */\n";
+   }
+endif;
+
+if(!function_exists('wda_start_media_query')) :
+   function wda_start_media_query($media_type = "screen", $media_features = "(min-width: 768px)") {
+      echo "\t" . "@media $media_type and $media_features {" . "\n";
+   }
+endif;
+
+if(!function_exists('wda_end_media_query')) :
+   function wda_end_media_query() {
+      echo "\t}\n";
+   }
+endif;
+
+
 // Generate front-end css selector with rule(s) from our theme_mods
 
 if (!function_exists('wda_generate_css_rule')) :
 
-   function wda_generate_css_rule($selector,...$rules) {
+   function wda_generate_css_rule($selector,$formats,...$rules) {
 
       if(!is_array($rules)) return;
       
@@ -50,7 +71,8 @@ if (!function_exists('wda_generate_css_rule')) :
          }
       }
       if($css_inners !== '') {
-         $css = $selector . '{';
+         if(!empty($formats['indent'])) $css = "\t";
+         $css.= $selector . '{';
          $css.= $css_inners;
          $css.= '}';
          echo ("\t");
@@ -60,17 +82,19 @@ if (!function_exists('wda_generate_css_rule')) :
 endif;
 
 
+
 // Generate front-end css selector with rules from given values
 
 if (!function_exists('wda_inject_css')) :
 
-   function wda_inject_css($selector,...$rules) {
+   function wda_inject_css($selector,$formats,...$rules) {
 
       $css_inners = '';
       foreach ($rules as $rule) {
          $css_inners.= sprintf('%s:%s;',$rule['style'],$rule['prefix'].$rule['value'].$rule['postfix']);
       }
       if($css_inners !== '') {
+         if(!empty($formats['indent'])) $css = "\t";
          $css = $selector . '{';
          $css.= $css_inners;
          $css.= '}';

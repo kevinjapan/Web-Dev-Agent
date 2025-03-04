@@ -120,27 +120,32 @@ function wda_customize_register_cover_blocks_styles() {
    // eg  if(get_theme_mod($rule['wda_cover_x_width'])) {..
    //          @media screen and (max-width: 768px) {..
 
-   ?>
-<?php 
+   wda_start_css_block('Cover Blocks');
+
    // Hero Block
-   wda_generate_css_rule('.wda-hero',            
+   wda_generate_css_rule('.wda-hero',   
+      [],         
       ['style' => 'height','setting' => 'wda_hero_x_height','prefix'  => '','postfix' => 'vh'],);
-   wda_generate_css_rule('.wda-hero',            
+   wda_generate_css_rule('.wda-hero',  
+      [],         
       ['style' => 'margin-bottom','setting' => 'wda_hero_bottom_margin','prefix'  => '','postfix' => '%'],);  
-   wda_generate_css_rule('.wda-hero',            
+   wda_generate_css_rule('.wda-hero',     
+      [],       
       ['style' => 'align-items','setting' => 'wda_hero_v_align','prefix'  => '','postfix' => ''],);
 
    // Cover Block  
    wda_generate_css_rule('.wda-cover',
+      [],
       ['style' => 'margin-top','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh'],
       ['style' => 'margin-bottom','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh']);
   
-      ?>
-    @media screen and (min-width: 768px) { 
-    <?php
-        wda_generate_css_rule('.wda-cover, .wda-cover-rows',
-           ['style' => 'width','setting' => 'wda_cover_x_width','prefix'  => '','postfix' => '%'],);
-     ?>
-    }
-  <?php
+
+   wda_start_media_query("screen","(min-width: 768px)");
+      
+      wda_generate_css_rule(
+         '.wda-cover, .wda-cover-rows',
+         ['indent' => 'true'],
+         ['style' => 'width','setting' => 'wda_cover_x_width','prefix'  => '','postfix' => '%'],);
+     
+    wda_end_media_query();
 }

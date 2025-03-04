@@ -57,13 +57,21 @@ function wda_customize_register_image_blocks($wp_customize) {
 
 function wda_customize_register_image_blocks_styles() {
 
-   wda_generate_css_rule('article .entry-content figure.wp-block-image.wda-image img',
+   wda_start_css_block('Image Blocks');
+
+   wda_generate_css_rule(
+      'article .entry-content figure.wp-block-image.wda-image img',
+      [],
       ['style' => 'padding-left','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%'],
       ['style' => 'padding-right','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%']);
-   wda_generate_css_rule('figure.wp-block-image.wda-image',
+   wda_generate_css_rule(
+      'figure.wp-block-image.wda-image',
+      [],
       ['style' => 'padding-left','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%'],
       ['style' => 'padding-right','setting' => 'wda_image_x_padding','prefix'  => '','postfix' => '%']);
-   wda_generate_css_rule('article .entry-content figure.wp-block-image.wda-image img,article .entry-content figure.wp-block-image.wda-image.has-background img',
+   wda_generate_css_rule(
+      'article .entry-content figure.wp-block-image.wda-image img,article .entry-content figure.wp-block-image.wda-image.has-background img',
+      [],
       ['style' => 'margin-top','setting' => 'wda_image_y_margins','prefix'  => '','postfix' => 'vh'],
       ['style' => 'margin-bottom','setting' => 'wda_image_y_margins','prefix'  => '','postfix' => 'vh']);
 

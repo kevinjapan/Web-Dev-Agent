@@ -150,51 +150,55 @@ function wda_customize_register_grid_blocks($wp_customize) {
 }
 
 function wda_customize_register_grid_blocks_styles() {
-   ?>
+   
+   wda_start_css_block('Grid Blocks');
 
-<?php 
-   wda_generate_css_rule('.wda-grid',
-   ['style' => 'margin-top','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh'],
-   ['style' => 'margin-bottom','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh']);
+   wda_generate_css_rule(
+      '.wda-grid',
+      [],
+      ['style' => 'margin-top','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh'],
+      ['style' => 'margin-bottom','setting' => 'wda_grid_y_margins','prefix'  => '','postfix' => 'vh']);
 
    // to do : could gen @media w/ utility func call?  eg:
    // start_media_query('min-width','768px');   // <- this would allow global setting for primary screen size changes..
    // end_media_query()                         // simply '}'
    // would also allow better control of layout on front-end page source.
 
-   wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
-   ['style' => 'grid-template-columns','setting' => 'wda_grid_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
+   wda_generate_css_rule(
+      '.wda-grid > div, .wda-grid:not(:has(div))',
+      [],
+      ['style' => 'grid-template-columns','setting' => 'wda_grid_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
 
    // we increase specificity to ensure this rule is selected over WP classes and avoid using !important so as not to override web-customize.js binding in Customizer
-   wda_generate_css_rule('div.wp-block-group.wda_grid_cards.is-layout-grid',
-   ['style' => 'grid-template-columns','setting' => 'wda_grid_cards_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
-   ?>
-    @media screen and (min-width: 768px) { 
-     <?php 
-     // container rules
-     wda_generate_css_rule('.wda-grid',
-     ['style' => 'margin-left','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw'],
-     ['style' => 'margin-right','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw']);
-     ?>
-     <?php      
-     wda_generate_css_rule('.wda_grid_cards',
-     ['style' => 'margin-left','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw'],
-     ['style' => 'margin-right','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw']);
-     ?>
-     <?php
-   //   wda_inject_css(
-   //      '.wda_grid_cards > *',
-   //      ['style' => 'background','value' => 'blue' ,'prefix'  => '','postfix' => ''],
-   //      ['style' => 'color','value' => 'white' ,'prefix'  => '','postfix' => '']
-   //   );
+   wda_generate_css_rule(
+      'div.wp-block-group.wda_grid_cards.is-layout-grid',
+      [],
+      ['style' => 'grid-template-columns','setting' => 'wda_grid_cards_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
+
+   wda_start_media_query("screen","(min-width: 768px)"); // to do : make 768px global single-truth
+
+      wda_generate_css_rule(
+         '.wda-grid',
+         ['indent' => 'true'],
+         ['style' => 'margin-left','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw'],
+         ['style' => 'margin-right','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw']);
+      
+      wda_generate_css_rule(
+         '.wda_grid_cards',
+         ['indent' => 'true'],
+         ['style' => 'margin-left','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw'],
+         ['style' => 'margin-right','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw']);
+
+      wda_generate_css_rule(
+         '.wda-grid > div, .wda-grid:not(:has(div))',
+         ['indent' => 'true'],
+         ['style' => 'gap','setting' => 'wda_grid_gap','prefix'  => '','postfix' => 'rem']);
+
+      wda_generate_css_rule(
+         '.wda_grid_cards',
+         ['indent' => 'true'],
+         ['style' => 'gap','setting' => 'wda_grid_cards_gap','prefix'  => '','postfix' => 'rem']);
      
-     wda_generate_css_rule('.wda-grid > div, .wda-grid:not(:has(div))',
-     ['style' => 'gap','setting' => 'wda_grid_gap','prefix'  => '','postfix' => 'rem']);
-     ?>
-     <?php
-     wda_generate_css_rule('.wda_grid_cards',
-     ['style' => 'gap','setting' => 'wda_grid_cards_gap','prefix'  => '','postfix' => 'rem']);
-     ?>
-    }
-<?php
+    wda_end_media_query();
+
 }

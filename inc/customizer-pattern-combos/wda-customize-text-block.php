@@ -77,17 +77,20 @@ function wda_customize_register_text_blocks($wp_customize) {
 
 
 function wda_customize_register_text_blocks_styles() {
-   ?>
 
-<?php
-   wda_generate_css_rule('.wp-block-group.wda-text.wda-simple-text',
+   wda_start_css_block('Text Blocks');
+
+   wda_generate_css_rule(
+      '.wp-block-group.wda-text.wda-simple-text',
+      [],
       ['style' => 'margin-top','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh'],
       ['style' => 'margin-bottom','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh']); 
-   wda_generate_css_rule('.wp-block-group.wda-text.wda-simple-text',
+   wda_generate_css_rule(
+      '.wp-block-group.wda-text.wda-simple-text',
+      [],
       ['style' => 'text-align','setting' => 'wda_text_text_align','prefix'  => '','postfix' => '']); 
-
-
    wda_generate_css_rule('.wda-text, .wda-text.has-background ',
+      [],
       ['style' => 'padding-left','setting' => 'wda_text_x_padding','prefix'  => '','postfix' => '%'],
       ['style' => 'padding-right','setting' => 'wda_text_x_padding','prefix'  => '','postfix' => '%']);
 
