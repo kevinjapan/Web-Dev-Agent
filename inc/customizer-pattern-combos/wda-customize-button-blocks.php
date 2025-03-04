@@ -55,7 +55,9 @@ function wda_customize_register_button_blocks($wp_customize) {
 
 
 function wda_customize_register_button_blocks_styles() {
+   ?>
 
+<?php 
    // to do : ' wda_button_margin' not working exactly as expected - apply to container (group) ? stretching x-axis unexpectedly
    wda_generate_css_rule(
       '.wda_discrete_buttons > .wda_button > a.wp-block-button__link',

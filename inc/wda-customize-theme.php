@@ -80,7 +80,7 @@ class WebDevAgentThemeCustomizer {
    // frontend inline theme styles
    public static function wda_customizer_theme_styles() {
       echo("\n");
-      ?><!-- Web Dev Agent Theme Customizer CSS --> 
+      ?><!-- WDA Theme Customizer CSS --> 
 <style id="web-dev-agent-custom-theme" type="text/css">
 <?php 
 // Theme Customizer Styles

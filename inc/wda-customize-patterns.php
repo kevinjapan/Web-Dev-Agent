@@ -147,7 +147,7 @@ class WebDevAgentPatternsCustomizer {
    //
    public static function wda_customizer_patterns_styles() {
       echo("\n");
-?><!-- Web Dev Agent Patterns Customizer CSS -->
+?><!-- WDA Patterns Customizer CSS -->
 <style type="text/css">
 <?php
 wda_customize_register_cover_blocks_styles();

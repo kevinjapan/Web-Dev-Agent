@@ -82,24 +82,20 @@ function wda_customize_register_feature_blocks($wp_customize) {
 
 
 function wda_customize_register_feature_blocks_styles() {
-      
-   // to do : these rules are too long to be useful page source - break them up
-   wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
+?>
+
+<?php
+   wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background',
    ['style' => 'padding-top','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh'],
    ['style' => 'padding-bottom','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh']);
+   wda_generate_css_rule('.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
+   ['style' => 'padding-top','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh'],
+   ['style' => 'padding-bottom','setting' => 'wda_features_y_padding','prefix'  => '','postfix' => 'vh']);
+
    wda_generate_css_rule('.wp-block-media-text.wda-features.wda-single-feature-columns,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
       ['style' => 'margin-top','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important'],
       ['style' => 'margin-bottom','setting' => 'wda_column_y_margins','prefix'  => '','postfix' => 'vh !important']);
-?>
-@media screen and (min-width: 768px) { 
-<?php
-   wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background,.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
-      ['style' => 'padding-left','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%'],
-      ['style' => 'padding-right','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%']
-   );
-?>
-}
-<?php
+
    wda_generate_css_rule('.wda-cover-columns, .wda-cover-columns.has-background',
       ['style' => 'padding-left','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%'],
       ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']
@@ -129,6 +125,21 @@ function wda_customize_register_feature_blocks_styles() {
          ['style' => 'color','value' => 'var(--link_text_color_hover)' ,'prefix'  => '','postfix' => '']
       );
    }
+   ?>
+    @media screen and (min-width: 768px) { 
+      <?php
+      wda_generate_css_rule('.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background',
+         ['style' => 'padding-left','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%'],
+         ['style' => 'padding-right','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%']
+      );?>
+      <?php
+      wda_generate_css_rule('.wp-block-columns.wda-features,.wp-block-columns.wda-features.has-background',
+         ['style' => 'padding-left','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%'],
+         ['style' => 'padding-right','setting' => 'wda_features_x_padding','prefix'  => '','postfix' => '%']
+      );
+      ?>
+    }
+<?php
 ?>
 <?php
 }

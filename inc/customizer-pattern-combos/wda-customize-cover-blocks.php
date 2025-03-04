@@ -112,8 +112,11 @@ function wda_customize_register_cover_blocks($wp_customize) {
 }
 
 function wda_customize_register_cover_blocks_styles() {
+   ?>
+   
+   <?php
 
-   // to do : we were generating way too many '@media screen..'s in page source : on-going
+   // future : we were generating way too many '@media screen..'s in page source : on-going
    // we removed all for now and will only add when we have specific responsive requirement
    // for individual CSS rules.
    // solution: check if rule has been set - only include '@media..' if setting a rule:
@@ -130,16 +133,17 @@ function wda_customize_register_cover_blocks_styles() {
    wda_generate_css_rule('.wda-hero',            
    ['style' => 'align-items','setting' => 'wda_hero_v_align','prefix'  => '','postfix' => ''],);
 
-   // Cover Block    ?>
-@media screen and (min-width: 768px) { 
-<?php
-      wda_generate_css_rule('.wda-cover, .wda-cover-rows',
-         ['style' => 'width','setting' => 'wda_cover_x_width','prefix'  => '','postfix' => '%'],);
-?>
-}
-<?php
+   // Cover Block  
    wda_generate_css_rule('.wda-cover',
       ['style' => 'margin-top','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh'],
       ['style' => 'margin-bottom','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh']);
-
+  
+      ?>
+    @media screen and (min-width: 768px) { 
+    <?php
+        wda_generate_css_rule('.wda-cover, .wda-cover-rows',
+           ['style' => 'width','setting' => 'wda_cover_x_width','prefix'  => '','postfix' => '%'],);
+     ?>
+    }
+  <?php
 }

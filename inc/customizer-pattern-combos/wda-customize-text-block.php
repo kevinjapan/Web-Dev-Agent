@@ -79,7 +79,9 @@ function wda_customize_register_text_blocks($wp_customize) {
 
 
 function wda_customize_register_text_blocks_styles() {
+   ?>
 
+<?php
    wda_generate_css_rule('.wp-block-group.wda-text.wda-simple-text',
       ['style' => 'margin-top','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh'],
       ['style' => 'margin-bottom','setting' => 'wda_text_y_margins','prefix'  => '','postfix' => 'vh']); 
