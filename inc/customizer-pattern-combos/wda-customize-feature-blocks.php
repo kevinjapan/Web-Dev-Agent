@@ -135,7 +135,7 @@ function wda_customize_register_feature_blocks_styles() {
       );
    }
 
-   wda_start_media_query("screen","(min-width: 768px)");
+   wda_start_media_query("screen","(min-width: " . wda_get_md_breakpoint() . ")");
 
       wda_generate_css_rule(
          '.wp-block-media-text.wda-features,.wp-block-media-text.wda-features.has-background',

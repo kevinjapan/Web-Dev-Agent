@@ -312,7 +312,7 @@ function wda_customize_register_title_lead_blocks_styles() {
       ['style' => 'padding-bottom','setting' => 'wda_title_lead_bottom_padding','prefix'  => '','postfix' => 'vh']);
 
 
-   wda_start_media_query("screen","(min-width: 768px)"); 
+      wda_start_media_query("screen","(min-width: " . wda_get_md_breakpoint() . ")");
       wda_generate_css_rule(
          '.wp-block-group.wda-title-lead,.wp-block-group.wda-title-lead.has-background ',
          ['indent' => 'true'],

@@ -24,6 +24,16 @@ if (!function_exists('wda_is_blog_archive_page')) :
 endif;
 
 
+// Responsive Breakpoints
+
+if (!function_exists('wda_get_md_breakpoint')) :
+   function wda_get_md_breakpoint($as_str = true) {
+      if($as_str) return "768px";
+      return 768;
+   }
+endif;
+
+
 // We generate tidy front-end CSS and we don't want source code providing formatting for output
 
 if(!function_exists('wda_start_css_block')) :
@@ -31,13 +41,11 @@ if(!function_exists('wda_start_css_block')) :
       echo "\n\t/* " . $block_name . " */\n";
    }
 endif;
-
 if(!function_exists('wda_start_media_query')) :
    function wda_start_media_query($media_type = "screen", $media_features = "(min-width: 768px)") {
       echo "\t" . "@media $media_type and $media_features {" . "\n";
    }
 endif;
-
 if(!function_exists('wda_end_media_query')) :
    function wda_end_media_query() {
       echo "\t}\n";
@@ -82,7 +90,6 @@ if (!function_exists('wda_generate_css_rule')) :
 endif;
 
 
-
 // Generate front-end css selector with rules from given values
 
 if (!function_exists('wda_inject_css')) :
@@ -105,7 +112,8 @@ if (!function_exists('wda_inject_css')) :
 
 endif;
 
-// map setting values to appropriate value for a specified property
+
+// Map setting values to appropriate value for a specified property
 
 if (!function_exists('map_prop_values')) :
 
@@ -116,8 +124,8 @@ if (!function_exists('map_prop_values')) :
       }
       return $mod;
    }
-endif;
 
+endif;
 
 if(!function_exists('text_to_flex_props')) :
    function text_to_flex_props($mod) {

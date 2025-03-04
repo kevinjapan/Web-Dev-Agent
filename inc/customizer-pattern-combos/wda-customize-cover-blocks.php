@@ -140,7 +140,7 @@ function wda_customize_register_cover_blocks_styles() {
       ['style' => 'margin-bottom','setting' => 'wda_cover_y_margins','prefix'  => '','postfix' => 'vh']);
   
 
-   wda_start_media_query("screen","(min-width: 768px)");
+      wda_start_media_query("screen","(min-width: " . wda_get_md_breakpoint() . ")");
       
       wda_generate_css_rule(
          '.wda-cover, .wda-cover-rows',
