@@ -24,9 +24,7 @@ if (!function_exists('wda_is_blog_archive_page')) :
 endif;
 
 
-// wda_generate_css_rule
-// Generates front-end css selector with rule(s) from our theme mods.
-// These rules will not appear in the front-end until you have 'published' in the Customizer.
+// Generate front-end css selector with rule(s) from our theme_mods
 
 if (!function_exists('wda_generate_css_rule')) :
 
@@ -62,20 +60,22 @@ if (!function_exists('wda_generate_css_rule')) :
 endif;
 
 
+// Generate front-end css selector with rules from given values
 
 if (!function_exists('wda_inject_css')) :
 
    function wda_inject_css($selector,...$rules) {
 
+      $css_inners = '';
       foreach ($rules as $rule) {
-         $css_inners = sprintf('%s:%s;',$rule['style'],$rule['prefix'].$rule['value'].$rule['postfix']);
-         if($css_inners !== '') {
-            $css = $selector . '{';
-            $css.= $css_inners;
-            $css.= '}';
-            echo ("\t");
-            echo $css . "\n";
-         }
+         $css_inners.= sprintf('%s:%s;',$rule['style'],$rule['prefix'].$rule['value'].$rule['postfix']);
+      }
+      if($css_inners !== '') {
+         $css = $selector . '{';
+         $css.= $css_inners;
+         $css.= '}';
+         echo ("\t");
+         echo $css . "\n";
       }
    }
 
