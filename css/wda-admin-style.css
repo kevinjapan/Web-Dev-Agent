@@ -85,7 +85,8 @@ div.wda_customizer_ctrl_label {
 div.wda_customizer_ctrl_label > h4 {
    margin:0;padding:.25rem;font-weight:200;font-size:1rem;
 }
-div.wda_compact_number_customizer_ctrl {
+div.wda_compact_number_customizer_ctrl,
+div.wda_compact_checkbox_customizer_ctrl {
    display:-webkit-box;
    display:-ms-flexbox;
    display:flex;
@@ -95,11 +96,13 @@ div.wda_compact_number_customizer_ctrl {
    gap:1rem;
    min-width:100%;
 }
-div.wda_compact_number_customizer_ctrl div.customize-control-description {
+div.wda_compact_number_customizer_ctrl div.customize-control-description,
+div.wda_compact_checkbox_customizer_ctrl div.customize-control-description {
    width:50%;
    height:fit-content;
  }
-input.wda_compact_number_customizer_ctrl_input {
+ input.wda_compact_number_customizer_ctrl_input,
+ input.wda_compact_checkbox_customizer_ctrl_input {
    max-width: 60px;
 }
 

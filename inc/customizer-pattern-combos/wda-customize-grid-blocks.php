@@ -6,7 +6,10 @@
 
 function wda_customize_register_grid_blocks($wp_customize) {
 
-   // X-margins
+
+   // Grid Blocks
+   // ------------------------------------------------
+
    $wp_customize->add_setting(
       'wda_grid_x_margins',
       array('default'    => '0', 
@@ -26,7 +29,6 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
-   // Y-margins
    $wp_customize->add_setting(
       'wda_grid_y_margins',
       array('default'    => '0', 
@@ -45,9 +47,7 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'description' => __( '% vertical margin','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
-   
 
-   // Grid Gap
    $wp_customize->add_setting(
       'wda_grid_gap',
       array('default'    => '0', 
@@ -67,10 +67,9 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
    ));
 
-   // Grid Template Columns
    $wp_customize->add_setting(
       'wda_grid_template_cols',
-   array('default'    => '0', 
+      array('default'    => '0', 
          'type'       => 'theme_mod',
          'capability' => 'edit_theme_options',
          'transport'  => 'postMessage',
@@ -87,9 +86,11 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
+   
 
    // Grid Card Blocks
-   // X-margins
+   // ------------------------------------------------
+
    $wp_customize->add_setting(
       'wda_grid_cards_x_margins',
       array('default'    => '0', 
@@ -108,7 +109,26 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'description' => __( '% horizontal margin','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
-   // Grid Cards Gap
+
+   $wp_customize->add_setting(
+      'wda_grid_cards_y_margins',
+      array('default'    => '0', 
+            'type'       => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport'  => 'postMessage',
+            'sanitize_callback' => 'wda_sanitize_number_range') 
+   );
+   $wp_customize->add_control(new CompactNumberCustomizerControl($wp_customize,
+      'wda_grid_cards_y_margins', 
+      array('type' => 'number',
+            'priority' => 10,
+            'section' => 'wda_grid_cards_patterns',
+            'label' => __( '','wda'),
+            'settings'   => 'wda_grid_cards_y_margins', 
+            'description' => __( '% vertical margin','wda'),
+            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+   ));
+
    $wp_customize->add_setting(
       'wda_grid_cards_gap',
       array('default'    => '0', 
@@ -127,7 +147,7 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'description' => __( 'element spacing','wda'),
             'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
    ));
-   // Grid Cards Template Columns
+
    $wp_customize->add_setting(
       'wda_grid_cards_template_cols',
       array('default'    => '0', 
@@ -147,33 +167,53 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
-   // to do : get 'link type' working all views
-   
-   $wp_customize->add_setting(
-      'wda_grid_cards_cta_type',
-      array('default'    => 'Button', 
-            'type'       => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport'  => 'postMessage',
-            'sanitize_callback' => 'wda_sanitize_select',) 
+   // has_btn
+   $wp_customize->add_setting( 'wda_grid_cards_has_btn',
+   array('default'    => true, 
+         'type'       => 'theme_mod',
+         'capability' => 'edit_theme_options',
+         'transport'  => 'postMessage',
+         'sanitize_callback' => 'wda_sanitize_checkbox') 
    );
-   $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
-      'wda_grid_cards_cta_type', 
-      array('type' => 'select',
-            'priority' => 12,
+   $wp_customize->add_control(new CompactCheckBoxCustomizerControl($wp_customize,
+      'wda_grid_cards_has_btn', 
+      array('type' => 'checkbox',
+            'priority' => 10,
             'section' => 'wda_grid_cards_patterns',
-            'settings'   => 'wda_grid_cards_cta_type', 
-            'description' => __( 'link type','wda'),
-            'choices' => array(
-               'Button' => 'Button',
-               'Link' => 'Link',
-            ))
+            'label' => esc_html__( '','wda'),
+            'settings'   => 'wda_grid_cards_has_btn', 
+            'input_attrs' => array( 'style' => 'width:100%;' ),
+            'description' => esc_html__('display button','wda' ))
+   ));
+
+   // has_link
+   $wp_customize->add_setting( 
+      'wda_grid_cards_has_link',
+      array('default'    => true, 
+         'type'       => 'theme_mod',
+         'capability' => 'edit_theme_options',
+         'transport'  => 'postMessage',
+         'sanitize_callback' => 'wda_sanitize_checkbox') 
+   );
+   $wp_customize->add_control(new CompactCheckBoxCustomizerControl($wp_customize,
+      'wda_grid_cards_has_link', 
+      array('type' => 'checkbox',
+            'priority' => 10,
+            'section' => 'wda_grid_cards_patterns',
+            'label' => esc_html__( '','wda'),
+            'settings'   => 'wda_grid_cards_has_link', 
+            'input_attrs' => array( 'style' => 'width:100%;' ),
+            'description' => esc_html__('display link','wda' ))
    ));
 
 }
 
 function wda_customize_register_grid_blocks_styles() {
    
+    
+   // Grid Blocks
+   // ------------------------------------------
+
    wda_start_css_block('Grid Blocks');
 
    wda_generate_css_rule(
@@ -187,38 +227,7 @@ function wda_customize_register_grid_blocks_styles() {
       [],
       ['style' => 'grid-template-columns','setting' => 'wda_grid_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
 
-   // we increase specificity to ensure this rule is selected over WP classes and avoid using !important so as not to override web-customize.js binding in Customizer
-   wda_generate_css_rule(
-      'div.wp-block-group.wda_grid_cards.is-layout-grid',
-      [],
-      ['style' => 'grid-template-columns','setting' => 'wda_grid_cards_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
 
-      if(get_theme_mod('wda_grid_cardss_cta_type') === "Button") {
-         wda_inject_css(
-            '.wda_grid_cards_btns',
-            [],
-            ['style' => 'background','value' => 'unset' ,'prefix'  => '','postfix' => '']
-         );
-      }
-      else {
-         wda_inject_css(
-            '.wda_grid_cards_btns > div > a',
-            [],
-            ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
-            ['style' => 'color','value' => 'var(--wda_btn_bg)' ,'prefix'  => '','postfix' => ''],
-            ['style' => 'text-align','value' => 'left' ,'prefix'  => '','postfix' => ''],
-            ['style' => 'padding','value' => '.25rem' ,'prefix'  => '','postfix' => ''],
-            ['style' => 'padding-left','value' => '.5rem' ,'prefix'  => '','postfix' => ''],
-            ['style' => 'font-size','value' => '1rem' ,'prefix'  => '','postfix' => ''],
-            ['style' => 'text-decoration','value' => 'underline' ,'prefix'  => '','postfix' => '']
-         );
-         wda_inject_css(
-            '.wda_grid_cards_btns > div > a:hover',
-            [],
-            ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
-            ['style' => 'color','value' => 'var(--link_text_color_hover)' ,'prefix'  => '','postfix' => '']
-         );
-      }
 
 
    wda_start_media_query("screen","(min-width: " . wda_get_md_breakpoint() . ")");
@@ -230,21 +239,65 @@ function wda_customize_register_grid_blocks_styles() {
          ['style' => 'margin-right','setting' => 'wda_grid_x_margins','prefix'  => '','postfix' => 'vw']);
       
       wda_generate_css_rule(
-         '.wda_grid_cards',
-         ['indent' => 'true'],
-         ['style' => 'margin-left','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw'],
-         ['style' => 'margin-right','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw']);
-
-      wda_generate_css_rule(
          '.wda-grid > div, .wda-grid:not(:has(div))',
          ['indent' => 'true'],
          ['style' => 'gap','setting' => 'wda_grid_gap','prefix'  => '','postfix' => 'rem']);
-
-      wda_generate_css_rule(
-         '.wda_grid_cards',
-         ['indent' => 'true'],
-         ['style' => 'gap','setting' => 'wda_grid_cards_gap','prefix'  => '','postfix' => 'rem']);
+         
      
     wda_end_media_query();
+
+
+
+   // Grid Cards Blocks
+   // ------------------------------------------
+
+   wda_start_css_block('Grid Cards Blocks');
+   
+   // we increase specificity to ensure this rule is selected over WP classes and avoid using !important so as not to override web-customize.js binding in Customizer
+   wda_generate_css_rule(
+      'div.wp-block-group.wda_grid_cards.is-layout-grid',
+      [],
+      ['style' => 'grid-template-columns','setting' => 'wda_grid_cards_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
+
+   wda_generate_css_rule(
+      '.wda_grid_cards',
+      [],
+      ['style' => 'margin-top','setting' => 'wda_grid_cards_y_margins','prefix'  => '','postfix' => 'vw'],
+      ['style' => 'margin-bottom','setting' => 'wda_grid_cards_y_margins','prefix'  => '','postfix' => 'vw']);
+
+      
+
+   if(!get_theme_mod('wda_grid_cards_has_link')) {
+      wda_inject_css(
+         'div.wp-block-buttons.wda_grid_cards_links',
+         [],
+         ['style' => 'display','value' => 'none' ,'prefix'  => '','postfix' => '']
+      );
+   }
+   if(!get_theme_mod('wda_grid_cards_has_btn')) {
+      wda_inject_css(
+         'div.wp-block-buttons.wda_grid_cards_btns',
+         [],
+         ['style' => 'display','value' => 'none' ,'prefix'  => '','postfix' => '']
+      );
+   }
+
+
+   wda_start_media_query("screen","(min-width: " . wda_get_md_breakpoint() . ")");
+   
+   wda_generate_css_rule(
+      '.wda_grid_cards',
+      ['indent' => 'true'],
+      ['style' => 'margin-left','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw'],
+      ['style' => 'margin-right','setting' => 'wda_grid_cards_x_margins','prefix'  => '','postfix' => 'vw']);
+
+   wda_generate_css_rule(
+      '.wda_grid_cards',
+      ['indent' => 'true'],
+      ['style' => 'gap','setting' => 'wda_grid_cards_gap','prefix'  => '','postfix' => 'rem']);
+
+   wda_end_media_query();
+
+
 
 }

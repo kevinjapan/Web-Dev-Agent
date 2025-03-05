@@ -72,6 +72,15 @@ function wda_register_grid_blocks_templates($site_uri) {
                      <!-- /wp:button -->
                   </div>
                   <!-- /wp:buttons -->
+                  <!-- wp:buttons {"className":"wda_grid_cards_links"} -->
+                  <div class="wp-block-buttons wda_grid_cards_links">
+                     <!-- wp:button {"className":"wda_grid_cards_link"} -->
+                     <div class="wp-block-button wda_grid_cards_link">
+                        <a class="wp-block-button__link wp-element-button">read more</a>
+                     </div>
+                     <!-- /wp:button -->
+                  </div>
+                  <!-- /wp:buttons -->
                </div>
 		         <!-- /wp:group -->
 

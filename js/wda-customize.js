@@ -93,23 +93,6 @@
          $('.wda-features, .wda-features.has-background').css('padding-bottom', value + 'vh')
       })
    })
-   
-   // to do : why is this not used?
-   // wp.customize('wda_features_img_width', function(setting) {
-   //    setting.bind( function(value) {
-   //       if(value < 0) value = 0
-   //       if(value > 100) value = 100
-   //       $('.wda-two-col-features img, .wda-three-col-features img').css('width', value + '%')
-   //       if(value !== '100') {
-   //          $('.wda-two-col-features img, .wda-three-col-features img').css('margin-left','.5rem').css('margin-top','.5rem')
-   //       }
-   //       else {
-   //          // reset on-the-fly if user swaps between options
-   //          $('.wda-two-col-features img, .wda-three-col-features img').css('margin-left','0').css('margin-top','0')
-   //       }
-   //    })
-   // })
-
    wp.customize('wda_features_cta_type', function(setting) {
       setting.bind( function(value) {
          if(value === "Link") {
@@ -197,6 +180,16 @@
          })
       })
    })
+   wp.customize('wda_grid_cards_y_margins',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0
+         if(value > 25) value = 25
+         $('.wda_grid_cards').css({
+            "margin-top":value + 'vw',
+            "margin-left":value + 'vw'
+         })
+      })
+   })
    wp.customize('wda_grid_cards_gap',function(setting) {
       setting.bind( function(value) {
          if(value < 0) value = 0
@@ -215,34 +208,18 @@
          })
       })
    })
-   wp.customize('wda_grid_cards_cta_type', function(setting) {
+   wp.customize('wda_grid_cards_has_btn',function(setting) {
       setting.bind( function(value) {
-         if(value === "Link") {
-            $('.wda_grid_cards_btns > div > a').css({
-               backgroundColor:'transparent',
-               color:'var(--link_text_color)',
-               textAlign:'left',
-               padding:'.25rem',
-               paddingLeft:'.5rem',
-               fontSize:'1rem',
-               textDecoration:'underline'
-            })
-            $('.wda_grid_cards_btns > div > a:hover').css({
-               backgroundColor:'transparent',
-               color:'var(--link_text_color_hover)'
-            })
-         }
-         else {
-            $('.wda_grid_cards_btns > div > a').css({
-               backgroundColor:'var(--wda_btn_bg)',
-               color:'var(--wda_btn_text_color)',
-               textAlign:'left',
-               padding:'.25rem',
-               paddingLeft:'.25rem',
-               fontSsize:'1rem',
-               textDecoration:'underline'
-            })
-         }
+         $('.wda_grid_cards_btns').css({
+            "display": value ? 'block' : 'none'
+         })
+      })
+   })
+   wp.customize('wda_grid_cards_has_link',function(setting) {
+      setting.bind( function(value) {
+         $('.wda_grid_cards_links').css({
+            "display": value ? 'block' : 'none'
+         })
       })
    })
 

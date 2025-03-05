@@ -68,6 +68,7 @@ class WebDevAgentThemeCustomizer {
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactNumberCustomizerControl.php';
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactTextCustomizerControl.php';
       require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactSelectCustomizerControl.php';
+      require_once trailingslashit(dirname(__FILE__)) . '/custom-customizer-controls/CompactCheckboxCustomizerControl.php';
    
       // Theme Sections Settings/Controls combos
       wda_customize_theme_copyright($wp_customize);

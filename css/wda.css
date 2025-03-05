@@ -462,6 +462,7 @@ div.wda-features > div.wp-block-column {
    /* to do : style Grid Cards.. */
    border:solid 2px blue;
    background:hsl(0, 0%, 96%);
+   margin:1rem;
    padding:1rem;
 }
 /* style button/links in Grid Cards Block */
@@ -477,9 +478,23 @@ div.wda-features > div.wp-block-column {
    background:var(--wda_btn_bg_hover);
    color:var(--link_text_color_hover); 
 }
-/* .wda_grid_cards_btns > .wda_grid_cards_btn  {
-   
-} */
+
+
+div.wda_grid_cards_links {
+   margin:0;
+   padding:0;
+}
+div.wda_grid_cards_link {
+   margin:0;
+   padding:0;
+}
+div.wda_grid_cards_link > a {
+   background:transparent;
+   color:blue;
+   font-size:1rem;
+   text-decoration:underline;
+}
+
 
 
 /*

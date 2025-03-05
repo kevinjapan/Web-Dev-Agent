@@ -80,6 +80,7 @@ function wda_customize_register_feature_blocks($wp_customize) {
 
 }
 
+// to do : button/links is working in Customizer but not getting thru to front-end
 
 function wda_customize_register_feature_blocks_styles() {
 
