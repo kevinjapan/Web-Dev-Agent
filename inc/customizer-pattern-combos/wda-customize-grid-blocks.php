@@ -147,6 +147,29 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
+   // to do : get 'link type' working all views
+   
+   $wp_customize->add_setting(
+      'wda_grid_cards_cta_type',
+      array('default'    => 'Button', 
+            'type'       => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport'  => 'postMessage',
+            'sanitize_callback' => 'wda_sanitize_select',) 
+   );
+   $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
+      'wda_grid_cards_cta_type', 
+      array('type' => 'select',
+            'priority' => 12,
+            'section' => 'wda_grid_cards_patterns',
+            'settings'   => 'wda_grid_cards_cta_type', 
+            'description' => __( 'link type','wda'),
+            'choices' => array(
+               'Button' => 'Button',
+               'Link' => 'Link',
+            ))
+   ));
+
 }
 
 function wda_customize_register_grid_blocks_styles() {
@@ -169,6 +192,34 @@ function wda_customize_register_grid_blocks_styles() {
       'div.wp-block-group.wda_grid_cards.is-layout-grid',
       [],
       ['style' => 'grid-template-columns','setting' => 'wda_grid_cards_template_cols','prefix'  => 'repeat(','postfix' => ',minmax(100px,1fr))']);
+
+      if(get_theme_mod('wda_grid_cardss_cta_type') === "Button") {
+         wda_inject_css(
+            '.wda_grid_cards_btns',
+            [],
+            ['style' => 'background','value' => 'unset' ,'prefix'  => '','postfix' => '']
+         );
+      }
+      else {
+         wda_inject_css(
+            '.wda_grid_cards_btns > div > a',
+            [],
+            ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
+            ['style' => 'color','value' => 'var(--wda_btn_bg)' ,'prefix'  => '','postfix' => ''],
+            ['style' => 'text-align','value' => 'left' ,'prefix'  => '','postfix' => ''],
+            ['style' => 'padding','value' => '.25rem' ,'prefix'  => '','postfix' => ''],
+            ['style' => 'padding-left','value' => '.5rem' ,'prefix'  => '','postfix' => ''],
+            ['style' => 'font-size','value' => '1rem' ,'prefix'  => '','postfix' => ''],
+            ['style' => 'text-decoration','value' => 'underline' ,'prefix'  => '','postfix' => '']
+         );
+         wda_inject_css(
+            '.wda_grid_cards_btns > div > a:hover',
+            [],
+            ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
+            ['style' => 'color','value' => 'var(--link_text_color_hover)' ,'prefix'  => '','postfix' => '']
+         );
+      }
+
 
    wda_start_media_query("screen","(min-width: " . wda_get_md_breakpoint() . ")");
 

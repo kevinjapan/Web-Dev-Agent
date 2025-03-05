@@ -79,7 +79,7 @@
 } 
 
 
-
+/* to do : tidy all Block CSS rules etc. - tidy this file.. */
 
 html {
    margin:0;
@@ -484,8 +484,28 @@ div.wda-features > div.wp-block-column {
    -webkit-box-align:start;
    -ms-flex-align:start;
    align-items:flex-start;
-}
 
+   /* to do : style Grid Cards.. */
+   border:solid 2px blue;
+   background:hsl(0, 0%, 96%);
+   padding:1rem;
+}
+/* style button/links in Grid Cards Block */
+.wda_grid_cards_btns > div > a,
+.wda_grid_cards_btns > div > div {
+   width:100%;
+   background:var(--wda_btn_bg);
+   color:var(--wda_btn_text_color);
+   padding:var(--wda_btn_padding);
+   font-size:var(--wda_btn_font_size);
+}
+.wda_grid_cards_btns > div > a:hover {
+   background:var(--wda_btn_bg_hover);
+   color:var(--link_text_color_hover); 
+}
+/* .wda_grid_cards_btns > .wda_grid_cards_btn  {
+   
+} */
 /*
    Title-Lead Blocks
    -------------------------------------------------------------

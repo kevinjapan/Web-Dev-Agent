@@ -63,10 +63,10 @@ function wda_register_grid_blocks_templates($site_uri) {
                   <!-- wp:paragraph {"align":"left"} -->
                   <p class="has-text-align-left">paragraph in here</p>
                   <!-- /wp:paragraph -->
-                  <!-- wp:buttons -->
-                  <div class="wp-block-buttons">
-                     <!-- wp:button -->
-                     <div class="wp-block-button">
+                  <!-- wp:buttons {"className":"wda_grid_cards_btns"} -->
+                  <div class="wp-block-buttons wda_grid_cards_btns">
+                     <!-- wp:button {"className":"wda_grid_cards_btn"} -->
+                     <div class="wp-block-button wda_button wda_grid_cards_btn">
                         <a class="wp-block-button__link wp-element-button">read more</a>
                      </div>
                      <!-- /wp:button -->
@@ -74,7 +74,7 @@ function wda_register_grid_blocks_templates($site_uri) {
                   <!-- /wp:buttons -->
                </div>
 		         <!-- /wp:group -->
-                     
+
 		         <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","verticalAlignment":"top"}} -->
                <div class="wp-block-group">
                   <!-- wp:heading {"fontSize":"x-large"} -->

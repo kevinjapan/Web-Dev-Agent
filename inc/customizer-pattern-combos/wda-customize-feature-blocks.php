@@ -55,6 +55,7 @@ function wda_customize_register_feature_blocks($wp_customize) {
 
    // depr : 'wda_features_img_width' : changing image size via setting is not compatible w/ Page Editor, 
    //        so we offer as different separate templates instead.
+   //        future : may be possible using higher specificity on rules?
 
    $wp_customize->add_setting(
       'wda_features_cta_type',
@@ -64,7 +65,6 @@ function wda_customize_register_feature_blocks($wp_customize) {
             'transport'  => 'postMessage',
             'sanitize_callback' => 'wda_sanitize_select',) 
    );
-
    $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
       'wda_features_cta_type', 
       array('type' => 'select',
