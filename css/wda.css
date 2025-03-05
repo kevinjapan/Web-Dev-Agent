@@ -79,7 +79,6 @@
 } 
 
 
-/* to do : tidy all Block CSS rules etc. - tidy this file.. */
 
 html {
    margin:0;
@@ -102,6 +101,10 @@ p {
 }
 
 
+/*
+   Nav
+   -------------------------------------------
+*/
 .menu-top-menu {
    display:-webkit-box;
    display:-ms-flexbox;
@@ -117,7 +120,6 @@ ul.menu{
    display:flex;
    gap:1rem;
 }
-
 /* Heading elements */
 h1, h2, h3, h4, h5, h6 {
    margin:0;
@@ -147,12 +149,7 @@ h6.wda_h6,.wda-cover h6 {
    font-size:1.25rem;
    line-height:1.35rem;
 }
-
-
-/* 
-   adapt outlinecss nav to wordpress menu structure 
-*/
-
+/* adapt outlinecss nav to wordpress menu structure */
 /* style selection of menu item on top nav */
 li.menu-item {width:100%;}
 li.menu-item a,
@@ -166,35 +163,21 @@ li.menu-item:hover > a {
 li.menu-item.current-menu-item > a {
    border-bottom:solid 1px white;
 }
-
-
 .list_style_bullets {
-
    -ms-flex-item-align:center;
    -ms-grid-row-align:center;
    align-self:center;
-
    width:fit-content;
    list-style:circle;
    margin-bottom:1rem;
 }
 
 
+/* ----------------------- Block Pattern Customizations ----------------------- */
 
-/* 
-   customizing Block Patterns 
-*/
-/* we take control to align all Blocks elements */
-/* div, p {
-   margin:0;
-   padding:0;
-} */
-
-
-/* 
-future : 
-- layout of text on columns when stacked retains height and spacing 
-  of horizontal alignment - may look better more compact. 
+/*
+   Cover Blocks
+   -------------------------------------------
 */
 .wda-cover {
    margin:0 auto;
@@ -209,18 +192,15 @@ future :
    -ms-flex-direction:column;
    flex-direction:column;
 }
-
 .wda-cover h1,.wda-cover h2,.wda-cover h3,.wda-cover h4,.wda-cover h5,.wda-cover h6,
 .wda-cover p{
   color:white;
 }
-
 @media screen and (max-width: 782px) { 
    .wda-cover {
       border-radius:0;
    }
 }
-
 .wda_cover_btns {
    margin:0;
 }
@@ -239,11 +219,9 @@ future :
 }
 
 
-/* .wda_cover_btn {
-   padding:.5rem;
-} */
 /*
    Button Blocks
+   -------------------------------------------
 */
 div.wda_buttons {
    margin:1rem 0;
@@ -254,9 +232,9 @@ div.wda_button a {
 }
 
 
-/* 
-   Feature Blocks [using WP Columns]
-   -------------------------------------------------------------
+/*
+   Feature Blocks
+   -------------------------------------------
    We build from WordPress media-text which only stacks at v. sm
    We want it consistent w/ two-feature-columns breakpoints etc.
    Also, image was distorted by resizing screen width.
@@ -285,7 +263,6 @@ div.wda_button a {
    -webkit-box-align:left;
    -ms-flex-align:left;
    align-items:left;
-
    padding:1rem;
    border:solid 1px lightgrey;
    border-radius:.5rem;
@@ -345,7 +322,6 @@ div.wda_button a {
    }
 }
 
-
 /*
    to retain pattern block integrity, we want img to keep height
    Here, we force height but permit aspect to be retained (overflow permits x-cropping)
@@ -359,9 +335,7 @@ div.wda_button a {
    -o-object-fit: cover;
    object-fit: cover;
 }
-/* div.wda_feature_btn {
-   
-} */
+
 /* 
    reset grid (WordPress default)
    782px matches WordPress columns media break - consistency 
@@ -389,32 +363,28 @@ div.wda_button a {
    
 } */
 
-
-/* 
-   Stacking Features Block Patterns
-   -------------------------------------------------------------
+/*
+   Staching Feature Blocks
+   -------------------------------------------
    we incrse gap btwn 'columns' when stacking in sm/mobile for readability
 */
 div.wda-features > div.wp-block-column {
    margin-bottom:1rem;
 }
-
 /* enable left-align content */
 .wda-two-col-features img, .wda-three-col-features img, .wda-six-col-features img {
    margin:0 auto 0 0;
 }
-
-
-
 .wda_icon {
    width:42px;
    padding-left:.5rem;
 }
+
+
 /*
    Grid Blocks
-   -------------------------------------------------------------
+   -------------------------------------------
 */
-
 @media screen and (max-width: 768px) {
    div.wda-grid {
       /* set defaults on mobile/sm screens */
@@ -455,6 +425,11 @@ div.wda-features > div.wp-block-column {
 }
 
 
+
+/*
+   Grid Card Blocks
+   -------------------------------------------
+*/
 .wda_grid_cards {
    background:transparent;
    margin:0 auto;
@@ -472,7 +447,6 @@ div.wda-features > div.wp-block-column {
    -ms-flex-align:center;
    align-items:center;
 }
-
 .wda_grid_cards > div.wp-block-group {
    display:-webkit-box;
    display:-ms-flexbox;
@@ -506,9 +480,11 @@ div.wda-features > div.wp-block-column {
 /* .wda_grid_cards_btns > .wda_grid_cards_btn  {
    
 } */
+
+
 /*
-   Title-Lead Blocks
-   -------------------------------------------------------------
+   Title Lead Blocks
+   -------------------------------------------
 */
 @media screen and (max-width: 768px) {
    .wp-block-group.wda-title-lead {
@@ -525,10 +501,6 @@ div.wda-features > div.wp-block-column {
    -ms-flex-align:start;
    align-items:flex-start;
 }
-
-
-
-
 /* we need to remove P margin to permit text-align in Title-Lead Block */
 p.wda-title-lead__p {
    margin:0;
@@ -547,15 +519,17 @@ p.wda-title-lead__p {
       align-items:flex-end;
 }
 
-/*
-   Utility Classes
-   -------------------------------------------------------------
-*/
+
+/* ----------------------- Utility Classes ----------------------- */
+
+/* Flex */
 div.flex {
    display:-webkit-box;
    display:-ms-flexbox;
    display:flex;
 }
+
+/* Spacing */
 .mt_2 {margin-top:2rem;}
 .mb_2 {margin-bottom:2rem;}
 
