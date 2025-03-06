@@ -64,14 +64,14 @@ img {
 }
 
 /* style button/links in Feature Block */
-.wda_feature_btns > div > a {
+.wda_features_btns > div > a {
    width:100%;
    background:var(--wda_btn_bg);
    color:var(--wda_btn_text_color);
    padding:var(--wda_btn_padding);
    font-size:var(--wda_btn_font_size);
 }
-.wda_feature_btns > div > a:hover {
+.wda_features_btns > div > a:hover {
    background:var(--wda_btn_bg_hover);
 }
 
@@ -95,15 +95,18 @@ div.wda_compact_checkbox_customizer_ctrl {
    align-items:center;
    gap:1rem;
    min-width:100%;
+   user-select:none;
 }
 div.wda_compact_number_customizer_ctrl div.customize-control-description,
 div.wda_compact_checkbox_customizer_ctrl div.customize-control-description {
    width:50%;
    height:fit-content;
+   user-select:none;
  }
  input.wda_compact_number_customizer_ctrl_input,
  input.wda_compact_checkbox_customizer_ctrl_input {
    max-width: 60px;
+   user-select:none;
 }
 
 /* default  */
@@ -128,3 +131,4 @@ h2.wda-title-lead__title {
       margin-bottom:1rem;
    }
 }
+

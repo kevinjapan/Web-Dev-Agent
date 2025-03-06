@@ -98,12 +98,14 @@ header {
 
 p {
    margin:0;
+   padding:0;
 }
 
 
 /*
    Nav
    -------------------------------------------
+   to do : since we are including in Admin, we are currently breaking UI Menu display in Appearance\Menu (flex)
 */
 .menu-top-menu {
    display:-webkit-box;
@@ -173,7 +175,9 @@ li.menu-item.current-menu-item > a {
 }
 
 
+
 /* ----------------------- Block Pattern Customizations ----------------------- */
+
 
 /*
    Cover Blocks
@@ -347,21 +351,38 @@ div.wda_button a {
    }
 }
 /* style button/links in Feature Block */
-.wda_feature_btns > div > a,
-.wda_feature_btns > div > div {
+.wda_features_btns > div > a,
+.wda_features_btns > div > div {
    width:100%;
    background:var(--wda_btn_bg);
    color:var(--wda_btn_text_color);
    padding:var(--wda_btn_padding);
    font-size:var(--wda_btn_font_size);
 }
-.wda_feature_btns > div > a:hover {
+.wda_features_btns > div > a:hover {
    background:var(--wda_btn_bg_hover);
    color:var(--link_text_color_hover); 
 }
-/* .wda_feature_btns > .wda_feature_btn  {
+/* .wda_features_btns > .wda_features_btn  {
    
 } */
+div.wda_grid_links {
+   margin:0;
+   padding:0;
+}
+div.wda_grid_link {
+   margin:0;
+   padding:0;
+}
+div.wda_grid_link > a {
+   background:transparent;
+   color:blue;
+   font-size:1rem;
+   text-decoration:underline;
+   margin:0;
+   padding:0;
+}
+
 
 /*
    Staching Feature Blocks
@@ -424,6 +445,22 @@ div.wda-features > div.wp-block-column {
    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
+div.wda_features_links {
+   margin:0;
+   padding:0;
+}
+div.wda_features_link {
+   margin:0;
+   padding:0;
+}
+p.wda_features_link > a {
+   background:transparent;
+   color:blue;
+   font-size:1rem;
+   text-decoration:underline;
+   margin:0;
+   padding:0;
+}
 
 
 /*
@@ -433,7 +470,6 @@ div.wda-features > div.wp-block-column {
 .wda_grid_cards {
    background:transparent;
    margin:0 auto;
-   border:solid 1px blue;
 }
 .wda_grid_cards {
    display:-ms-grid;
@@ -443,10 +479,11 @@ div.wda-features > div.wp-block-column {
    -webkit-box-pack:center;
    -ms-flex-pack:center;
    justify-content:center;
-   -webkit-box-align:center;
-   -ms-flex-align:center;
-   align-items:center;
+   -webkit-box-align:flex-start;
+   -ms-flex-align:flex-start;
+   align-items:flex-start;
 }
+.wda_card,
 .wda_grid_cards > div.wp-block-group {
    display:-webkit-box;
    display:-ms-flexbox;
@@ -458,11 +495,9 @@ div.wda-features > div.wp-block-column {
    -webkit-box-align:start;
    -ms-flex-align:start;
    align-items:flex-start;
-
-   /* to do : style Grid Cards.. */
-   border:solid 2px blue;
    background:hsl(0, 0%, 96%);
-   margin:1rem;
+   border-radius:.5rem;
+   margin:0;
    padding:1rem;
 }
 /* style button/links in Grid Cards Block */
@@ -479,7 +514,6 @@ div.wda-features > div.wp-block-column {
    color:var(--link_text_color_hover); 
 }
 
-
 div.wda_grid_cards_links {
    margin:0;
    padding:0;
@@ -488,11 +522,13 @@ div.wda_grid_cards_link {
    margin:0;
    padding:0;
 }
-div.wda_grid_cards_link > a {
+p.wda_grid_cards_link > a {
    background:transparent;
    color:blue;
    font-size:1rem;
    text-decoration:underline;
+   margin:0;
+   padding:0;
 }
 
 
@@ -532,6 +568,15 @@ p.wda-title-lead__p {
       -webkit-box-align:end;
       -ms-flex-align:end;
       align-items:flex-end;
+}
+
+
+/*
+   Footer (Blocks?)
+   -------------------------------------------
+*/
+footer li {
+   border:solid 1px white;
 }
 
 
