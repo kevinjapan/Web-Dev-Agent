@@ -167,6 +167,11 @@ function wda_customize_register_grid_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
+
+   // Call To Action Button|Link Ctrl
+   // attempts to alter styling on-the-fly failed - WP is just too complex btwn front-end / customizer / editor.
+   // Solution : we just offer binary choices (checkboxes) on both button and link. User can select either|combine|exclude.
+
    // has_btn
    $wp_customize->add_setting( 'wda_grid_cards_has_btn',
    array('default'    => true, 
@@ -269,11 +274,12 @@ function wda_customize_register_grid_blocks_styles() {
 
    if(!get_theme_mod('wda_grid_cards_has_link')) {
       wda_inject_css(
-         'div.wp-block-buttons.wda_grid_cards_links',
+         '.wda_grid_cards_links',
          [],
          ['style' => 'display','value' => 'none' ,'prefix'  => '','postfix' => '']
       );
    }
+   
    if(!get_theme_mod('wda_grid_cards_has_btn')) {
       wda_inject_css(
          'div.wp-block-buttons.wda_grid_cards_btns',

@@ -226,13 +226,21 @@ function wda_features_col_template($image_template = null, $img_only = false) {
                      <p class="has-text-align-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate autem voluptatem deserunt ea odio quae odit molestiae provident similique id totam neque et dolorum explicabo, architecto itaque? Quas, eos quam?</p>
                      <!-- /wp:paragraph -->
 
-                     <!-- wp:buttons {"className":"wda-buttons"} -->
-                     <div class="wp-block-buttons wda_buttons wda_feature_btns">            
-                        <!-- wp:button {"className":"wda_feature_btn"} -->
-                        <div class="wp-block-button wda_button wda_feature_btn"><a class="wp-block-button__link">read more</a></div>
+                     <!-- wp:buttons {"className":"wda_features_btns"} -->
+                     <div class="wp-block-buttons wda_features_btns">            
+                        <!-- wp:button {"className":"wda_features_btn"} -->
+                        <div class="wp-block-button wda_button wda_features_btn"><a class="wp-block-button__link">read more</a></div>
                         <!-- /wp:button -->
                      </div>
-                     <!-- /wp:buttons -->';
+                     <!-- /wp:buttons -->
+
+                     <!-- wp:group {"className":"wda_features_links"} -->
+                     <div class="wp-block-group wda_features_links">
+                        <!-- wp:paragraph  {"className":"wda_features_link"} -->
+                        <p class="wda_features_link"><a href="#">read more</a></p>
+                        <!-- /wp:paragraph -->
+                     </div>
+                     <!-- /wp:group -->';
    }
 
    

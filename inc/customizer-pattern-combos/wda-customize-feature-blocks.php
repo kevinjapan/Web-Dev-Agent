@@ -53,34 +53,56 @@ function wda_customize_register_feature_blocks($wp_customize) {
             'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 5 )) 
    ));
 
-   // depr : 'wda_features_img_width' : changing image size via setting is not compatible w/ Page Editor, 
-   //        so we offer as different separate templates instead.
-   //        future : may be possible using higher specificity on rules?
+   
+   // 'wda_features_img_width' : depr
+   // changing image size via setting is not compatible w/ Page Editor, so we offer as different separate templates instead.
 
+
+   // Call To Action Button|Link Ctrl
+   // attempts to alter styling on-the-fly failed - WP is just too complex btwn front-end / customizer / editor.
+   // Solution : we just offer binary choices (checkboxes) on both button and link. User can select either|combine|exclude.
+
+   // has_btn
    $wp_customize->add_setting(
-      'wda_features_cta_type',
-      array('default'    => 'Button', 
-            'type'       => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport'  => 'postMessage',
-            'sanitize_callback' => 'wda_sanitize_select',) 
+      'wda_features_has_btn',
+      array('default'    => true, 
+         'type'       => 'theme_mod',
+         'capability' => 'edit_theme_options',
+         'transport'  => 'postMessage',
+         'sanitize_callback' => 'wda_sanitize_checkbox') 
    );
-   $wp_customize->add_control(new CompactSelectCustomizerControl($wp_customize,
-      'wda_features_cta_type', 
-      array('type' => 'select',
-            'priority' => 12,
+   $wp_customize->add_control(new CompactCheckBoxCustomizerControl($wp_customize,
+      'wda_features_has_btn', 
+      array('type' => 'checkbox',
+            'priority' => 10,
             'section' => 'wda_features_patterns',
-            'settings'   => 'wda_features_cta_type', 
-            'description' => __( 'link type','wda'),
-            'choices' => array(
-               'Button' => 'Button',
-               'Link' => 'Link',
-            ))
+            'label' => esc_html__( '','wda'),
+            'settings'   => 'wda_features_has_btn', 
+            'input_attrs' => array( 'style' => 'width:100%;' ),
+            'description' => esc_html__('display button','wda' ))
+   ));
+
+   // has_link
+   $wp_customize->add_setting( 
+      'wda_features_has_link',
+      array('default'    => true, 
+         'type'       => 'theme_mod',
+         'capability' => 'edit_theme_options',
+         'transport'  => 'postMessage',
+         'sanitize_callback' => 'wda_sanitize_checkbox') 
+   );
+   $wp_customize->add_control(new CompactCheckBoxCustomizerControl($wp_customize,
+      'wda_features_has_link', 
+      array('type' => 'checkbox',
+            'priority' => 10,
+            'section' => 'wda_features_patterns',
+            'label' => esc_html__( '','wda'),
+            'settings'   => 'wda_features_has_link', 
+            'input_attrs' => array( 'style' => 'width:100%;' ),
+            'description' => esc_html__('display link','wda' ))
    ));
 
 }
-
-// to do : button/links is working in Customizer but not getting thru to front-end
 
 function wda_customize_register_feature_blocks_styles() {
 
@@ -109,32 +131,23 @@ function wda_customize_register_feature_blocks_styles() {
       ['style' => 'padding-right','setting' => 'wda_cover_column_x_padding','prefix'  => '','postfix' => '%']
    );
 
-   if(get_theme_mod('wda_features_cta_type') === "Button") {
+   
+   if(!get_theme_mod('wda_features_has_link')) {
       wda_inject_css(
-         '.wda_feature_btns',
+         '.wda_features_links',
          [],
-         ['style' => 'background','value' => 'unset' ,'prefix'  => '','postfix' => '']
+         ['style' => 'display','value' => 'none' ,'prefix'  => '','postfix' => '']
       );
    }
-   else {
+   
+   if(!get_theme_mod('wda_features_has_btn')) {
       wda_inject_css(
-         '.wda_feature_btns > div > a',
+         'div.wp-block-buttons.wda_features_btns',
          [],
-         ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
-         ['style' => 'color','value' => 'var(--wda_btn_bg)' ,'prefix'  => '','postfix' => ''],
-         ['style' => 'text-align','value' => 'left' ,'prefix'  => '','postfix' => ''],
-         ['style' => 'padding','value' => '.25rem' ,'prefix'  => '','postfix' => ''],
-         ['style' => 'padding-left','value' => '.5rem' ,'prefix'  => '','postfix' => ''],
-         ['style' => 'font-size','value' => '1rem' ,'prefix'  => '','postfix' => ''],
-         ['style' => 'text-decoration','value' => 'underline' ,'prefix'  => '','postfix' => '']
-      );
-      wda_inject_css(
-         '.wda_feature_btns > div > a:hover',
-         [],
-         ['style' => 'background','value' => 'transparent' ,'prefix'  => '','postfix' => ''],
-         ['style' => 'color','value' => 'var(--link_text_color_hover)' ,'prefix'  => '','postfix' => '']
+         ['style' => 'display','value' => 'none' ,'prefix'  => '','postfix' => '']
       );
    }
+
 
    wda_start_media_query("screen","(min-width: " . wda_get_md_breakpoint() . ")");
 
