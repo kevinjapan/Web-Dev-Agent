@@ -1,26 +1,58 @@
 <?php
-/*
-Global Page Footer
-*/
+// Global Page Footer
+// to do : make customizable/configurable footer blocks
 ?>
-<footer>
-
-   <ul>
-      <li>
-         <a href="<?php echo get_site_url(); ?>">
-            <h5><?php echo get_bloginfo('name'); ?></h5>
-         </a>
-      </li>
-      <li>
-         <?php wp_nav_menu(
-            array(
-               'theme_location' => 'footer-menu'
-            )
-         ); ?>     
-      </li>
-      <li></li>
-   </ul>
-
+<footer class="wda_footer">
+   <section class="wda_footer_content">
+      <div><ul>
+         <li>
+            <?php // to do : logo img ?>
+            <a href="<?php echo get_site_url(); ?>">
+               <h5><?php echo get_bloginfo('name'); ?></h5>
+            </a>
+         </li>
+         <li>
+            <?php wp_nav_menu(
+               array(
+                  'theme_location' => 'footer-menu'
+               )
+            ); ?>     
+         </li>
+         <li></li>
+      </ul></div>
+      <div><ul>
+         <li>
+            <?php // to do : logo img ?>
+            <a href="<?php echo get_site_url(); ?>">
+               <h5><?php echo get_bloginfo('name'); ?></h5>
+            </a>
+         </li>
+         <li>
+            <?php wp_nav_menu(
+               array(
+                  'theme_location' => 'footer-menu'
+               )
+            ); ?>     
+         </li>
+         <li></li>
+      </ul></div>
+      <div><ul>
+         <li>
+            <?php // to do : logo img ?>
+            <a href="<?php echo get_site_url(); ?>">
+               <h5><?php echo get_bloginfo('name'); ?></h5>
+            </a>
+         </li>
+         <li>
+            <?php wp_nav_menu(
+               array(
+                  'theme_location' => 'footer-menu'
+               )
+            ); ?>     
+         </li>
+         <li></li>
+      </ul></div>
+   </section>
    <ul class="footnote">
       <li class="flex fit_content">
          <div class="footer_copyright fit_content">
@@ -38,7 +70,6 @@ Global Page Footer
          </div>
       </li>
    </ul>
-
 </footer>
 
 <?php // load all enqueqed assets ?>

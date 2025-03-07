@@ -360,6 +360,27 @@
    })
 
 
+   // Footer
+   // -----------------------------------------------
+   wp.customize('wda_footer_gap',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0
+         if(value > 25) value = 25
+         $('.wda_footer > .wda_footer_content').css({
+            "gap":value + 'rem'
+         })
+      })
+   })
+   wp.customize('wda_footer_template_cols',function(setting) {
+      setting.bind( function(value) {
+         if(value < 0) value = 0
+         if(value > 10) value = 10
+         $('.wda_footer > .wda_footer_content').css({
+            "grid-template-columns":'repeat(' + value + ',minmax(100px,1fr))' + ''
+         })
+      })
+   })
+
    // Copyright Notice Block
    // -----------------------------------------------
    wp.customize('wda_copyright',function(setting) {

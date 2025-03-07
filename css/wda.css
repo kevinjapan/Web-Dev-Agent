@@ -575,7 +575,19 @@ p.wda-title-lead__p {
    Footer (Blocks?)
    -------------------------------------------
 */
-footer li {
+footer.wda_footer > .wda_footer_content {
+   display:-ms-grid;
+   display:grid;
+   justify-items: stretch;
+   width:100%;
+   margin:0 auto;
+   padding:0 auto;border:solid 2px navy;
+}
+footer.wda_footer > div {
+   background:orange;
+
+}
+footer.wda_footer li {
    border:solid 1px white;
 }
 

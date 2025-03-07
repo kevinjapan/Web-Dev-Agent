@@ -7,6 +7,7 @@ require_once get_template_directory() . '/inc/customizer-theme-combos/wda-custom
 require_once get_template_directory() . '/inc/customizer-theme-combos/wda-customize-theme-typography.php';
 require_once get_template_directory() . '/inc/customizer-theme-combos/wda-customize-theme-posts.php';
 require_once get_template_directory() . '/inc/customizer-theme-combos/wda-customize-theme-frontpage.php';
+require_once get_template_directory() . '/inc/customizer-theme-combos/wda-customize-theme-footer.php';
 
 
 // WebDevAgentThemeCustomizer
@@ -35,7 +36,10 @@ class WebDevAgentThemeCustomizer {
          }
       }
 
+
       // Theme Customizer Sections
+      // --------------------------------------------
+
       $wp_customize->add_section(
          'wda_typography', 
          array('title'       => esc_html('Typography', 'wda'),
@@ -49,15 +53,23 @@ class WebDevAgentThemeCustomizer {
       $wp_customize->add_section(
          'wda_posts', 
          array('title'       => esc_html__('Posts', 'wda'),
-               'priority'    => 52,
+               'priority'    => 20,
                'capability'  => 'edit_theme_options',
                'description' => esc_html__('Customize the layout of your posts.', 'wda'),
                'panel' => 'wda_layout_panel') 
       );
       $wp_customize->add_section(
+         'wda_footer', 
+         array('title'       => esc_html__('Footer', 'wda'),
+               'priority'    => 40,
+               'capability'  => 'edit_theme_options',
+               'description' => esc_html__('You can customize the site\'s Footer here.', 'wda'),
+               'panel' => 'wda_layout_panel') 
+      );
+      $wp_customize->add_section(
          'wda_copyright', 
          array('title'       => esc_html__('Copyright', 'wda'),
-               'priority'    => 52,
+               'priority'    => 41,
                'capability'  => 'edit_theme_options',
                'description' => esc_html__('You can customize the site\'s Copyright Footer Notice here.', 'wda'),
                'panel' => 'wda_layout_panel') 
@@ -74,6 +86,7 @@ class WebDevAgentThemeCustomizer {
       wda_customize_theme_copyright($wp_customize);
       wda_customize_theme_typography($wp_customize);
       wda_customize_theme_frontpage($wp_customize);
+      wda_customize_theme_footer($wp_customize);
       wda_customize_theme_posts($wp_customize);
    }
 
@@ -89,6 +102,7 @@ wda_customize_theme_copyright_styles();
 wda_customize_theme_typography_styles();
 wda_customize_theme_posts_styles();
 wda_customize_theme_frontpage_styles();
+wda_customize_theme_footer_styles();
 ?>
 </style>
 <?php
