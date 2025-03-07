@@ -23,8 +23,8 @@ function wda_customize_theme_typography($wp_customize) {
          'type' => 'text',
          'priority' => 10,
          'section' => 'wda_typography',
-         'label' => esc_html__( 'Site Title','wda'),
-         'description' => __( 'text for site title','the-educator'),
+         'label' => esc_html__('Site Title','wda'),
+         'description' => __('text for site title','the-educator'),
          'settings'   => 'wda_title_fonts', 
          'input_attrs' => array('style' => 'width: 50%;')) 
    ));
@@ -42,7 +42,7 @@ function wda_customize_theme_typography($wp_customize) {
          'type' => 'text',
          'priority' => 10,
          'section' => 'wda_typography',
-         'label' => esc_html__( 'Site Tagline','wda'),
+         'label' => esc_html__('Site Tagline','wda'),
          'settings'   => 'wda_tagline_fonts',
          'input_attrs' => array('style' => 'width: 50%;'))  
    );
@@ -62,7 +62,7 @@ function wda_customize_theme_typography($wp_customize) {
          'type' => 'text',
          'priority' => 10,
          'section' => 'wda_typography',
-         'label' => esc_html__( 'Hero Text','wda'),
+         'label' => esc_html__('Hero Text','wda'),
          'settings'   => 'wda_hero_fonts', 
          'input_attrs' => array('style' => 'width: 50%;')) 
    );
@@ -81,7 +81,7 @@ function wda_customize_theme_typography($wp_customize) {
       array('type' => 'text',
             'priority' => 10,
             'section' => 'wda_typography',
-            'label' => esc_html__( 'Navigation Text','wda'),
+            'label' => esc_html__('Navigation Text','wda'),
             'settings'   => 'wda_nav_fonts', 
             'input_attrs' => array('style' => 'width: 50%;')) 
    );
@@ -101,7 +101,7 @@ function wda_customize_theme_typography($wp_customize) {
          'type' => 'text',
          'priority' => 10,
          'section' => 'wda_typography',
-         'label' => esc_html__( 'Headings','wda'),
+         'label' => esc_html__('Headings','wda'),
          'settings'   => 'wda_headings_fonts', 
          'input_attrs' => array('style' => 'width: 50%;')) 
    );
@@ -120,7 +120,7 @@ function wda_customize_theme_typography($wp_customize) {
       array('type' => 'text',
             'priority' => 10,
             'section' => 'wda_typography',
-            'label' => esc_html__( 'Text','wda'),
+            'label' => esc_html__('Text','wda'),
             'settings'   => 'wda_body_fonts',
             'input_attrs' => array('style' => 'width: 50%;')) 
    ); 

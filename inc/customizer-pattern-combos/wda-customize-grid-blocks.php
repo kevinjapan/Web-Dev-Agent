@@ -23,10 +23,10 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
-            'label' => __( '','wda'),
+            'label' => __('','wda'),
             'settings'   => 'wda_grid_x_margins', 
-            'description' => __( '% horizontal margin','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+            'description' => __('% horizontal margin','wda'),
+            'input_attrs' => array('min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
    $wp_customize->add_setting(
@@ -42,10 +42,10 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
-            'label' => __( '','wda'),
+            'label' => __('','wda'),
             'settings'   => 'wda_grid_y_margins', 
-            'description' => __( '% vertical margin','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+            'description' => __('% vertical margin','wda'),
+            'input_attrs' => array('min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
    $wp_customize->add_setting(
@@ -61,10 +61,10 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
-            'label' => __( '','wda'),
+            'label' => __('','wda'),
             'settings'   => 'wda_grid_gap', 
-            'description' => __( 'element spacing','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
+            'description' => __('element spacing','wda'),
+            'input_attrs' => array('min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
    ));
 
    $wp_customize->add_setting(
@@ -80,10 +80,10 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_patterns',
-            'label' => __( '','wda'),
+            'label' => __('','wda'),
             'settings'   => 'wda_grid_template_cols', 
-            'description' => __( 'number of columns','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+            'description' => __('number of columns','wda'),
+            'input_attrs' => array('min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
    
@@ -104,10 +104,10 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_cards_patterns',
-            'label' => __( '','wda'),
+            'label' => __('','wda'),
             'settings'   => 'wda_grid_cards_x_margins', 
-            'description' => __( '% horizontal margin','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+            'description' => __('% horizontal margin','wda'),
+            'input_attrs' => array('min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
    $wp_customize->add_setting(
@@ -123,10 +123,10 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_cards_patterns',
-            'label' => __( '','wda'),
+            'label' => __('','wda'),
             'settings'   => 'wda_grid_cards_y_margins', 
-            'description' => __( '% vertical margin','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+            'description' => __('% vertical margin','wda'),
+            'input_attrs' => array('min' => 0, 'max' => 25, 'style' => 'width: 60px;', 'step'	=> 1 )) 
    ));
 
    $wp_customize->add_setting(
@@ -142,10 +142,10 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_cards_patterns',
-            'label' => __( '','wda'),
+            'label' => __('','wda'),
             'settings'   => 'wda_grid_cards_gap', 
-            'description' => __( 'element spacing','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
+            'description' => __('element spacing','wda'),
+            'input_attrs' => array('min' => 0, 'max' => 5, 'style' => 'width: 60px;', 'step'	=> .5 )) 
    ));
 
    $wp_customize->add_setting(
@@ -161,10 +161,10 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'number',
             'priority' => 10,
             'section' => 'wda_grid_cards_patterns',
-            'label' => __( '','wda'),
+            'label' => __('','wda'),
             'settings'   => 'wda_grid_cards_template_cols', 
-            'description' => __( 'number of columns','wda'),
-            'input_attrs' => array( 'min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step'	=> 1 )) 
+            'description' => __('number of columns','wda'),
+            'input_attrs' => array('min' => 0, 'max' => 9, 'style' => 'width: 60px;', 'step' => 1 )) 
    ));
 
 
@@ -173,7 +173,7 @@ function wda_customize_register_grid_blocks($wp_customize) {
    // Solution : we just offer binary choices (checkboxes) on both button and link. User can select either|combine|exclude.
 
    // has_btn
-   $wp_customize->add_setting( 'wda_grid_cards_has_btn',
+   $wp_customize->add_setting('wda_grid_cards_has_btn',
    array('default'    => true, 
          'type'       => 'theme_mod',
          'capability' => 'edit_theme_options',
@@ -185,9 +185,9 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'checkbox',
             'priority' => 10,
             'section' => 'wda_grid_cards_patterns',
-            'label' => esc_html__( '','wda'),
+            'label' => esc_html__('','wda'),
             'settings'   => 'wda_grid_cards_has_btn', 
-            'input_attrs' => array( 'style' => 'width:100%;' ),
+            'input_attrs' => array('style' => 'width:100%;' ),
             'description' => esc_html__('display button','wda' ))
    ));
 
@@ -205,9 +205,9 @@ function wda_customize_register_grid_blocks($wp_customize) {
       array('type' => 'checkbox',
             'priority' => 10,
             'section' => 'wda_grid_cards_patterns',
-            'label' => esc_html__( '','wda'),
+            'label' => esc_html__('','wda'),
             'settings'   => 'wda_grid_cards_has_link', 
-            'input_attrs' => array( 'style' => 'width:100%;' ),
+            'input_attrs' => array('style' => 'width:100%;' ),
             'description' => esc_html__('display link','wda' ))
    ));
 
